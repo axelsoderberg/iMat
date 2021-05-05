@@ -1,4 +1,4 @@
-package src;
+package iMat;
 
 public class Controller {
 
