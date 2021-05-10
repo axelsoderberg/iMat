@@ -23,13 +23,26 @@ import se.chalmers.cse.dat216.project.ShoppingCartListener;
  * ett eller annat sätt.
  *
  */
-public class iMatController implements Initializable, ShoppingCartListener {
+public class iMatController implements Initializable/*, ShoppingCartListener*/ {
 
     // @FXML items here:
         // TODO lägga till alla FXML saker vi behöver här
     // Other variables
     private final Model model = Model.getInstance();
 
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO initialisera saker, kolla lab 3 typ
+        //model.getShoppingCart().addShoppingCartListener(this);
+
+        //updateProductList(model.getProducts());
+        //updateBottomPanel();
+
+        //setupAccountPane();
+
+    }
+    /*
     // Shop pane actions
     @FXML
     private void handleShowAccountAction(ActionEvent event) {
@@ -62,17 +75,6 @@ public class iMatController implements Initializable, ShoppingCartListener {
         closeAccountView();
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO initialisera saker, kolla lab 3 typ
-        model.getShoppingCart().addShoppingCartListener(this);
-
-        updateProductList(model.getProducts());
-        updateBottomPanel();
-
-        setupAccountPane();
-
-    }
 
     // Navigation
     public void openAccountView() {
@@ -158,4 +160,7 @@ public class iMatController implements Initializable, ShoppingCartListener {
         yearCombo.getItems().addAll(model.getYears());
 
     }
+    */
+
 }
+
