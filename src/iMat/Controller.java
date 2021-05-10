@@ -1,6 +1,12 @@
 package iMat;
 
+import java.net.URL;
+import java.util.ResourceBundle;
+
 public class Controller {
-    project
-    // Test
+
+    public void initialize(URL url, ResourceBundle rb) {
+
+    }
+
 }
