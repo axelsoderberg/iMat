@@ -1,0 +1,18 @@
+.dark-green {
+    -fx-background-color: #629543;
+}
+
+.light-green {
+    -fx-background-color: #C3D5BD;
+}
+
+.almost-white {
+    -fx-background-color: #F5F5F2;
+}
+
+
+.text-font{
+    -fx-font-family: "Assistant";
+}
+
+
