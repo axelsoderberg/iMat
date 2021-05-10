@@ -7,12 +7,30 @@
 }
 
 .almost-white {
-    -fx-background-color: #F5F5F2;
+    -fx-background-color: #ECEBEB;
 }
 
-
-.text-font{
+.text-font {
     -fx-font-family: "Assistant";
 }
+
+.green-button {
+    -fx-font-family: "Assistant";
+    -fx-font-size: 32px;
+    -fx-text-fill: #ECEBEB;
+    -fx-font-weight: bold;
+    -fx-background-color: #629543;
+    -fx-background-radius: 20px;
+}
+
+.white-button {
+    -fx-font-family: "Assistant";
+    -fx-font-size: 32px;
+    -fx-text-fill: #000000;
+    -fx-font-weight: bold;
+    -fx-background-color: #ECEBEB;
+    -fx-background-radius: 20px;
+}
+
 
 
