@@ -10,7 +10,7 @@
     -fx-background-color: #ECEBEB;
 }
 
-.text-font {
+.text-font{
     -fx-font-family: "Assistant";
 }
 
@@ -33,4 +33,32 @@
 }
 
 
+#text-help-header{
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+}
 
+.text-helpbox-header{
+    -fx-font-family: "Assistant";
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+.text-helpbox-normal{
+    -fx-font-family: "Assistant";
+    -fx-font-size: 18px;
+}
+
+.text-helpbox-contact{
+    -fx-font-family: "Assistant";
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.help-button{
+    -fx-font-family: "Assistant";
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #F5F5F2;
+    -fx-background-color: #629543;
+}
