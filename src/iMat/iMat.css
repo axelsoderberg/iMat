@@ -27,9 +27,7 @@
     -fx-background-radius: 20px;
 }
 
-.small-button{
-    -fx-font-size: 20px;
-}
+
 
 .white-button {
     -fx-font-family: "Assistant";
@@ -38,6 +36,10 @@
     -fx-font-weight: bold;
     -fx-background-color: #ECEBEB;
     -fx-background-radius: 20px;
+}
+
+.small-button{
+    -fx-font-size: 20px;
 }
 
 .text-page-header{
