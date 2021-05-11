@@ -8,8 +8,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="664.0" prefWidth="1536.0" styleClass="almost-white" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.Help">
+<AnchorPane prefHeight="664.0" prefWidth="1536.0" styleClass="almost-white" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.Help">
    <children>
       <Line endX="100.0" layoutX="999.0" layoutY="83.0" startX="-564.0" stroke="#0000004d" strokeWidth="5.0" />
       <Text id="text-help-header" layoutX="497.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-font" text="Hej! Vad behöver du hjälp med?" textAlignment="CENTER" />
