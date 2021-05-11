@@ -14,6 +14,10 @@
     -fx-font-family: "Assistant";
 }
 
+.shadow-effect {
+    fx-background-effect: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
 .green-button {
     -fx-font-family: "Assistant";
     -fx-font-size: 28px;
@@ -33,6 +37,9 @@
 }
 
 #text-help-header{
+
+.text-page-header{
+    -fx-font-family: "Assistant";
     -fx-font-size: 36px;
     -fx-font-weight: bold;
 }

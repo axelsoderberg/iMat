@@ -27,6 +27,10 @@ public class iMatController implements Initializable/*, ShoppingCartListener*/ {
 
     // @FXML items here:
         // TODO lägga till alla FXML saker vi behöver här
+    @FXML private AnchorPane helpPane;
+    @FXML private AnchorPane shoppingListsPane;
+    @FXML private AnchorPane headerPane;
+    @FXML private AnchorPane startPane;
     // Other variables
     private final Model model = Model.getInstance();
 
@@ -38,9 +42,43 @@ public class iMatController implements Initializable/*, ShoppingCartListener*/ {
 
         //updateProductList(model.getProducts());
         //updateBottomPanel();
-
+        headerToFront();
+        openStartView();
         //setupAccountPane();
 
+
+    }
+    // Init
+
+    public void headerToFront() { headerPane.toFront(); }
+
+    public void openStartView() {
+        startPane.toFront();
+    }
+
+    // Navigation
+
+
+    public void openAccountView() {
+        // updateAccountPanel();
+        accountPane.toFront();
+    }
+
+    public void closeAccountView() {
+        // updateCreditCard();
+        account.toBack();
+    }
+
+    public void openShoppingList() {
+        shoppingListsPane.toFront();
+    }
+
+    public void openHelpView() {
+        helpPane.toFront();
+    }
+
+    public void openHomeView() {
+        homePane.toFront();
     }
     /*
     // Shop pane actions
@@ -75,17 +113,6 @@ public class iMatController implements Initializable/*, ShoppingCartListener*/ {
         closeAccountView();
     }
 
-
-    // Navigation
-    public void openAccountView() {
-        updateAccountPanel();
-        accountPane.toFront();
-    }
-
-    public void closeAccountView() {
-        updateCreditCard();
-        shopPane.toFront();
-    }
 
     // Shop pane methods
     @Override
@@ -161,6 +188,9 @@ public class iMatController implements Initializable/*, ShoppingCartListener*/ {
 
     }
     */
+
+    // Help
+
 
 }
 
