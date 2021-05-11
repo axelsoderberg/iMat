@@ -33,7 +33,8 @@
 }
 
 
-#text-help-header{
+.text-page-header{
+    -fx-font-family: "Assistant";
     -fx-font-size: 36px;
     -fx-font-weight: bold;
 }
