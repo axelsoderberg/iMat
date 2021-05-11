@@ -75,3 +75,9 @@
     -fx-font-family: "Assistant";
     -fx-font-size: 32px;
 }
+
+.special-rectangle {
+    -fx-background-radius: 20 20 0 0;
+}
+
+

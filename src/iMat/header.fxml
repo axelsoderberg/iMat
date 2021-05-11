@@ -31,7 +31,7 @@
                      <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../../../Downloads/ant-design_home-filled.png" />
+                              <Image url="@../../../../../../../Pictures/home_icon.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -50,7 +50,7 @@
                      <graphic>
                         <ImageView fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../../../Downloads/Vector.png" />
+                              <Image url="@../../../../../../../Pictures/shopping_list_icon.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -71,7 +71,7 @@
                <graphic>
                   <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../../Downloads/image%204.png" />
+                        <Image url="@../../../../../../../Pictures/shopping_cart_icon.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -90,7 +90,7 @@
             </TextField>
             <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="1002.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="21.0">
                <image>
-                  <Image url="@../../../../../../../Downloads/Icon%20(Right)%201.png" />
+                  <Image url="@../../../../../../../Pictures/search_icon.png" />
                </image>
             </ImageView>
          </children>
@@ -119,7 +119,7 @@
          <graphic>
             <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../Downloads/Ellipse%205.png" />
+                  <Image url="@../../../../../../../Pictures/Hjordis.png" />
                </image>
             </ImageView>
          </graphic>
@@ -138,7 +138,7 @@
          <graphic>
             <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../Downloads/Group%20100.png" />
+                  <Image url="@../../../../../../../Pictures/help_icon.png" />
                </image>
             </ImageView>
          </graphic>

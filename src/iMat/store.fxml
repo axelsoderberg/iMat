@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="689.0" prefWidth="1536.0" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#c3d5bd" height="649.0" layoutX="45.0" layoutY="21.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="350.0" x="45.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="20.0" />
+      <Line endX="387.0" endY="90.0" startX="45.0" startY="90.0" stroke="#e3e3e3" strokeWidth="8.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="85.0">
+         <rotationAxis>
+            <Point3D />
+         </rotationAxis>
+      </Line>
+      <AnchorPane layoutX="50.0" layoutY="20.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="20.0">
+         <children>
+            <Region prefHeight="65.0" prefWidth="350.0">
+               <styleClass>
+                  <String fx:value="dark-green" />
+                  <String fx:value="special-rectangle" />
+               </styleClass>
+            </Region>
+            <Label layoutX="81.0" layoutY="4.0" styleClass="text-font" text="Underkategori">
+               <font>
+                  <Font name="Berlin Sans FB Bold" size="36.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="21.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../Pictures/arrow.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="20.0">
+         <children>
+            <Region prefHeight="65.0" prefWidth="350.0">
+               <styleClass>
+                  <String fx:value="light-green" />
+                  <String fx:value="special-rectangle" />
+               </styleClass>
+            </Region>
+            <Label alignment="CENTER" layoutX="-1.0" layoutY="8.0" prefHeight="53.0" prefWidth="350.0" styleClass="text-font" text="Kategorier" AnchorPane.leftAnchor="0.0">
+               <font>
+                  <Font name="Berlin Sans FB Bold" size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#c3d5bd" height="649.0" layoutX="984.0" layoutY="78.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="350.0" x="45.0" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="20.0" />
+      <Line endX="387.0" endY="90.0" layoutX="988.0" layoutY="58.0" startX="45.0" startY="90.0" stroke="#e3e3e3" strokeWidth="8.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="85.0" />
+      <Label alignment="CENTER" layoutX="1140.0" layoutY="27.0" prefHeight="53.0" prefWidth="350.0" styleClass="text-font" text="Varukorg" AnchorPane.rightAnchor="46.0">
+         <font>
+            <Font name="Berlin Sans FB Bold" size="36.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
