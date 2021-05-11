@@ -27,6 +27,7 @@ public class iMatController implements Initializable/*, ShoppingCartListener*/ {
 
     // @FXML items here:
         // TODO lägga till alla FXML saker vi behöver här
+    @FXML private AnchorPane helpPane;
     // Other variables
     private final Model model = Model.getInstance();
 
@@ -85,6 +86,14 @@ public class iMatController implements Initializable/*, ShoppingCartListener*/ {
     public void closeAccountView() {
         updateCreditCard();
         shopPane.toFront();
+    }
+
+    private void openHelpView() {
+        helpPane.toFront();
+    }
+
+    private void openHomeView() {
+        homePane.toFront();
     }
 
     // Shop pane methods
@@ -161,6 +170,9 @@ public class iMatController implements Initializable/*, ShoppingCartListener*/ {
 
     }
     */
+
+    // Help
+
 
 }
 
