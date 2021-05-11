@@ -12,7 +12,6 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="664.0" prefWidth="1536.0" styleClass="almost-white" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.Shoppinglists">
    <children>
       <Line endX="242.0" layoutX="762.0" layoutY="98.0" startX="-564.0" stroke="#0000004d" strokeWidth="5.0" AnchorPane.leftAnchor="195.5" />
@@ -27,9 +26,9 @@
             </DropShadow>
          </effect>
          <graphic>
-            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../resources/List-PNG-Picture.png" />
+                  <Image url="@../resources/Inkopslistor.png" />
                </image>
             </ImageView>
          </graphic>
@@ -41,6 +40,6 @@
       <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#c3d5bb" height="603.0" layoutX="1026.0" layoutY="31.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="rectangle" width="295.0" AnchorPane.leftAnchor="1026.0" />
       <Line endX="390.0" layoutX="931.0" layoutY="97.0" startX="95.0" stroke="#ebebeb" strokeWidth="5.0" styleClass="almost-white" AnchorPane.leftAnchor="1023.5" />
       <Text layoutX="1139.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-page-header" text="Tips" textAlignment="CENTER" AnchorPane.leftAnchor="1139.0" />
-      <Text layoutX="1162.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" AnchorPane.leftAnchor="1162.0" />
+      <Text layoutX="1048.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="a" text="Niodnasfnlasfnsa" AnchorPane.leftAnchor="1048.0" />
    </children>
 </AnchorPane>
