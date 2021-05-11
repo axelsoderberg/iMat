@@ -27,6 +27,8 @@
     -fx-background-radius: 20px;
 }
 
+
+
 .white-button {
     -fx-font-family: "Assistant";
     -fx-font-size: 28px;
@@ -36,7 +38,9 @@
     -fx-background-radius: 20px;
 }
 
-#text-help-header{
+.small-button{
+    -fx-font-size: 20px;
+}
 
 .text-page-header{
     -fx-font-family: "Assistant";
@@ -59,14 +63,6 @@
     -fx-font-family: "Assistant";
     -fx-font-size: 18px;
     -fx-font-weight: bold;
-}
-
-.help-button{
-    -fx-font-family: "Assistant";
-    -fx-font-size: 20px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #F5F5F2;
-    -fx-background-color: #629543;
 }
 
 .search-field{

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -8,12 +9,11 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="664.0" prefWidth="1536.0" styleClass="almost-white" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.Help">
+<AnchorPane prefHeight="689.0" prefWidth="1536.0" styleClass="almost-white" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.Help">
    <children>
       <Line endX="100.0" layoutX="999.0" layoutY="83.0" startX="-564.0" stroke="#0000004d" strokeWidth="5.0" />
-      <Text id="text-help-header" layoutX="497.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-font" text="Hej! Vad behöver du hjälp med?" textAlignment="CENTER" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c3d5bd" height="440.0" layoutX="220.0" layoutY="162.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="light-green" width="310.0" AnchorPane.leftAnchor="220.0">
+      <Text layoutX="497.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-page-header" text="Hej! Vad behöver du hjälp med?" textAlignment="CENTER" />
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#c3d5bd" height="440.0" layoutX="220.0" layoutY="162.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="light-green" width="310.0" AnchorPane.leftAnchor="220.0">
          <effect>
             <DropShadow height="6.0" offsetY="2.0" radius="2.5" width="6.0">
                <color>
@@ -22,7 +22,7 @@
             </DropShadow>
          </effect>
       </Rectangle>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c3d5bd" height="440.0" layoutX="613.0" layoutY="162.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="light-green" width="310.0" AnchorPane.leftAnchor="613.0">
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#c3d5bd" height="440.0" layoutX="613.0" layoutY="162.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="light-green" width="310.0" AnchorPane.leftAnchor="613.0">
          <effect>
             <DropShadow height="6.0" offsetY="2.0" radius="2.5" width="6.0">
                <color>
@@ -31,7 +31,7 @@
             </DropShadow>
          </effect>
       </Rectangle>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c3d5bd" height="440.0" layoutX="1011.0" layoutY="162.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="light-green" width="310.0" AnchorPane.leftAnchor="1000.0">
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#c3d5bd" height="440.0" layoutX="1011.0" layoutY="162.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="light-green" width="310.0" AnchorPane.leftAnchor="1000.0">
          <effect>
             <DropShadow height="6.0" offsetY="2.0" radius="2.5" width="6.0">
                <color>
@@ -50,7 +50,7 @@
       <Text layoutX="1102.0" layoutY="556.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-normal" text="imat@mejl.se" textAlignment="CENTER" />
       <Text layoutX="1039.0" layoutY="557.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-contact" text="Mejl:" AnchorPane.leftAnchor="1039.0" />
       <Text layoutX="1110.0" layoutY="528.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-normal" text="xxxx-xxxxxx" textAlignment="CENTER" />
-      <Button layoutX="300.0" layoutY="514.0" mnemonicParsing="false" prefWidth="150.0" styleClass="help-button" text="Starta guide">
+      <Button layoutX="300.0" layoutY="514.0" mnemonicParsing="false" prefWidth="150.0" text="Starta guide">
          <effect>
             <DropShadow height="6.17" offsetY="2.0" radius="2.585" width="6.17">
                <color>
@@ -58,8 +58,12 @@
                </color>
             </DropShadow>
          </effect>
+         <styleClass>
+            <String fx:value="green-button" />
+            <String fx:value="small-button" />
+         </styleClass>
       </Button>
-      <Button layoutX="693.0" layoutY="514.0" mnemonicParsing="false" prefWidth="150.0" styleClass="help-button" text="Läs mer">
+      <Button layoutX="693.0" layoutY="514.0" mnemonicParsing="false" prefWidth="150.0" text="Läs mer">
          <effect>
             <DropShadow height="6.17" offsetY="2.0" radius="2.585" width="6.17">
                <color>
@@ -67,6 +71,10 @@
                </color>
             </DropShadow>
          </effect>
+         <styleClass>
+            <String fx:value="green-button" />
+            <String fx:value="small-button" />
+         </styleClass>
       </Button>
    </children>
 </AnchorPane>

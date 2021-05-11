@@ -14,12 +14,12 @@
    <children>
       <ImageView fitHeight="868.0" fitWidth="1540.0" pickOnBounds="true">
          <image>
-            <Image url="@../../../../Downloads/pexels-matheus-cenali-2733918.jpg" />
+            <Image url="@../resources/pexels-matheus-cenali-2733918.jpg" />
          </image>
       </ImageView>
       <ImageView fitHeight="1331.0" fitWidth="1905.0" layoutX="-353.0" layoutY="-461.0" opacity="0.86" pickOnBounds="true" styleClass="green-button">
          <image>
-            <Image url="@../../../../OneDrive/Skrivbord/e5fbe1.png" />
+            <Image url="@../resources/e5fbe1.png" />
          </image>
       </ImageView>
       <Label alignment="CENTER" layoutX="338.0" layoutY="2.0" prefHeight="310.0" prefWidth="912.0" text="IMAT" textAlignment="CENTER" textFill="#629543">
@@ -32,7 +32,7 @@
             <Font name="Berlin Sans FB" size="64.0" />
          </font>
       </Label>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="350.0" layoutX="386.0" layoutY="400.0" stroke="WHITE" strokeType="INSIDE" width="310.0">
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="350.0" layoutX="386.0" layoutY="400.0" stroke="WHITE" strokeType="INSIDE" width="310.0">
          <effect>
             <DropShadow height="6.17" offsetY="2.0" radius="2.585" width="6.17">
                <color>
@@ -43,10 +43,10 @@
       </Rectangle>
       <ImageView fitHeight="113.0" fitWidth="172.0" layoutX="450.0" layoutY="422.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../OneDrive/Skrivbord/istock-153696622.jpg" />
+            <Image url="@../resources/istock-153696622.jpg" />
          </image>
       </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="350.0" layoutX="867.0" layoutY="400.0" stroke="WHITE" strokeType="INSIDE" width="310.0">
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="350.0" layoutX="867.0" layoutY="400.0" stroke="WHITE" strokeType="INSIDE" width="310.0">
          <effect>
             <DropShadow height="6.17" offsetY="2.0" radius="2.585" width="6.17">
                <color>
@@ -57,7 +57,7 @@
       </Rectangle>
       <ImageView fitHeight="113.0" fitWidth="159.0" layoutX="930.0" layoutY="408.0" pickOnBounds="true">
          <image>
-            <Image url="@../../../../OneDrive/Skrivbord/istockphoto-91520053-170667a.jpg" />
+            <Image url="@../resources/istockphoto-91520053-170667a.jpg" />
          </image>
       </ImageView>
       <Label layoutX="444.0" layoutY="551.0" prefHeight="81.0" prefWidth="183.0" stylesheets="@iMat.css" text="Redo för att handla?" textAlignment="CENTER" wrapText="true">
@@ -65,7 +65,7 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="921.0" layoutY="542.0" prefHeight="82.0" prefWidth="202.0" text="Behöver du hjälp med något?" textAlignment="CENTER" wrapText="true">
+      <Label layoutX="921.0" layoutY="551.0" prefHeight="82.0" prefWidth="202.0" text="Behöver du hjälp med något?" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>
