@@ -32,7 +32,7 @@
             <Font name="Berlin Sans FB" size="64.0" />
          </font>
       </Label>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="350.0" layoutX="386.0" layoutY="400.0" stroke="WHITE" strokeType="INSIDE" width="310.0">
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="350.0" layoutX="386.0" layoutY="400.0" stroke="WHITE" strokeType="INSIDE" width="310.0">
          <effect>
             <DropShadow height="6.17" offsetY="2.0" radius="2.585" width="6.17">
                <color>
@@ -46,7 +46,7 @@
             <Image url="@../resources/istock-153696622.jpg" />
          </image>
       </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="350.0" layoutX="867.0" layoutY="400.0" stroke="WHITE" strokeType="INSIDE" width="310.0">
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="350.0" layoutX="867.0" layoutY="400.0" stroke="WHITE" strokeType="INSIDE" width="310.0">
          <effect>
             <DropShadow height="6.17" offsetY="2.0" radius="2.585" width="6.17">
                <color>
