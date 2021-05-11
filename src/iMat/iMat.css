@@ -16,7 +16,7 @@
 
 .green-button {
     -fx-font-family: "Assistant";
-    -fx-font-size: 32px;
+    -fx-font-size: 28px;
     -fx-text-fill: #ECEBEB;
     -fx-font-weight: bold;
     -fx-background-color: #629543;
@@ -25,13 +25,12 @@
 
 .white-button {
     -fx-font-family: "Assistant";
-    -fx-font-size: 32px;
+    -fx-font-size: 28px;
     -fx-text-fill: #000000;
     -fx-font-weight: bold;
     -fx-background-color: #ECEBEB;
     -fx-background-radius: 20px;
 }
-
 
 #text-help-header{
     -fx-font-size: 36px;
@@ -61,4 +60,11 @@
     -fx-font-weight: bold;
     -fx-text-fill: #F5F5F2;
     -fx-background-color: #629543;
+}
+
+.search-field{
+    -fx-background-color: #ECEBEB;
+    -fx-background-radius: 20px;
+    -fx-font-family: "Assistant";
+    -fx-font-size: 32px;
 }
