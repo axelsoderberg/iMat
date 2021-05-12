@@ -11,7 +11,7 @@ import java.util.ResourceBundle;
 public class Main extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) throws Exception {
         ResourceBundle bundle = java.util.ResourceBundle.getBundle("resources/iMat");
         Parent root = FXMLLoader.load(getClass().getResource("Start.fxml"), bundle);
         primaryStage.setTitle(bundle.getString("application.name"));

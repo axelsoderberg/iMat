@@ -31,9 +31,11 @@ public class iMatController implements Initializable/*, ShoppingCartListener*/ {
     @FXML private AnchorPane helpPane;
     @FXML private AnchorPane shoppingListsPane;
     @FXML private AnchorPane headerPane;
+    @FXML private AnchorPane storePane;
 
     @FXML private AnchorPane startPane;
     @FXML private Button startHelpButton;
+    @FXML private Button startStoreButton;
 
     // Other variables
     private final Model model = Model.getInstance();
@@ -63,8 +65,10 @@ public class iMatController implements Initializable/*, ShoppingCartListener*/ {
 
     public void helpButtonOnClick() { openHelpView(); }
 
+    public void storeButtonOnClick() { openStoreView(); }
+
     /*
-    public void homeButtonOnClick() { openHomeView(); }
+
 
     public void accountButtonOnClick() { openAccountView(); }
 
@@ -77,9 +81,10 @@ public class iMatController implements Initializable/*, ShoppingCartListener*/ {
         shoppingListsPane.toFront();
     }
 
-    private void openHelpView() {
-        helpPane.toFront();
-    }
+    @FXML
+    private void openHelpView() { helpPane.toFront(); }
+    @FXML
+    private void openStoreView() { storePane.toFront(); }
 /*
     private void openAccountView() {
         // updateAccountPanel();
