@@ -2,6 +2,7 @@ package iMat;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -28,34 +29,37 @@ import se.chalmers.cse.dat216.project.ShoppingCartListener;
  */
 public class StartController implements Initializable/*, ShoppingCartListener*/ {
 
+    //FXML items
     @FXML private AnchorPane startPane;
     @FXML private Button startHelpButton;
     @FXML private Button startStoreButton;
 
     // Other variables
-    private final Model model = Model.getInstance();
+    private final ViewHandler viewHandler = ViewHandler.getInstance();
 
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         openStartView();
-
     }
 
     public void openStartView() { startPane.toFront(); }
 
 
-    @FXML
     private void openHelpView(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("help.fxml"));
-        startPane.getChildren().setAll(pane);
+        List<String> panes = new ArrayList();
+        panes.add("help.fxml");
+        panes.add("header.fxml");
+        viewHandler.loadPanes(panes);
     }
 
-    @FXML
     private void openStoreView(ActionEvent event) throws IOException {
-        AnchorPane pane = FXMLLoader.load(getClass().getResource("store.fxml"));
-        startPane.getChildren().setAll(pane);
+        List<String> panes = new ArrayList();
+        panes.add("store.fxml");
+        panes.add("header.fxml");
+        viewHandler.loadPanes(panes);
     }
+
 
 }
 
