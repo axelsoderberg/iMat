@@ -50,9 +50,14 @@
          </font>
       </Label>
       <Button layoutX="7.0" layoutY="167.0" maxHeight="35.0" minHeight="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="157.0" styleClass="lightgreen-button" text="Lägg till" />
-      <ImageView fitHeight="82.0" fitWidth="40.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="82.0" fitWidth="40.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
          <image>
             <Image url="@../resources/heart.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="82.0" fitWidth="40.0" layoutX="24.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
+         <image>
+            <Image url="@../resources/heartFilled.png" />
          </image>
       </ImageView>
    </children>
