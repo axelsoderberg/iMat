@@ -15,7 +15,7 @@
             <Image url="@../resources/pexels-matheus-cenali-2733918.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="1331.0" fitWidth="1905.0" layoutX="-353.0" layoutY="-461.0" opacity="0.86" pickOnBounds="true" styleClass="green-button">
+      <ImageView fitHeight="1331.0" fitWidth="1905.0" layoutX="-495.0" layoutY="-463.0" opacity="0.86" pickOnBounds="true" styleClass="green-button">
          <image>
             <Image url="@../resources/e5fbe1.png" />
          </image>
@@ -68,7 +68,7 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </Label>
-      <Button fx:id="startShoppingButton" layoutX="417.0" layoutY="657.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="250.0" styleClass="green-button" stylesheets="@iMat.css" text="Gå till affären">
+      <Button fx:id="startShoppingButton" layoutX="417.0" layoutY="657.0" mnemonicParsing="false" onAction="#storeButtonOnClick" onMouseClicked="#storeButtonOnClick" prefHeight="57.0" prefWidth="250.0" styleClass="green-button" stylesheets="@iMat.css" text="Gå till affären">
          <effect>
             <DropShadow height="6.17" offsetY="2.0" radius="2.585" width="6.17">
                <color>
@@ -77,7 +77,7 @@
             </DropShadow>
          </effect>
       </Button>
-      <Button fx:id="startHelpButton" layoutX="889.0" layoutY="663.0" mnemonicParsing="false" onMouseClicked="#helpButtonOnClick" prefHeight="57.0" prefWidth="250.0" styleClass="green-button" stylesheets="@iMat.css" text="Klicka här">
+      <Button fx:id="startHelpButton" layoutX="889.0" layoutY="663.0" mnemonicParsing="false" onAction="#helpButtonOnClick" onMouseClicked="#helpButtonOnClick" prefHeight="57.0" prefWidth="250.0" styleClass="green-button" stylesheets="@iMat.css" text="Klicka här">
          <effect>
             <DropShadow height="6.17" offsetY="2.0" radius="2.585" width="6.17">
                <color>
