@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -30,7 +31,10 @@ public class iMatController implements Initializable/*, ShoppingCartListener*/ {
     @FXML private AnchorPane helpPane;
     @FXML private AnchorPane shoppingListsPane;
     @FXML private AnchorPane headerPane;
+
     @FXML private AnchorPane startPane;
+    @FXML private Button startHelpButton;
+
     // Other variables
     private final Model model = Model.getInstance();
 
@@ -42,7 +46,7 @@ public class iMatController implements Initializable/*, ShoppingCartListener*/ {
 
         //updateProductList(model.getProducts());
         //updateBottomPanel();
-        headerToFront();
+        //headerToFront();
         openStartView();
         //setupAccountPane();
 
@@ -52,35 +56,40 @@ public class iMatController implements Initializable/*, ShoppingCartListener*/ {
 
     public void headerToFront() { headerPane.toFront(); }
 
-    public void openStartView() {
-        startPane.toFront();
-    }
+    public void openStartView() { startPane.toFront(); }
+
 
     // Navigation
 
+    public void helpButtonOnClick() { openHelpView(); }
 
-    public void openAccountView() {
+    /*
+    public void homeButtonOnClick() { openHomeView(); }
+
+    public void accountButtonOnClick() { openAccountView(); }
+
+    public void shoppingListsButtonOnClick() { openAccountView(); } */
+
+
+
+
+    private void openShoppingList() {
+        shoppingListsPane.toFront();
+    }
+
+    private void openHelpView() {
+        helpPane.toFront();
+    }
+/*
+    private void openAccountView() {
         // updateAccountPanel();
         accountPane.toFront();
     }
 
-    public void closeAccountView() {
-        // updateCreditCard();
-        account.toBack();
-    }
-
-    public void openShoppingList() {
-        shoppingListsPane.toFront();
-    }
-
-    public void openHelpView() {
-        helpPane.toFront();
-    }
-
-    public void openHomeView() {
+    private void openHomeView() {
         homePane.toFront();
     }
-    /*
+
     // Shop pane actions
     @FXML
     private void handleShowAccountAction(ActionEvent event) {
