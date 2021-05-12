@@ -12,7 +12,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="689.0" prefWidth="1536.0" styleClass="almost-white" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.Shoppinglists">
+<AnchorPane prefHeight="689.0" prefWidth="1536.0" styleClass="almost-white" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.iMatController">
    <children>
       <Line endX="242.0" layoutX="762.0" layoutY="98.0" startX="-564.0" stroke="#0000004d" strokeWidth="5.0" AnchorPane.leftAnchor="195.5" />
       <Text layoutX="196.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-page-header" text="Mina inköpslistor" textAlignment="CENTER" AnchorPane.leftAnchor="196.0" />
