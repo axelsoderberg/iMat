@@ -86,4 +86,9 @@
     -fx-background-radius: 20 20 0 0;
 }
 
+.text-semi{
+    -fx-font-family: "Assistant";
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
 
