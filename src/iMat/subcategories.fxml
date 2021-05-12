@@ -7,7 +7,7 @@
 
 <AnchorPane maxHeight="60.0" maxWidth="350.0" minHeight="60.0" minWidth="350.0" prefHeight="60.0" prefWidth="350.0" styleClass="light-green" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <CheckBox layoutX="27.0" layoutY="8.0" maxWidth="310.0" minWidth="310.0" mnemonicParsing="false" prefWidth="310.0" styleClass="text-font" text="Äpple" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="5.0">
+      <CheckBox layoutX="27.0" layoutY="8.0" maxWidth="310.0" minWidth="310.0" mnemonicParsing="false" prefWidth="310.0" styleClass="text-font" text="Äpple" textFill="#3d3d3d" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="5.0">
          <font>
             <Font size="30.0" />
          </font>

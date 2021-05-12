@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="60.0" prefWidth="1120.0" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.iMatController">
+   <children>
+      <Text layoutX="163.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-normal" text="Text" />
+      <Text layoutX="782.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-normal" text="xx kr" />
+      <Text layoutX="986.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-normal" text="xx kr/st" />
+   </children>
+</AnchorPane>
