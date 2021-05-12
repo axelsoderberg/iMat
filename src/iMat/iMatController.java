@@ -81,8 +81,9 @@ public class iMatController implements Initializable/*, ShoppingCartListener*/ {
         shoppingListsPane.toFront();
     }
 
+    @FXML
     private void openHelpView() { helpPane.toFront(); }
-
+    @FXML
     private void openStoreView() { storePane.toFront(); }
 /*
     private void openAccountView() {
