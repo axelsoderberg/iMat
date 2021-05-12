@@ -38,6 +38,16 @@
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.25), 0, 10, 0, 4);
 }
 
+.lightgreen-button {
+    -fx-font-family: "Assistant";
+    -fx-font-size: 20px;
+    -fx-text-fill: #000000;
+    -fx-font-weight: bold;
+    -fx-background-color: #C3D5BD;
+    -fx-background-radius: 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.25), 0, 10, 0, 4);
+}
+
 .small-button{
     -fx-font-size: 20px;
 }

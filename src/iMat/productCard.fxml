@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="210.0" prefWidth="170.0" style="-fx-background-radius: 20; -fx-background-color: #f7f7f7;" styleClass="shadow-effect" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="87.0" fitWidth="82.0" layoutX="44.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="44.0" AnchorPane.rightAnchor="44.0">
+         <image>
+            <Image url="@../../../../../../../Downloads/2092417300000.jpg" />
+         </image>
+      </ImageView>
+      <Group layoutX="13.0" layoutY="166.0">
+         <children>
+            <ImageView fitHeight="36.0" fitWidth="156.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../Pictures/addRemoveButton.png" />
+               </image>
+            </ImageView>
+            <Line endX="15.0" layoutX="10.0" layoutY="19.0" strokeWidth="4.0" />
+            <ImageView fitHeight="29.0" fitWidth="31.0" layoutX="112.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../Pictures/plusSign.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="52.0" styleClass="text-font" text="x st">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Group>
+      <Label alignment="CENTER" layoutX="11.0" layoutY="125.0" prefHeight="45.0" prefWidth="144.0" styleClass="text-font" text="Produkt">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Circle fill="#c4c4c4" layoutX="130.0" layoutY="40.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Label layoutX="99.0" layoutY="26.0" styleClass="text-font" text="15 kr/st">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="7.0" layoutY="167.0" maxHeight="35.0" minHeight="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="157.0" styleClass="lightgreen-button" text="Lägg till" />
+   </children>
+</AnchorPane>
