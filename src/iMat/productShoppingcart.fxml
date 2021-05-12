@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="70.0" maxWidth="350.0" minHeight="70.0" minWidth="350.0" prefHeight="70.0" prefWidth="350.0" styleClass="light-green" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Line endX="346.0" layoutX="108.0" layoutY="56.0" stroke="#ecebeb" strokeWidth="4.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+      <Label alignment="CENTER" layoutX="79.0" layoutY="7.0" prefHeight="34.0" prefWidth="142.0" styleClass="text-font" text="Vattenmelon">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <Label layoutX="117.0" layoutY="33.0" styleClass="text-font" text="10 kr/st">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="32.0" fitWidth="110.0" layoutX="228.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="21.5" AnchorPane.topAnchor="21.0">
+         <image>
+            <Image url="@../../../../../../../Pictures/addRemoveButton.png" />
+         </image>
+      </ImageView>
+      <Line endX="12.0" layoutX="236.0" layoutY="35.0" strokeWidth="2.0" AnchorPane.bottomAnchor="34.0" AnchorPane.topAnchor="34.0" />
+      <ImageView fitHeight="150.0" fitWidth="20.0" layoutX="314.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../Pictures/plusSign.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="266.0" layoutY="19.0" styleClass="text-font" text="x st">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="57.0" fitWidth="80.0" layoutX="14.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../Downloads/2092417300000.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
