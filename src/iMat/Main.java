@@ -17,11 +17,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         ResourceBundle bundle = java.util.ResourceBundle.getBundle("resources/iMat");
 
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Start.fxml"));
-        fxmlLoader.setController(new StartController());
-        Parent root = fxmlLoader.load();
-
-        //Parent root = FXMLLoader.load(getClass().getResource("Start.fxml"), bundle);
+        Parent root = FXMLLoader.load(getClass().getResource("iMat.fxml"), bundle);
 
         primaryStage.setTitle(bundle.getString("application.name"));
         primaryStage.setScene(new Scene(root, 1536, 864));

@@ -12,7 +12,6 @@ import java.util.ResourceBundle;
 
 public class ViewHandler {
 
-    private static ViewHandler instance = null;
 
     @FXML private AnchorPane startPane;
     @FXML private AnchorPane helpPane;
@@ -24,19 +23,8 @@ public class ViewHandler {
     /**
      * Constructor that should never be called, use getInstance() instead.
      */
-    private ViewHandler() {
+    public ViewHandler() {
         // Exists only to defeat instantiation.
-    }
-
-
-    /**
-     * Returns the single instance of the Model class.
-     */
-    public static ViewHandler getInstance() {
-        if (instance == null) {
-            instance = new ViewHandler();
-        }
-        return instance;
     }
 
     public void setController() throws IOException {
@@ -58,5 +46,9 @@ public class ViewHandler {
     @FXML
     public void clearPanes() {
         mainPane.getChildren().removeAll();
+    }
+
+    public AnchorPane getPane() {
+        return startPane;
     }
 }

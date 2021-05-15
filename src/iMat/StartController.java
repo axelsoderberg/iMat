@@ -9,8 +9,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 
 public class StartController implements Initializable/*, ShoppingCartListener*/ {
@@ -21,7 +24,6 @@ public class StartController implements Initializable/*, ShoppingCartListener*/ 
     @FXML private Button startStoreButton;
 
     // Other variables
-    private final ViewHandler viewHandler = ViewHandler.getInstance();
 
 
     @Override
@@ -43,15 +45,15 @@ public class StartController implements Initializable/*, ShoppingCartListener*/ 
         List<String> panes = new ArrayList();
         panes.add("help.fxml");
         panes.add("header.fxml");
-        viewHandler.loadPanes(panes);
+        new FXMLLoader(getClass().getResource("Start.fxml"));
     }
 
     @FXML
     private void openStoreView(ActionEvent event) throws IOException {
-        List<String> panes = new ArrayList();
+        /*List<String> panes = new ArrayList();
         panes.add("store.fxml");
         panes.add("header.fxml");
-        //viewHandler.loadPanes(panes);
+        //viewHandler.loadPanes(panes);*/
     }
 
 
