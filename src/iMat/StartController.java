@@ -24,36 +24,21 @@ public class StartController implements Initializable/*, ShoppingCartListener*/ 
     @FXML private Button startStoreButton;
 
     // Other variables
-
+    iMatController controller = new iMatController();
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Start.fxml"));
-        loader.setController(this);
-        try {
-            AnchorPane mainPane = loader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        openStartView();
-    }
 
-    public void openStartView() { startPane.toFront(); }
-
-    @FXML
-    private void openHelpView(ActionEvent event) throws IOException {
-        List<String> panes = new ArrayList();
-        panes.add("help.fxml");
-        panes.add("header.fxml");
-        new FXMLLoader(getClass().getResource("Start.fxml"));
     }
 
     @FXML
-    private void openStoreView(ActionEvent event) throws IOException {
-        /*List<String> panes = new ArrayList();
-        panes.add("store.fxml");
-        panes.add("header.fxml");
-        //viewHandler.loadPanes(panes);*/
+    private void openHelpView(ActionEvent event) {
+        iMatController.setPage("help");
+    }
+
+    @FXML
+    private void openStoreView(ActionEvent event) {
+        iMatController.setPage("store");
     }
 
 

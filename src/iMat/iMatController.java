@@ -35,7 +35,7 @@ public class iMatController implements Initializable/*, ShoppingCartListener*/ {
 
     // Other variables
     private final Model model = Model.getInstance();
-    private List<AnchorPane> panes = new ArrayList<>(); // Här har vi alla fxml-sidor
+    private static List<AnchorPane> panes = new ArrayList<>(); // Här har vi alla fxml-sidor
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -57,8 +57,12 @@ public class iMatController implements Initializable/*, ShoppingCartListener*/ {
 
     }
 
+    public static void setPage(String page) {
+        panes.get(getIndexOfPage(page)).toFront();
+    }
+
     // Inte jättesnygg lösning, men använd denna för att få fram den önskade sidan
-    private int getIndexOfPage(String fileName) {
+    private static int getIndexOfPage(String fileName) {
         switch (fileName) {
             case "Start":
                 return 0;
