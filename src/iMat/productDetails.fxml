@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+
+
+<AnchorPane prefHeight="410.0" prefWidth="607.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.ProductDetails">
+   <children>
+      <ImageView fitHeight="163.0" fitWidth="166.0" layoutX="23.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/apple.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="219.0" layoutY="14.0" prefHeight="46.0" prefWidth="75.0" text="Äpple" />
+      <TextArea layoutX="212.0" layoutY="58.0" prefHeight="134.0" prefWidth="371.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#70b715" height="27.0" layoutY="210.0" stroke="#70b715" strokeType="INSIDE" width="607.0" />
+      <TextArea layoutY="237.0" prefHeight="171.0" prefWidth="607.0" text="bla bla bla" />
+   </children>
+</AnchorPane>
