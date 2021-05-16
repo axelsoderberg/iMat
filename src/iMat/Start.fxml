@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="startPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="864.0" prefWidth="1536.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.StartController">
+<AnchorPane fx:id="startPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="864.0" prefWidth="1536.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.StartController">
    <children>
       <ImageView fitHeight="868.0" fitWidth="1540.0" pickOnBounds="true">
          <image>
             <Image url="@../resources/pexels-matheus-cenali-2733918.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="1331.0" fitWidth="1905.0" layoutX="-495.0" layoutY="-463.0" opacity="0.86" pickOnBounds="true" styleClass="green-button">
+      <ImageView fitHeight="1331.0" fitWidth="1905.0" layoutX="-354.0" layoutY="-454.0" opacity="0.86" pickOnBounds="true" styleClass="green-button">
          <image>
             <Image url="@../resources/e5fbe1.png" />
          </image>
