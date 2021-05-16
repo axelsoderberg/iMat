@@ -8,6 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Text?>
@@ -40,6 +41,11 @@
       <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#c3d5bb" height="603.0" layoutX="1026.0" layoutY="31.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="rectangle" width="295.0" AnchorPane.leftAnchor="1026.0" />
       <Line endX="390.0" layoutX="931.0" layoutY="97.0" startX="95.0" stroke="#ebebeb" strokeWidth="5.0" styleClass="almost-white" AnchorPane.leftAnchor="1023.5" />
       <Text layoutX="1139.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-page-header" text="Tips" textAlignment="CENTER" AnchorPane.leftAnchor="1139.0" />
-      <Text layoutX="1048.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="a" text="Niodnasfnlasfnsa" AnchorPane.leftAnchor="1048.0" />
+      <Text layoutX="1055.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-contact" text="Namnge listor för att enkelt hitta listan du söker" wrappingWidth="250.0" AnchorPane.leftAnchor="1055.0" />
+      <Circle layoutX="1038.0" layoutY="151.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
+      <Text layoutX="1055.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-contact" text="Du kan lägga till enskilda artiklar från olika listor i din varukorg" wrappingWidth="250.0" />
+      <Text layoutX="1055.0" layoutY="422.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-contact" text="Har du ett favoritrecept? Skapa en lista med de ingredienser du behöver" wrappingWidth="250.0" />
+      <Circle layoutX="1038.0" layoutY="293.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle layoutX="1038.0" layoutY="443.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
    </children>
 </AnchorPane>
