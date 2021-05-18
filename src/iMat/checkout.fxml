@@ -12,6 +12,7 @@
 
 <AnchorPane prefHeight="689.0" prefWidth="1536.0" styleClass="almost-white" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.iMatController">
    <children>
+      <Rectangle fill="#ececeb" height="689.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1536.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <Rectangle arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="603.0" layoutX="195.0" layoutY="41.0" stroke="#c9c9c9" strokeType="INSIDE" strokeWidth="5.0" styleClass="rectangle" width="1136.0" AnchorPane.leftAnchor="200.0" />
       <Line endX="389.0" layoutX="944.0" layoutY="107.0" startX="-741.0" stroke="#c9c9c9" strokeWidth="5.0" styleClass="almost-white" />
       <Text layoutX="721.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-page-header" text="Kassa" textAlignment="CENTER" />
