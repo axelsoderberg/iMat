@@ -2,6 +2,8 @@ package iMat;
 
 import javafx.fxml.FXML;
 
+import java.awt.event.ActionEvent;
+
 public class headerController {
 
     @FXML
@@ -15,8 +17,18 @@ public class headerController {
     }
 
     @FXML
-    private void openCheckout() {
+    private void openCheckoutView() {
         iMatController.setPage("checkout");
+    }
+
+    @FXML
+    private void openMypageView() {
+        iMatController.setPage("mypage");
+    }
+
+    @FXML
+    private void openShoppingListView() {
+        iMatController.setPage("shoppinglists");
     }
 
 }

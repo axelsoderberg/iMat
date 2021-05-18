@@ -5,103 +5,23 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="headerPane" prefHeight="864.0" prefWidth="1536.0" styleClass="almost-white" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.headerController">
+<AnchorPane fx:id="headerPane" prefHeight="175.0" prefWidth="1536.0" styleClass="almost-white" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.headerController">
    <children>
-      <AnchorPane layoutY="91.0" maxHeight="75.0" minHeight="84.0" prefHeight="75.0" prefWidth="1536.0" styleClass="dark-green" stylesheets="@iMat.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="91.0">
-         <children>
-            <HBox layoutX="42.0" layoutY="7.0" spacing="30.0" AnchorPane.topAnchor="17.0">
-               <children>
-                  <Button alignment="CENTER" maxHeight="50.0" minHeight="50.0" mnemonicParsing="false" onAction="#openStoreView" prefHeight="50.0" prefWidth="175.0" styleClass="white-button" stylesheets="@iMat.css" text="Hem">
-                     <effect>
-                        <DropShadow height="10.45" offsetY="5.0" radius="3.6125" width="6.0">
-                           <color>
-                              <Color opacity="0.6000000238418579" />
-                           </color>
-                        </DropShadow>
-                     </effect>
-                     <font>
-                        <Font size="36.0" />
-                     </font>
-                     <graphic>
-                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../resources/home_icon.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <Button alignment="CENTER" maxHeight="50.0" minHeight="50.0" mnemonicParsing="false" onAction="#openHelpView" prefHeight="50.0" prefWidth="286.0" styleClass="white-button" stylesheets="@iMat.css" text="Inköpslistor">
-                     <effect>
-                        <DropShadow height="10.45" offsetY="5.0" radius="3.6125" width="6.0">
-                           <color>
-                              <Color opacity="0.6000000238418579" />
-                           </color>
-                        </DropShadow>
-                     </effect>
-                     <font>
-                        <Font size="36.0" />
-                     </font>
-                     <graphic>
-                        <ImageView fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../resources/shopping_list_icon.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-               </children>
-            </HBox>
-            <Button alignment="CENTER" layoutX="1150.0" layoutY="11.0" maxHeight="60.0" minHeight="45.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="364.0" styleClass="white-button" stylesheets="@iMat.css" text="Kassan  30 kr" AnchorPane.topAnchor="17.0">
-               <effect>
-                  <DropShadow height="14.9" offsetY="5.0" radius="4.725" width="6.0">
-                     <color>
-                        <Color opacity="0.6000000238418579" />
-                     </color>
-                  </DropShadow>
-               </effect>
-               <font>
-                  <Font size="36.0" />
-               </font>
-               <graphic>
-                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../resources/shopping_cart_icon.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <TextField layoutX="582.0" layoutY="25.0" maxHeight="60.0" minHeight="50.0" prefHeight="50.0" prefWidth="481.0" promptText="Sök  efter produkter..." styleClass="search-field" AnchorPane.topAnchor="17.0">
-               <font>
-                  <Font size="28.0" />
-               </font>
-               <effect>
-                  <DropShadow height="6.55625" offsetY="5.0" radius="2.6390625" width="6.0">
-                     <color>
-                        <Color opacity="0.6000000238418579" />
-                     </color>
-                  </DropShadow>
-               </effect>
-            </TextField>
-            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="1002.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="21.0">
-               <image>
-                  <Image url="@../resources/search_icon.png" />
-               </image>
-            </ImageView>
-         </children>
-      </AnchorPane>
       <Label layoutX="21.0" layoutY="-20.0" maxHeight="121.0" minHeight="90.0" prefHeight="121.0" prefWidth="303.0" text="IMAT" textFill="#629543" AnchorPane.leftAnchor="21.0" AnchorPane.topAnchor="-20.0">
          <font>
             <Font name="Berlin Sans FB Bold" size="100.0" />
          </font>
       </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#168638" height="84.0" layoutY="91.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1536.0" />
       <Label layoutX="277.0" layoutY="24.0" prefHeight="17.0" prefWidth="496.0" text="En Mataffär Online" textFill="#629543">
          <font>
             <Font size="54.0" />
          </font>
       </Label>
-      <Button alignment="CENTER" layoutX="1076.0" layoutY="12.0" maxHeight="70.0" minHeight="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="227.0" styleClass="green-button" stylesheets="@iMat.css" text="Hjördis" AnchorPane.topAnchor="10.0">
+      <Button fx:id="mypageButton" alignment="CENTER" layoutX="1076.0" layoutY="12.0" maxHeight="70.0" minHeight="50.0" mnemonicParsing="false" onAction="#openMypageView" prefHeight="50.0" prefWidth="227.0" styleClass="green-button" stylesheets="@iMat.css" text="Hjördis" AnchorPane.topAnchor="10.0">
          <effect>
             <DropShadow height="10.45" offsetY="5.0" radius="3.6125" width="6.0">
                <color>
@@ -120,7 +40,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button alignment="CENTER" layoutX="1315.0" layoutY="10.0" maxHeight="70.0" minHeight="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="182.0" styleClass="green-button" stylesheets="@iMat.css" text="Hjälp" AnchorPane.topAnchor="10.0">
+      <Button fx:id="helpButton" alignment="CENTER" layoutX="1315.0" layoutY="10.0" maxHeight="70.0" minHeight="50.0" mnemonicParsing="false" onAction="#openHelpView" prefHeight="50.0" prefWidth="182.0" styleClass="green-button" stylesheets="@iMat.css" text="Hjälp" AnchorPane.topAnchor="10.0">
          <effect>
             <DropShadow height="10.45" offsetY="5.0" radius="3.6125" width="6.0">
                <color>
@@ -139,5 +59,79 @@
             </ImageView>
          </graphic>
       </Button>
+      <TextField layoutX="594.0" layoutY="108.0" maxHeight="60.0" minHeight="50.0" prefHeight="50.0" prefWidth="481.0" promptText="Sök  efter produkter..." styleClass="search-field" AnchorPane.topAnchor="108.0">
+         <font>
+            <Font size="28.0" />
+         </font>
+         <effect>
+            <DropShadow height="6.55625" offsetY="5.0" radius="2.6390625" width="6.0">
+               <color>
+                  <Color opacity="0.6000000238418579" />
+               </color>
+            </DropShadow>
+         </effect>
+      </TextField>
+      <Button fx:id="shoppingListButton" alignment="CENTER" layoutX="241.0" layoutY="108.0" maxHeight="50.0" minHeight="50.0" mnemonicParsing="false" onAction="#openShoppingListView" prefHeight="50.0" prefWidth="286.0" styleClass="white-button" stylesheets="@iMat.css" text="Inköpslistor">
+         <effect>
+            <DropShadow height="10.45" offsetY="5.0" radius="3.6125" width="6.0">
+               <color>
+                  <Color opacity="0.6000000238418579" />
+               </color>
+            </DropShadow>
+         </effect>
+         <font>
+            <Font size="36.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/shopping_list_icon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="storeButton" alignment="CENTER" layoutX="25.0" layoutY="108.0" maxHeight="50.0" minHeight="50.0" mnemonicParsing="false" onAction="#openStoreView" prefHeight="50.0" prefWidth="175.0" styleClass="white-button" stylesheets="@iMat.css" text="Hem">
+         <effect>
+            <DropShadow height="10.45" offsetY="5.0" radius="3.6125" width="6.0">
+               <color>
+                  <Color opacity="0.6000000238418579" />
+               </color>
+            </DropShadow>
+         </effect>
+         <font>
+            <Font size="36.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/home_icon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="checkoutButton" alignment="CENTER" layoutX="1157.0" layoutY="108.0" maxHeight="60.0" minHeight="45.0" mnemonicParsing="false" onAction="#openCheckoutView" prefHeight="50.0" prefWidth="364.0" styleClass="white-button" stylesheets="@iMat.css" text="Kassan  30 kr" AnchorPane.topAnchor="108.0">
+         <effect>
+            <DropShadow height="14.9" offsetY="5.0" radius="4.725" width="6.0">
+               <color>
+                  <Color opacity="0.6000000238418579" />
+               </color>
+            </DropShadow>
+         </effect>
+         <font>
+            <Font size="36.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/shopping_cart_icon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="1016.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="112.0">
+         <image>
+            <Image url="@../resources/search_icon.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
