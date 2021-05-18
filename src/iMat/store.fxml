@@ -7,16 +7,18 @@
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.Region?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="689.0" prefWidth="1536.0" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.storeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="689.0" prefWidth="1536.0" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.storeController">
    <children>
       <Rectangle fill="#ececeb" height="689.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1536.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#c3d5bd" height="649.0" layoutX="45.0" layoutY="21.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="350.0" x="45.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="20.0" />
@@ -74,12 +76,6 @@
             <FlowPane nodeOrientation="LEFT_TO_RIGHT" prefHeight="570.0" prefWidth="648.0" prefWrapLength="1200.0" rowValignment="TOP" />
          </content>
       </ScrollPane>
-      <Button layoutX="1164.0" layoutY="608.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="309.0" styleClass="white-button" text="Till kassan" />
-      <ImageView fitHeight="150.0" fitWidth="40.0" layoutX="1393.0" layoutY="617.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../resources/arrow.png" />
-         </image>
-      </ImageView>
       <Label alignment="CENTER" layoutX="1195.0" layoutY="570.0" prefHeight="35.0" prefWidth="241.0" styleClass="text-semi" text="Summa: 35 kr" />
       <Line endX="387.0" endY="90.0" layoutX="1105.0" layoutY="9.0" startX="45.0" startY="90.0" stroke="#e3e3e3" strokeWidth="8.0" AnchorPane.bottomAnchor="120.0" AnchorPane.rightAnchor="50.0" />
       <ScrollPane fitToHeight="true" fitToWidth="true" layoutX="53.0" layoutY="93.0" prefHeight="530.0" prefWidth="350.0" styleClass="light-green" AnchorPane.leftAnchor="50.0">
@@ -102,5 +98,22 @@
             <Font size="18.0" />
          </font>
       </MenuButton>
+      <Button alignment="CENTER" layoutX="1152.0" layoutY="605.0" maxHeight="50.0" minHeight="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="324.0" styleClass="white-button" stylesheets="@iMat.css" text="Till kassan">
+         <effect>
+            <DropShadow height="10.45" offsetY="5.0" radius="3.6125" width="6.0">
+               <color>
+                  <Color opacity="0.6000000238418579" />
+               </color>
+            </DropShadow>
+         </effect>
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="150.0" fitWidth="40.0" layoutX="1396.0" layoutY="613.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/arrow.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
