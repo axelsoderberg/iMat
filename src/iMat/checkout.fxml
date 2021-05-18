@@ -5,41 +5,48 @@
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="689.0" prefWidth="1536.0" styleClass="almost-white" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.iMatController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="689.0" prefWidth="1536.0" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Rectangle fill="#ececeb" height="689.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1536.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="603.0" layoutX="195.0" layoutY="41.0" stroke="#c9c9c9" strokeType="INSIDE" strokeWidth="5.0" styleClass="rectangle" width="1136.0" AnchorPane.leftAnchor="200.0" />
-      <Line endX="389.0" layoutX="944.0" layoutY="107.0" startX="-741.0" stroke="#c9c9c9" strokeWidth="5.0" styleClass="almost-white" />
-      <Text layoutX="721.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-page-header" text="Kassa" textAlignment="CENTER" />
-      <Line endX="389.0" layoutX="944.0" layoutY="564.0" startX="-741.0" stroke="#c9c9c9" strokeWidth="5.0" styleClass="almost-white" />
-      <Text layoutX="896.0" layoutY="611.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-header" text="Summa: 15 kr" />
-      <Button layoutX="1172.0" layoutY="573.0" mnemonicParsing="false" prefWidth="150.0" styleClass="green-button" text="Betala">
-         <effect>
-            <DropShadow height="6.17" offsetY="2.0" radius="2.585" width="6.17">
-               <color>
-                  <Color opacity="0.4000000059604645" />
-               </color>
-            </DropShadow>
-         </effect>
-      </Button>
-      <Line endX="389.0" layoutX="944.0" layoutY="168.0" startX="-741.0" stroke="#c9c9c9" strokeWidth="5.0" styleClass="almost-white" />
-      <Text layoutX="388.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-header" text="Produkt" />
-      <Text layoutX="1160.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-header" text="Styckpris" />
-      <Text layoutX="947.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-header" text="Totalpris" />
-      <Text layoutX="733.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-header" text="Antal" />
-      <ScrollPane hbarPolicy="NEVER" layoutX="205.0" layoutY="170.0" prefHeight="392.0" prefWidth="1126.0">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="391.0" prefWidth="1123.0">
+      <StackPane prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <FlowPane prefHeight="392.0" prefWidth="1110.0" />
+                  <ScrollPane hbarPolicy="NEVER" prefHeight="392.0" prefWidth="1126.0" AnchorPane.bottomAnchor="127.0" AnchorPane.leftAnchor="205.0">
+                     <content>
+                        <FlowPane prefHeight="392.0" prefWidth="1110.0" />
+                     </content>
+                  </ScrollPane>
+                  <Rectangle arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="603.0" stroke="#c9c9c9" strokeType="INSIDE" strokeWidth="5.0" styleClass="rectangle" width="1136.0" AnchorPane.bottomAnchor="43.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="43.0" />
+                  <Line endX="389.0" startX="-741.0" stroke="#c9c9c9" strokeWidth="5.0" styleClass="almost-white" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="201.0" AnchorPane.topAnchor="105.0" />
+                  <Line endX="389.0" startX="-741.0" stroke="#c9c9c9" strokeWidth="5.0" styleClass="almost-white" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="201.0" AnchorPane.topAnchor="165.0" />
+                  <Line endX="389.0" startX="-741.0" stroke="#c9c9c9" strokeWidth="5.0" styleClass="almost-white" AnchorPane.bottomAnchor="122.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="201.0" />
+                  <Text layoutX="432.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-header" text="Produkt" AnchorPane.topAnchor="122.0" />
+                  <Text layoutX="1151.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-header" text="Styckpris" AnchorPane.topAnchor="122.0" />
+                  <Text layoutX="963.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-header" text="Totalpris" AnchorPane.topAnchor="122.0" />
+                  <Text layoutX="741.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-header" text="Antal" AnchorPane.topAnchor="122.0" />
+                  <Text layoutX="728.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-page-header" text="Kassa" textAlignment="CENTER" />
+                  <Text layoutX="906.0" layoutY="616.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-header" text="Summa: 15 kr" />
+                  <Button layoutX="1162.0" layoutY="572.0" mnemonicParsing="false" prefWidth="150.0" styleClass="green-button" text="Betala">
+                     <effect>
+                        <DropShadow height="6.17" offsetY="2.0" radius="2.585" width="6.17">
+                           <color>
+                              <Color opacity="0.4000000059604645" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Button>
                </children>
             </AnchorPane>
-        </content>
-      </ScrollPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
+               <children /></AnchorPane>
+         </children>
+      </StackPane>
    </children>
 </AnchorPane>
