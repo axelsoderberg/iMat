@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="headerPane" prefHeight="864.0" prefWidth="1536.0" styleClass="almost-white" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.headerController">
+<AnchorPane fx:id="headerPane" prefHeight="864.0" prefWidth="1536.0" styleClass="almost-white" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.headerController">
    <children>
       <AnchorPane layoutY="91.0" maxHeight="75.0" minHeight="84.0" prefHeight="75.0" prefWidth="1536.0" styleClass="dark-green" stylesheets="@iMat.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="91.0">
          <children>
             <HBox layoutX="42.0" layoutY="7.0" spacing="30.0" AnchorPane.topAnchor="17.0">
                <children>
-                  <Button alignment="CENTER" maxHeight="50.0" minHeight="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="175.0" styleClass="white-button" stylesheets="@iMat.css" text="Hem">
+                  <Button alignment="CENTER" maxHeight="50.0" minHeight="50.0" mnemonicParsing="false" onAction="#openStoreView" prefHeight="50.0" prefWidth="175.0" styleClass="white-button" stylesheets="@iMat.css" text="Hem">
                      <effect>
                         <DropShadow height="10.45" offsetY="5.0" radius="3.6125" width="6.0">
                            <color>
@@ -36,7 +32,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button alignment="CENTER" maxHeight="50.0" minHeight="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="286.0" styleClass="white-button" stylesheets="@iMat.css" text="Inköpslistor">
+                  <Button alignment="CENTER" maxHeight="50.0" minHeight="50.0" mnemonicParsing="false" onAction="#openHelpView" prefHeight="50.0" prefWidth="286.0" styleClass="white-button" stylesheets="@iMat.css" text="Inköpslistor">
                      <effect>
                         <DropShadow height="10.45" offsetY="5.0" radius="3.6125" width="6.0">
                            <color>

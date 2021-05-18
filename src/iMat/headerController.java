@@ -14,4 +14,9 @@ public class headerController {
         iMatController.setPage("store");
     }
 
+    @FXML
+    private void openCheckout() {
+        iMatController.setPage("checkout");
+    }
+
 }
