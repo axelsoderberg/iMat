@@ -13,9 +13,6 @@ public class StartController /*, ShoppingCartListener*/ {
     @FXML private Button startHelpButton;
     @FXML private Button startStoreButton;
 
-    // Other variables
-    iMatController controller = new iMatController();
-
     @FXML
     private void openHelpView(ActionEvent event) {
         iMatController.setPage("help");

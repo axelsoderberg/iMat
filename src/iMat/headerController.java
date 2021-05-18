@@ -12,8 +12,6 @@ public class headerController {
     @FXML private Button headerHelpButton;
     @FXML private Button headerStoreButton;
 
-    // Other variables
-    iMatController controller = new iMatController();
 
     @FXML
     private void openHelpView(ActionEvent event) {
