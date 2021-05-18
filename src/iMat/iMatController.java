@@ -33,6 +33,8 @@ public class iMatController implements Initializable/*, ShoppingCartListener*/ {
             panes.add(FXMLLoader.load(Objects.requireNonNull(getClass().getResource("help.fxml"))));
             panes.add(FXMLLoader.load(Objects.requireNonNull(getClass().getResource("mypage.fxml"))));
             panes.add(FXMLLoader.load(Objects.requireNonNull(getClass().getResource("header.fxml"))));
+            panes.add(FXMLLoader.load(Objects.requireNonNull(getClass().getResource("shoppinglists.fxml"))));
+            panes.add(FXMLLoader.load(Objects.requireNonNull(getClass().getResource("checkout.fxml"))));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -60,6 +62,8 @@ public class iMatController implements Initializable/*, ShoppingCartListener*/ {
             case "help" -> 2;
             case "mypage" -> 3;
             case "header" -> 4;
+            case "shoppinglists" -> 5;
+            case "checkout" -> 6;
             default -> -1;
         };
     }
