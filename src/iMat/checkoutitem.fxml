@@ -9,18 +9,18 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxWidth="1110.0" minWidth="1110.0" prefHeight="70.0" prefWidth="1110.0" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.iMatController">
+<AnchorPane maxWidth="1130.0" minWidth="1130.0" prefHeight="70.0" prefWidth="1130.0" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.iMatController">
    <children>
-      <Text layoutX="169.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-products" text="Produktnamn" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="23.0" />
-      <Text layoutX="844.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-products" text="xx kr" AnchorPane.leftAnchor="775.0" AnchorPane.topAnchor="23.0" />
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="32.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="12.0">
+      <Text layoutX="169.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-products" text="Produktnamn" AnchorPane.leftAnchor="210.0" AnchorPane.topAnchor="23.0" />
+      <Text layoutX="844.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-products" text="xx kr" AnchorPane.leftAnchor="795.0" AnchorPane.topAnchor="23.0" />
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="32.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="70.0" AnchorPane.topAnchor="12.0">
          <image>
             <Image url="@../resources/apple.jpg" />
          </image>
       </ImageView>
-      <Line endX="1007.0" layoutX="102.0" layoutY="80.0" startX="-100.0" stroke="#c9c9c9" strokeWidth="3.0" AnchorPane.leftAnchor="0.0" />
+      <Line endX="1027.0" layoutX="102.0" layoutY="80.0" startX="-100.0" stroke="#c9c9c9" strokeWidth="3.0" AnchorPane.leftAnchor="0.0" />
       <Text layoutX="1025.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-products" text="xx kr/st" AnchorPane.leftAnchor="975.0" AnchorPane.topAnchor="23.0" />
-      <Group layoutX="476.0" layoutY="22.0" AnchorPane.leftAnchor="485.0">
+      <Group layoutX="476.0" layoutY="22.0" AnchorPane.leftAnchor="500.0">
          <children>
             <ImageView fitHeight="36.0" fitWidth="156.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
                <image>
