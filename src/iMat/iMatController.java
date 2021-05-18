@@ -48,6 +48,8 @@ public class iMatController implements Initializable/*, ShoppingCartListener*/ {
     public static void setPage(String page) {
         panes.get(getIndexOfPage(page)).toFront();
         AnchorPane.setBottomAnchor(panes.get(getIndexOfPage(page)), 0.0);
+        if (!page.equals("Start"))
+            panes.get(getIndexOfPage("header")).toFront();
     }
 
     // Inte jättesnygg lösning, men använd denna för att få fram den önskade sidan
