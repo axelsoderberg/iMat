@@ -8,14 +8,18 @@ import se.chalmers.cse.dat216.project.ProductCategory;
 
 import java.awt.*;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 public class storeController implements Initializable {
     private final Model model = Model.getInstance();
+    private Map<String, productCard> productCardMap;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        productListInit();
         updateProductList(model.getProducts());
         // kategorier
         // varukorg
@@ -30,10 +34,17 @@ public class storeController implements Initializable {
 
         for (Product product : products) {
             System.out.println(product.getName());
-            productsFlowPaneStore.getChildren().add(new productCard(product));
+            productsFlowPaneStore.getChildren().add(productCardMap.get(product.getName()));
         }
 
 
+    }
+    private void productListInit() {
+        productCardMap = new HashMap<String, productCard>();
+        for (Product products : model.getProducts()) {
+            productCard recipeListItem = new productCard(products);
+            productCardMap.put(products.getName(), recipeListItem);
+        }
     }
 
     /*@FXML private FlowPane categoriesFlowPane;
