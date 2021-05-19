@@ -6,7 +6,6 @@ import javafx.scene.layout.FlowPane;
 import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ProductCategory;
 
-import java.awt.*;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.List;
@@ -25,7 +24,6 @@ public class storeController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         placeCategories();
         updateProductList(model.getProducts());
-        // kategorier
         // varukorg
     }
 

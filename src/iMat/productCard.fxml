@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="210.0" prefWidth="170.0" style="-fx-background-radius: 20; -fx-background-color: #f7f7f7;" styleClass="shadow-effect" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root type="javafx.scene.layout.AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="210.0" prefWidth="170.0" style="-fx-background-radius: 20; -fx-background-color: #f7f7f7;" styleClass="shadow-effect" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fx:id="productCardImageView" fitHeight="87.0" fitWidth="82.0" layoutX="44.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="44.0" AnchorPane.rightAnchor="44.0">
          <image>
@@ -55,4 +55,4 @@
          </image>
       </ImageView>
    </children>
-</AnchorPane>
+</fx:root>
