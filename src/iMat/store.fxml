@@ -18,7 +18,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="689.0" prefWidth="1536.0" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.storeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="689.0" prefWidth="1536.0" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.storeController">
    <children>
       <Rectangle fill="#ececeb" height="689.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1536.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#c3d5bd" height="649.0" layoutX="45.0" layoutY="21.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="300.0" x="45.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="20.0" />
@@ -78,11 +78,7 @@
       </ScrollPane>
       <Label alignment="CENTER" layoutX="1216.0" layoutY="569.0" prefHeight="35.0" prefWidth="241.0" styleClass="text-semi" text="Summa: 35 kr" />
       <Line endX="387.0" endY="90.0" layoutX="1105.0" layoutY="9.0" startX="45.0" startY="90.0" stroke="#ececeb" strokeWidth="8.0" AnchorPane.bottomAnchor="120.0" AnchorPane.rightAnchor="50.0" />
-      <ScrollPane fitToHeight="true" fitToWidth="true" layoutX="53.0" layoutY="93.0" prefHeight="530.0" prefWidth="300.0" styleClass="light-green" AnchorPane.leftAnchor="50.0">
-         <content>
-            <FlowPane nodeOrientation="LEFT_TO_RIGHT" prefHeight="528.0" prefWidth="300.0" prefWrapLength="1200.0" rowValignment="TOP" styleClass="light-green" />
-         </content>
-      </ScrollPane>
+      <FlowPane fx:id="categoriesFlowPane" layoutX="50.0" layoutY="93.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="528.0" prefWidth="300.0" prefWrapLength="1200.0" rowValignment="TOP" styleClass="light-green" />
       <ScrollPane fitToHeight="true" fitToWidth="true" layoutX="1186.0" layoutY="93.0" prefHeight="470.0" prefWidth="300.0" styleClass="light-green">
          <content>
             <FlowPane nodeOrientation="LEFT_TO_RIGHT" prefHeight="468.0" prefWidth="295.0" prefWrapLength="1200.0" rowValignment="TOP" styleClass="light-green" />

@@ -15,9 +15,8 @@ public class categories extends AnchorPane {
     private RadioButton radioButton;
 
     private final String c;
-    private final storeController parentController;
 
-    public categories(String c, storeController store){
+    public categories(String c) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("categories.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
@@ -29,13 +28,8 @@ public class categories extends AnchorPane {
         }
 
         this.c = c;
-        this.parentController = store;
 
         radioButton.setText(c);
     }
 
-    @FXML
-    protected void onClick(Event event){
-        parentController.updateSubcategories(c.toString());
-    }
 }

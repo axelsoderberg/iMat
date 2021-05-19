@@ -22,6 +22,7 @@ public class iMatController implements Initializable/*, ShoppingCartListener*/ {
 
     // Other variables
     // private final Model model = Model.getInstance();
+
     private static final List<AnchorPane> panes = new ArrayList<>(); // Här har vi alla fxml-sidor
 
     static List<String> categoriesList = Arrays.asList("Frukt", "Grönsaker", "Kött & Fisk", "Mejeri", "Basvaror", "Godis & Läsk");
