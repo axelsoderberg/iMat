@@ -2,12 +2,8 @@ package iMat;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.ResourceBundle;
+import java.util.*;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -29,6 +25,19 @@ public class iMatController implements Initializable/*, ShoppingCartListener*/ {
     private final Model model = Model.getInstance();
     private static final List<AnchorPane> panes = new ArrayList<>(); // Här har vi alla fxml-sidor
 
+    static List<String> categoriesList = Arrays.asList("Frukt", "Grönsaker", "Kött & Fisk", "Mejeri", "Basvaror", "Godis & Läsk");
+
+    static List<ProductCategory> fruit = Arrays.asList(ProductCategory.FRUIT, ProductCategory.CITRUS_FRUIT,
+            ProductCategory.EXOTIC_FRUIT, ProductCategory.BERRY, ProductCategory.VEGETABLE_FRUIT, ProductCategory.MELONS);
+    static List<ProductCategory> greens = Arrays.asList(ProductCategory.POD, ProductCategory.CABBAGE, ProductCategory.HERB,
+            ProductCategory.ROOT_VEGETABLE);
+    static List<ProductCategory> meat = Arrays.asList(ProductCategory.FISH, ProductCategory.MEAT);
+    static List<ProductCategory> dairy = Arrays.asList(ProductCategory.DAIRIES);
+    static List<ProductCategory> base = Arrays.asList(ProductCategory.BREAD, ProductCategory.FLOUR_SUGAR_SALT,
+            ProductCategory.POTATO_RICE, ProductCategory.PASTA, ProductCategory.NUTS_AND_SEEDS);
+    static List<ProductCategory> sweets = Arrays.asList(ProductCategory.HOT_DRINKS, ProductCategory.COLD_DRINKS,
+            ProductCategory.SWEET);
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try {
@@ -38,7 +47,7 @@ public class iMatController implements Initializable/*, ShoppingCartListener*/ {
             panes.add(FXMLLoader.load(Objects.requireNonNull(getClass().getResource("mypage.fxml"))));
             panes.add(FXMLLoader.load(Objects.requireNonNull(getClass().getResource("header.fxml"))));
             panes.add(FXMLLoader.load(Objects.requireNonNull(getClass().getResource("shoppinglists.fxml"))));
-            panes.add(FXMLLoader.load(Objects.requireNonNull(getClass().getResource("checkout.fxml"))));
+            panes.add(FXMLLoader.load(Objects.requireNonNull(getClass().getResource("checkouts.fxml"))));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -67,10 +76,25 @@ public class iMatController implements Initializable/*, ShoppingCartListener*/ {
             case "mypage" -> 3;
             case "header" -> 4;
             case "shoppinglists" -> 5;
-            case "checkout" -> 6;
+            case "checkouts" -> 6;
             default -> -1;
         };
     }
 
+    public static List<ProductCategory> getSubCategories(String category) {
+        return switch (category) {
+            case "Frukt" -> fruit;
+            case "Grönsaker" -> greens;
+            case "Kött & Fisk" -> meat;
+            case "Mejeri" -> dairy;
+            case "Basvaror" -> base;
+            case "Godis & Läsk" -> sweets;
+            default -> null;
+        };
+    }
+
+    public static List<String> getCategories() {
+        return categoriesList;
+    }
 }
 

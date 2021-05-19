@@ -13,9 +13,9 @@ public class storeController {
 
     public void placeCategories() {
         categoriesFlowPane.getChildren().clear();
-        List<ProductCategory> subCategoriesList = iMatController.getSubCategories(category);
-        for (ProductCategory C : subCategoriesList) {
-            categoriesFlowPane.getChildren().add(subCategoryCard(C));
+        List<String> categoriesList = iMatController.getCategories();
+        for (String C : categoriesList) {
+            categoriesFlowPane.getChildren().add(categoryCard(C));
         }
     }
 
@@ -34,6 +34,10 @@ public class storeController {
 
     public subcategories subCategoryCard(ProductCategory pc) {
         return new subcategories(pc,this);
+    }
+
+    public categories categoryCard(String c) {
+        return new categories(c,this);
     }
 
 

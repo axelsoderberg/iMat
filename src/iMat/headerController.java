@@ -22,13 +22,13 @@ public class headerController {
 
     @FXML
     private void openStoreView() {
-        storeController.updateStore(model.getProducts());
+        //storeController.updateStore(model.getProducts());
         setPage("store");
     }
 
     @FXML
     private void openCheckoutView() {
-        setPage("checkout");
+        setPage("checkouts");
     }
 
     @FXML
@@ -45,7 +45,7 @@ public class headerController {
     private void handleSearchAction(ActionEvent event) {
 
         List<Product> matches = model.findProducts(searchField.getText());
-        storeController.updateStore(matches);
+        //storeController.updateStore(matches);
         setPage("store");
 
     }
