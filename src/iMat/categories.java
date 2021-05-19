@@ -34,8 +34,5 @@ public class categories extends AnchorPane {
         radioButton.setText(c);
     }
 
-    @FXML
-    protected void onClick(Event event){
-        parentController.updateSubcategories(c.toString());
-    }
+
 }

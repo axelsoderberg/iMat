@@ -33,8 +33,5 @@ public class subcategories extends AnchorPane {
         checkbox.setLabel(pc.toString());
     }
 
-    @FXML
-    protected void onClick(Event event){
-        parentController.addSubcatToView(pc);
-    }
+
 }

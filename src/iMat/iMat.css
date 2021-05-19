@@ -14,9 +14,9 @@
     -fx-font-family: "Assistant";
 }
 
-/*.shadow-effect {
+.shadow-effect {
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.25), 0, 10, 0, 4);
-}*/
+}
 
 .green-button {
     -fx-font-family: "Assistant";

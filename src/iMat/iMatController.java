@@ -26,17 +26,6 @@ public class iMatController implements Initializable/*, ShoppingCartListener*/ {
 
     static List<String> categoriesList = Arrays.asList("Frukt", "Grönsaker", "Kött & Fisk", "Mejeri", "Basvaror", "Godis & Läsk");
 
-    static List<ProductCategory> fruit = Arrays.asList(ProductCategory.FRUIT, ProductCategory.CITRUS_FRUIT,
-            ProductCategory.EXOTIC_FRUIT, ProductCategory.BERRY, ProductCategory.VEGETABLE_FRUIT, ProductCategory.MELONS);
-    static List<ProductCategory> greens = Arrays.asList(ProductCategory.POD, ProductCategory.CABBAGE, ProductCategory.HERB,
-            ProductCategory.ROOT_VEGETABLE);
-    static List<ProductCategory> meat = Arrays.asList(ProductCategory.FISH, ProductCategory.MEAT);
-    static List<ProductCategory> dairy = Arrays.asList(ProductCategory.DAIRIES);
-    static List<ProductCategory> base = Arrays.asList(ProductCategory.BREAD, ProductCategory.FLOUR_SUGAR_SALT,
-            ProductCategory.POTATO_RICE, ProductCategory.PASTA, ProductCategory.NUTS_AND_SEEDS);
-    static List<ProductCategory> sweets = Arrays.asList(ProductCategory.HOT_DRINKS, ProductCategory.COLD_DRINKS,
-            ProductCategory.SWEET);
-
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try {
@@ -80,17 +69,7 @@ public class iMatController implements Initializable/*, ShoppingCartListener*/ {
         };
     }
 
-    public static List<ProductCategory> getSubCategories(String category) {
-        return switch (category) {
-            case "Frukt" -> fruit;
-            case "Grönsaker" -> greens;
-            case "Kött & Fisk" -> meat;
-            case "Mejeri" -> dairy;
-            case "Basvaror" -> base;
-            case "Godis & Läsk" -> sweets;
-            default -> null;
-        };
-    }
+
 
     public static List<String> getCategories() {
         return categoriesList;
