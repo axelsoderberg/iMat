@@ -6,10 +6,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
+
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import se.chalmers.cse.dat216.project.Product;
 
 
 /**
@@ -22,7 +26,7 @@ public class iMatController implements Initializable/*, ShoppingCartListener*/ {
     @FXML private AnchorPane iMatPane;
 
     // Other variables
-    // private final Model model = Model.getInstance();
+    private final Model model = Model.getInstance();
     private static final List<AnchorPane> panes = new ArrayList<>(); // Här har vi alla fxml-sidor
 
     @Override

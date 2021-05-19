@@ -10,10 +10,9 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="210.0" prefWidth="170.0" style="-fx-background-radius: 20; -fx-background-color: #f7f7f7;" styleClass="shadow-effect" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fitHeight="87.0" fitWidth="82.0" layoutX="44.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="44.0" AnchorPane.rightAnchor="44.0">
+      <ImageView fx:id="productCardImageView" fitHeight="87.0" fitWidth="82.0" layoutX="44.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="44.0" AnchorPane.rightAnchor="44.0">
          <image>
             <Image url="@../resources/apple.jpg" />
          </image>
@@ -38,13 +37,13 @@
             </Label>
          </children>
       </Group>
-      <Label alignment="CENTER" layoutX="11.0" layoutY="125.0" prefHeight="45.0" prefWidth="144.0" styleClass="text-font" text="Produkt">
+      <Label fx:id="productCardNameLabel" alignment="CENTER" layoutX="11.0" layoutY="125.0" prefHeight="45.0" prefWidth="144.0" styleClass="text-font" text="Produkt">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
       <Circle fill="#c4c4c4" layoutX="130.0" layoutY="40.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-      <Label layoutX="99.0" layoutY="26.0" styleClass="text-font" text="15 kr/st">
+      <Label fx:id="productCardPrizeLabel" layoutX="99.0" layoutY="26.0" styleClass="text-font" text="15 kr/st">
          <font>
             <Font size="18.0" />
          </font>
@@ -53,11 +52,6 @@
       <ImageView fitHeight="82.0" fitWidth="40.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
          <image>
             <Image url="@../resources/heart.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="82.0" fitWidth="40.0" layoutX="24.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
-         <image>
-            <Image url="@../resources/heartFilled.png" />
          </image>
       </ImageView>
    </children>
