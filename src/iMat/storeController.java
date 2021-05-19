@@ -14,19 +14,20 @@ import java.util.Map;
 import java.util.ResourceBundle;
 
 public class storeController implements Initializable {
-    private final Model model = Model.getInstance();
+
+    @FXML private FlowPane productsFlowPaneStore;
+    @FXML private FlowPane categoriesFlowPane;
+
     private Map<String, productCard> productCardMap;
+    private final Model model = Model.getInstance();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        productListInit();
+        placeCategories();
         updateProductList(model.getProducts());
         // kategorier
         // varukorg
     }
-
-
-    @FXML private FlowPane productsFlowPaneStore;
 
     private void updateProductList(List<Product> products) {
 
@@ -34,21 +35,11 @@ public class storeController implements Initializable {
 
         for (Product product : products) {
             System.out.println(product.getName());
-            productsFlowPaneStore.getChildren().add(productCardMap.get(product.getName()));
+            productsFlowPaneStore.getChildren().add(new productCard(product));
         }
 
 
     }
-    private void productListInit() {
-        productCardMap = new HashMap<String, productCard>();
-        for (Product products : model.getProducts()) {
-            productCard recipeListItem = new productCard(products);
-            productCardMap.put(products.getName(), recipeListItem);
-        }
-    }
-
-    /*@FXML private FlowPane categoriesFlowPane;
-    @FXML private FlowPane subcategoriesFlowPane;
 
     public void placeCategories() {
         categoriesFlowPane.getChildren().clear();
@@ -60,10 +51,18 @@ public class storeController implements Initializable {
 
     @FXML
     public void updateSubcategories(String category) {
-        subcategoriesFlowPane.getChildren().clear();
+        categoriesFlowPane.getChildren().clear();
         List<ProductCategory> subCategoriesList = iMatController.getSubCategories(category);
         for (ProductCategory C : subCategoriesList) {
-            subcategoriesFlowPane.getChildren().add(subCategoryCard(C));
+            categoriesFlowPane.getChildren().add(subCategoryCard(C));
+        }
+    }
+
+    private void productListInit() {
+        productCardMap = new HashMap<String, productCard>();
+        for (Product products : model.getProducts()) {
+            productCard recipeListItem = new productCard(products);
+            productCardMap.put(products.getName(), recipeListItem);
         }
     }
 
@@ -72,14 +71,15 @@ public class storeController implements Initializable {
     }
 
     public subcategories subCategoryCard(ProductCategory pc) {
-        return new subcategories(pc,this);
+        return new subcategories(pc);
     }
 
     public categories categoryCard(String c) {
-        return new categories(c,this);
+        return new categories(c);
     }
 
 
     public void viewCategory(ProductCategory pc) {
-    }*/
+    }
+
 }
