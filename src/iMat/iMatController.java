@@ -7,9 +7,8 @@ import java.util.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import se.chalmers.cse.dat216.project.Product;
+import se.chalmers.cse.dat216.project.ProductCategory;
 
 
 /**
@@ -22,7 +21,7 @@ public class iMatController implements Initializable/*, ShoppingCartListener*/ {
     @FXML private AnchorPane iMatPane;
 
     // Other variables
-    private final Model model = Model.getInstance();
+    // private final Model model = Model.getInstance();
     private static final List<AnchorPane> panes = new ArrayList<>(); // Här har vi alla fxml-sidor
 
     static List<String> categoriesList = Arrays.asList("Frukt", "Grönsaker", "Kött & Fisk", "Mejeri", "Basvaror", "Godis & Läsk");
