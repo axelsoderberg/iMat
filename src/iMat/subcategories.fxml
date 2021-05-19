@@ -5,13 +5,13 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="60.0" maxWidth="350.0" minHeight="60.0" minWidth="350.0" prefHeight="60.0" prefWidth="350.0" styleClass="light-green" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="60.0" maxWidth="350.0" minHeight="60.0" minWidth="300.0" prefHeight="60.0" prefWidth="300.0" styleClass="light-green" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <CheckBox layoutX="27.0" layoutY="8.0" maxWidth="310.0" minWidth="310.0" mnemonicParsing="false" prefWidth="310.0" styleClass="text-font" text="Äpple" textFill="#3d3d3d" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="5.0">
          <font>
             <Font size="30.0" />
          </font>
       </CheckBox>
-      <Line endX="346.0" layoutX="94.0" layoutY="53.0" stroke="#ecebeb" strokeWidth="4.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+      <Line endX="296.17156982421875" layoutX="94.0" layoutY="53.0" stroke="#ecebeb" strokeWidth="4.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
    </children>
 </AnchorPane>
