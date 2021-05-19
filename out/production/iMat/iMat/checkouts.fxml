@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="689.0" prefWidth="1536.0" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <StackPane layoutX="259.0" layoutY="170.0" prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
+               <children>
+                  <AnchorPane maxHeight="600.0" maxWidth="825.0" minHeight="600.0" minWidth="825.0" prefHeight="600.0" prefWidth="825.0" AnchorPane.bottomAnchor="44.0" AnchorPane.leftAnchor="355.0" AnchorPane.rightAnchor="356.0" AnchorPane.topAnchor="45.0">
+                     <children>
+                        <ImageView fitHeight="600.0" fitWidth="825.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-280.0" AnchorPane.topAnchor="0.0">
+                           <image>
+                              <Image url="@../resources/thanks.jpg" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="196.0" layoutY="188.0" style="-fx-font-weight: bold;" styleClass="text-font" text="Tack för ditt köp!">
+                           <font>
+                              <Font size="48.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="259.0" layoutY="258.0" styleClass="text-font" text="Välkommen åter!">
+                           <font>
+                              <Font size="36.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="66.0" fitWidth="74.0" layoutX="751.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="6.0">
+                           <image>
+                              <Image url="@../resources/listCloseButton.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
+               <children>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="light-green" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="500.0" AnchorPane.rightAnchor="500.0" AnchorPane.topAnchor="50.0">
+                     <children>
+                        <Label layoutX="145.0" layoutY="10.0" styleClass="text-page-header" text="Betaluppgifter" />
+                        <Line endX="434.0" layoutX="87.0" layoutY="171.0" startX="-100.0" stroke="#ecebeb" strokeWidth="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="65.0" />
+                        <Line endX="434.0" layoutX="97.0" layoutY="181.0" startX="-100.0" stroke="#ecebeb" strokeWidth="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="225.0" />
+                        <Label layoutX="19.0" layoutY="88.0" styleClass="text-helpbox-header" text="Betalsätt:" AnchorPane.leftAnchor="19.0" />
+                        <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#ecebeb" height="134.0" layoutX="150.0" layoutY="80.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="369.0" AnchorPane.leftAnchor="150.0" />
+                        <RadioButton layoutX="160.0" layoutY="90.0" mnemonicParsing="false" styleClass="text-products" text="Sparat kort: **** **** 0000" AnchorPane.leftAnchor="160.0" />
+                        <RadioButton layoutX="160.0" layoutY="130.0" mnemonicParsing="false" styleClass="text-products" text="Sparade fakturauppgifter" AnchorPane.leftAnchor="160.0" />
+                        <RadioButton layoutX="160.0" layoutY="170.0" mnemonicParsing="false" styleClass="text-products" text="Annat" AnchorPane.leftAnchor="160.0" />
+                        <Line endX="434.0" layoutX="96.0" layoutY="344.0" startX="-100.0" stroke="#ecebeb" strokeWidth="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="355.0" />
+                        <Label layoutX="18.0" layoutY="249.0" styleClass="text-helpbox-header" text="Leverans:" AnchorPane.leftAnchor="18.0" />
+                        <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#ecebeb" height="101.0" layoutX="166.0" layoutY="241.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="369.0" AnchorPane.leftAnchor="150.0" />
+                        <RadioButton layoutX="179.0" layoutY="251.0" mnemonicParsing="false" styleClass="text-products" text="Sparad adress: Chalmers 21..." AnchorPane.leftAnchor="160.0" />
+                        <RadioButton layoutX="179.0" layoutY="291.0" mnemonicParsing="false" styleClass="text-products" text="Sparade fakturauppgifter" AnchorPane.leftAnchor="160.0" />
+                        <Label layoutX="79.0" layoutY="384.0" styleClass="text-products" text="Leverans sker inom 2-3 arbetsdagar" />
+                        <Button layoutX="155.0" layoutY="458.0" mnemonicParsing="false" styleClass="white-button" text="Bekräfta köp" AnchorPane.leftAnchor="165.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: f7f7f7;">
+               <children>
+                  <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#f7f7f7" height="603.0" stroke="#c9c9c9" strokeType="INSIDE" strokeWidth="5.0" width="1136.0" AnchorPane.bottomAnchor="43.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="43.0" />
+                  <Label layoutX="721.0" layoutY="53.0" styleClass="text-page-header" text="Kassan" />
+                  <Label layoutX="450.0" layoutY="116.0" styleClass="text-helpbox-header" text="Produkt" AnchorPane.leftAnchor="435.0" AnchorPane.topAnchor="116.0" />
+                  <Line endX="1030.0" layoutX="302.5" layoutY="106.0" startX="-100.0" stroke="#c9c9c9" strokeWidth="5.0" AnchorPane.leftAnchor="200.0" />
+                  <Label layoutX="995.0" layoutY="116.0" styleClass="text-helpbox-header" text="Styckpris" AnchorPane.leftAnchor="1150.0" AnchorPane.topAnchor="116.0" />
+                  <Label layoutX="660.0" layoutY="116.0" styleClass="text-helpbox-header" text="Totalpris" AnchorPane.leftAnchor="950.0" AnchorPane.topAnchor="116.0" />
+                  <Label layoutX="743.0" layoutY="116.0" styleClass="text-helpbox-header" text="Antal" AnchorPane.leftAnchor="743.0" AnchorPane.topAnchor="116.0" />
+                  <Line endX="1030.0" layoutX="302.5" layoutY="163.0" startX="-100.0" stroke="#c9c9c9" strokeWidth="5.0" AnchorPane.leftAnchor="200.0" />
+                  <Line endX="1030.0" layoutX="312.5" layoutY="173.0" startX="-100.0" stroke="#c9c9c9" strokeWidth="5.0" AnchorPane.bottomAnchor="115.0" AnchorPane.leftAnchor="200.0" />
+                  <Label layoutX="907.0" layoutY="590.0" styleClass="text-helpbox-header" text="Summa: xxx kr" />
+                  <Button fx:id="helpButton" alignment="CENTER" layoutX="1139.0" layoutY="582.0" maxHeight="70.0" minHeight="50.0" mnemonicParsing="false" onAction="#openHelpView" prefHeight="50.0" prefWidth="182.0" styleClass="green-button" stylesheets="@iMat.css" text="Betala">
+                     <effect>
+                        <DropShadow height="10.45" offsetY="5.0" radius="3.6125" width="6.0">
+                           <color>
+                              <Color opacity="0.6000000238418579" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Button>
+                  <ScrollPane layoutX="206.0" layoutY="166.0" prefHeight="401.0" prefWidth="1125.0">
+                     <content>
+                        <FlowPane prefHeight="401.0" prefWidth="1123.0" />
+                     </content>
+                  </ScrollPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

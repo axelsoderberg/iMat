@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="shoppingListsPane" prefHeight="689.0" prefWidth="1536.0" styleClass="almost-white" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.shoppinglistsController">
+   <children>
+      <Rectangle fill="#ececeb" height="689.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1536.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Line endX="242.0" layoutX="762.0" layoutY="98.0" startX="-564.0" stroke="#0000004d" strokeWidth="5.0" AnchorPane.leftAnchor="195.5" />
+      <Text layoutX="196.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-page-header" text="Mina inköpslistor" textAlignment="CENTER" AnchorPane.leftAnchor="196.0" />
+      <Button layoutX="855.0" layoutY="48.0" mnemonicParsing="false" prefWidth="150.0" text="Skapa ny" AnchorPane.leftAnchor="855.0">
+         <effect>
+            <DropShadow height="6.17" offsetY="2.0" radius="2.585" width="6.17">
+               <color>
+                  <Color opacity="0.4000000059604645" />
+               </color>
+            </DropShadow>
+         </effect>
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/Inkopslistor.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <styleClass>
+            <String fx:value="green-button" />
+            <String fx:value="small-button" />
+         </styleClass>
+      </Button>
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#c3d5bb" height="603.0" layoutX="1026.0" layoutY="31.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="rectangle" width="295.0" AnchorPane.leftAnchor="1026.0" />
+      <Line endX="390.0" layoutX="931.0" layoutY="97.0" startX="95.0" stroke="#ebebeb" strokeWidth="5.0" styleClass="almost-white" AnchorPane.leftAnchor="1023.5" />
+      <Text layoutX="1139.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-page-header" text="Tips" textAlignment="CENTER" AnchorPane.leftAnchor="1139.0" />
+      <Text layoutX="1055.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-contact" text="Namnge listor för att enkelt hitta listan du söker" wrappingWidth="250.0" AnchorPane.leftAnchor="1055.0" />
+      <Circle layoutX="1038.0" layoutY="151.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
+      <Text layoutX="1055.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-contact" text="Du kan lägga till enskilda artiklar från olika listor i din varukorg" wrappingWidth="250.0" />
+      <Text layoutX="1055.0" layoutY="422.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-contact" text="Har du ett favoritrecept? Skapa en lista med de ingredienser du behöver" wrappingWidth="250.0" />
+      <Circle layoutX="1038.0" layoutY="293.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle layoutX="1038.0" layoutY="443.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" />
+      <ScrollPane layoutX="196.0" layoutY="101.0" prefHeight="537.0" prefWidth="811.0" styleClass="almost-white">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <FlowPane prefHeight="200.0" prefWidth="200.0" prefWrapLength="811.0" />
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

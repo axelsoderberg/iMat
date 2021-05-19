@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="helpPane" prefHeight="689.0" prefWidth="1536.0" styleClass="almost-white" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.helpController">
+   <children>
+      <Line endX="100.0" layoutX="999.0" layoutY="83.0" startX="-564.0" stroke="#0000004d" strokeWidth="5.0" />
+      <Text layoutX="497.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-page-header" text="Hej! Vad behöver du hjälp med?" textAlignment="CENTER" />
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#c3d5bd" height="440.0" layoutX="220.0" layoutY="162.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="light-green" width="310.0" AnchorPane.leftAnchor="220.0">
+         <effect>
+            <DropShadow height="6.0" offsetY="2.0" radius="2.5" width="6.0">
+               <color>
+                  <Color opacity="0.4000000059604645" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Rectangle>
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#c3d5bd" height="440.0" layoutX="613.0" layoutY="162.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="light-green" width="310.0" AnchorPane.leftAnchor="613.0">
+         <effect>
+            <DropShadow height="6.0" offsetY="2.0" radius="2.5" width="6.0">
+               <color>
+                  <Color opacity="0.4000000059604645" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Rectangle>
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#c3d5bd" height="440.0" layoutX="1011.0" layoutY="162.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="light-green" width="310.0" AnchorPane.leftAnchor="1000.0">
+         <effect>
+            <DropShadow height="6.0" offsetY="2.0" radius="2.5" width="6.0">
+               <color>
+                  <Color opacity="0.4000000059604645" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Rectangle>
+      <Text layoutX="250.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-header" text="Osäker på hur du använder hemsidan?" textAlignment="CENTER" wrappingWidth="250.0" />
+      <Text layoutX="250.0" layoutY="376.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-normal" text="Få en genomgång av programmet!" textAlignment="CENTER" wrappingWidth="250.0" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="356.576171875" />
+      <Text layoutX="643.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-header" text="Har du frågor angående din profil?" textAlignment="CENTER" wrappingWidth="250.0" />
+      <Text layoutX="643.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-normal" text="Vill du ha hjälp med att ändra uppgifterna i din profil eller vill du veta mer om betalningsätt och leverans?" textAlignment="CENTER" wrappingWidth="250.0" AnchorPane.leftAnchor="643.0" AnchorPane.topAnchor="333.576171875" />
+      <Text layoutX="1030.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-header" text="Vill du komma i kontakt med kundsupporten?" textAlignment="CENTER" wrappingWidth="250.0" />
+      <Text layoutX="1030.0" layoutY="365.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-normal" text="Du når oss på telefon mellan 8-17 varje vardag. Skickar du ett mejl svarar vi så fort vi kan!" textAlignment="CENTER" wrappingWidth="250.0" AnchorPane.leftAnchor="1030.0" AnchorPane.topAnchor="345.576171875" />
+      <Text layoutX="1039.0" layoutY="529.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-contact" text="Tel:" AnchorPane.leftAnchor="1039.0" />
+      <Text layoutX="1102.0" layoutY="556.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-normal" text="imat@mejl.se" textAlignment="CENTER" />
+      <Text layoutX="1039.0" layoutY="557.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-contact" text="Mejl:" AnchorPane.leftAnchor="1039.0" />
+      <Text layoutX="1110.0" layoutY="528.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-normal" text="xxxx-xxxxxx" textAlignment="CENTER" />
+      <Button layoutX="300.0" layoutY="514.0" mnemonicParsing="false" prefWidth="150.0" text="Starta guide">
+         <effect>
+            <DropShadow height="6.17" offsetY="2.0" radius="2.585" width="6.17">
+               <color>
+                  <Color opacity="0.4000000059604645" />
+               </color>
+            </DropShadow>
+         </effect>
+         <styleClass>
+            <String fx:value="green-button" />
+            <String fx:value="small-button" />
+         </styleClass>
+      </Button>
+      <Button layoutX="693.0" layoutY="514.0" mnemonicParsing="false" prefWidth="150.0" text="Läs mer">
+         <effect>
+            <DropShadow height="6.17" offsetY="2.0" radius="2.585" width="6.17">
+               <color>
+                  <Color opacity="0.4000000059604645" />
+               </color>
+            </DropShadow>
+         </effect>
+         <styleClass>
+            <String fx:value="green-button" />
+            <String fx:value="small-button" />
+         </styleClass>
+      </Button>
+   </children>
+</AnchorPane>
