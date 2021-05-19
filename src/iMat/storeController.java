@@ -1,26 +1,15 @@
 package iMat;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.layout.FlowPane;
 import se.chalmers.cse.dat216.project.ProductCategory;
 
-import java.net.URL;
 import java.util.List;
-import java.util.ResourceBundle;
 
-public class storeController implements Initializable {
+public class storeController {
 
     @FXML private FlowPane categoriesFlowPane;
-    //@FXML private ScrollPane categoriesScrollPane;
-
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-        placeCategories();
-    }
+    @FXML private FlowPane subcategoriesFlowPane;
 
     public void placeCategories() {
         categoriesFlowPane.getChildren().clear();
@@ -32,10 +21,10 @@ public class storeController implements Initializable {
 
     @FXML
     public void updateSubcategories(String category) {
-        categoriesFlowPane.getChildren().clear();
+        subcategoriesFlowPane.getChildren().clear();
         List<ProductCategory> subCategoriesList = iMatController.getSubCategories(category);
         for (ProductCategory C : subCategoriesList) {
-            categoriesFlowPane.getChildren().add(subCategoryCard(C));
+            subcategoriesFlowPane.getChildren().add(subCategoryCard(C));
         }
     }
 
@@ -44,16 +33,14 @@ public class storeController implements Initializable {
     }
 
     public subcategories subCategoryCard(ProductCategory pc) {
-        return new subcategories(pc);
+        return new subcategories(pc,this);
     }
 
     public categories categoryCard(String c) {
-        return new categories(c);
+        return new categories(c,this);
     }
 
 
     public void viewCategory(ProductCategory pc) {
     }
-
-
 }

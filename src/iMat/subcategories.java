@@ -14,9 +14,9 @@ public class subcategories extends AnchorPane {
     private Checkbox checkbox;
 
     private ProductCategory pc;
+    private storeController parentController;
 
-
-    public subcategories(ProductCategory pc){
+    public subcategories(ProductCategory pc, storeController store){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("subcategories.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
@@ -28,7 +28,13 @@ public class subcategories extends AnchorPane {
         }
 
         this.pc = pc;
+        this.parentController = store;
 
         checkbox.setLabel(pc.toString());
+    }
+
+    @FXML
+    protected void onClick(Event event){
+        parentController.addSubcatToView(pc);
     }
 }

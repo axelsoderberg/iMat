@@ -73,7 +73,7 @@
       <Line endX="770.0" endY="90.0" layoutX="433.0" layoutY="-3.0" startY="90.0" strokeWidth="2.0" AnchorPane.leftAnchor="380.0" />
       <ScrollPane fitToHeight="true" fitToWidth="true" layoutX="388.0" layoutY="93.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="388.0" AnchorPane.rightAnchor="388.0">
          <content>
-            <FlowPane fx:id="productsFlowPaneStore" nodeOrientation="LEFT_TO_RIGHT" prefHeight="570.0" prefWidth="648.0" prefWrapLength="1200.0" rowValignment="TOP" />
+            <FlowPane fx:id="productsFlowPaneStore" nodeOrientation="LEFT_TO_RIGHT" prefHeight="570.0" prefWidth="648.0" prefWrapLength="300.0" rowValignment="TOP" />
          </content>
       </ScrollPane>
       <Label alignment="CENTER" layoutX="1216.0" layoutY="569.0" prefHeight="35.0" prefWidth="241.0" styleClass="text-semi" text="Summa: 35 kr" />

@@ -13,7 +13,6 @@ public class StartController {
 
     @FXML
     private void openStoreView() {
-        //storeController.updateStore(model.getProducts());
         iMatController.setPage("store");
     }
 }
