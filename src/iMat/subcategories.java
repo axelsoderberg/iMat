@@ -2,16 +2,15 @@ package iMat;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.CheckBox;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.cse.dat216.project.ProductCategory;
 
-import java.awt.*;
 import java.io.IOException;
 
 public class subcategories extends AnchorPane {
 
-    @FXML
-    private Checkbox checkbox;
+    @FXML private CheckBox checkbox;
 
     private ProductCategory pc;
 
@@ -28,7 +27,7 @@ public class subcategories extends AnchorPane {
 
         this.pc = pc;
 
-        checkbox.setLabel(pc.toString());
+        checkbox.setText(pc.toString());
     }
 
 }
