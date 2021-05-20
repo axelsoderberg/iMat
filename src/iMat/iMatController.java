@@ -21,7 +21,7 @@ public class iMatController implements Initializable/*, ShoppingCartListener*/ {
     @FXML private AnchorPane iMatPane;
 
     // Other variables
-    // private final Model model = Model.getInstance();
+    private final Model model = Model.getInstance();
 
     private static final List<AnchorPane> panes = new ArrayList<>(); // Här har vi alla fxml-sidor
 

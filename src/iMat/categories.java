@@ -2,21 +2,21 @@ package iMat;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.cse.dat216.project.ProductCategory;
 
-import java.awt.*;
 import java.io.IOException;
 
 public class categories extends AnchorPane {
 
-    @FXML
-    private RadioButton radioButton;
+    @FXML private Label label;
 
     private final String c;
+    storeController parentController;
 
-    public categories(String c) {
+    public categories(String c, storeController parentController) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("categories.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
@@ -28,8 +28,14 @@ public class categories extends AnchorPane {
         }
 
         this.c = c;
+        this.parentController = parentController;
 
-        radioButton.setText(c);
+        label.setText(c);
     }
 
+
+    @FXML
+    private void onClick() {
+        parentController.updateSubcategories(c);
+    }
 }
