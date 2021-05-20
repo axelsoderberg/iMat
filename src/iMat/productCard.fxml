@@ -35,13 +35,13 @@
       </ImageView>
       <Group fx:id="addOrRemoveButton" layoutX="13.0" layoutY="166.0">
          <children>
-            <ImageView fitHeight="42.0" fitWidth="153.0" layoutX="-3.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="40.0" fitWidth="157.0" layoutX="-6.0" pickOnBounds="true">
                <image>
                   <Image url="@../resources/addRemoveButton.png" />
                </image>
             </ImageView>
-            <Line endX="15.0" layoutX="10.0" layoutY="19.0" onMouseClicked="#handleRemoveAction" strokeWidth="4.0" />
-            <ImageView fitHeight="29.0" fitWidth="31.0" layoutX="115.0" layoutY="5.0" onMouseClicked="#handleAddAction" pickOnBounds="true" preserveRatio="true">
+            <Line endX="15.0" layoutX="7.0" layoutY="19.0" onMouseClicked="#handleRemoveAction" strokeWidth="5.0" />
+            <ImageView fitHeight="29.0" fitWidth="31.0" layoutX="116.0" layoutY="5.0" onMouseClicked="#handleAddAction" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../resources/plusSign.png" />
                </image>
@@ -53,6 +53,6 @@
             </Label>
          </children>
       </Group>
-      <Button fx:id="addButton" layoutX="7.0" layoutY="165.0" maxHeight="40.0" minHeight="35.0" mnemonicParsing="false" onAction="#handleAddAction" prefHeight="40.0" prefWidth="157.0" styleClass="lightgreen-button" text="Lägg till" />
+      <Button fx:id="addButton" layoutX="8.0" layoutY="165.0" maxHeight="40.0" minHeight="35.0" mnemonicParsing="false" onAction="#handleAddAction" prefHeight="40.0" prefWidth="157.0" styleClass="lightgreen-button" text="Lägg till" />
    </children>
 </fx:root>

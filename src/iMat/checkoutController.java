@@ -10,8 +10,12 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.Toggle;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.FlowPane;
+import se.chalmers.cse.dat216.project.Product;
+import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import static iMat.iMatController.setPage;
@@ -22,6 +26,8 @@ public class checkoutController implements Initializable {
     private ToggleGroup paymentTypeToggleGroup;
     private ToggleGroup deliveryTypeToggleGroup;
 
+    private final Model model = Model.getInstance();
+
     @FXML private AnchorPane checkoutShoppingcart;
     @FXML private AnchorPane checkoutPaymentdetails;
     @FXML private AnchorPane checkoutThanks;
@@ -30,10 +36,12 @@ public class checkoutController implements Initializable {
     @FXML private RadioButton otherPaymentRadioButton;
     @FXML private RadioButton savedDeliveryAdressRadioButton;
     @FXML private RadioButton otherDeliveryRadioButton;
+    @FXML private FlowPane productsFlowPaneCheckout;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initRadioButtons();
+        updateShoppingcartList(model.getShoppingCart().getItems());
     }
 
     private void initRadioButtons() {
@@ -67,6 +75,15 @@ public class checkoutController implements Initializable {
         });
     }
 
+    private void updateShoppingcartList(List<ShoppingItem> items) {
+
+        productsFlowPaneCheckout.getChildren().clear();
+
+        for (ShoppingItem item : items) {
+            productsFlowPaneCheckout.getChildren().add(new Checkoutitem(item));
+        }
+
+    }
 
     @FXML private void openPaymentDetails() {
         checkoutPaymentdetails.toFront();

@@ -13,7 +13,6 @@ import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 
-import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.util.Objects;
 
@@ -85,6 +84,10 @@ public class productCard extends AnchorPane {
             model.addFavorite(product);
             productCardFavoriteImageView.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("resources/heartFilled.png"))));
         }
+    }
+
+    public ShoppingItem getShoppingItem() {
+        return this.shoppingItem;
     }
 
 }
