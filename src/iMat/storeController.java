@@ -32,10 +32,8 @@ public class storeController implements Initializable {
         productsFlowPaneStore.getChildren().clear();
 
         for (Product product : products) {
-            System.out.println(product.getName());
             productsFlowPaneStore.getChildren().add(new productCard(product));
         }
-
 
     }
 

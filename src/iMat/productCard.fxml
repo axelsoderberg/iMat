@@ -10,33 +10,13 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<fx:root type="javafx.scene.layout.AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="210.0" prefWidth="170.0" style="-fx-background-radius: 20; -fx-background-color: #f7f7f7;" styleClass="shadow-effect" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="210.0" prefWidth="170.0" style="-fx-background-radius: 20; -fx-background-color: #f7f7f7;" styleClass="shadow-effect" stylesheets="@iMat.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fx:id="productCardImageView" fitHeight="87.0" fitWidth="82.0" layoutX="44.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="44.0" AnchorPane.rightAnchor="44.0">
          <image>
             <Image url="@../resources/apple.jpg" />
          </image>
       </ImageView>
-      <Group layoutX="13.0" layoutY="166.0">
-         <children>
-            <ImageView fitHeight="36.0" fitWidth="156.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../resources/addRemoveButton.png" />
-               </image>
-            </ImageView>
-            <Line endX="15.0" layoutX="10.0" layoutY="19.0" strokeWidth="4.0" />
-            <ImageView fitHeight="29.0" fitWidth="31.0" layoutX="112.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../resources/plusSign.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="52.0" styleClass="text-font" text="x st">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Label>
-         </children>
-      </Group>
       <Label fx:id="productCardNameLabel" alignment="CENTER" layoutX="11.0" layoutY="125.0" prefHeight="45.0" prefWidth="144.0" styleClass="text-font" text="Produkt">
          <font>
             <Font size="30.0" />
@@ -48,11 +28,31 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button layoutX="7.0" layoutY="167.0" maxHeight="35.0" minHeight="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="157.0" styleClass="lightgreen-button" text="Lägg till" />
-      <ImageView fitHeight="82.0" fitWidth="40.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
+      <ImageView fx:id="productCardFavoriteImageView" fitHeight="82.0" fitWidth="40.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#handleFavoriteAction" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
          <image>
             <Image url="@../resources/heart.png" />
          </image>
       </ImageView>
+      <Group fx:id="addOrRemoveButton" layoutX="13.0" layoutY="166.0">
+         <children>
+            <ImageView fitHeight="42.0" fitWidth="153.0" layoutX="-3.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/addRemoveButton.png" />
+               </image>
+            </ImageView>
+            <Line endX="15.0" layoutX="10.0" layoutY="19.0" onMouseClicked="#handleRemoveAction" strokeWidth="4.0" />
+            <ImageView fitHeight="29.0" fitWidth="31.0" layoutX="115.0" layoutY="5.0" onMouseClicked="#handleAddAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/plusSign.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="productCardAmountLabel" layoutX="52.0" styleClass="text-font" text="x st">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Group>
+      <Button fx:id="addButton" layoutX="7.0" layoutY="165.0" maxHeight="40.0" minHeight="35.0" mnemonicParsing="false" onAction="#handleAddAction" prefHeight="40.0" prefWidth="157.0" styleClass="lightgreen-button" text="Lägg till" />
    </children>
 </fx:root>

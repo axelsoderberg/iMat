@@ -3,13 +3,17 @@ package iMat;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Group;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.Product;
+import se.chalmers.cse.dat216.project.ShoppingItem;
 
+import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.util.Objects;
 
@@ -19,16 +23,20 @@ public class productCard extends AnchorPane {
     @FXML Label productCardNameLabel;
     @FXML Label productCardPrizeLabel;
     @FXML ImageView productCardFavoriteImageView;
+    @FXML Button addButton;
+    @FXML Group addOrRemoveButton;
+    @FXML Label productCardAmountLabel;
 
     private Model model = Model.getInstance();
-    private IMatDataHandler iMatDataHandler;
 
     private Product product;
+    ShoppingItem shoppingItem;
 
     private final static double kImageWidth = 82;
     private final static double kImageRatio = 0.75;
 
     public productCard(Product product) {
+        this.shoppingItem = new ShoppingItem(product, 0);
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("productCard.fxml"));
         fxmlLoader.setRoot(this);
@@ -45,14 +53,39 @@ public class productCard extends AnchorPane {
         productCardPrizeLabel.setText(String.format("%.2f", product.getPrice()) + " " + product.getUnit());
         productCardImageView.setImage(model.getImage(product, kImageWidth, kImageWidth*kImageRatio));
         // if favorite....
-        //if (iMatDataHandler.isFavorite(product)) {
-          //  productCardFavoriteImageView.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("iMat/resources/heartFilled.png"))));
-        //} //annars ej ifyllt hjärta
+        if (model.isFavorite(product)) {
+            productCardFavoriteImageView.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("iMat/resources/heartFilled.png"))));
+        } //annars ej ifyllt hjärta
     }
 
     @FXML
-    private void handleAddAction(ActionEvent event) {
-        model.addToShoppingCart(product);
+    private void handleAddAction() {
+        shoppingItem.setAmount(shoppingItem.getAmount() + 1);
+        model.addToShoppingCart(shoppingItem);
+        addOrRemoveButton.toFront();
+        productCardAmountLabel.setText((int) shoppingItem.getAmount() + " st");
     }
+
+    @FXML
+    private void handleRemoveAction() {
+        shoppingItem.setAmount(shoppingItem.getAmount() - 1);
+        if (shoppingItem.getAmount() == 0) { //Om man tog bort den sista i kundvagnen
+            addButton.toFront();
+        } else {
+            productCardAmountLabel.setText((int) shoppingItem.getAmount() + " st");
+        }
+    }
+
+    @FXML
+    private void handleFavoriteAction() {
+        if (model.isFavorite(product)) {
+            model.removeFavorite(product);
+            productCardFavoriteImageView.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("resources/heart.png"))));
+        } else {
+            model.addFavorite(product);
+            productCardFavoriteImageView.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("resources/heartFilled.png"))));
+        }
+    }
+
 }
 
