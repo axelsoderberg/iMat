@@ -12,9 +12,9 @@ public class subcategories extends AnchorPane {
 
     @FXML private CheckBox checkbox;
 
-    private ProductCategory pc;
+    private String pc;
 
-    public subcategories(ProductCategory pc){
+    public subcategories(String pc) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("subcategories.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
@@ -27,7 +27,10 @@ public class subcategories extends AnchorPane {
 
         this.pc = pc;
 
-        checkbox.setText(pc.toString());
+        checkbox.setText(pc);
     }
 
+    public CheckBox getCheckbox() {
+        return checkbox;
+    }
 }

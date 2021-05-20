@@ -96,5 +96,6 @@ public class iMatController implements Initializable/*, ShoppingCartListener*/ {
     public static List<String> getCategories() {
         return categoriesList;
     }
+
 }
 

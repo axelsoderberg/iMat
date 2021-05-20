@@ -7,7 +7,7 @@
 
 <fx:root fx:id="subcategoryPane" maxHeight="60.0" maxWidth="350.0" minHeight="60.0" minWidth="300.0" prefHeight="60.0" prefWidth="300.0" styleClass="light-green" stylesheets="@iMat.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <CheckBox fx:id="checkbox" layoutX="27.0" layoutY="8.0" maxWidth="310.0" minWidth="256.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="256.0" styleClass="text-font" text="Äpple" textFill="#3d3d3d" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="5.0">
+      <CheckBox fx:id="checkbox" layoutX="27.0" layoutY="8.0" maxWidth="310.0" minWidth="256.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="256.0" styleClass="text-category" text="Äpple" textFill="#3d3d3d" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="5.0">
          <font>
             <Font size="30.0" />
          </font>
