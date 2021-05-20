@@ -2,10 +2,12 @@ package iMat;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.FlowPane;
 import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ProductCategory;
 
+import java.awt.*;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.List;
@@ -16,6 +18,8 @@ public class storeController implements Initializable {
 
     @FXML private FlowPane productsFlowPaneStore;
     @FXML private FlowPane categoriesFlowPane;
+    @FXML private final ToggleGroup categoriesGroup = new ToggleGroup();
+    @FXML private CheckboxGroup subcategoriesGroup = new CheckboxGroup();
 
     private Map<String, productCard> productCardMap;
     private final Model model = Model.getInstance();
@@ -73,7 +77,9 @@ public class storeController implements Initializable {
     }
 
     public categories categoryCard(String c) {
-        return new categories(c);
+        categories cat = new categories(c, this);
+        cat.getRadioButton().setToggleGroup(categoriesGroup);
+        return cat;
     }
 
 

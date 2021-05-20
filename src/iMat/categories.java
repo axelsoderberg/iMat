@@ -7,6 +7,7 @@ import javafx.scene.layout.AnchorPane;
 import se.chalmers.cse.dat216.project.ProductCategory;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.io.IOException;
 
 public class categories extends AnchorPane {
@@ -15,8 +16,9 @@ public class categories extends AnchorPane {
     private RadioButton radioButton;
 
     private final String c;
+    storeController parentController;
 
-    public categories(String c) {
+    public categories(String c, storeController parentController) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("categories.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
@@ -28,8 +30,17 @@ public class categories extends AnchorPane {
         }
 
         this.c = c;
+        this.parentController = parentController;
 
         radioButton.setText(c);
     }
 
+    public RadioButton getRadioButton() {
+        return radioButton;
+    }
+
+    @FXML
+    private void onClick() {
+        parentController.updateSubcategories(c);
+    }
 }
