@@ -3,11 +3,11 @@ package iMat;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
 import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ProductCategory;
 
-import java.awt.*;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.List;
@@ -18,6 +18,7 @@ public class storeController implements Initializable {
 
     @FXML private FlowPane productsFlowPaneStore;
     @FXML private FlowPane categoriesFlowPane;
+    @FXML private ImageView backArrow;
     @FXML private final ToggleGroup categoriesGroup = new ToggleGroup();
 
     private Map<String, productCard> productCardMap;
@@ -43,6 +44,7 @@ public class storeController implements Initializable {
     }
 
     public void placeCategories() {
+        backArrow.toBack();
         categoriesFlowPane.getChildren().clear();
         List<String> categoriesList = iMatController.getCategories();
         for (String C : categoriesList) {
@@ -52,6 +54,7 @@ public class storeController implements Initializable {
 
     @FXML
     public void updateSubcategories(String category) {
+        backArrow.toFront();
         categoriesFlowPane.getChildren().clear();
         List<ProductCategory> subCategoriesList = iMatController.getSubCategories(category);
         for (ProductCategory C : subCategoriesList) {
@@ -81,6 +84,11 @@ public class storeController implements Initializable {
 
 
     public void viewCategory(ProductCategory pc) {
+    }
+
+    @FXML
+    private void backArrowClicked() {
+        placeCategories();
     }
 
 }
