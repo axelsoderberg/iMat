@@ -19,7 +19,6 @@ public class storeController implements Initializable {
     @FXML private FlowPane productsFlowPaneStore;
     @FXML private FlowPane categoriesFlowPane;
     @FXML private final ToggleGroup categoriesGroup = new ToggleGroup();
-    @FXML private CheckboxGroup subcategoriesGroup = new CheckboxGroup();
 
     private Map<String, productCard> productCardMap;
     private final Model model = Model.getInstance();
@@ -77,9 +76,7 @@ public class storeController implements Initializable {
     }
 
     public categories categoryCard(String c) {
-        categories cat = new categories(c, this);
-        cat.getRadioButton().setToggleGroup(categoriesGroup);
-        return cat;
+        return new categories(c, this);
     }
 
 

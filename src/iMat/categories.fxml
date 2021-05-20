@@ -3,18 +3,10 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
 
 <fx:root maxHeight="60.0" maxWidth="300.0" minHeight="60.0" minWidth="300.0" prefHeight="60.0" prefWidth="300.0" styleClass="light-green" stylesheets="@iMat.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Line endX="296.0" layoutX="16.0" layoutY="60.0" stroke="#ecebeb" strokeWidth="4.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-      <RadioButton fx:id="radioButton" layoutX="10.0" maxWidth="310.0" minWidth="250.0" mnemonicParsing="false" onAction="#onClick" prefHeight="45.0" prefWidth="290.0" styleClass="text-font" text="Erbjudanden" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0">
-         <font>
-            <Font size="30.0" />
-         </font>
-         <toggleGroup>
-            <ToggleGroup fx:id="categories" />
-         </toggleGroup>
-      </RadioButton>
+      <Label fx:id="label" layoutX="30.0" layoutY="5.0" onMouseClicked="#onClick" prefHeight="45.0" prefWidth="249.0" styleClass="text-font" text="Kategori" />
    </children>
 </fx:root>

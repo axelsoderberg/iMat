@@ -2,18 +2,16 @@ package iMat;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.cse.dat216.project.ProductCategory;
 
-import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.io.IOException;
 
 public class categories extends AnchorPane {
 
-    @FXML
-    private RadioButton radioButton;
+    @FXML private Label label;
 
     private final String c;
     storeController parentController;
@@ -32,12 +30,9 @@ public class categories extends AnchorPane {
         this.c = c;
         this.parentController = parentController;
 
-        radioButton.setText(c);
+        label.setText(c);
     }
 
-    public RadioButton getRadioButton() {
-        return radioButton;
-    }
 
     @FXML
     private void onClick() {
