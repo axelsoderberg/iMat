@@ -14,7 +14,7 @@ import se.chalmers.cse.dat216.project.ProductCategory;
 /**
  *
  */
-public class iMatController implements Initializable/*, ShoppingCartListener*/ {
+public class iMatController extends AnchorPane/*, ShoppingCartListener*/ {
 
     // FXML items
 
@@ -38,26 +38,38 @@ public class iMatController implements Initializable/*, ShoppingCartListener*/ {
     static List<ProductCategory> sweets = Arrays.asList(ProductCategory.HOT_DRINKS, ProductCategory.COLD_DRINKS,
             ProductCategory.SWEET);
 
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public iMatController() {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("iMat.fxml"));
+        fxmlLoader.setRoot(this);
+        fxmlLoader.setController(this);
+
         try {
-            panes.add(FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Start.fxml"))));
-            panes.add(FXMLLoader.load(Objects.requireNonNull(getClass().getResource("store.fxml"))));
-            panes.add(FXMLLoader.load(Objects.requireNonNull(getClass().getResource("help.fxml"))));
-            panes.add(FXMLLoader.load(Objects.requireNonNull(getClass().getResource("mypage.fxml"))));
-            panes.add(FXMLLoader.load(Objects.requireNonNull(getClass().getResource("header.fxml"))));
-            panes.add(FXMLLoader.load(Objects.requireNonNull(getClass().getResource("shoppinglists.fxml"))));
-            panes.add(FXMLLoader.load(Objects.requireNonNull(getClass().getResource("checkouts.fxml"))));
-        } catch (IOException e) {
-            e.printStackTrace();
+            fxmlLoader.load();
+        } catch (IOException exception) {
+            throw new RuntimeException(exception);
         }
+
+        checkoutController checkoutCtrl = new checkoutController();
+        storeController storeCtrl = new storeController();
+        mypageController mypageCtrl = new mypageController();
+        shoppinglistsController shoppinglistsCtrl = new shoppinglistsController();
+        helpController helpCtrl = new helpController();
+        headerController headerCtrl = new headerController(checkoutCtrl, storeCtrl, mypageCtrl, shoppinglistsCtrl, helpCtrl);
+        StartController startCtrl = new StartController();
+
+        panes.add(startCtrl);
+        panes.add(storeCtrl);
+        panes.add(helpCtrl);
+        panes.add(mypageCtrl);
+        panes.add(shoppinglistsCtrl);
+        panes.add(headerCtrl);
+        panes.add(checkoutCtrl);
 
         // Alla AnchorPanes från andra fxml-filer hamnar "under" iMatPane
         iMatPane.getChildren().clear(); // Så först, se till att den är tom
         iMatPane.getChildren().addAll(panes); // Lägg till alla
 
-        panes.get(getIndexOfPage("Start")).toFront(); // Sätt Start att vara längst fram
-
+        startCtrl.toFront(); // Sätt Start att vara längst fram
     }
 
     public static void setPage(String page) {

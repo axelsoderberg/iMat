@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="689.0" prefWidth="1536.0" styleClass="almost-white" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.mypageController">
+<fx:root prefHeight="689.0" prefWidth="1536.0" styleClass="almost-white" stylesheets="@iMat.css" type="AnchorPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c3d5bd" height="610.0" layoutX="44.0" layoutY="40.0" stroke="#c3d5bd" strokeType="INSIDE" width="475.0" AnchorPane.bottomAnchor="39.0" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="40.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c3d5bd" height="173.0" layoutX="531.0" layoutY="40.0" stroke="#c3d5bd" strokeType="INSIDE" width="475.0" />
@@ -129,4 +129,4 @@
       <ComboBox layoutX="798.0" layoutY="154.0" prefHeight="35.0" prefWidth="165.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c3d5bd" height="432.0" layoutX="532.0" layoutY="218.0" stroke="#c3d5bd" strokeType="INSIDE" width="475.0" />
    </children>
-</AnchorPane>
+</fx:root>

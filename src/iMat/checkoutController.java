@@ -4,6 +4,7 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
@@ -14,6 +15,7 @@ import javafx.scene.layout.FlowPane;
 import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -21,7 +23,7 @@ import java.util.ResourceBundle;
 import static iMat.iMatController.setPage;
 
 
-public class checkoutController implements Initializable {
+public class checkoutController extends AnchorPane {
 
     private ToggleGroup paymentTypeToggleGroup;
     private ToggleGroup deliveryTypeToggleGroup;
@@ -38,8 +40,17 @@ public class checkoutController implements Initializable {
     @FXML private RadioButton otherDeliveryRadioButton;
     @FXML private FlowPane productsFlowPaneCheckout;
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    public checkoutController () {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("checkouts.fxml"));
+        fxmlLoader.setRoot(this);
+        fxmlLoader.setController(this);
+
+        try {
+            fxmlLoader.load();
+        } catch (IOException exception) {
+            throw new RuntimeException(exception);
+        }
+
         initRadioButtons();
         updateShoppingcartList(model.getShoppingCart().getItems());
     }
@@ -75,7 +86,7 @@ public class checkoutController implements Initializable {
         });
     }
 
-    private void updateShoppingcartList(List<ShoppingItem> items) {
+    public void updateShoppingcartList(List<ShoppingItem> items) {
 
         productsFlowPaneCheckout.getChildren().clear();
 
@@ -98,7 +109,7 @@ public class checkoutController implements Initializable {
     }
 
     @FXML private void doneWithOrder() {
-        setPage("store");
+        this.toBack();
     }
 
     @FXML

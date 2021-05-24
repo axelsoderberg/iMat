@@ -15,7 +15,18 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+
         ResourceBundle bundle = java.util.ResourceBundle.getBundle("resources/iMat");
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("iMat.fxml"));
+        fxmlLoader.setRoot(this);
+        fxmlLoader.setController(this);
+
+        try {
+            fxmlLoader.load();
+        } catch (IOException exception) {
+            throw new RuntimeException(exception);
+        }
 
         Parent root = FXMLLoader.load(getClass().getResource("iMat.fxml"), bundle);
 

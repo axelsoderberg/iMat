@@ -1,20 +1,23 @@
 package iMat;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ProductCategory;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
 
-public class storeController implements Initializable {
+public class storeController extends AnchorPane {
 
     @FXML private FlowPane productsFlowPaneStore;
     @FXML private FlowPane categoriesFlowPane;
@@ -24,8 +27,17 @@ public class storeController implements Initializable {
     private Map<String, productCard> productCardMap;
     private final Model model = Model.getInstance();
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    public storeController() {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("iMat.fxml"));
+        fxmlLoader.setRoot(this);
+        fxmlLoader.setController(this);
+
+        try {
+            fxmlLoader.load();
+        } catch (IOException exception) {
+            throw new RuntimeException(exception);
+        }
+
         placeCategories();
         updateProductList(model.getProducts());
         // varukorg
