@@ -16,7 +16,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        ResourceBundle bundle = java.util.ResourceBundle.getBundle("resources/iMat");
+        /*ResourceBundle bundle = java.util.ResourceBundle.getBundle("resources/iMat");
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("iMat.fxml"));
         fxmlLoader.setRoot(this);
@@ -26,12 +26,19 @@ public class Main extends Application {
 
         primaryStage.setTitle(bundle.getString("application.name"));
         primaryStage.setScene(new Scene(root, 1536, 864));
-        primaryStage.show();
+        primaryStage.show();*/
 
         /*Parent root = FXMLLoader.load(getClass().getResource("iMat.fxml"));
         primaryStage.setTitle("iMat");
         primaryStage.setScene(new Scene(root, 1536, 864));
         primaryStage.show();*/
+
+        Parent root = FXMLLoader.load(getClass().getResource("iMat.fxml"));
+
+        Scene scene = new Scene(root);
+
+        primaryStage.setScene(scene);
+        primaryStage.show();
 
     }
 
