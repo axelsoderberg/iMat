@@ -1,18 +1,19 @@
 package iMat;
 
+import javafx.beans.property.BooleanProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
 import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ProductCategory;
 
+import java.awt.*;
 import java.net.URL;
-import java.util.HashMap;
+import java.util.*;
 import java.util.List;
-import java.util.Map;
-import java.util.ResourceBundle;
 
 public class storeController implements Initializable {
 
@@ -22,6 +23,7 @@ public class storeController implements Initializable {
     @FXML private final ToggleGroup categoriesGroup = new ToggleGroup();
 
     private Map<String, productCard> productCardMap;
+    private List<ProductCategory> selectedCategories = new ArrayList();
     private final Model model = Model.getInstance();
 
     @Override
@@ -56,7 +58,7 @@ public class storeController implements Initializable {
         categoriesFlowPane.getChildren().clear();
         List<ProductCategory> subCategoriesList = iMatController.getSubCategories(category);
         for (ProductCategory C : subCategoriesList) {
-            categoriesFlowPane.getChildren().add(subCategoryCard(subCatConverter(C)));
+            categoriesFlowPane.getChildren().add(subCategoryCard(C));
         }
     }
 
@@ -69,9 +71,8 @@ public class storeController implements Initializable {
     }
 
 
-    public subcategories subCategoryCard(String pc) {
-        subcategories subcat = new subcategories(pc);
-        subcat.getCheckbox().
+    public subcategories subCategoryCard(ProductCategory pc) {
+        return new subcategories(pc, this);
     }
 
     public categories categoryCard(String c) {
@@ -80,10 +81,11 @@ public class storeController implements Initializable {
 
     @FXML
     private void backArrowClicked() {
+        clearSubcategories();
         placeCategories();
     }
 
-    private String subCatConverter(ProductCategory pc) {
+    public String subCatConverter(ProductCategory pc) {
         return switch (pc) {
             case POD -> "Baljväxter";
             case CABBAGE -> "Kål";
@@ -107,5 +109,17 @@ public class storeController implements Initializable {
             case ROOT_VEGETABLE -> "Rotfrukter";
             case VEGETABLE_FRUIT -> "Grönsaksfrukter";
         };
+    }
+
+    public void addSubcategory(ProductCategory pc) {
+        selectedCategories.add(pc);
+    }
+
+    public void removeSubcategory(ProductCategory pc) {
+        selectedCategories.remove(pc);
+    }
+
+    public void clearSubcategories() {
+        selectedCategories.clear();
     }
 }
