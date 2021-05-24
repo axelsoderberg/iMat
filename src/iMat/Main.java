@@ -28,7 +28,7 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 1536, 864));
         primaryStage.show();*/
 
-        Parent root = FXMLLoader.load(getClass().getResource("Start.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("iMat.fxml"));
         primaryStage.setTitle("iMat");
         primaryStage.setScene(new Scene(root, 1536, 864));
         primaryStage.show();
