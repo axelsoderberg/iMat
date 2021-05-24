@@ -30,7 +30,7 @@ public class storeController extends AnchorPane {
     private final Model model = Model.getInstance();
 
     public storeController() {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("iMat.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("store.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 

@@ -14,7 +14,7 @@ import se.chalmers.cse.dat216.project.ProductCategory;
 /**
  *
  */
-public class iMatController extends AnchorPane/*, ShoppingCartListener*/ {
+public class iMatController implements Initializable/*, ShoppingCartListener*/ {
 
     // FXML items
 
@@ -38,17 +38,8 @@ public class iMatController extends AnchorPane/*, ShoppingCartListener*/ {
     static List<ProductCategory> sweets = Arrays.asList(ProductCategory.HOT_DRINKS, ProductCategory.COLD_DRINKS,
             ProductCategory.SWEET);
 
-    public iMatController() {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("iMat.fxml"));
-        fxmlLoader.setRoot(this);
-        fxmlLoader.setController(this);
-
-        try {
-            fxmlLoader.load();
-        } catch (IOException exception) {
-            throw new RuntimeException(exception);
-        }
-
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
         checkoutController checkoutCtrl = new checkoutController();
         storeController storeCtrl = new storeController();
         mypageController mypageCtrl = new mypageController();
@@ -64,6 +55,13 @@ public class iMatController extends AnchorPane/*, ShoppingCartListener*/ {
         panes.add(shoppinglistsCtrl);
         panes.add(headerCtrl);
         panes.add(checkoutCtrl);
+
+        AnchorPane.setBottomAnchor(startCtrl, 0.0);
+        AnchorPane.setBottomAnchor(storeCtrl, 0.0);
+        AnchorPane.setBottomAnchor(helpCtrl, 0.0);
+        AnchorPane.setBottomAnchor(mypageCtrl, 0.0);
+        AnchorPane.setBottomAnchor(shoppinglistsCtrl, 0.0);
+        AnchorPane.setBottomAnchor(checkoutCtrl, 0.0);
 
         // Alla AnchorPanes från andra fxml-filer hamnar "under" iMatPane
         iMatPane.getChildren().clear(); // Så först, se till att den är tom

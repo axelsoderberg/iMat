@@ -14,7 +14,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Text?>
 
-<fx:root fx:id="shoppingListsPane" prefHeight="689.0" prefWidth="1536.0" styleClass="almost-white" stylesheets="@iMat.css" type="AnchorPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.shoppinglistsController">
+<fx:root fx:id="shoppingListsPane" prefHeight="689.0" prefWidth="1536.0" styleClass="almost-white" stylesheets="@iMat.css" type="AnchorPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Rectangle fill="#ececeb" height="689.0" layoutX="10.0" layoutY="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1536.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <Line endX="242.0" layoutX="762.0" layoutY="98.0" startX="-564.0" stroke="#0000004d" strokeWidth="5.0" AnchorPane.leftAnchor="195.5" />
