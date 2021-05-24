@@ -16,26 +16,32 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        ResourceBundle bundle = java.util.ResourceBundle.getBundle("resources/iMat");
+        /*ResourceBundle bundle = java.util.ResourceBundle.getBundle("resources/iMat");
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("iMat.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
-        try {
-            fxmlLoader.load();
-        } catch (IOException exception) {
-            throw new RuntimeException(exception);
-        }
-
-        Parent root = FXMLLoader.load(getClass().getResource("iMat.fxml"), bundle);
+        Parent root = FXMLLoader.load(getClass().getResource("Start.fxml"), bundle);
 
         primaryStage.setTitle(bundle.getString("application.name"));
         primaryStage.setScene(new Scene(root, 1536, 864));
+        primaryStage.show();*/
+
+        Parent root = FXMLLoader.load(getClass().getResource("Start.fxml"));
+        primaryStage.setTitle("iMat");
+        primaryStage.setScene(new Scene(root, 1536, 864));
         primaryStage.show();
+
     }
 
     public static void main(String[] args) {
         launch(args);
+        Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Model.getInstance().shutDown();
+            }
+        }));
     }
 }

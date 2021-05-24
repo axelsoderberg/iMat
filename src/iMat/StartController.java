@@ -8,8 +8,11 @@ import java.io.IOException;
 
 public class StartController extends AnchorPane {
 
-    public StartController() {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Start.fxml"));
+    storeController storeCtrl;
+    helpController helpCtrl;
+
+    public StartController(storeController storeCtrl, helpController helpCtrl) {
+        /*FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Start.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
@@ -17,19 +20,22 @@ public class StartController extends AnchorPane {
             fxmlLoader.load();
         } catch (IOException exception) {
             throw new RuntimeException(exception);
-        }
+        }*/
+
+        this.helpCtrl = helpCtrl;
+        this.storeCtrl = storeCtrl;
     }
 
     private static final Model model = Model.getInstance();
 
     @FXML
     private void openHelpView() {
-        iMatController.setPage("help");
+        helpCtrl.toFront();
     }
 
     @FXML
     private void openStoreView() {
-        iMatController.setPage("store");
+        storeCtrl.toFront();
     }
 }
 

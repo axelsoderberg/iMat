@@ -55,7 +55,7 @@ public class iMatController extends AnchorPane/*, ShoppingCartListener*/ {
         shoppinglistsController shoppinglistsCtrl = new shoppinglistsController();
         helpController helpCtrl = new helpController();
         headerController headerCtrl = new headerController(checkoutCtrl, storeCtrl, mypageCtrl, shoppinglistsCtrl, helpCtrl);
-        StartController startCtrl = new StartController();
+        StartController startCtrl = new StartController(storeCtrl, helpCtrl);
 
         panes.add(startCtrl);
         panes.add(storeCtrl);
