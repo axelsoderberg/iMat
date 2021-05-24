@@ -127,4 +127,23 @@
     -fx-font-size: 16px;
 }
 
+.shopping-list-list {
+    -fx-background-color: #C3D5BD;
+    -fx-background-radius: 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.25), 0, 10, 0, 4);
+}
 
+.white-button-shoppinglist {
+    -fx-font-family: "Assistant";
+    -fx-font-size: 24px;
+    -fx-text-fill: #000000;
+    -fx-font-weight: bold;
+    -fx-background-color: #ECEBEB;
+    -fx-background-radius: 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.25), 0, 10, 0, 4);
+}
+
+.text-shopping-list-title{
+    -fx-font-family: "Assistant";
+    -fx-font-size: 28px;
+}
