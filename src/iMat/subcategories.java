@@ -1,5 +1,6 @@
 package iMat;
 
+import javafx.beans.property.BooleanProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.CheckBox;
@@ -13,8 +14,9 @@ public class subcategories extends AnchorPane {
     @FXML private CheckBox checkbox;
 
     private ProductCategory pc;
+    private storeController parentController;
 
-    public subcategories(ProductCategory pc){
+    public subcategories(ProductCategory pc, storeController parentController) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("subcategories.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
@@ -26,8 +28,20 @@ public class subcategories extends AnchorPane {
         }
 
         this.pc = pc;
+        this.parentController = parentController;
 
-        checkbox.setText(pc.toString());
+        checkbox.setText(parentController.subCatConverter(pc));
     }
 
+    public CheckBox getCheckbox() {
+        return checkbox;
+    }
+
+    @FXML
+    public void onClick() {
+        if (checkbox.isSelected())
+            parentController.addSubcategory(pc);
+        else
+            parentController.removeSubcategory(pc);
+    }
 }

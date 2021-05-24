@@ -30,7 +30,7 @@ public class categories extends AnchorPane {
         this.c = c;
         this.parentController = parentController;
 
-        label.setText(c);
+        label.setText(c.toString());
     }
 
 

@@ -108,5 +108,6 @@ public class iMatController extends AnchorPane/*, ShoppingCartListener*/ {
     public static List<String> getCategories() {
         return categoriesList;
     }
+
 }
 

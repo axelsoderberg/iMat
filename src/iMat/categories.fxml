@@ -7,6 +7,6 @@
 <fx:root maxHeight="60.0" maxWidth="300.0" minHeight="60.0" minWidth="300.0" prefHeight="60.0" prefWidth="300.0" styleClass="light-green" stylesheets="@iMat.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Line endX="296.0" layoutX="16.0" layoutY="60.0" stroke="#ecebeb" strokeWidth="4.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-      <Label fx:id="label" layoutX="30.0" layoutY="5.0" onMouseClicked="#onClick" prefHeight="45.0" prefWidth="249.0" styleClass="text-products" text="Kategori" />
+      <Label fx:id="label" layoutX="50.0" layoutY="7.0" onMouseClicked="#onClick" prefHeight="45.0" prefWidth="249.0" styleClass="text-category" text="Kategori" />
    </children>
 </fx:root>

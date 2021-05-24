@@ -108,3 +108,8 @@
     -fx-font-weight: bold;
 }
 
+.text-category{
+    -fx-font-family: "Assistant";
+    -fx-font-size: 24px;
+}
+
