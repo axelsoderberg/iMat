@@ -20,7 +20,7 @@
 
 .green-button {
     -fx-font-family: "Assistant";
-    -fx-font-size: 28px;
+    -fx-font-size: 25px;
     -fx-text-fill: #ECEBEB;
     -fx-font-weight: bold;
     -fx-background-color: #629543;
@@ -31,7 +31,7 @@
 
 .white-button {
     -fx-font-family: "Assistant";
-    -fx-font-size: 28px;
+    -fx-font-size: 27px;
     -fx-text-fill: #000000;
     -fx-font-weight: bold;
     -fx-background-color: #ECEBEB;
@@ -112,4 +112,19 @@
     -fx-font-family: "Assistant";
     -fx-font-size: 24px;
 }
+
+.detail-view-button {
+    -fx-font-family: "Assistant";
+    -fx-font-size: 14px;
+    -fx-text-fill: #000000;
+    -fx-font-weight: bold;
+    -fx-background-color: #C3D5BD;
+    -fx-background-radius: 14px 14px 0px 0px;
+}
+
+.text-detail-view-detail{
+    -fx-font-family: "Assistant";
+    -fx-font-size: 16px;
+}
+
 
