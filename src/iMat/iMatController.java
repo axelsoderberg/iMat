@@ -8,13 +8,15 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
+import se.chalmers.cse.dat216.project.CartEvent;
 import se.chalmers.cse.dat216.project.ProductCategory;
+import se.chalmers.cse.dat216.project.ShoppingCartListener;
 
 
 /**
  *
  */
-public class iMatController implements Initializable/*, ShoppingCartListener*/ {
+public class iMatController implements Initializable, ShoppingCartListener {
 
     // FXML items
 
@@ -38,16 +40,18 @@ public class iMatController implements Initializable/*, ShoppingCartListener*/ {
     static List<ProductCategory> sweets = Arrays.asList(ProductCategory.HOT_DRINKS, ProductCategory.COLD_DRINKS,
             ProductCategory.SWEET);
 
+    checkoutController checkoutCtrl;
+    headerController headerCtrl;
+    storeController storeCtrl;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        model.clearShoppingCart();
-
-        checkoutController checkoutCtrl = new checkoutController();
-        storeController storeCtrl = new storeController();
+        checkoutCtrl = new checkoutController();
+        storeCtrl = new storeController();
         mypageController mypageCtrl = new mypageController();
         shoppinglistsController shoppinglistsCtrl = new shoppinglistsController();
         helpController helpCtrl = new helpController();
-        headerController headerCtrl = new headerController(checkoutCtrl, storeCtrl, mypageCtrl, shoppinglistsCtrl, helpCtrl);
+        headerCtrl = new headerController(checkoutCtrl, storeCtrl, mypageCtrl, shoppinglistsCtrl, helpCtrl);
         StartController startCtrl = new StartController(storeCtrl, helpCtrl, headerCtrl);
 
         panes.add(startCtrl);
@@ -70,6 +74,8 @@ public class iMatController implements Initializable/*, ShoppingCartListener*/ {
         iMatPane.getChildren().addAll(panes); // Lägg till alla
 
         startCtrl.toFront(); // Sätt Start att vara längst fram
+
+        model.getShoppingCart().addShoppingCartListener(this);
 
     }
 
@@ -110,5 +116,13 @@ public class iMatController implements Initializable/*, ShoppingCartListener*/ {
         return categoriesList;
     }
 
+    @Override
+    public void shoppingCartChanged(CartEvent cartEvent) {
+        this.storeCtrl.updateShoppingcartview(model.getShoppingCart().getItems());
+        this.checkoutCtrl.updateShoppingcartList(model.getShoppingCart().getItems());
+        this.headerCtrl.updateCheckoutButton();
+        this.checkoutCtrl.updateCheckoutTotal();
+        //uppdatera produktkorten
+    }
 }
 

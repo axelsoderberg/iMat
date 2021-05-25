@@ -3,6 +3,7 @@ package iMat;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.cse.dat216.project.Product;
@@ -16,6 +17,7 @@ public class headerController extends AnchorPane {
 
     private static final Model model = Model.getInstance();
     @FXML private TextField searchField;
+    @FXML Button checkoutButton;
     checkoutController checkoutCtrl;
     storeController storeCtrl;
     mypageController mypageCtrl;
@@ -39,6 +41,9 @@ public class headerController extends AnchorPane {
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
+
+        updateCheckoutButton();
+
     }
 
     @FXML
@@ -80,6 +85,10 @@ public class headerController extends AnchorPane {
         storeCtrl.toFront();
         this.toFront();
 
+    }
+
+    public void updateCheckoutButton() {
+        checkoutButton.setText("Kassan " + model.getShoppingCart().getTotal() + " kr");
     }
 
 }

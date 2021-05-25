@@ -71,12 +71,12 @@
       </Label>
       <Label layoutX="403.0" layoutY="34.0" styleClass="text-page-header" text="Underkategori" AnchorPane.topAnchor="34.0" />
       <Line endX="770.0" endY="90.0" layoutX="433.0" layoutY="-3.0" startY="90.0" strokeWidth="2.0" AnchorPane.leftAnchor="380.0" />
-      <Label alignment="CENTER" layoutX="1216.0" layoutY="569.0" prefHeight="35.0" prefWidth="241.0" styleClass="text-semi" text="Summa: 35 kr" />
+      <Label fx:id="storeShoppingcartTotalPrize" alignment="CENTER" layoutX="1216.0" layoutY="569.0" prefHeight="35.0" prefWidth="241.0" styleClass="text-semi" text="Summa: 35 kr" />
       <Line endX="387.0" endY="90.0" layoutX="1105.0" layoutY="9.0" startX="45.0" startY="90.0" stroke="#ececeb" strokeWidth="8.0" AnchorPane.bottomAnchor="120.0" AnchorPane.rightAnchor="50.0" />
       <FlowPane fx:id="categoriesFlowPane" layoutX="50.0" layoutY="93.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="528.0" prefWidth="300.0" prefWrapLength="1200.0" rowValignment="TOP" styleClass="light-green" />
       <ScrollPane fitToHeight="true" fitToWidth="true" layoutX="1186.0" layoutY="93.0" prefHeight="470.0" prefWidth="300.0" styleClass="light-green">
          <content>
-            <FlowPane nodeOrientation="LEFT_TO_RIGHT" prefHeight="468.0" prefWidth="295.0" prefWrapLength="1200.0" rowValignment="TOP" styleClass="light-green" />
+            <FlowPane fx:id="shoppingcartFlowpaneStore" nodeOrientation="LEFT_TO_RIGHT" prefHeight="468.0" prefWidth="295.0" prefWrapLength="1200.0" rowValignment="TOP" styleClass="light-green" />
          </content>
       </ScrollPane>
       <MenuButton layoutX="1030.0" layoutY="41.0" mnemonicParsing="false" text="Sortera">

@@ -49,11 +49,11 @@ public class productCard extends AnchorPane {
 
         this.product = product;
         productCardNameLabel.setText(product.getName());
-        productCardPrizeLabel.setText(String.format("%.2f", product.getPrice()) + " " + product.getUnit());
+        productCardPrizeLabel.setText(String.format("%.2f", product.getPrice()) + "\n" + product.getUnit());
         productCardImageView.setImage(model.getImage(product, kImageWidth, kImageWidth*kImageRatio));
         // if favorite....
         if (model.isFavorite(product)) {
-            productCardFavoriteImageView.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("iMat/resources/heartFilled.png"))));
+            productCardFavoriteImageView.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("resources/heartFilled.png"))));
         } //annars ej ifyllt hjärta
     }
 
@@ -63,13 +63,16 @@ public class productCard extends AnchorPane {
         model.addToShoppingCart(shoppingItem);
         addOrRemoveButton.toFront();
         productCardAmountLabel.setText((int) shoppingItem.getAmount() + " st");
+        model.getShoppingCart().fireShoppingCartChanged(shoppingItem, true);
     }
 
     @FXML
     private void handleRemoveAction() {
         shoppingItem.setAmount(shoppingItem.getAmount() - 1);
+        model.getShoppingCart().fireShoppingCartChanged(shoppingItem, true);
         if (shoppingItem.getAmount() == 0) { //Om man tog bort den sista i kundvagnen
             addButton.toFront();
+            model.getShoppingCart().removeItem(shoppingItem);
         } else {
             productCardAmountLabel.setText((int) shoppingItem.getAmount() + " st");
         }

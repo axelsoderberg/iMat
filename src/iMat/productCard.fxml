@@ -23,7 +23,7 @@
          </font>
       </Label>
       <Circle fill="#c4c4c4" layoutX="130.0" layoutY="40.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-      <Label fx:id="productCardPrizeLabel" layoutX="99.0" layoutY="26.0" styleClass="text-font" text="15 kr/st">
+      <Label fx:id="productCardPrizeLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="99.0" layoutY="10.0" prefHeight="58.0" prefWidth="61.0" styleClass="text-font" text="15 kr/st" textAlignment="CENTER">
          <font>
             <Font size="18.0" />
          </font>

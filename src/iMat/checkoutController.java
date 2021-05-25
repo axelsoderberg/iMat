@@ -6,10 +6,7 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.Toggle;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import se.chalmers.cse.dat216.project.Product;
@@ -39,6 +36,7 @@ public class checkoutController extends AnchorPane {
     @FXML private RadioButton savedDeliveryAdressRadioButton;
     @FXML private RadioButton otherDeliveryRadioButton;
     @FXML private FlowPane productsFlowPaneCheckout;
+    @FXML private Label checkoutTotalLabel;
 
     public checkoutController () {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("checkouts.fxml"));
@@ -53,6 +51,7 @@ public class checkoutController extends AnchorPane {
 
         initRadioButtons();
         updateShoppingcartList(model.getShoppingCart().getItems());
+
     }
 
     private void initRadioButtons() {
@@ -101,6 +100,7 @@ public class checkoutController extends AnchorPane {
     }
 
     @FXML private void openCheckoutThanks() {
+        model.placeOrder();
         checkoutThanks.toFront();
     }
 
@@ -117,4 +117,7 @@ public class checkoutController extends AnchorPane {
         event.consume();
     }
 
+    void updateCheckoutTotal() {
+        checkoutTotalLabel.setText("Summa: " + String.format("%.2f",model.getShoppingCart().getTotal()) + " kr");
+    }
 }

@@ -86,7 +86,7 @@
                   <Label layoutX="743.0" layoutY="116.0" styleClass="text-helpbox-header" text="Antal" AnchorPane.leftAnchor="743.0" AnchorPane.topAnchor="116.0" />
                   <Line endX="1030.0" layoutX="302.5" layoutY="163.0" startX="-100.0" stroke="#c9c9c9" strokeWidth="5.0" AnchorPane.leftAnchor="200.0" />
                   <Line endX="1030.0" layoutX="312.5" layoutY="173.0" startX="-100.0" stroke="#c9c9c9" strokeWidth="5.0" AnchorPane.bottomAnchor="115.0" AnchorPane.leftAnchor="200.0" />
-                  <Label layoutX="907.0" layoutY="590.0" styleClass="text-helpbox-header" text="Summa: 0 kr" />
+                  <Label fx:id="checkoutTotalLabel" layoutX="907.0" layoutY="590.0" styleClass="text-helpbox-header" text="Summa: 0 kr" />
                   <Button fx:id="payButton" alignment="CENTER" layoutX="1139.0" layoutY="582.0" maxHeight="70.0" minHeight="50.0" mnemonicParsing="false" onAction="#openPaymentDetails" prefHeight="50.0" prefWidth="182.0" styleClass="green-button" stylesheets="@iMat.css" text="Betala">
                      <effect>
                         <DropShadow height="10.45" offsetY="5.0" radius="3.6125" width="6.0">
