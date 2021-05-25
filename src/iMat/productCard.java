@@ -55,6 +55,13 @@ public class productCard extends AnchorPane {
         if (model.isFavorite(product)) {
             productCardFavoriteImageView.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("resources/heartFilled.png"))));
         } //annars ej ifyllt hjärta
+
+        initAmount();
+
+    }
+
+    void initAmount() {
+
     }
 
     @FXML

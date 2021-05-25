@@ -78,10 +78,10 @@ public class headerController extends AnchorPane {
     }
 
     @FXML
-    private void handleSearchAction(ActionEvent event) {
+    private void handleSearchAction() {
 
         List<Product> matches = model.findProducts(searchField.getText());
-        //storeController.updateProductlist(matches);
+        storeCtrl.updateProductList(matches);
         storeCtrl.toFront();
         this.toFront();
 

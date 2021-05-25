@@ -68,6 +68,7 @@ public class Checkoutitem extends AnchorPane {
         } else {
             checkoutitemAmountLabel.setText((int) item.getAmount() + " st");
             checkoutitemTotalItemPrizeText.setText(String.format("%.2f",item.getTotal()) + " kr");
+            model.getShoppingCart().fireShoppingCartChanged(item, true);
         }
     }
 }
