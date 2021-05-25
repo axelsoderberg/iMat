@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="text-page-header" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fx:id="detailViewImage" fitHeight="209.0" fitWidth="170.0" layoutX="14.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="detailViewProductName" layoutX="212.0" layoutY="22.0" prefHeight="50.0" prefWidth="339.0" text="Produktnamn" />
+      <Label alignment="TOP_LEFT" layoutX="212.0" layoutY="83.0" prefHeight="156.0" prefWidth="350.0" styleClass="text-detail-view-detail" text="Produktbeskrivning ipsum">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#629543" height="37.0" layoutY="242.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="600.0" />
+      <Button fx:id="nutritionButton" layoutX="218.0" layoutY="247.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="165.0" styleClass="detail-view-button" text="Näringsinnehåll" />
+      <Button fx:id="contentsButton" layoutX="17.0" layoutY="247.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="165.0" styleClass="detail-view-button" text="Innehållsförteckning" />
+      <Button fx:id="moreInformationButton" layoutX="423.0" layoutY="247.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="165.0" styleClass="detail-view-button" text="Mer information" />
+      <Label fx:id="detailViewDetailText" alignment="TOP_LEFT" layoutX="13.0" layoutY="292.0" prefHeight="108.0" prefWidth="575.0" styleClass="text-detail-view-detail" text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." wrapText="true" />
+   </children>
+</AnchorPane>
