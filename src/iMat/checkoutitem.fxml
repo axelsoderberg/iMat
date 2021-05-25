@@ -27,8 +27,8 @@
                   <Image url="@../resources/addRemoveButton.png" />
                </image>
             </ImageView>
-            <Line endX="15.0" layoutX="10.0" layoutY="19.0" strokeWidth="4.0" />
-            <ImageView fitHeight="29.0" fitWidth="31.0" layoutX="112.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+            <Line endX="15.0" layoutX="10.0" layoutY="19.0" onMouseClicked="#handleRemoveAction" strokeWidth="4.0" />
+            <ImageView fitHeight="29.0" fitWidth="31.0" layoutX="112.0" layoutY="5.0" onMouseClicked="#handleAddAction" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../resources/plusSign.png" />
                </image>

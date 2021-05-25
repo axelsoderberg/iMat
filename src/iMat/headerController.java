@@ -44,28 +44,32 @@ public class headerController extends AnchorPane {
     @FXML
     private void openHelpView() {
         helpCtrl.toFront();
+        this.toFront();
     }
 
     @FXML
     private void openStoreView() {
         storeCtrl.toFront();
+        this.toFront();
     }
 
     @FXML
     private void openCheckoutView() {
         checkoutCtrl.toFront();
+        this.toFront();
         checkoutCtrl.updateShoppingcartList(model.getShoppingCart().getItems());
-        //setPage("checkouts");
     }
 
     @FXML
     private void openMypageView() {
         mypageCtrl.toFront();
+        this.toFront();
     }
 
     @FXML
     private void openShoppingListView() {
         shoppinglistsCtrl.toFront();
+        this.toFront();
     }
 
     @FXML
@@ -74,6 +78,7 @@ public class headerController extends AnchorPane {
         List<Product> matches = model.findProducts(searchField.getText());
         //storeController.updateProductlist(matches);
         storeCtrl.toFront();
+        this.toFront();
 
     }
 

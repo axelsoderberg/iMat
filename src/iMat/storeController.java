@@ -41,7 +41,7 @@ public class storeController extends AnchorPane {
         }
 
         placeCategories();
-        updateProductList(model.getProducts());
+        //updateProductList(model.getProducts());
         // varukorg
     }
 

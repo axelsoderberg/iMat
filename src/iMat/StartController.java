@@ -10,9 +10,10 @@ public class StartController extends AnchorPane {
 
     storeController storeCtrl;
     helpController helpCtrl;
+    headerController headerCtrl;
 
-    public StartController(storeController storeCtrl, helpController helpCtrl) {
-        /*FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Start.fxml"));
+    public StartController(storeController storeCtrl, helpController helpCtrl, headerController headerCtrl) {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Start.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
@@ -20,10 +21,11 @@ public class StartController extends AnchorPane {
             fxmlLoader.load();
         } catch (IOException exception) {
             throw new RuntimeException(exception);
-        }*/
+        }
 
         this.helpCtrl = helpCtrl;
         this.storeCtrl = storeCtrl;
+        this.headerCtrl = headerCtrl;
     }
 
     private static final Model model = Model.getInstance();
@@ -31,11 +33,13 @@ public class StartController extends AnchorPane {
     @FXML
     private void openHelpView() {
         helpCtrl.toFront();
+        headerCtrl.toFront();
     }
 
     @FXML
     private void openStoreView() {
         storeCtrl.toFront();
+        headerCtrl.toFront();
     }
 }
 

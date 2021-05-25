@@ -40,13 +40,15 @@ public class iMatController implements Initializable/*, ShoppingCartListener*/ {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        model.clearShoppingCart();
+
         checkoutController checkoutCtrl = new checkoutController();
         storeController storeCtrl = new storeController();
         mypageController mypageCtrl = new mypageController();
         shoppinglistsController shoppinglistsCtrl = new shoppinglistsController();
         helpController helpCtrl = new helpController();
         headerController headerCtrl = new headerController(checkoutCtrl, storeCtrl, mypageCtrl, shoppinglistsCtrl, helpCtrl);
-        StartController startCtrl = new StartController(storeCtrl, helpCtrl);
+        StartController startCtrl = new StartController(storeCtrl, helpCtrl, headerCtrl);
 
         panes.add(startCtrl);
         panes.add(storeCtrl);
@@ -68,6 +70,7 @@ public class iMatController implements Initializable/*, ShoppingCartListener*/ {
         iMatPane.getChildren().addAll(panes); // Lägg till alla
 
         startCtrl.toFront(); // Sätt Start att vara längst fram
+
     }
 
     public static void setPage(String page) {

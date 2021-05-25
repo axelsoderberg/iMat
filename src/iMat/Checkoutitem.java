@@ -2,6 +2,8 @@ package iMat;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Group;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -45,5 +47,23 @@ public class Checkoutitem extends AnchorPane {
         checkoutitemProductImage.setImage(model.getImage(item.getProduct(), kImageWidth, kImageWidth*kImageRatio));
         checkoutitemTotalItemPrizeText.setText(item.getTotal() + " kr");
         checkoutitemAmountLabel.setText((int) item.getAmount() + " st");
+    }
+
+    @FXML
+    private void handleAddAction() {
+        item.setAmount(item.getAmount() + 1);
+        model.addToShoppingCart(item);
+        checkoutitemAmountLabel.setText((int) item.getAmount() + " st");
+    }
+
+    @FXML
+    private void handleRemoveAction() {
+        item.setAmount(item.getAmount() - 1);
+        if (item.getAmount() == 0) { //Om man tog bort den sista i kundvagnen
+            //radera item från listan
+            model.removeProduct(item.getProduct());
+        } else {
+            checkoutitemAmountLabel.setText((int) item.getAmount() + " st");
+        }
     }
 }
