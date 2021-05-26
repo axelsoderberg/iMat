@@ -26,6 +26,8 @@ public class storeController extends AnchorPane {
     @FXML private FlowPane productsFlowPaneStore;
     @FXML private FlowPane categoriesFlowPane;
     @FXML private ImageView backArrow;
+    @FXML private AnchorPane detailPane;
+    @FXML private AnchorPane storePane;
     @FXML private final ToggleGroup categoriesGroup = new ToggleGroup();
     @FXML FlowPane shoppingcartFlowpaneStore;
     @FXML Label storeShoppingcartTotalPrize;
@@ -157,14 +159,40 @@ public class storeController extends AnchorPane {
 
     public void addSubcategory(ProductCategory pc) {
         selectedCategories.add(pc);
+        List<Product> lp = new ArrayList();
+        for (ProductCategory productCat : selectedCategories) {
+            lp.addAll(model.getProducts(productCat));
+        }
+        updateProductList(lp);
     }
 
     public void removeSubcategory(ProductCategory pc) {
         selectedCategories.remove(pc);
+        List<Product> lp = new ArrayList();
+        for (ProductCategory productCat : selectedCategories) {
+            lp.addAll(model.getProducts(productCat));
+        }
+        updateProductList(lp);
     }
 
     public void clearSubcategories() {
         selectedCategories.clear();
+    }
+
+    public void openDetailView(Product product) {
+        detailPane.getChildren().clear();
+        detailView productDetailCard = new detailView(product, this);
+        detailPane.getChildren().add(productDetailCard);
+        detailPane.toFront();
+        storePane.toFront();
+    }
+
+    public void closeDetailView() {
+        detailPane.getChildren().clear();
+        detailPane.toBack();
+        storePane.toBack();
+        iMatController.getHeader().openStoreView();
+
     }
 
 }
