@@ -26,15 +26,16 @@ public class productCard extends AnchorPane {
     @FXML Group addOrRemoveButton;
     @FXML Label productCardAmountLabel;
 
-    private Model model = Model.getInstance();
+    private final Model model = Model.getInstance();
 
-    private Product product;
+    private final Product product;
     ShoppingItem shoppingItem;
+    storeController parentController;
 
     private final static double kImageWidth = 82;
     private final static double kImageRatio = 0.75;
 
-    public productCard(Product product) {
+    public productCard(Product product, storeController parentController) {
         this.shoppingItem = new ShoppingItem(product, 0);
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("productCard.fxml"));
@@ -55,6 +56,7 @@ public class productCard extends AnchorPane {
         if (model.isFavorite(product)) {
             productCardFavoriteImageView.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("resources/heartFilled.png"))));
         } //annars ej ifyllt hjärta
+        this.parentController = parentController;
     }
 
     @FXML
@@ -93,5 +95,9 @@ public class productCard extends AnchorPane {
         return this.shoppingItem;
     }
 
+    @FXML
+    private void openDetailView() {
+        parentController.openDetailView(product);
+    }
 }
 

@@ -18,6 +18,24 @@
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.25), 0, 10, 0, 4);
 }
 
+.detail-view-button-green {
+    -fx-font-family: "Assistant";
+    -fx-font-size: 12px;
+    -fx-text-fill: #000000;
+    -fx-font-weight: bold;
+    -fx-background-color: #C3D5BD;
+    -fx-background-radius: 14px 14px 0px 0px;
+}
+
+.detail-view-button-white {
+    -fx-font-family: "Assistant";
+    -fx-font-size: 12px;
+    -fx-text-fill: #000000;
+    -fx-font-weight: bold;
+    -fx-background-color: #ECEBEB;
+    -fx-background-radius: 14px 14px 0px 0px;
+}
+
 .green-button {
     -fx-font-family: "Assistant";
     -fx-font-size: 25px;
@@ -113,15 +131,6 @@
     -fx-font-size: 24px;
 }
 
-.detail-view-button {
-    -fx-font-family: "Assistant";
-    -fx-font-size: 14px;
-    -fx-text-fill: #000000;
-    -fx-font-weight: bold;
-    -fx-background-color: #C3D5BD;
-    -fx-background-radius: 14px 14px 0px 0px;
-}
-
 .text-detail-view-detail{
     -fx-font-family: "Assistant";
     -fx-font-size: 16px;
@@ -147,3 +156,8 @@
     -fx-font-family: "Assistant";
     -fx-font-size: 28px;
 }
+
+.lightbox-background {
+    -fx-background-color: rgba(0, 0, 0, 0.5)
+}
+
