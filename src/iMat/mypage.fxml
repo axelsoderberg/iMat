@@ -100,7 +100,7 @@
                   <Font size="18.0" />
                </font>
             </TextField>
-            <TextField fx:id="postCodeTextField" maxHeight="40.0" minHeight="40.0" prefHeight="40.0">
+            <TextField fx:id="postCodeTextField" maxHeight="40.0" minHeight="40.0" onKeyTyped="#checkPostCode" prefHeight="40.0">
                <font>
                   <Font size="18.0" />
                </font>
@@ -110,7 +110,7 @@
                   <Font size="18.0" />
                </font>
             </TextField>
-            <TextField fx:id="phoneTextField" maxHeight="40.0" minHeight="40.0" prefHeight="40.0">
+            <TextField fx:id="phoneTextField" maxHeight="40.0" minHeight="40.0" onKeyTyped="#checkPhoneNumber" prefHeight="40.0">
                <font>
                   <Font size="18.0" />
                </font>

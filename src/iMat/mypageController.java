@@ -231,5 +231,25 @@ public class mypageController extends AnchorPane {
 
     }
 
+    @FXML
+    private void checkPostCode() {
+        if (postCodeTextField.getLength() > 5) {
+            postCodeTextField.deletePreviousChar();
+        } else if (!postCodeTextField.getText().matches("\\d+")) {
+            //given text does not include digits
+            postCodeTextField.deletePreviousChar();
+        }
+    }
+
+    @FXML
+    private void checkPhoneNumber() {
+        if (phoneTextField.getLength() > 10) {
+            phoneTextField.deletePreviousChar();
+        } else if (!phoneTextField.getText().matches("\\d+")) {
+            //given text does not include digits
+            phoneTextField.deletePreviousChar();
+        }
+    }
+
 
 }
