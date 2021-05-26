@@ -70,13 +70,13 @@ public class storeController extends AnchorPane {
     private void productListInit() {
         productCardMap = new HashMap<Product, productCard>();
         for (ShoppingItem item : model.getShoppingCart().getItems()) {
-            productCard productCard = new productCard(item);
+            productCard productCard = new productCard(item, this);
             productCardMap.put(item.getProduct(), productCard);
         }
 
         for (Product product : model.getProducts()) {
             if (!productCardMap.containsKey(product)) {
-                productCard productCard = new productCard(new ShoppingItem(product, 0));
+                productCard productCard = new productCard(new ShoppingItem(product, 0), this);
                 productCardMap.put(product, productCard);
             }
         }
@@ -126,7 +126,7 @@ public class storeController extends AnchorPane {
     }
 
     @FXML
-    private void backArrowClicked() {
+    void backArrowClicked() {
         clearSubcategories();
         placeCategories();
     }
