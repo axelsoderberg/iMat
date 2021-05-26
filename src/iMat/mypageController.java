@@ -4,6 +4,7 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
@@ -19,6 +20,9 @@ public class mypageController extends AnchorPane {
     @FXML TextField cityTextField;
     @FXML TextField phoneTextField;
     @FXML TextField mailTextField;
+    @FXML ComboBox cardTypeComboBox;
+    @FXML ComboBox validMonthComboBox;
+    @FXML ComboBox validYearComboBox;
 
     private final Model model = Model.getInstance();
 
@@ -42,6 +46,52 @@ public class mypageController extends AnchorPane {
         mailTextField.setText(model.getCustomer().getEmail());
 
         addListeners();
+
+        initComboBoxCardtype();
+        initComboBoxValidMonth();
+        initComboBoxValidYear();
+    }
+
+    void initComboBoxCardtype() {
+        //det som ska visas i boxen
+        cardTypeComboBox.getItems().addAll(model.getCardTypes());
+        //bestämmer vad som är valt från början
+        cardTypeComboBox.getSelectionModel().select(model.getCreditCard().getCardType());
+
+        cardTypeComboBox.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                model.getCreditCard().setCardType(newValue);
+            }
+        });
+    }
+
+    void initComboBoxValidMonth() {
+        //det som ska visas i boxen
+        validMonthComboBox.getItems().addAll(model.getMonths());
+        //bestämmer vad som är valt från början
+        validMonthComboBox.getSelectionModel().select(model.getCreditCard().getValidMonth());
+
+        validMonthComboBox.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                model.getCreditCard().setValidMonth(Integer.parseInt(newValue));
+            }
+        });
+    }
+
+    void initComboBoxValidYear() {
+        //det som ska visas i boxen
+        validYearComboBox.getItems().addAll(model.getYears());
+        //bestämmer vad som är valt från början
+        validYearComboBox.getSelectionModel().select(model.getCreditCard().getValidYear());
+
+        validYearComboBox.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                model.getCreditCard().setValidYear(Integer.parseInt(newValue));
+            }
+        });
     }
 
     void addListeners() {
