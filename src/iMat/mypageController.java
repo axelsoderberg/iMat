@@ -1,8 +1,11 @@
 package iMat;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
@@ -12,7 +15,7 @@ public class mypageController extends AnchorPane {
     @FXML TextField firstNameTextField;
     @FXML TextField surNameTextField;
     @FXML TextField postAdressTextField;
-    @FXML TextField postNrTextField;
+    @FXML TextField postCodeTextField;
     @FXML TextField cityTextField;
     @FXML TextField phoneTextField;
     @FXML TextField mailTextField;
@@ -31,10 +34,202 @@ public class mypageController extends AnchorPane {
         }
 
         firstNameTextField.setText(model.getCustomer().getFirstName());
+        surNameTextField.setText(model.getCustomer().getLastName());
+        postAdressTextField.setText(model.getCustomer().getPostAddress());
+        postCodeTextField.setText(model.getCustomer().getPostCode());
+        cityTextField.setText(model.getCustomer().getAddress());
+        phoneTextField.setText(model.getCustomer().getPhoneNumber());
+        mailTextField.setText(model.getCustomer().getEmail());
+
+        addListeners();
     }
 
-    @FXML
-    private void firstNameChanged() {
-        model.getCustomer().setFirstName(firstNameTextField.getText());
+    void addListeners() {
+
+        // Denna metod körs när textfältet är fokuserat och man trycker Enter
+        firstNameTextField.setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.ENTER) {
+                // Spara metoden här
+                model.getCustomer().setLastName(firstNameTextField.getText());
+
+            }
+        });
+
+        firstNameTextField.focusedProperty().addListener(new ChangeListener<Boolean>()
+        {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> arg0, Boolean oldPropertyValue, Boolean newPropertyValue)
+            {
+                if (newPropertyValue)
+                {
+
+                }
+                else
+                {
+                    // Denna körs när fältet inte längre är fokuserat, så vill ha spara metod här också
+                    model.getCustomer().setLastName(firstNameTextField.getText());
+                }
+            }
+        });
+
+        // Denna metod körs när textfältet är fokuserat och man trycker Enter
+        surNameTextField.setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.ENTER) {
+                // Spara metoden här
+                model.getCustomer().setLastName(surNameTextField.getText());
+
+            }
+        });
+
+        surNameTextField.focusedProperty().addListener(new ChangeListener<Boolean>()
+        {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> arg0, Boolean oldPropertyValue, Boolean newPropertyValue)
+            {
+                if (newPropertyValue)
+                {
+
+                }
+                else
+                {
+                    // Denna körs när fältet inte längre är fokuserat, så vill ha spara metod här också
+                    model.getCustomer().setLastName(surNameTextField.getText());
+                }
+            }
+        });
+
+        // Denna metod körs när textfältet är fokuserat och man trycker Enter
+        postAdressTextField.setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.ENTER) {
+                // Spara metoden här
+                model.getCustomer().setLastName(postAdressTextField.getText());
+
+            }
+        });
+
+        postAdressTextField.focusedProperty().addListener(new ChangeListener<Boolean>()
+        {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> arg0, Boolean oldPropertyValue, Boolean newPropertyValue)
+            {
+                if (newPropertyValue)
+                {
+
+                }
+                else
+                {
+                    // Denna körs när fältet inte längre är fokuserat, så vill ha spara metod här också
+                    model.getCustomer().setLastName(postAdressTextField.getText());
+                }
+            }
+        });
+
+        // Denna metod körs när textfältet är fokuserat och man trycker Enter
+        postCodeTextField.setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.ENTER) {
+                // Spara metoden här
+                model.getCustomer().setLastName(postCodeTextField.getText());
+
+            }
+        });
+
+        postCodeTextField.focusedProperty().addListener(new ChangeListener<Boolean>()
+        {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> arg0, Boolean oldPropertyValue, Boolean newPropertyValue)
+            {
+                if (newPropertyValue)
+                {
+
+                }
+                else
+                {
+                    // Denna körs när fältet inte längre är fokuserat, så vill ha spara metod här också
+                    model.getCustomer().setLastName(postCodeTextField.getText());
+                }
+            }
+        });
+
+        // Denna metod körs när textfältet är fokuserat och man trycker Enter
+        cityTextField.setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.ENTER) {
+                // Spara metoden här
+                model.getCustomer().setLastName(cityTextField.getText());
+
+            }
+        });
+
+        cityTextField.focusedProperty().addListener(new ChangeListener<Boolean>()
+        {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> arg0, Boolean oldPropertyValue, Boolean newPropertyValue)
+            {
+                if (newPropertyValue)
+                {
+
+                }
+                else
+                {
+                    // Denna körs när fältet inte längre är fokuserat, så vill ha spara metod här också
+                    model.getCustomer().setLastName(cityTextField.getText());
+                }
+            }
+        });
+
+        // Denna metod körs när textfältet är fokuserat och man trycker Enter
+        phoneTextField.setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.ENTER) {
+                // Spara metoden här
+                model.getCustomer().setLastName(phoneTextField.getText());
+
+            }
+        });
+
+        phoneTextField.focusedProperty().addListener(new ChangeListener<Boolean>()
+        {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> arg0, Boolean oldPropertyValue, Boolean newPropertyValue)
+            {
+                if (newPropertyValue)
+                {
+
+                }
+                else
+                {
+                    // Denna körs när fältet inte längre är fokuserat, så vill ha spara metod här också
+                    model.getCustomer().setLastName(phoneTextField.getText());
+                }
+            }
+        });
+
+        // Denna metod körs när textfältet är fokuserat och man trycker Enter
+        mailTextField.setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.ENTER) {
+                // Spara metoden här
+                model.getCustomer().setLastName(mailTextField.getText());
+
+            }
+        });
+
+        mailTextField.focusedProperty().addListener(new ChangeListener<Boolean>()
+        {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> arg0, Boolean oldPropertyValue, Boolean newPropertyValue)
+            {
+                if (newPropertyValue)
+                {
+
+                }
+                else
+                {
+                    // Denna körs när fältet inte längre är fokuserat, så vill ha spara metod här också
+                    model.getCustomer().setLastName(mailTextField.getText());
+                }
+            }
+        });
+
+
     }
+
+
 }

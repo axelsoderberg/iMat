@@ -13,7 +13,7 @@
 <fx:root prefHeight="689.0" prefWidth="1536.0" styleClass="almost-white" stylesheets="@iMat.css" type="AnchorPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c3d5bd" height="610.0" layoutX="44.0" layoutY="40.0" stroke="#c3d5bd" strokeType="INSIDE" width="475.0" AnchorPane.bottomAnchor="39.0" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="40.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c3d5bd" height="173.0" layoutX="531.0" layoutY="40.0" stroke="#c3d5bd" strokeType="INSIDE" width="475.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c3d5bd" height="610.0" layoutX="531.0" layoutY="40.0" stroke="#c3d5bd" strokeType="INSIDE" width="475.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c3d5bd" height="610.0" layoutX="1022.0" layoutY="40.0" stroke="#c3d5bd" strokeType="INSIDE" width="475.0" />
       <Label layoutX="73.0" layoutY="48.0" stylesheets="@iMat.css" text="Personuppgifter">
          <font>
@@ -30,10 +30,10 @@
             <Font name="System Bold" size="48.0" />
          </font>
       </Label>
-      <Line endX="474.99993896484375" endY="-1.52587890625E-5" layoutX="40.0" layoutY="130.0" startX="1.52587890625E-5" startY="-1.52587890625E-5" stroke="WHITE" strokeWidth="4.0" />
-      <Line endX="955.9999389648438" endY="-6.5999908447265625" layoutX="50.0" layoutY="130.0" startX="480.99993896484375" startY="-6.5999908447265625" stroke="WHITE" strokeWidth="4.0" />
-      <Line endX="1434.0" endY="-20.800003051757812" layoutX="60.0" layoutY="140.0" startX="961.9999389648438" startY="-20.800003051757812" stroke="WHITE" strokeWidth="4.0" />
-      <Label layoutX="582.0" layoutY="146.0" text="Betalsätt:">
+      <Line endX="474.99993896484375" endY="-1.52587890625E-5" layoutX="40.0" layoutY="130.0" startX="1.52587890625E-5" startY="-1.52587890625E-5" stroke="WHITE" strokeWidth="4.0" AnchorPane.topAnchor="120.0" />
+      <Line endX="955.9999389648438" endY="-6.5999908447265625" layoutX="50.0" layoutY="130.0" startX="480.99993896484375" startY="-6.5999908447265625" stroke="WHITE" strokeWidth="4.0" AnchorPane.topAnchor="120.0" />
+      <Line endX="1434.0" endY="-20.800003051757812" layoutX="60.0" layoutY="140.0" startX="961.9999389648438" startY="-20.800003051757812" stroke="WHITE" strokeWidth="4.0" AnchorPane.topAnchor="120.0" />
+      <Label layoutX="582.0" layoutY="146.0" text="Korttyp:">
          <font>
             <Font size="36.0" />
          </font>
@@ -44,7 +44,6 @@
         </content>
       </ScrollPane>
       <ComboBox layoutX="798.0" layoutY="154.0" prefHeight="35.0" prefWidth="165.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c3d5bd" height="432.0" layoutX="532.0" layoutY="218.0" stroke="#c3d5bd" strokeType="INSIDE" width="475.0" />
       <VBox alignment="TOP_RIGHT" layoutX="73.0" layoutY="153.0" spacing="20.0" AnchorPane.topAnchor="153.0">
          <children>
             <Label styleClass="text-shopping-list-title" text="Förnamn:">
@@ -101,7 +100,7 @@
                   <Font size="18.0" />
                </font>
             </TextField>
-            <TextField fx:id="postNrTextField" maxHeight="40.0" minHeight="40.0" prefHeight="40.0">
+            <TextField fx:id="postCodeTextField" maxHeight="40.0" minHeight="40.0" prefHeight="40.0">
                <font>
                   <Font size="18.0" />
                </font>
