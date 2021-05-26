@@ -51,6 +51,7 @@ public class checkoutController extends AnchorPane {
 
         initRadioButtons();
         updateShoppingcartList(model.getShoppingCart().getItems());
+        updateCheckoutTotal();
 
     }
 

@@ -33,7 +33,7 @@
                   <Image url="@../resources/plusSign.png" />
                </image>
             </ImageView>
-            <Label fx:id="checkoutitemAmountLabel" layoutX="52.0" styleClass="text-font" text="x st">
+            <Label fx:id="checkoutitemAmountLabel" layoutX="52.0" styleClass="text-amount-big" text="x st">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
