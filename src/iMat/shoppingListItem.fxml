@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxWidth="1130.0" minWidth="1190.0" prefHeight="70.0" prefWidth="1130.0" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text fx:id="shoppingListItemNameText" layoutX="169.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-products" text="Produktnamn" AnchorPane.leftAnchor="138.0" AnchorPane.topAnchor="23.0" />
+      <Text fx:id="shoppingListItemTotalItemPrizeText" layoutX="844.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-products" text="xx kr" AnchorPane.leftAnchor="560.0" AnchorPane.topAnchor="23.0" />
+      <ImageView fx:id="shoppingListItemProductImage" fitHeight="50.0" fitWidth="50.0" layoutX="32.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="12.0">
+         <image>
+            <Image url="@../resources/apple.jpg" />
+         </image>
+      </ImageView>
+      <Line endX="1087.878662109375" layoutX="102.0" layoutY="80.0" startX="-100.0" stroke="#c9c9c9" strokeWidth="3.0" AnchorPane.leftAnchor="0.0" />
+      <Text fx:id="shoppingListItemPrizePerItemText" layoutX="1025.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-products" text="xx kr/st" AnchorPane.leftAnchor="792.0" AnchorPane.topAnchor="23.0" />
+      <Group layoutX="350.0" layoutY="22.0" AnchorPane.leftAnchor="355.0">
+         <children>
+            <ImageView fitHeight="36.0" fitWidth="156.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/addRemoveButton.png" />
+               </image>
+            </ImageView>
+            <Line endX="15.0" layoutX="10.0" layoutY="19.0" onMouseClicked="#handleRemoveAction" strokeWidth="4.0" />
+            <ImageView fitHeight="29.0" fitWidth="31.0" layoutX="112.0" layoutY="5.0" onMouseClicked="#handleAddAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/plusSign.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="shoppingListItemAmountLabel" layoutX="52.0" styleClass="text-font" text="x st">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Group>
+      <Line endX="132.0" endY="69.0" layoutX="830.0" layoutY="33.0" startX="132.0" startY="-7.0" stroke="#c9c9c9" strokeWidth="5.0" styleClass="almost-white" AnchorPane.leftAnchor="960.0" AnchorPane.topAnchor="0.0" />
+      <CheckBox layoutX="1059.0" layoutY="19.0" mnemonicParsing="false">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </CheckBox>
+   </children>
+</AnchorPane>

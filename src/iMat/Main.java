@@ -49,6 +49,7 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 1536, 864));
         primaryStage.show();
 
+
     }
 
     public static void main(String[] args) {

@@ -134,6 +134,10 @@ public class Model {
         iMatDataHandler.shutDown();
     }
 
+    public IMatDataHandler getImatDataHandler(){
+        return iMatDataHandler;
+    }
+
     public boolean isFavorite(Product product) {
         return iMatDataHandler.isFavorite(product);
     }
