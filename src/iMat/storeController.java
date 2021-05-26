@@ -27,8 +27,8 @@ public class storeController extends AnchorPane {
     @FXML private FlowPane categoriesFlowPane;
     @FXML private ImageView backArrow;
     @FXML private AnchorPane detailPane;
-    @FXML private final ToggleGroup categoriesGroup = new ToggleGroup();
     @FXML private AnchorPane storePane;
+    @FXML private final ToggleGroup categoriesGroup = new ToggleGroup();
     @FXML FlowPane shoppingcartFlowpaneStore;
     @FXML Label storeShoppingcartTotalPrize;
 
@@ -165,6 +165,6 @@ public class storeController extends AnchorPane {
 
     public void closeDetailView() {
         detailPane.toBack();
-        storePane.toBack();
+        detailPane.getChildren().clear();
     }
 }
