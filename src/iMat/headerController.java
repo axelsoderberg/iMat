@@ -21,11 +21,11 @@ public class headerController extends AnchorPane {
     checkoutController checkoutCtrl;
     storeController storeCtrl;
     mypageController mypageCtrl;
-    shoppinglistsController shoppinglistsCtrl;
+    shoppinglists shoppinglistsCtrl;
     helpController helpCtrl;
 
     public headerController(checkoutController checkoutCtrl, storeController storeCtrl, mypageController mypageCtrl,
-                            shoppinglistsController shoppinglistsCtrl, helpController helpCtrl) {
+                            shoppinglists shoppinglistsCtrl, helpController helpCtrl) {
         this.helpCtrl = helpCtrl;
         this.mypageCtrl = mypageCtrl;
         this.shoppinglistsCtrl = shoppinglistsCtrl;

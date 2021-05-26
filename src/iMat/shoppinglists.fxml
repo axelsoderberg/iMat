@@ -23,7 +23,7 @@
             <Rectangle fill="#ececeb" height="689.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1536.0" />
             <Line endX="242.0" layoutX="762.5" layoutY="95.5" startX="-564.0" stroke="#0000004d" strokeWidth="5.0" />
             <Text layoutX="196.0" layoutY="43.15234375" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-page-header" text="Mina inköpslistor" textAlignment="CENTER" />
-            <Button layoutX="855.0" layoutY="44.0" mnemonicParsing="false" onMouseClicked="#createShoppingList" prefWidth="150.0" text="Skapa ny">
+            <Button layoutX="855.0" layoutY="44.0" mnemonicParsing="false" prefWidth="150.0" text="Skapa ny">
                <effect>
                   <DropShadow height="6.17" offsetY="2.0" radius="2.585" width="6.17">
                      <color>

@@ -8,13 +8,13 @@ import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
 import java.util.Map;
 
-public class shoppinglistsController extends AnchorPane {
+public class shoppinglists extends AnchorPane {
 
     @FXML private AnchorPane createView;
     @FXML private AnchorPane listView;
     private Map<String, oneShoppingList> shoppingListMap;
 
-    public shoppinglistsController() {
+    public shoppinglists() {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("shoppinglists.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
