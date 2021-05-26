@@ -90,7 +90,8 @@ public class headerController extends AnchorPane {
     }
 
     public void updateCheckoutButton() {
-        checkoutButton.setText("Kassan " + model.getShoppingCart().getTotal() + " kr");
+        checkoutButton.setText("Kassan " + String.format("%.2f", model.getShoppingCart().getTotal()) + " kr");
+
     }
 
 }
