@@ -59,9 +59,9 @@ public class ShoppingcartItem extends AnchorPane {
         if (item.getAmount() == 0) { //Om man tog bort den sista i kundvagnen
             //radera item från listan
             model.getShoppingCart().removeItem(item);
-            model.getShoppingCart().fireShoppingCartChanged(item, true);
         } else {
             shoppingcartItemAmountLabel.setText((int) item.getAmount() + " st");
         }
+        model.getShoppingCart().fireShoppingCartChanged(item, false);
     }
 }

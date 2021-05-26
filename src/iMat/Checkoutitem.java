@@ -64,11 +64,11 @@ public class Checkoutitem extends AnchorPane {
         if (item.getAmount() == 0) { //Om man tog bort den sista i kundvagnen
             //radera item från listan
             model.getShoppingCart().removeItem(item);
-            model.getShoppingCart().fireShoppingCartChanged(item, true);
+            model.getShoppingCart().fireShoppingCartChanged(item, false);
         } else {
             checkoutitemAmountLabel.setText((int) item.getAmount() + " st");
             checkoutitemTotalItemPrizeText.setText(String.format("%.2f",item.getTotal()) + " kr");
-            model.getShoppingCart().fireShoppingCartChanged(item, true);
+            model.getShoppingCart().fireShoppingCartChanged(item, false);
         }
     }
 }

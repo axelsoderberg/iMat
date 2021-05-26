@@ -17,13 +17,13 @@
             <Image url="@../resources/apple.jpg" />
          </image>
       </ImageView>
-      <Label fx:id="productCardNameLabel" alignment="CENTER" layoutX="11.0" layoutY="125.0" prefHeight="45.0" prefWidth="144.0" styleClass="text-font" text="Produkt">
+      <Label fx:id="productCardNameLabel" alignment="CENTER" layoutX="11.0" layoutY="125.0" prefHeight="45.0" prefWidth="144.0" styleClass="text-shopping-list-title" text="Produkt">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
       <Circle fill="#c4c4c4" layoutX="130.0" layoutY="40.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-      <Label fx:id="productCardPrizeLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="99.0" layoutY="10.0" prefHeight="58.0" prefWidth="61.0" styleClass="text-font" text="15 kr/st" textAlignment="CENTER">
+      <Label fx:id="productCardPrizeLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="99.0" layoutY="10.0" prefHeight="58.0" prefWidth="61.0" styleClass="text-helpbox-normal" text="15 kr/st" textAlignment="CENTER">
          <font>
             <Font size="18.0" />
          </font>
@@ -46,11 +46,21 @@
                   <Image url="@../resources/plusSign.png" />
                </image>
             </ImageView>
-            <Label fx:id="productCardAmountLabel" layoutX="52.0" styleClass="text-font" text="x st">
+            <Label fx:id="productCardAmountLabel" layoutX="52.0" styleClass="text-amount-big" text="x st">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
+            <ImageView fitHeight="84.0" fitWidth="40.0" layoutX="111.0" layoutY="-1.0" onMouseClicked="#handleAddAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/add.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="43.0" fitWidth="48.0" layoutX="-6.0" onMouseClicked="#handleRemoveAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/remove.png" />
+               </image>
+            </ImageView>
          </children>
       </Group>
       <Button fx:id="addButton" layoutX="8.0" layoutY="165.0" maxHeight="40.0" minHeight="35.0" mnemonicParsing="false" onAction="#handleAddAction" prefHeight="40.0" prefWidth="157.0" styleClass="lightgreen-button" text="Lägg till" />

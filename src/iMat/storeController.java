@@ -30,7 +30,7 @@ public class storeController extends AnchorPane {
     @FXML FlowPane shoppingcartFlowpaneStore;
     @FXML Label storeShoppingcartTotalPrize;
 
-    private Map<String, productCard> productCardMap;
+    private Map<Product, productCard> productCardMap;
     private List<ProductCategory> selectedCategories = new ArrayList();
     private final Model model = Model.getInstance();
 
@@ -45,9 +45,14 @@ public class storeController extends AnchorPane {
             throw new RuntimeException(exception);
         }
 
+        productListInit();
         placeCategories();
         updateProductList(model.getProducts());
         updateShoppingcartview(model.getShoppingCart().getItems());
+    }
+
+    void updateProductCard(Product product) {
+        productCardMap.get(product).update();
     }
 
     void updateProductList(List<Product> products) {
@@ -55,9 +60,27 @@ public class storeController extends AnchorPane {
         productsFlowPaneStore.getChildren().clear();
 
         for (Product product : products) {
-
-            productsFlowPaneStore.getChildren().add(new productCard(product));
+            productsFlowPaneStore.getChildren().add(productCardMap.get(product));
         }
+
+    }
+
+    private void productListInit() {
+        productCardMap = new HashMap<Product, productCard>();
+        for (ShoppingItem item : model.getShoppingCart().getItems()) {
+            productCard productCard = new productCard(item);
+            productCardMap.put(item.getProduct(), productCard);
+        }
+
+        for (Product product : model.getProducts()) {
+            if (!productCardMap.containsKey(product)) {
+                productCard productCard = new productCard(new ShoppingItem(product, 0));
+                productCardMap.put(product, productCard);
+            }
+        }
+    }
+
+    public void sortAlfabethic() {
 
     }
 
@@ -91,15 +114,6 @@ public class storeController extends AnchorPane {
             categoriesFlowPane.getChildren().add(subCategoryCard(C));
         }
     }
-
-    private void productListInit() {
-        productCardMap = new HashMap<String, productCard>();
-        for (Product products : model.getProducts()) {
-            productCard recipeListItem = new productCard(products);
-            productCardMap.put(products.getName(), recipeListItem);
-        }
-    }
-
 
     public subcategories subCategoryCard(ProductCategory pc) {
         return new subcategories(pc, this);
@@ -152,4 +166,5 @@ public class storeController extends AnchorPane {
     public void clearSubcategories() {
         selectedCategories.clear();
     }
+
 }

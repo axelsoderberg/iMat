@@ -34,8 +34,8 @@ public class productCard extends AnchorPane {
     private final static double kImageWidth = 82;
     private final static double kImageRatio = 0.75;
 
-    public productCard(Product product) {
-        this.shoppingItem = new ShoppingItem(product, 0);
+    public productCard(ShoppingItem shoppingItem) {
+        this.shoppingItem = shoppingItem;
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("productCard.fxml"));
         fxmlLoader.setRoot(this);
@@ -47,7 +47,7 @@ public class productCard extends AnchorPane {
             throw new RuntimeException(exception);
         }
 
-        this.product = product;
+        this.product = shoppingItem.getProduct();
         productCardNameLabel.setText(product.getName());
         productCardPrizeLabel.setText(String.format("%.2f", product.getPrice()) + "\n" + product.getUnit());
         productCardImageView.setImage(model.getImage(product, kImageWidth, kImageWidth*kImageRatio));
@@ -56,12 +56,19 @@ public class productCard extends AnchorPane {
             productCardFavoriteImageView.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("resources/heartFilled.png"))));
         } //annars ej ifyllt hjärta
 
-        initAmount();
+        if (shoppingItem.getAmount() > 0) {
+            addOrRemoveButton.toFront();
+            productCardAmountLabel.setText((int) shoppingItem.getAmount() + " st");
+        }
 
     }
 
-    void initAmount() {
-
+    void update() {
+        if (shoppingItem.getAmount() == 0) { //Om man tog bort den sista i kundvagnen
+            addButton.toFront();
+        } else {
+            productCardAmountLabel.setText((int) shoppingItem.getAmount() + " st");
+        }
     }
 
     @FXML
@@ -76,13 +83,13 @@ public class productCard extends AnchorPane {
     @FXML
     private void handleRemoveAction() {
         shoppingItem.setAmount(shoppingItem.getAmount() - 1);
-        model.getShoppingCart().fireShoppingCartChanged(shoppingItem, true);
         if (shoppingItem.getAmount() == 0) { //Om man tog bort den sista i kundvagnen
             addButton.toFront();
             model.getShoppingCart().removeItem(shoppingItem);
         } else {
             productCardAmountLabel.setText((int) shoppingItem.getAmount() + " st");
         }
+        model.getShoppingCart().fireShoppingCartChanged(shoppingItem, false);
     }
 
     @FXML

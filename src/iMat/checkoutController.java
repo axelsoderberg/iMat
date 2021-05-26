@@ -120,4 +120,8 @@ public class checkoutController extends AnchorPane {
     void updateCheckoutTotal() {
         checkoutTotalLabel.setText("Summa: " + String.format("%.2f",model.getShoppingCart().getTotal()) + " kr");
     }
+
+    @FXML private void backAction() {
+        this.toBack();
+    }
 }
