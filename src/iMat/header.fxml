@@ -62,7 +62,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <TextField fx:id="searchField" layoutX="594.0" layoutY="108.0" maxHeight="60.0" minHeight="50.0" prefHeight="50.0" prefWidth="481.0" promptText="Sök  efter produkter..." styleClass="search-field" AnchorPane.topAnchor="108.0">
+      <TextField fx:id="searchField" layoutX="594.0" layoutY="108.0" maxHeight="60.0" minHeight="50.0" onAction="#handleSearchAction" prefHeight="50.0" prefWidth="481.0" promptText="Sök  efter produkter..." styleClass="search-field" AnchorPane.topAnchor="108.0">
          <font>
             <Font size="28.0" />
          </font>

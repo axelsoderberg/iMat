@@ -54,6 +54,7 @@ public class headerController extends AnchorPane {
 
     @FXML
     public void openStoreView() {
+        storeCtrl.updateProductList(model.getProducts());
         storeCtrl.toFront();
         this.toFront();
     }

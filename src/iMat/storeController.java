@@ -192,7 +192,6 @@ public class storeController extends AnchorPane {
         detailPane.toBack();
         storePane.toBack();
         iMatController.getHeader().openStoreView();
-
     }
 
 }
