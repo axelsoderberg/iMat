@@ -37,7 +37,7 @@ public class StartController extends AnchorPane {
     }
 
     @FXML
-    private void openStoreView() {
+    public void openStoreView() {
         storeCtrl.toFront();
         headerCtrl.toFront();
     }

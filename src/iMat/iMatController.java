@@ -41,7 +41,7 @@ public class iMatController implements Initializable, ShoppingCartListener {
             ProductCategory.SWEET);
 
     checkoutController checkoutCtrl;
-    headerController headerCtrl;
+    static headerController headerCtrl;
     storeController storeCtrl;
 
     @Override
@@ -124,5 +124,7 @@ public class iMatController implements Initializable, ShoppingCartListener {
         this.checkoutCtrl.updateCheckoutTotal();
         //uppdatera produktkorten
     }
+
+    public static headerController getHeader() { return headerCtrl; }
 }
 

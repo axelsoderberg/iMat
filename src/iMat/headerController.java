@@ -53,7 +53,7 @@ public class headerController extends AnchorPane {
     }
 
     @FXML
-    private void openStoreView() {
+    public void openStoreView() {
         storeCtrl.toFront();
         this.toFront();
     }

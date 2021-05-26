@@ -12,7 +12,7 @@
 
 <fx:root fx:id="storePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="689.0" prefWidth="1536.0" stylesheets="@iMat.css" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane fx:id="detailPane" layoutX="-6.0" layoutY="-175.0" prefHeight="864.0" prefWidth="1547.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-175.0" />
+      <AnchorPane fx:id="detailPane" layoutX="-6.0" layoutY="-192.0" onMouseClicked="#closeDetailView" prefHeight="881.0" prefWidth="1536.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-192.0" />
       <Rectangle fill="#ececeb" height="689.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1536.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#c3d5bd" height="649.0" layoutX="45.0" layoutY="21.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="300.0" x="45.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="20.0" />
       <Line endX="341.0" endY="90.0" startX="45.0" startY="90.0" stroke="#ececeb" strokeWidth="8.0" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="85.0">
