@@ -37,5 +37,6 @@ public class categories extends AnchorPane {
     @FXML
     private void onClick() {
         parentController.updateSubcategories(c);
+        parentController.updateProductList(Model.getInstance().getList(c));
     }
 }

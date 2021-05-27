@@ -29,6 +29,14 @@ public class Model {
     private final ArrayList<String> availableCardTypes = new ArrayList<String>(Arrays.asList("MasterCard", "Visa"));
     private final ArrayList<String> months = new ArrayList<String>(Arrays.asList("1", "2","3", "4", "5", "6"));
     private final ArrayList<String> years = new ArrayList<String>(Arrays.asList("19", "20", "21", "22", "23", "24", "25"));
+
+    public List<Product> fruits = new ArrayList();
+    public List<Product> greens = new ArrayList();
+    public List<Product> meat = new ArrayList();
+    public List<Product> dairy = new ArrayList();
+    public List<Product> base = new ArrayList();
+    public List<Product> sweets = new ArrayList();
+
     /**
      * Constructor that should never be called, use getInstance() instead.
      */
@@ -50,7 +58,18 @@ public class Model {
     private void init() {
 
         iMatDataHandler = IMatDataHandler.getInstance();
-
+        for (ProductCategory pc : iMatController.fruit)
+            fruits.addAll(getProducts(pc));
+        for (ProductCategory pc : iMatController.greens)
+            greens.addAll(getProducts(pc));
+        for (ProductCategory pc : iMatController.meat)
+            meat.addAll(getProducts(pc));
+        for (ProductCategory pc : iMatController.dairy)
+            dairy.addAll(getProducts(pc));
+        for (ProductCategory pc : iMatController.base)
+            base.addAll(getProducts(pc));
+        for (ProductCategory pc : iMatController.sweets)
+            sweets.addAll(getProducts(pc));
     }
 
     public List<Product> getProducts() {
@@ -154,4 +173,15 @@ public class Model {
         iMatDataHandler.removeFavorite(product);
     }
 
+    public List<Product> getList(String c) {
+        return switch (c) {
+            case "Godis & Läsk" -> sweets;
+            case "Frukt" -> fruits;
+            case "Mejeri" -> dairy;
+            case "Kött & Fisk" -> meat;
+            case "Basvaror" -> base;
+            case "Grönsaker" -> greens;
+            default -> null;
+        };
+    }
 }
