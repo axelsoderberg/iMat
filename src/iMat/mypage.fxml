@@ -4,6 +4,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -38,29 +40,29 @@
       <Line endX="474.99993896484375" endY="-1.52587890625E-5" layoutX="40.0" layoutY="130.0" startX="1.52587890625E-5" startY="-1.52587890625E-5" stroke="WHITE" strokeWidth="4.0" AnchorPane.topAnchor="120.0" />
       <Line endX="955.9999389648438" endY="-6.5999908447265625" layoutX="50.0" layoutY="130.0" startX="480.99993896484375" startY="-6.5999908447265625" stroke="WHITE" strokeWidth="4.0" AnchorPane.topAnchor="120.0" />
       <Line endX="1434.0" endY="-20.800003051757812" layoutX="60.0" layoutY="140.0" startX="961.9999389648438" startY="-20.800003051757812" stroke="WHITE" strokeWidth="4.0" AnchorPane.topAnchor="120.0" />
-      <VBox alignment="CENTER_RIGHT" layoutX="543.0" layoutY="153.0" spacing="20.0" AnchorPane.topAnchor="153.0">
+      <VBox alignment="CENTER_RIGHT" layoutX="543.0" layoutY="153.0" spacing="23.0" AnchorPane.leftAnchor="537.0" AnchorPane.topAnchor="153.0">
          <children>
-            <Label styleClass="text-shopping-list-title" text="Korttyp:">
+            <Label styleClass="text-mypage" text="Korttyp:">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
-            <Label styleClass="text-shopping-list-title" text="Kortnummer:">
+            <Label styleClass="text-mypage" text="Kortnummer:">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
-            <Label styleClass="text-shopping-list-title" text="Korthavarens namn:">
+            <Label styleClass="text-mypage" text="Korthavarens namn:">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
-            <Label styleClass="text-shopping-list-title" text="Utgångsdatum:">
+            <Label styleClass="text-mypage" text="Utgångsdatum:">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
-            <Label styleClass="text-shopping-list-title" text="CVC:">
+            <Label styleClass="text-mypage" text="CVC:">
                <font>
                   <Font size="36.0" />
                </font>
@@ -72,15 +74,15 @@
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="502.0" prefWidth="432.0" styleClass="almost-white" />
         </content>
       </ScrollPane>
-      <VBox layoutX="798.0" layoutY="154.0" spacing="20.0" AnchorPane.topAnchor="153.0">
+      <VBox layoutX="778.0" layoutY="155.0" prefWidth="187.0" spacing="20.0" AnchorPane.leftAnchor="770.0" AnchorPane.topAnchor="155.0">
          <children>
-            <ComboBox fx:id="cardTypeComboBox" prefHeight="35.0" prefWidth="198.0" styleClass="textfields" />
-            <TextField fx:id="cardNrTextField" maxHeight="40.0" minHeight="40.0" onKeyTyped="#checkCardNumber" prefHeight="40.0" prefWidth="198.0" styleClass="textfields">
+            <ComboBox fx:id="cardTypeComboBox" prefHeight="39.0" prefWidth="187.0" styleClass="textfields" />
+            <TextField fx:id="cardNrTextField" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="176.0" styleClass="textfields">
                <font>
                   <Font size="18.0" />
                </font>
             </TextField>
-            <TextField fx:id="holdersNameTextField" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="198.0" styleClass="textfields">
+            <TextField fx:id="holdersNameTextField" maxHeight="40.0" minHeight="40.0" onKeyTyped="#checkCardNumber" prefHeight="40.0" prefWidth="198.0" styleClass="textfields">
                <font>
                   <Font size="18.0" />
                </font>
@@ -88,8 +90,8 @@
             <HBox spacing="10.0">
                <children>
                   <ComboBox fx:id="validMonthComboBox" prefHeight="39.0" prefWidth="80.0" styleClass="textfields" />
-                  <Label styleClass="text-shopping-list-title" text="/" />
-                  <ComboBox fx:id="validYearComboBox" prefHeight="39.0" prefWidth="90.0" styleClass="textfields" />
+                  <Label prefHeight="40.0" prefWidth="3.0" styleClass="text-shopping-list-title" text="/" />
+                  <ComboBox fx:id="validYearComboBox" prefHeight="39.0" prefWidth="97.0" styleClass="textfields" />
                </children>
             </HBox>
             <TextField fx:id="verificationCodeTextField" maxHeight="40.0" maxWidth="80.0" minHeight="40.0" onKeyTyped="#checkVerificationCode" prefHeight="40.0" prefWidth="87.0" styleClass="textfields">
@@ -99,46 +101,46 @@
             </TextField>
          </children>
       </VBox>
-      <VBox alignment="TOP_RIGHT" layoutX="73.0" layoutY="153.0" spacing="20.0" AnchorPane.topAnchor="153.0">
+      <VBox alignment="TOP_RIGHT" layoutX="73.0" layoutY="153.0" spacing="23.0" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="153.0">
          <children>
-            <Label styleClass="text-shopping-list-title" text="Förnamn:">
+            <Label styleClass="text-mypage" text="Förnamn:">
                <font>
                   <Font size="28.0" />
                </font>
             </Label>
-            <Label styleClass="text-shopping-list-title" text="Efternamn:">
+            <Label styleClass="text-mypage" text="Efternamn:">
                <font>
                   <Font size="28.0" />
                </font>
             </Label>
-            <Label styleClass="text-shopping-list-title" text="Postadress:">
+            <Label styleClass="text-mypage" text="Postadress:">
                <font>
                   <Font size="28.0" />
                </font>
             </Label>
-            <Label styleClass="text-shopping-list-title" text="Postnummer:">
+            <Label styleClass="text-mypage" text="Postnummer:">
                <font>
                   <Font size="28.0" />
                </font>
             </Label>
-            <Label styleClass="text-shopping-list-title" text="Stad:">
+            <Label styleClass="text-mypage" text="Stad:">
                <font>
                   <Font size="28.0" />
                </font>
             </Label>
-            <Label styleClass="text-shopping-list-title" text="Telefon:">
+            <Label styleClass="text-mypage" text="Telefon:">
                <font>
                   <Font size="28.0" />
                </font>
             </Label>
-            <Label styleClass="text-shopping-list-title" text="Mejladress:">
+            <Label styleClass="text-mypage" text="Mejladress:">
                <font>
                   <Font size="28.0" />
                </font>
             </Label>
          </children>
       </VBox>
-      <VBox layoutX="247.0" layoutY="153.0" spacing="20.0">
+      <VBox layoutX="247.0" layoutY="153.0" spacing="20.0" AnchorPane.leftAnchor="230.0">
          <children>
             <TextField fx:id="firstNameTextField" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" styleClass="textfields">
                <font>
@@ -175,6 +177,74 @@
                   <Font size="18.0" />
                </font>
             </TextField>
+         </children>
+      </VBox>
+      <VBox layoutX="464.0" layoutY="153.0" spacing="20.0" AnchorPane.topAnchor="153.0">
+         <children>
+            <ImageView fx:id="firstNameApprovedImageView" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/notApproved.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="surNameApprovedImageView" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/notApproved.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="postadressApprovedImageView" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/notApproved.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="postcodeApprovedImageView" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/notApproved.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="cityApprovedImageView" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/notApproved.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="phoneApprovedImageView" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/notApproved.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="mailApprovedImageView" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/notApproved.png" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+      <VBox layoutX="960.0" layoutY="153.0" spacing="20.0" AnchorPane.topAnchor="153.0">
+         <children>
+            <ImageView fx:id="cardtypeApprovedImageView" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/notApproved.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="cardNrApprovedImageView" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/notApproved.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="holdersNameApprovedImageView" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/notApproved.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="validDateApprovedImageView" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/notApproved.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="verificationCodeApprovedImageView" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/notApproved.png" />
+               </image>
+            </ImageView>
          </children>
       </VBox>
    </children>

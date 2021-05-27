@@ -6,10 +6,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class mypageController extends AnchorPane {
 
@@ -26,6 +29,19 @@ public class mypageController extends AnchorPane {
     @FXML TextField holdersNameTextField;
     @FXML TextField verificationCodeTextField;
     @FXML TextField cardNrTextField;
+
+    @FXML ImageView firstNameApprovedImageView;
+    @FXML ImageView surNameApprovedImageView;
+    @FXML ImageView postadressApprovedImageView;
+    @FXML ImageView postcodeApprovedImageView;
+    @FXML ImageView cityApprovedImageView;
+    @FXML ImageView phoneApprovedImageView;
+    @FXML ImageView mailApprovedImageView;
+    @FXML ImageView cardtypeApprovedImageView;
+    @FXML ImageView validDateApprovedImageView;
+    @FXML ImageView holdersNameApprovedImageView;
+    @FXML ImageView verificationCodeApprovedImageView;
+    @FXML ImageView cardNrApprovedImageView;
 
     private final Model model = Model.getInstance();
 
@@ -56,6 +72,7 @@ public class mypageController extends AnchorPane {
         initComboBoxCardtype();
         initComboBoxValidMonth();
         initComboBoxValidYear();
+
     }
 
     void initComboBoxCardtype() {
@@ -405,6 +422,12 @@ public class mypageController extends AnchorPane {
             cardNrTextField.deletePreviousChar();
         } else if ((cardNrTextField.getLength() % 4) == 0) {
             //cardNrTextField.setText(cardNrTextField.getText() + " ");
+        }
+
+        if (cardNrTextField.getLength() == 16) {
+            cardNrApprovedImageView.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("resources/approved.png"))));
+        } else {
+            cardNrApprovedImageView.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("resources/notApproved.png"))));
         }
     }
 

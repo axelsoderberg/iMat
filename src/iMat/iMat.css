@@ -183,7 +183,7 @@
 
 .text-amount-big{
     -fx-font-family: "Assistant";
-    -fx-font-size: 24px;
+    -fx-font-size: 22px;
     -fx-font-weight: bold;
 }
 
@@ -213,6 +213,11 @@
 .text-productcard {
     -fx-font-family: "Assistant";
     -fx-font-size: 24px;
+}
+
+.text-mypage {
+    -fx-font-family: "Assistant";
+    -fx-font-size: 26px;
 }
 
 

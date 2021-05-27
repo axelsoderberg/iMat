@@ -33,7 +33,6 @@
             <Image url="@../resources/heart.png" />
          </image>
       </ImageView>
-      <Button fx:id="addButton" layoutX="7.0" layoutY="190.0" maxHeight="40.0" minHeight="40.0" mnemonicParsing="false" onAction="#handleAddAction" prefHeight="40.0" prefWidth="157.0" styleClass="lightgreen-button" text="Lägg till" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="7.0" />
       <Group fx:id="addOrRemoveButton" layoutX="12.0" layoutY="182.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="6.0">
          <children>
             <ImageView fitHeight="42.0" fitWidth="157.0" layoutX="-6.0" layoutY="9.0" pickOnBounds="true">
@@ -64,5 +63,6 @@
             </ImageView>
          </children>
       </Group>
+      <Button fx:id="addButton" layoutX="7.0" layoutY="190.0" maxHeight="40.0" minHeight="40.0" mnemonicParsing="false" onAction="#handleAddAction" prefHeight="40.0" prefWidth="157.0" styleClass="lightgreen-button" text="Lägg till" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="7.0" />
    </children>
 </fx:root>
