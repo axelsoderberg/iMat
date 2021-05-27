@@ -77,12 +77,12 @@
       <VBox layoutX="778.0" layoutY="155.0" prefWidth="187.0" spacing="20.0" AnchorPane.leftAnchor="770.0" AnchorPane.topAnchor="155.0">
          <children>
             <ComboBox fx:id="cardTypeComboBox" prefHeight="39.0" prefWidth="187.0" styleClass="textfields" />
-            <TextField fx:id="cardNrTextField" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="176.0" styleClass="textfields">
+            <TextField fx:id="cardNrTextField" maxHeight="40.0" minHeight="40.0" onKeyTyped="#checkCardNumber" prefHeight="40.0" prefWidth="176.0" styleClass="textfields">
                <font>
                   <Font size="18.0" />
                </font>
             </TextField>
-            <TextField fx:id="holdersNameTextField" maxHeight="40.0" minHeight="40.0" onKeyTyped="#checkCardNumber" prefHeight="40.0" prefWidth="198.0" styleClass="textfields">
+            <TextField fx:id="holdersNameTextField" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="198.0" styleClass="textfields">
                <font>
                   <Font size="18.0" />
                </font>
@@ -94,14 +94,23 @@
                   <ComboBox fx:id="validYearComboBox" prefHeight="39.0" prefWidth="97.0" styleClass="textfields" />
                </children>
             </HBox>
-            <TextField fx:id="verificationCodeTextField" maxHeight="40.0" maxWidth="80.0" minHeight="40.0" onKeyTyped="#checkVerificationCode" prefHeight="40.0" prefWidth="87.0" styleClass="textfields">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </TextField>
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <TextField fx:id="verificationCodeTextField" maxHeight="40.0" maxWidth="80.0" minHeight="40.0" onKeyTyped="#checkVerificationCode" prefHeight="40.0" prefWidth="87.0" styleClass="textfields">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <ImageView fx:id="verificationCodeApprovedImageView" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/notApproved.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
          </children>
       </VBox>
-      <VBox alignment="TOP_RIGHT" layoutX="73.0" layoutY="153.0" spacing="23.0" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="153.0">
+      <VBox alignment="TOP_RIGHT" layoutX="56.0" layoutY="153.0" spacing="23.0" AnchorPane.leftAnchor="56.0" AnchorPane.topAnchor="153.0">
          <children>
             <Label styleClass="text-mypage" text="Förnamn:">
                <font>
@@ -128,7 +137,7 @@
                   <Font size="28.0" />
                </font>
             </Label>
-            <Label styleClass="text-mypage" text="Telefon:">
+            <Label styleClass="text-mypage" text="Mobilnummer:">
                <font>
                   <Font size="28.0" />
                </font>
@@ -157,11 +166,20 @@
                   <Font size="18.0" />
                </font>
             </TextField>
-            <TextField fx:id="postCodeTextField" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" onKeyTyped="#checkPostCode" prefHeight="40.0" prefWidth="100.0" styleClass="textfields">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </TextField>
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <TextField fx:id="postCodeTextField" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" onKeyTyped="#checkPostCode" prefHeight="40.0" prefWidth="100.0" styleClass="textfields">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <ImageView fx:id="postcodeApprovedImageView" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/notApproved.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
             <TextField fx:id="cityTextField" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" styleClass="textfields">
                <font>
                   <Font size="18.0" />
@@ -179,68 +197,62 @@
             </TextField>
          </children>
       </VBox>
-      <VBox layoutX="464.0" layoutY="153.0" spacing="20.0" AnchorPane.topAnchor="153.0">
+      <VBox layoutX="464.0" layoutY="153.0" spacing="30.0" AnchorPane.leftAnchor="464.0" AnchorPane.topAnchor="158.0">
          <children>
-            <ImageView fx:id="firstNameApprovedImageView" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="firstNameApprovedImageView" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../resources/notApproved.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="surNameApprovedImageView" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="surNameApprovedImageView" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../resources/notApproved.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="postadressApprovedImageView" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../resources/notApproved.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="postcodeApprovedImageView" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../resources/notApproved.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="cityApprovedImageView" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../resources/notApproved.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="phoneApprovedImageView" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../resources/notApproved.png" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="mailApprovedImageView" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="postadressApprovedImageView" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../resources/notApproved.png" />
                </image>
             </ImageView>
          </children>
       </VBox>
-      <VBox layoutX="960.0" layoutY="153.0" spacing="20.0" AnchorPane.topAnchor="153.0">
+      <VBox layoutX="960.0" layoutY="153.0" spacing="30.0" AnchorPane.topAnchor="158.0">
          <children>
-            <ImageView fx:id="cardtypeApprovedImageView" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="cardtypeApprovedImageView" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../resources/notApproved.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="cardNrApprovedImageView" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="cardNrApprovedImageView" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../resources/notApproved.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="holdersNameApprovedImageView" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="holdersNameApprovedImageView" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../resources/notApproved.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="validDateApprovedImageView" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="validDateApprovedImageView" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../resources/notApproved.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="verificationCodeApprovedImageView" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+         </children>
+      </VBox>
+      <VBox layoutX="464.0" layoutY="398.0" spacing="30.0" AnchorPane.leftAnchor="464.0">
+         <children>
+            <ImageView fx:id="cityApprovedImageView" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/notApproved.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="phoneApprovedImageView" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/notApproved.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="mailApprovedImageView" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../resources/notApproved.png" />
                </image>

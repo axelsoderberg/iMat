@@ -73,6 +73,15 @@ public class mypageController extends AnchorPane {
         initComboBoxValidMonth();
         initComboBoxValidYear();
 
+        checkApprovals();
+
+    }
+
+    void checkApprovals() {
+        checkCardNumber();
+        checkPhoneNumber();
+        checkPostCode();
+        checkVerificationCode();
     }
 
     void initComboBoxCardtype() {
@@ -133,11 +142,7 @@ public class mypageController extends AnchorPane {
             @Override
             public void changed(ObservableValue<? extends Boolean> arg0, Boolean oldPropertyValue, Boolean newPropertyValue)
             {
-                if (newPropertyValue)
-                {
-
-                }
-                else
+                if (!newPropertyValue)
                 {
                     // Denna körs när fältet inte längre är fokuserat, så vill ha spara metod här också
                     model.getCustomer().setFirstName(firstNameTextField.getText());
@@ -159,11 +164,7 @@ public class mypageController extends AnchorPane {
             @Override
             public void changed(ObservableValue<? extends Boolean> arg0, Boolean oldPropertyValue, Boolean newPropertyValue)
             {
-                if (newPropertyValue)
-                {
-
-                }
-                else
+                if (!newPropertyValue)
                 {
                     // Denna körs när fältet inte längre är fokuserat, så vill ha spara metod här också
                     model.getCustomer().setLastName(surNameTextField.getText());
@@ -185,11 +186,7 @@ public class mypageController extends AnchorPane {
             @Override
             public void changed(ObservableValue<? extends Boolean> arg0, Boolean oldPropertyValue, Boolean newPropertyValue)
             {
-                if (newPropertyValue)
-                {
-
-                }
-                else
+                if (!newPropertyValue)
                 {
                     // Denna körs när fältet inte längre är fokuserat, så vill ha spara metod här också
                     model.getCustomer().setAddress(postAdressTextField.getText());
@@ -211,11 +208,7 @@ public class mypageController extends AnchorPane {
             @Override
             public void changed(ObservableValue<? extends Boolean> arg0, Boolean oldPropertyValue, Boolean newPropertyValue)
             {
-                if (newPropertyValue)
-                {
-
-                }
-                else
+                if (!newPropertyValue)
                 {
                     // Denna körs när fältet inte längre är fokuserat, så vill ha spara metod här också
                     model.getCustomer().setPostCode(postCodeTextField.getText());
@@ -237,11 +230,7 @@ public class mypageController extends AnchorPane {
             @Override
             public void changed(ObservableValue<? extends Boolean> arg0, Boolean oldPropertyValue, Boolean newPropertyValue)
             {
-                if (newPropertyValue)
-                {
-
-                }
-                else
+                if (!newPropertyValue)
                 {
                     // Denna körs när fältet inte längre är fokuserat, så vill ha spara metod här också
                     model.getCustomer().setPostAddress(cityTextField.getText());
@@ -263,11 +252,7 @@ public class mypageController extends AnchorPane {
             @Override
             public void changed(ObservableValue<? extends Boolean> arg0, Boolean oldPropertyValue, Boolean newPropertyValue)
             {
-                if (newPropertyValue)
-                {
-
-                }
-                else
+                if (!newPropertyValue)
                 {
                     // Denna körs när fältet inte längre är fokuserat, så vill ha spara metod här också
                     model.getCustomer().setPhoneNumber(phoneTextField.getText());
@@ -289,11 +274,7 @@ public class mypageController extends AnchorPane {
             @Override
             public void changed(ObservableValue<? extends Boolean> arg0, Boolean oldPropertyValue, Boolean newPropertyValue)
             {
-                if (newPropertyValue)
-                {
-
-                }
-                else
+                if (!newPropertyValue)
                 {
                     // Denna körs när fältet inte längre är fokuserat, så vill ha spara metod här också
                     model.getCustomer().setEmail(mailTextField.getText());
@@ -315,11 +296,7 @@ public class mypageController extends AnchorPane {
             @Override
             public void changed(ObservableValue<? extends Boolean> arg0, Boolean oldPropertyValue, Boolean newPropertyValue)
             {
-                if (newPropertyValue)
-                {
-
-                }
-                else
+                if (!newPropertyValue)
                 {
                     // Denna körs när fältet inte längre är fokuserat, så vill ha spara metod här också
                     model.getCreditCard().setHoldersName(holdersNameTextField.getText());
@@ -333,7 +310,6 @@ public class mypageController extends AnchorPane {
             if (e.getCode() == KeyCode.ENTER) {
                 // Spara metoden här
                 model.getCreditCard().setCardNumber(cardNrTextField.getText());
-
             }
         });
 
@@ -342,11 +318,7 @@ public class mypageController extends AnchorPane {
             @Override
             public void changed(ObservableValue<? extends Boolean> arg0, Boolean oldPropertyValue, Boolean newPropertyValue)
             {
-                if (newPropertyValue)
-                {
-
-                }
-                else
+                if (!newPropertyValue)
                 {
                     // Denna körs när fältet inte längre är fokuserat, så vill ha spara metod här också
                     model.getCreditCard().setCardNumber(cardNrTextField.getText());
@@ -359,7 +331,6 @@ public class mypageController extends AnchorPane {
             if (e.getCode() == KeyCode.ENTER) {
                 // Spara metoden här
                 model.getCreditCard().setVerificationCode(Integer.parseInt(verificationCodeTextField.getText()));
-
             }
         });
 
@@ -368,11 +339,7 @@ public class mypageController extends AnchorPane {
             @Override
             public void changed(ObservableValue<? extends Boolean> arg0, Boolean oldPropertyValue, Boolean newPropertyValue)
             {
-                if (newPropertyValue)
-                {
-
-                }
-                else
+                if (!newPropertyValue)
                 {
                     // Denna körs när fältet inte längre är fokuserat, så vill ha spara metod här också
                     model.getCreditCard().setVerificationCode(Integer.parseInt(verificationCodeTextField.getText()));
@@ -391,6 +358,12 @@ public class mypageController extends AnchorPane {
             //given text does not include digits
             postCodeTextField.deletePreviousChar();
         }
+
+        if (postCodeTextField.getLength() == 5) {
+            postcodeApprovedImageView.setImage(getApprovedImage());
+        } else {
+            postcodeApprovedImageView.setImage(getNotApprovedImage());
+        }
     }
 
     @FXML
@@ -401,6 +374,12 @@ public class mypageController extends AnchorPane {
             //given text does not include digits
             phoneTextField.deletePreviousChar();
         }
+
+        if (phoneTextField.getLength() == 10) {
+            phoneApprovedImageView.setImage(getApprovedImage());
+        } else {
+            phoneApprovedImageView.setImage(getNotApprovedImage());
+        }
     }
 
     @FXML
@@ -410,6 +389,12 @@ public class mypageController extends AnchorPane {
         } else if (!verificationCodeTextField.getText().matches("\\d+")) {
             //given text does not include digits
             verificationCodeTextField.deletePreviousChar();
+        }
+
+        if (verificationCodeTextField.getLength() == 3) {
+            verificationCodeApprovedImageView.setImage(getApprovedImage());
+        } else {
+            verificationCodeApprovedImageView.setImage(getNotApprovedImage());
         }
     }
 
@@ -425,10 +410,18 @@ public class mypageController extends AnchorPane {
         }
 
         if (cardNrTextField.getLength() == 16) {
-            cardNrApprovedImageView.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("resources/approved.png"))));
+            cardNrApprovedImageView.setImage(getApprovedImage());
         } else {
-            cardNrApprovedImageView.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("resources/notApproved.png"))));
+            cardNrApprovedImageView.setImage(getNotApprovedImage());
         }
+    }
+
+    Image getApprovedImage() {
+        return new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("resources/approved.png")));
+    }
+
+    Image getNotApprovedImage() {
+        return new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("resources/notApproved.png")));
     }
 
 }
