@@ -63,7 +63,7 @@ public class productCard extends AnchorPane {
 
         if (shoppingItem.getAmount() > 0) {
             addOrRemoveButton.toFront();
-            productCardAmountLabel.setText((int) shoppingItem.getAmount() + " st");
+            productCardAmountLabel.setText((int) shoppingItem.getAmount() + " " + shoppingItem.getProduct().getUnitSuffix());
         }
 
     }
@@ -72,7 +72,7 @@ public class productCard extends AnchorPane {
         if (shoppingItem.getAmount() == 0) { //Om man tog bort den sista i kundvagnen
             addButton.toFront();
         } else {
-            productCardAmountLabel.setText((int) shoppingItem.getAmount() + " st");
+            productCardAmountLabel.setText((int) shoppingItem.getAmount() + " " + shoppingItem.getProduct().getUnitSuffix());
         }
     }
 
@@ -81,7 +81,7 @@ public class productCard extends AnchorPane {
         shoppingItem.setAmount(shoppingItem.getAmount() + 1);
         model.addToShoppingCart(shoppingItem);
         addOrRemoveButton.toFront();
-        productCardAmountLabel.setText((int) shoppingItem.getAmount() + " st");
+        productCardAmountLabel.setText((int) shoppingItem.getAmount() + " " + shoppingItem.getProduct().getUnitSuffix());
         model.getShoppingCart().fireShoppingCartChanged(shoppingItem, true);
     }
 
@@ -92,7 +92,7 @@ public class productCard extends AnchorPane {
             addButton.toFront();
             model.getShoppingCart().removeItem(shoppingItem);
         } else {
-            productCardAmountLabel.setText((int) shoppingItem.getAmount() + " st");
+            productCardAmountLabel.setText((int) shoppingItem.getAmount() + " " + shoppingItem.getProduct().getUnitSuffix());
         }
         model.getShoppingCart().fireShoppingCartChanged(shoppingItem, false);
     }

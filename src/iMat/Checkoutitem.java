@@ -46,14 +46,14 @@ public class Checkoutitem extends AnchorPane {
         checkoutitemPrizePerItemText.setText(String.format("%.2f", item.getProduct().getPrice()) + " " + item.getProduct().getUnit());
         checkoutitemProductImage.setImage(model.getImage(item.getProduct(), kImageWidth, kImageWidth*kImageRatio));
         checkoutitemTotalItemPrizeText.setText(item.getTotal() + " kr");
-        checkoutitemAmountLabel.setText((int) item.getAmount() + " st");
+        checkoutitemAmountLabel.setText((int) item.getAmount() + " " + item.getProduct().getUnitSuffix());
     }
 
     @FXML
     private void handleAddAction() {
         item.setAmount(item.getAmount() + 1);
         model.addToShoppingCart(item);
-        checkoutitemAmountLabel.setText((int) item.getAmount() + " st");
+        checkoutitemAmountLabel.setText((int) item.getAmount() + " " + item.getProduct().getUnitSuffix());
         checkoutitemTotalItemPrizeText.setText(String.format("%.2f",item.getTotal()) + " kr");
         model.getShoppingCart().fireShoppingCartChanged(item, true);
     }
@@ -66,7 +66,7 @@ public class Checkoutitem extends AnchorPane {
             model.getShoppingCart().removeItem(item);
             model.getShoppingCart().fireShoppingCartChanged(item, false);
         } else {
-            checkoutitemAmountLabel.setText((int) item.getAmount() + " st");
+            checkoutitemAmountLabel.setText((int) item.getAmount() + " " + item.getProduct().getUnitSuffix());
             checkoutitemTotalItemPrizeText.setText(String.format("%.2f",item.getTotal()) + " kr");
             model.getShoppingCart().fireShoppingCartChanged(item, false);
         }

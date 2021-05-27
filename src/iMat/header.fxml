@@ -24,7 +24,7 @@
             <Font size="54.0" />
          </font>
       </Label>
-      <Button fx:id="mypageButton" alignment="CENTER" layoutX="1076.0" layoutY="12.0" maxHeight="70.0" minHeight="50.0" mnemonicParsing="false" onAction="#openMypageView" prefHeight="50.0" prefWidth="227.0" styleClass="green-button" stylesheets="@iMat.css" text="Hjördis" AnchorPane.topAnchor="10.0">
+      <Button fx:id="mypageButton" alignment="CENTER" layoutX="1076.0" layoutY="12.0" maxHeight="70.0" minHeight="50.0" mnemonicParsing="false" onAction="#openMypageView" prefHeight="50.0" prefWidth="227.0" styleClass="green-button" stylesheets="@iMat.css" text="Mina sidor" AnchorPane.topAnchor="10.0">
          <effect>
             <DropShadow height="10.45" offsetY="5.0" radius="3.6125" width="6.0">
                <color>
@@ -38,7 +38,7 @@
          <graphic>
             <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../resources/Hjordis.png" />
+                  <Image url="@../resources/profile.png" />
                </image>
             </ImageView>
          </graphic>

@@ -210,4 +210,9 @@
     -fx-border-radius: 40;
 }
 
+.text-productcard {
+    -fx-font-family: "Assistant";
+    -fx-font-size: 24px;
+}
+
 

@@ -42,14 +42,14 @@ public class ShoppingcartItem extends AnchorPane {
         shoppingcartItemNameText.setText(item.getProduct().getName());
         shoppingcartItemPrizeText.setText(String.format("%.2f", item.getProduct().getPrice()) + " " + item.getProduct().getUnit());
         shoppingcartItemImageview.setImage(model.getImage(item.getProduct(), kImageWidth, kImageWidth*kImageRatio));
-        shoppingcartItemAmountLabel.setText((int) item.getAmount() + " st");
+        shoppingcartItemAmountLabel.setText((int) item.getAmount() + " " + item.getProduct().getUnitSuffix());
     }
 
     @FXML
     private void handleAddAction() {
         item.setAmount(item.getAmount() + 1);
         model.addToShoppingCart(item);
-        shoppingcartItemAmountLabel.setText((int) item.getAmount() + " st");
+        shoppingcartItemAmountLabel.setText((int) item.getAmount() + " " + item.getProduct().getUnitSuffix());
         model.getShoppingCart().fireShoppingCartChanged(item, true);
     }
 
@@ -60,7 +60,7 @@ public class ShoppingcartItem extends AnchorPane {
             //radera item från listan
             model.getShoppingCart().removeItem(item);
         } else {
-            shoppingcartItemAmountLabel.setText((int) item.getAmount() + " st");
+            shoppingcartItemAmountLabel.setText((int) item.getAmount() + " " + item.getProduct().getUnitSuffix());
         }
         model.getShoppingCart().fireShoppingCartChanged(item, false);
     }
