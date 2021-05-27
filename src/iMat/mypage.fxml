@@ -75,12 +75,12 @@
       <VBox layoutX="798.0" layoutY="154.0" spacing="20.0" AnchorPane.topAnchor="153.0">
          <children>
             <ComboBox fx:id="cardTypeComboBox" prefHeight="35.0" prefWidth="198.0" styleClass="text-helpbox-normal" />
-            <TextField maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="198.0">
+            <TextField fx:id="holdersNameTextField" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="198.0">
                <font>
                   <Font size="18.0" />
                </font>
             </TextField>
-            <TextField maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="198.0">
+            <TextField fx:id="cardNrTextField" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="198.0">
                <font>
                   <Font size="18.0" />
                </font>
@@ -92,7 +92,7 @@
                   <ComboBox fx:id="validYearComboBox" prefHeight="39.0" prefWidth="90.0" styleClass="text-helpbox-normal" />
                </children>
             </HBox>
-            <TextField maxHeight="40.0" maxWidth="80.0" minHeight="40.0" prefHeight="40.0" prefWidth="87.0">
+            <TextField fx:id="verificationCodeTextField" maxHeight="40.0" maxWidth="80.0" minHeight="40.0" prefHeight="40.0" prefWidth="87.0">
                <font>
                   <Font size="18.0" />
                </font>

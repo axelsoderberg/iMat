@@ -23,6 +23,9 @@ public class mypageController extends AnchorPane {
     @FXML ComboBox cardTypeComboBox;
     @FXML ComboBox validMonthComboBox;
     @FXML ComboBox validYearComboBox;
+    @FXML TextField holdersNameTextField;
+    @FXML TextField verificationCodeTextField;
+    @FXML TextField cardNrTextField;
 
     private final Model model = Model.getInstance();
 
@@ -274,6 +277,84 @@ public class mypageController extends AnchorPane {
                 {
                     // Denna körs när fältet inte längre är fokuserat, så vill ha spara metod här också
                     model.getCustomer().setLastName(mailTextField.getText());
+                }
+            }
+        });
+
+        // Denna metod körs när textfältet är fokuserat och man trycker Enter
+        holdersNameTextField.setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.ENTER) {
+                // Spara metoden här
+                model.getCreditCard().setHoldersName(holdersNameTextField.getText());
+
+            }
+        });
+
+        holdersNameTextField.focusedProperty().addListener(new ChangeListener<Boolean>()
+        {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> arg0, Boolean oldPropertyValue, Boolean newPropertyValue)
+            {
+                if (newPropertyValue)
+                {
+
+                }
+                else
+                {
+                    // Denna körs när fältet inte längre är fokuserat, så vill ha spara metod här också
+                    model.getCreditCard().setHoldersName(holdersNameTextField.getText());
+                }
+            }
+        });
+
+        // Denna metod körs när textfältet är fokuserat och man trycker Enter
+        cardNrTextField.setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.ENTER) {
+                // Spara metoden här
+                model.getCreditCard().setCardNumber(cardNrTextField.getText());
+
+            }
+        });
+
+        cardNrTextField.focusedProperty().addListener(new ChangeListener<Boolean>()
+        {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> arg0, Boolean oldPropertyValue, Boolean newPropertyValue)
+            {
+                if (newPropertyValue)
+                {
+
+                }
+                else
+                {
+                    // Denna körs när fältet inte längre är fokuserat, så vill ha spara metod här också
+                    model.getCreditCard().setCardNumber(cardNrTextField.getText());
+                }
+            }
+        });
+
+        // Denna metod körs när textfältet är fokuserat och man trycker Enter
+        verificationCodeTextField.setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.ENTER) {
+                // Spara metoden här
+                model.getCreditCard().setVerificationCode(Integer.parseInt(verificationCodeTextField.getText()));
+
+            }
+        });
+
+        verificationCodeTextField.focusedProperty().addListener(new ChangeListener<Boolean>()
+        {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> arg0, Boolean oldPropertyValue, Boolean newPropertyValue)
+            {
+                if (newPropertyValue)
+                {
+
+                }
+                else
+                {
+                    // Denna körs när fältet inte längre är fokuserat, så vill ha spara metod här också
+                    model.getCreditCard().setVerificationCode(Integer.parseInt(verificationCodeTextField.getText()));
                 }
             }
         });
