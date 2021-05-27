@@ -107,9 +107,9 @@
             <Image url="@../resources/arrow.png" />
          </image>
       </ImageView>
-      <ScrollPane fitToHeight="true" fitToWidth="true" layoutX="388.0" layoutY="93.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="388.0" AnchorPane.rightAnchor="388.0">
+      <ScrollPane fitToHeight="true" fitToWidth="true" layoutX="388.0" layoutY="93.0" styleClass="almost-white" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="388.0" AnchorPane.rightAnchor="388.0">
          <content>
-            <FlowPane fx:id="productsFlowPaneStore" nodeOrientation="LEFT_TO_RIGHT" prefHeight="570.0" prefWidth="648.0" prefWrapLength="1200.0" rowValignment="TOP" />
+            <FlowPane fx:id="productsFlowPaneStore" hgap="20.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="570.0" prefWidth="648.0" prefWrapLength="1200.0" rowValignment="TOP" styleClass="almost-white" vgap="20.0" />
          </content>
       </ScrollPane>
       <ImageView fx:id="backArrow" fitHeight="48.0" fitWidth="48.0" onMouseClicked="#backArrowClicked" pickOnBounds="true" preserveRatio="true" x="55.0" y="30.0">

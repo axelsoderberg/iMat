@@ -36,7 +36,9 @@ public class storeController extends AnchorPane {
     private List<ProductCategory> selectedCategories = new ArrayList();
     private final Model model = Model.getInstance();
 
-    public storeController() {
+    headerController headerCtrl;
+
+    public storeController(headerController headerCtrl) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("store.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
@@ -51,6 +53,8 @@ public class storeController extends AnchorPane {
         placeCategories();
         updateProductList(model.getProducts());
         updateShoppingcartview(model.getShoppingCart().getItems());
+
+        this.headerCtrl = headerCtrl;
     }
 
     void updateProductCard(Product product) {

@@ -103,7 +103,7 @@ public class mypageController extends AnchorPane {
         firstNameTextField.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.ENTER) {
                 // Spara metoden här
-                model.getCustomer().setLastName(firstNameTextField.getText());
+                model.getCustomer().setFirstName(firstNameTextField.getText());
 
             }
         });
@@ -120,7 +120,7 @@ public class mypageController extends AnchorPane {
                 else
                 {
                     // Denna körs när fältet inte längre är fokuserat, så vill ha spara metod här också
-                    model.getCustomer().setLastName(firstNameTextField.getText());
+                    model.getCustomer().setFirstName(firstNameTextField.getText());
                 }
             }
         });
@@ -155,7 +155,7 @@ public class mypageController extends AnchorPane {
         postAdressTextField.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.ENTER) {
                 // Spara metoden här
-                model.getCustomer().setLastName(postAdressTextField.getText());
+                model.getCustomer().setAddress(postAdressTextField.getText());
 
             }
         });
@@ -172,7 +172,7 @@ public class mypageController extends AnchorPane {
                 else
                 {
                     // Denna körs när fältet inte längre är fokuserat, så vill ha spara metod här också
-                    model.getCustomer().setLastName(postAdressTextField.getText());
+                    model.getCustomer().setAddress(postAdressTextField.getText());
                 }
             }
         });
@@ -181,7 +181,7 @@ public class mypageController extends AnchorPane {
         postCodeTextField.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.ENTER) {
                 // Spara metoden här
-                model.getCustomer().setLastName(postCodeTextField.getText());
+                model.getCustomer().setPostCode(postCodeTextField.getText());
 
             }
         });
@@ -198,7 +198,7 @@ public class mypageController extends AnchorPane {
                 else
                 {
                     // Denna körs när fältet inte längre är fokuserat, så vill ha spara metod här också
-                    model.getCustomer().setLastName(postCodeTextField.getText());
+                    model.getCustomer().setPostCode(postCodeTextField.getText());
                 }
             }
         });
@@ -207,7 +207,7 @@ public class mypageController extends AnchorPane {
         cityTextField.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.ENTER) {
                 // Spara metoden här
-                model.getCustomer().setLastName(cityTextField.getText());
+                model.getCustomer().setPostAddress(cityTextField.getText());
 
             }
         });
@@ -224,7 +224,7 @@ public class mypageController extends AnchorPane {
                 else
                 {
                     // Denna körs när fältet inte längre är fokuserat, så vill ha spara metod här också
-                    model.getCustomer().setLastName(cityTextField.getText());
+                    model.getCustomer().setPostAddress(cityTextField.getText());
                 }
             }
         });
@@ -233,7 +233,7 @@ public class mypageController extends AnchorPane {
         phoneTextField.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.ENTER) {
                 // Spara metoden här
-                model.getCustomer().setLastName(phoneTextField.getText());
+                model.getCustomer().setPhoneNumber(phoneTextField.getText());
 
             }
         });
@@ -250,7 +250,7 @@ public class mypageController extends AnchorPane {
                 else
                 {
                     // Denna körs när fältet inte längre är fokuserat, så vill ha spara metod här också
-                    model.getCustomer().setLastName(phoneTextField.getText());
+                    model.getCustomer().setPhoneNumber(phoneTextField.getText());
                 }
             }
         });
@@ -259,7 +259,7 @@ public class mypageController extends AnchorPane {
         mailTextField.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.ENTER) {
                 // Spara metoden här
-                model.getCustomer().setLastName(mailTextField.getText());
+                model.getCustomer().setEmail(mailTextField.getText());
 
             }
         });
@@ -276,7 +276,7 @@ public class mypageController extends AnchorPane {
                 else
                 {
                     // Denna körs när fältet inte längre är fokuserat, så vill ha spara metod här också
-                    model.getCustomer().setLastName(mailTextField.getText());
+                    model.getCustomer().setEmail(mailTextField.getText());
                 }
             }
         });
@@ -382,5 +382,26 @@ public class mypageController extends AnchorPane {
         }
     }
 
+    @FXML
+    private void checkVerificationCode() {
+        if (verificationCodeTextField.getLength() > 3) {
+            verificationCodeTextField.deletePreviousChar();
+        } else if (!verificationCodeTextField.getText().matches("\\d+")) {
+            //given text does not include digits
+            verificationCodeTextField.deletePreviousChar();
+        }
+    }
+
+    @FXML
+    private void checkCardNumber() {
+        if (cardNrTextField.getLength() > 16) {
+            cardNrTextField.deletePreviousChar();
+        } else if (!cardNrTextField.getText().matches("\\d+")) {
+            //given text does not include digits
+            cardNrTextField.deletePreviousChar();
+        } else if ((cardNrTextField.getLength() % 4) == 0) {
+            //cardNrTextField.setText(cardNrTextField.getText() + " ");
+        }
+    }
 
 }

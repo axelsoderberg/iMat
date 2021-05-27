@@ -60,7 +60,7 @@ public class headerController extends AnchorPane {
     }
 
     @FXML
-    private void openCheckoutView() {
+    void openCheckoutView() {
         checkoutCtrl.toFront();
         this.toFront();
         checkoutCtrl.updateShoppingcartList(model.getShoppingCart().getItems());
@@ -82,6 +82,7 @@ public class headerController extends AnchorPane {
     private void handleSearchAction() {
 
         List<Product> matches = model.findProducts(searchField.getText());
+        searchField.clear();
         storeCtrl.updateProductList(matches);
         storeCtrl.toFront();
         storeCtrl.clearSubcategories();

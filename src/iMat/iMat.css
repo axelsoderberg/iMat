@@ -15,7 +15,7 @@
 }
 
 .shadow-effect {
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.25), 0, 10, 0, 4);
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 0, 10, 0, 4);
 }
 
 .detail-view-button-green {
@@ -43,7 +43,7 @@
     -fx-font-weight: bold;
     -fx-background-color: #629543;
     -fx-background-radius: 20px;
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.25), 0, 10, 0, 4);
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 0, 10, 0, 4);
 }
 
 .white-button {
@@ -53,7 +53,7 @@
     -fx-font-weight: bold;
     -fx-background-color: #ECEBEB;
     -fx-background-radius: 20px;
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.25), 0, 10, 0, 4);
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 0, 10, 0, 4);
 }
 
 .lightgreen-button {
@@ -63,7 +63,7 @@
     -fx-font-weight: bold;
     -fx-background-color: #C3D5BD;
     -fx-background-radius: 20px;
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.25), 0, 10, 0, 4);
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 0, 10, 0, 4);
 }
 
 .red-button {
@@ -73,7 +73,7 @@
     -fx-font-weight: bold;
     -fx-background-color: #AC1E0B;
     -fx-background-radius: 20px;
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.25), 0, 10, 0, 4);
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 0, 10, 0, 4);
 }
 
 .grey-button {
@@ -167,7 +167,7 @@
     -fx-font-weight: bold;
     -fx-background-color: #ECEBEB;
     -fx-background-radius: 20px;
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.25), 0, 10, 0, 4);
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 0, 10, 0, 4);
 }
 
 .text-shopping-list-title{
@@ -187,9 +187,27 @@
     -fx-font-weight: bold;
 }
 
-
-
 .lightbox-background {
     -fx-background-color: rgba(0, 0, 0, 0.5)
 }
+
+.productcard {
+    -fx-background-radius:  20;
+    -fx-background-color: #F7F7F7;
+    -fx-border-radius: 20;
+    -fx-border-color: #c4c4c4;
+    -fx-border-width: 2px;
+}
+
+.textfields {
+    -fx-background-radius: 10;
+    -fx-background-color: #ECEBEB;
+    -fx-font-family: "Assistant";
+    -fx-font-size: 18px;
+}
+
+.rounded-corners {
+    -fx-border-radius: 40;
+}
+
 

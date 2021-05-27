@@ -13,9 +13,9 @@
 
 <fx:root prefHeight="689.0" prefWidth="1536.0" styleClass="almost-white" stylesheets="@iMat.css" type="AnchorPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c3d5bd" height="610.0" layoutX="44.0" layoutY="40.0" stroke="#c3d5bd" strokeType="INSIDE" width="475.0" AnchorPane.bottomAnchor="39.0" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="40.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c3d5bd" height="610.0" layoutX="531.0" layoutY="40.0" stroke="#c3d5bd" strokeType="INSIDE" width="475.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c3d5bd" height="610.0" layoutX="1022.0" layoutY="40.0" stroke="#c3d5bd" strokeType="INSIDE" width="475.0" />
+      <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#c3d5bd" height="610.0" layoutX="44.0" layoutY="40.0" stroke="#c3d5bd" strokeType="INSIDE" width="475.0" AnchorPane.bottomAnchor="39.0" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="40.0" />
+      <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#c3d5bd" height="610.0" layoutX="531.0" layoutY="40.0" stroke="#c3d5bd" strokeType="INSIDE" width="475.0" />
+      <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#c3d5bd" height="610.0" layoutX="1022.0" layoutY="40.0" stroke="#c3d5bd" strokeType="INSIDE" width="475.0" />
       <HBox layoutX="40.0" layoutY="45.0" spacing="16.0">
          <children>
             <Label alignment="CENTER" prefWidth="475.0" stylesheets="@iMat.css" text="Personuppgifter" textAlignment="CENTER">
@@ -69,30 +69,30 @@
       </VBox>
       <ScrollPane layoutX="1046.0" layoutY="135.0" prefHeight="500.0" prefWidth="433.0">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="502.0" prefWidth="432.0" />
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="502.0" prefWidth="432.0" styleClass="almost-white" />
         </content>
       </ScrollPane>
       <VBox layoutX="798.0" layoutY="154.0" spacing="20.0" AnchorPane.topAnchor="153.0">
          <children>
-            <ComboBox fx:id="cardTypeComboBox" prefHeight="35.0" prefWidth="198.0" styleClass="text-helpbox-normal" />
-            <TextField fx:id="holdersNameTextField" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="198.0">
+            <ComboBox fx:id="cardTypeComboBox" prefHeight="35.0" prefWidth="198.0" styleClass="textfields" />
+            <TextField fx:id="holdersNameTextField" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="198.0" styleClass="textfields">
                <font>
                   <Font size="18.0" />
                </font>
             </TextField>
-            <TextField fx:id="cardNrTextField" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="198.0">
+            <TextField fx:id="cardNrTextField" maxHeight="40.0" minHeight="40.0" onKeyTyped="#checkCardNumber" prefHeight="40.0" prefWidth="198.0" styleClass="textfields">
                <font>
                   <Font size="18.0" />
                </font>
             </TextField>
             <HBox spacing="10.0">
                <children>
-                  <ComboBox fx:id="validMonthComboBox" prefHeight="39.0" prefWidth="80.0" styleClass="text-helpbox-normal" />
+                  <ComboBox fx:id="validMonthComboBox" prefHeight="39.0" prefWidth="80.0" styleClass="textfields" />
                   <Label styleClass="text-shopping-list-title" text="/" />
-                  <ComboBox fx:id="validYearComboBox" prefHeight="39.0" prefWidth="90.0" styleClass="text-helpbox-normal" />
+                  <ComboBox fx:id="validYearComboBox" prefHeight="39.0" prefWidth="90.0" styleClass="textfields" />
                </children>
             </HBox>
-            <TextField fx:id="verificationCodeTextField" maxHeight="40.0" maxWidth="80.0" minHeight="40.0" prefHeight="40.0" prefWidth="87.0">
+            <TextField fx:id="verificationCodeTextField" maxHeight="40.0" maxWidth="80.0" minHeight="40.0" onKeyTyped="#checkVerificationCode" prefHeight="40.0" prefWidth="87.0" styleClass="textfields">
                <font>
                   <Font size="18.0" />
                </font>
@@ -140,37 +140,37 @@
       </VBox>
       <VBox layoutX="247.0" layoutY="153.0" spacing="20.0">
          <children>
-            <TextField fx:id="firstNameTextField" maxHeight="40.0" minHeight="40.0" prefHeight="40.0">
+            <TextField fx:id="firstNameTextField" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" styleClass="textfields">
                <font>
                   <Font size="18.0" />
                </font>
             </TextField>
-            <TextField fx:id="surNameTextField" maxHeight="40.0" minHeight="40.0" prefHeight="40.0">
+            <TextField fx:id="surNameTextField" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" styleClass="textfields">
                <font>
                   <Font size="18.0" />
                </font>
             </TextField>
-            <TextField fx:id="postAdressTextField" maxHeight="40.0" minHeight="40.0" prefHeight="40.0">
+            <TextField fx:id="postAdressTextField" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" styleClass="textfields">
                <font>
                   <Font size="18.0" />
                </font>
             </TextField>
-            <TextField fx:id="postCodeTextField" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" onKeyTyped="#checkPostCode" prefHeight="40.0" prefWidth="100.0">
+            <TextField fx:id="postCodeTextField" maxHeight="40.0" maxWidth="100.0" minHeight="40.0" minWidth="100.0" onKeyTyped="#checkPostCode" prefHeight="40.0" prefWidth="100.0" styleClass="textfields">
                <font>
                   <Font size="18.0" />
                </font>
             </TextField>
-            <TextField fx:id="cityTextField" maxHeight="40.0" minHeight="40.0" prefHeight="40.0">
+            <TextField fx:id="cityTextField" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" styleClass="textfields">
                <font>
                   <Font size="18.0" />
                </font>
             </TextField>
-            <TextField fx:id="phoneTextField" maxHeight="40.0" minHeight="40.0" onKeyTyped="#checkPhoneNumber" prefHeight="40.0">
+            <TextField fx:id="phoneTextField" maxHeight="40.0" minHeight="40.0" onKeyTyped="#checkPhoneNumber" prefHeight="40.0" styleClass="textfields">
                <font>
                   <Font size="18.0" />
                </font>
             </TextField>
-            <TextField fx:id="mailTextField" maxHeight="40.0" minHeight="40.0" prefHeight="40.0">
+            <TextField fx:id="mailTextField" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" styleClass="textfields">
                <font>
                   <Font size="18.0" />
                </font>
