@@ -47,6 +47,9 @@ public class mypageController extends AnchorPane {
         cityTextField.setText(model.getCustomer().getAddress());
         phoneTextField.setText(model.getCustomer().getPhoneNumber());
         mailTextField.setText(model.getCustomer().getEmail());
+        holdersNameTextField.setText(model.getCreditCard().getHoldersName());
+        verificationCodeTextField.setText(Integer.toString(model.getCreditCard().getVerificationCode()));
+        cardNrTextField.setText(model.getCreditCard().getCardNumber());
 
         addListeners();
 
@@ -303,6 +306,7 @@ public class mypageController extends AnchorPane {
                 {
                     // Denna körs när fältet inte längre är fokuserat, så vill ha spara metod här också
                     model.getCreditCard().setHoldersName(holdersNameTextField.getText());
+                    System.out.println(model.getCreditCard().getHoldersName());
                 }
             }
         });
