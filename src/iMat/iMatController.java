@@ -43,13 +43,14 @@ public class iMatController implements Initializable, ShoppingCartListener {
     checkoutController checkoutCtrl;
     static headerController headerCtrl;
     storeController storeCtrl;
+    shoppinglists shoppinglistsCtrl;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         checkoutCtrl = new checkoutController();
         storeCtrl = new storeController();
         mypageController mypageCtrl = new mypageController();
-        shoppinglists shoppinglistsCtrl = new shoppinglists();
+        shoppinglistsCtrl = new shoppinglists();
         helpController helpCtrl = new helpController();
         headerCtrl = new headerController(checkoutCtrl, storeCtrl, mypageCtrl, shoppinglistsCtrl, helpCtrl);
         StartController startCtrl = new StartController(storeCtrl, helpCtrl, headerCtrl);

@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -36,6 +37,7 @@ public class productCard extends AnchorPane {
     private final static double kImageRatio = 0.75;
 
     public productCard(ShoppingItem item, storeController parentController) {
+
         this.shoppingItem = item;
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("productCard.fxml"));
@@ -57,7 +59,7 @@ public class productCard extends AnchorPane {
             productCardFavoriteImageView.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("resources/heartFilled.png"))));
         } //annars ej ifyllt hjärta
 
-        this.parentController = parentController;
+            this.parentController = parentController;
 
         if (shoppingItem.getAmount() > 0) {
             addOrRemoveButton.toFront();

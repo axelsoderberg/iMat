@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="90.0" prefWidth="810.0" styleClass="almost-white" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.iMatController">
+<fx:root prefHeight="90.0" prefWidth="810.0" styleClass="almost-white" stylesheets="@iMat.css" type="AnchorPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Rectangle arcHeight="50.0" arcWidth="50.0" fill="#c3d5bd" height="75.0" layoutX="5.0" layoutY="8.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="800.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="8.0">
          <effect>
@@ -21,8 +21,8 @@
             </DropShadow>
          </effect>
       </Rectangle>
-      <Text layoutX="35.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-header" text="Text" AnchorPane.leftAnchor="35.0" />
-      <Button layoutX="324.0" layoutY="23.0" mnemonicParsing="false" text="Anpassa och lägg till">
+      <Text fx:id="nameText" layoutX="35.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-header" text="Text" AnchorPane.leftAnchor="35.0" />
+      <Button layoutX="324.0" layoutY="23.0" mnemonicParsing="false" onAction="#addButton" text="Anpassa och lägg till">
          <styleClass>
             <String fx:value="white-button" />
             <String fx:value="small-button" />
@@ -42,7 +42,7 @@
             </DropShadow>
          </effect>
       </Button>
-      <Button layoutX="639.0" layoutY="24.0" mnemonicParsing="false" text="Redigera">
+      <Button layoutX="639.0" layoutY="24.0" mnemonicParsing="false" onAction="#editButton" text="Redigera">
          <styleClass>
             <String fx:value="white-button" />
             <String fx:value="small-button" />
@@ -63,4 +63,4 @@
          </effect>
       </Button>
    </children>
-</AnchorPane>
+</fx:root>
