@@ -24,8 +24,8 @@ public class mypageController extends AnchorPane {
     @FXML TextField phoneTextField;
     @FXML TextField mailTextField;
     @FXML ComboBox cardTypeComboBox;
-    @FXML ComboBox validMonthComboBox;
-    @FXML ComboBox validYearComboBox;
+    @FXML TextField validMonthTextField;
+    @FXML TextField validYearTextField;
     @FXML TextField holdersNameTextField;
     @FXML TextField verificationCodeTextField;
     @FXML TextField cardNrTextField;
@@ -66,12 +66,12 @@ public class mypageController extends AnchorPane {
         holdersNameTextField.setText(model.getCreditCard().getHoldersName());
         verificationCodeTextField.setText(Integer.toString(model.getCreditCard().getVerificationCode()));
         cardNrTextField.setText(model.getCreditCard().getCardNumber());
+        validMonthTextField.setText(Integer.toString(model.getCreditCard().getValidMonth()));
+        validYearTextField.setText(Integer.toString(model.getCreditCard().getValidYear()));
 
         addListeners();
 
         initComboBoxCardtype();
-        initComboBoxValidMonth();
-        initComboBoxValidYear();
 
         checkApprovals();
 
@@ -94,34 +94,6 @@ public class mypageController extends AnchorPane {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 model.getCreditCard().setCardType(newValue);
-            }
-        });
-    }
-
-    void initComboBoxValidMonth() {
-        //det som ska visas i boxen
-        validMonthComboBox.getItems().addAll(model.getMonths());
-        //bestämmer vad som är valt från början
-        validMonthComboBox.getSelectionModel().select(model.getCreditCard().getValidMonth());
-
-        validMonthComboBox.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                model.getCreditCard().setValidMonth(Integer.parseInt(newValue));
-            }
-        });
-    }
-
-    void initComboBoxValidYear() {
-        //det som ska visas i boxen
-        validYearComboBox.getItems().addAll(model.getYears());
-        //bestämmer vad som är valt från början
-        validYearComboBox.getSelectionModel().select(model.getCreditCard().getValidYear());
-
-        validYearComboBox.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-                model.getCreditCard().setValidYear(Integer.parseInt(newValue));
             }
         });
     }
@@ -327,10 +299,75 @@ public class mypageController extends AnchorPane {
         });
 
         // Denna metod körs när textfältet är fokuserat och man trycker Enter
+        validMonthTextField.setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.ENTER) {
+                try {
+                    // Spara metoden här
+                    model.getCreditCard().setValidMonth(Integer.parseInt(validMonthTextField.getText()));
+                } catch(NumberFormatException ignored) {
+
+                }
+            }
+        });
+
+        validMonthTextField.focusedProperty().addListener(new ChangeListener<Boolean>()
+        {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> arg0, Boolean oldPropertyValue, Boolean newPropertyValue)
+            {
+                if (!newPropertyValue)
+                {
+                    try {
+                        // Denna körs när fältet inte längre är fokuserat, så vill ha spara metod här också
+                        model.getCreditCard().setValidMonth(Integer.parseInt(validMonthTextField.getText()));
+                    } catch(NumberFormatException ignored) {
+
+                    }
+
+                }
+            }
+        });
+
+        // Denna metod körs när textfältet är fokuserat och man trycker Enter
+        validYearTextField.setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.ENTER) {
+                try {
+                    // Spara metoden här
+                    model.getCreditCard().setValidYear(Integer.parseInt(validYearTextField.getText()));
+                } catch(NumberFormatException ignored) {
+
+                }
+            }
+        });
+
+        validYearTextField.focusedProperty().addListener(new ChangeListener<Boolean>()
+        {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> arg0, Boolean oldPropertyValue, Boolean newPropertyValue)
+            {
+                if (!newPropertyValue)
+                {
+                    try {
+                        // Denna körs när fältet inte längre är fokuserat, så vill ha spara metod här också
+                        model.getCreditCard().setValidYear(Integer.parseInt(validYearTextField.getText()));
+                    } catch(NumberFormatException ignored) {
+
+                    }
+
+                }
+            }
+        });
+
+        // Denna metod körs när textfältet är fokuserat och man trycker Enter
         verificationCodeTextField.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.ENTER) {
-                // Spara metoden här
-                model.getCreditCard().setVerificationCode(Integer.parseInt(verificationCodeTextField.getText()));
+                try {
+                    // Spara metoden här
+                    model.getCreditCard().setVerificationCode(Integer.parseInt(verificationCodeTextField.getText()));
+                } catch(NumberFormatException ignored) {
+
+                }
+
             }
         });
 
@@ -341,8 +378,13 @@ public class mypageController extends AnchorPane {
             {
                 if (!newPropertyValue)
                 {
-                    // Denna körs när fältet inte längre är fokuserat, så vill ha spara metod här också
-                    model.getCreditCard().setVerificationCode(Integer.parseInt(verificationCodeTextField.getText()));
+                    try {
+                        // Denna körs när fältet inte längre är fokuserat, så vill ha spara metod här också
+                        model.getCreditCard().setVerificationCode(Integer.parseInt(verificationCodeTextField.getText()));
+                    } catch(NumberFormatException ignored) {
+
+                    }
+
                 }
             }
         });
@@ -414,6 +456,47 @@ public class mypageController extends AnchorPane {
         } else {
             cardNrApprovedImageView.setImage(getNotApprovedImage());
         }
+    }
+
+    @FXML
+    private void checkValidDate() {
+        if (validMonthTextField.getLength() > 2) {
+            validMonthTextField.deletePreviousChar();
+        } else if (!validMonthTextField.getText().matches("\\d+")) {
+            //given text does not include digits
+            validMonthTextField.deletePreviousChar();
+        }
+
+        if (validYearTextField.getLength() > 2) {
+            validYearTextField.deletePreviousChar();
+        } else if (!validYearTextField.getText().matches("\\d+")) {
+            //given text does not include digits
+            validYearTextField.deletePreviousChar();
+        }
+
+        if (checkMonth() && checkYear()) {
+            validDateApprovedImageView.setImage(getApprovedImage());
+        } else {
+            validDateApprovedImageView.setImage(getNotApprovedImage());
+        }
+    }
+
+    boolean checkMonth() {
+        int month = -1;
+        if (!validMonthTextField.getText().equals("")) {
+            month = Integer.parseInt(validMonthTextField.getText());
+        }
+
+        System.out.println(month);
+        return  month >= 1 && month <=12 && validMonthTextField.getLength() > 0;
+    }
+
+    boolean checkYear() {
+        int year = -1;
+        if (!validYearTextField.getText().equals("")) {
+            year = Integer.parseInt(validYearTextField.getText());
+        }
+        return  year >= 21 && year <=31 && validYearTextField.getLength() == 2;
     }
 
     Image getApprovedImage() {

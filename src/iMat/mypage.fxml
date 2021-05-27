@@ -89,9 +89,17 @@
             </TextField>
             <HBox spacing="10.0">
                <children>
-                  <ComboBox fx:id="validMonthComboBox" prefHeight="39.0" prefWidth="80.0" styleClass="textfields" />
+                  <TextField fx:id="validMonthTextField" maxHeight="40.0" maxWidth="80.0" minHeight="40.0" onKeyTyped="#checkValidDate" prefHeight="40.0" prefWidth="87.0" promptText="Månad" styleClass="textfields">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
                   <Label prefHeight="40.0" prefWidth="3.0" styleClass="text-shopping-list-title" text="/" />
-                  <ComboBox fx:id="validYearComboBox" prefHeight="39.0" prefWidth="97.0" styleClass="textfields" />
+                  <TextField fx:id="validYearTextField" maxHeight="40.0" maxWidth="80.0" minHeight="40.0" onKeyTyped="#checkValidDate" prefHeight="40.0" prefWidth="87.0" promptText="År" styleClass="textfields">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" spacing="10.0">
