@@ -129,6 +129,7 @@ public class storeController extends AnchorPane {
     void backArrowClicked() {
         clearSubcategories();
         placeCategories();
+        updateProductList(model.getProducts());
     }
 
     public String subCatConverter(ProductCategory pc) {
