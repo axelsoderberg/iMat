@@ -12,6 +12,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <fx:root prefHeight="689.0" prefWidth="1536.0" styleClass="almost-white" stylesheets="@iMat.css" type="AnchorPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -82,7 +83,7 @@
                   <Font size="18.0" />
                </font>
             </TextField>
-            <TextField fx:id="holdersNameTextField" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" prefWidth="198.0" styleClass="textfields">
+            <TextField fx:id="holdersNameTextField" maxHeight="40.0" minHeight="40.0" onKeyTyped="#checkHoldersName" prefHeight="40.0" prefWidth="198.0" styleClass="textfields">
                <font>
                   <Font size="18.0" />
                </font>
@@ -159,17 +160,17 @@
       </VBox>
       <VBox layoutX="247.0" layoutY="153.0" spacing="20.0" AnchorPane.leftAnchor="230.0">
          <children>
-            <TextField fx:id="firstNameTextField" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" styleClass="textfields">
+            <TextField fx:id="firstNameTextField" maxHeight="40.0" minHeight="40.0" onKeyTyped="#checkFirstName" prefHeight="40.0" styleClass="textfields">
                <font>
                   <Font size="18.0" />
                </font>
             </TextField>
-            <TextField fx:id="surNameTextField" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" styleClass="textfields">
+            <TextField fx:id="surNameTextField" maxHeight="40.0" minHeight="40.0" onKeyTyped="#checkLastName" prefHeight="40.0" styleClass="textfields">
                <font>
                   <Font size="18.0" />
                </font>
             </TextField>
-            <TextField fx:id="postAdressTextField" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" styleClass="textfields">
+            <TextField fx:id="postAdressTextField" maxHeight="40.0" minHeight="40.0" onKeyTyped="#checkAdress" prefHeight="40.0" styleClass="textfields">
                <font>
                   <Font size="18.0" />
                </font>
@@ -188,7 +189,7 @@
                   </ImageView>
                </children>
             </HBox>
-            <TextField fx:id="cityTextField" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" styleClass="textfields">
+            <TextField fx:id="cityTextField" maxHeight="40.0" minHeight="40.0" onKeyTyped="#checkCity" prefHeight="40.0" styleClass="textfields">
                <font>
                   <Font size="18.0" />
                </font>
@@ -198,7 +199,7 @@
                   <Font size="18.0" />
                </font>
             </TextField>
-            <TextField fx:id="mailTextField" maxHeight="40.0" minHeight="40.0" prefHeight="40.0" styleClass="textfields">
+            <TextField fx:id="mailTextField" maxHeight="40.0" minHeight="40.0" onKeyTyped="#checkEmail" prefHeight="40.0" styleClass="textfields">
                <font>
                   <Font size="18.0" />
                </font>
@@ -267,5 +268,7 @@
             </ImageView>
          </children>
       </VBox>
+      <Text layoutX="114.0" layoutY="618.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-mypage-smaller" text="Uppgifterna sparas automatiskt" />
+      <Text layoutX="605.0" layoutY="618.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-mypage-smaller" text="Uppgifterna sparas automatiskt" />
    </children>
 </fx:root>

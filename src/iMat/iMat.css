@@ -227,6 +227,7 @@
 .text-mypage-smaller {
     -fx-font-family: "Assistant";
     -fx-font-size: 22px;
+    -fx-font-weight: bold;
 }
 
 

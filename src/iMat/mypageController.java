@@ -74,6 +74,7 @@ public class mypageController extends AnchorPane {
         initComboBoxCardtype();
 
         checkApprovals();
+        cardtypeApprovedImageView.setImage(getApprovedImage());
 
     }
 
@@ -82,6 +83,13 @@ public class mypageController extends AnchorPane {
         checkPhoneNumber();
         checkPostCode();
         checkVerificationCode();
+        checkLastName();
+        checkEmail();
+        checkFirstName();
+        checkAdress();
+        checkCity();
+        checkHoldersName();
+        checkValidDate();
     }
 
     void initComboBoxCardtype() {
@@ -94,6 +102,7 @@ public class mypageController extends AnchorPane {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 model.getCreditCard().setCardType(newValue);
+                cardtypeApprovedImageView.setImage(getApprovedImage());
             }
         });
     }
@@ -459,6 +468,74 @@ public class mypageController extends AnchorPane {
     }
 
     @FXML
+    private void checkFirstName() {
+        if (!isAlpha(firstNameTextField.getText())) {
+            firstNameTextField.deletePreviousChar();
+        }
+
+        if (firstNameTextField.getText() == "") {
+            firstNameApprovedImageView.setImage(getNotApprovedImage());
+        } else {
+            firstNameApprovedImageView.setImage(getApprovedImage());
+        }
+    }
+
+    @FXML
+    private void checkLastName() {
+        if (!isAlpha(surNameTextField.getText())) {
+            surNameTextField.deletePreviousChar();
+        }
+
+        if (surNameTextField.getText().equals("")) {
+            surNameApprovedImageView.setImage(getNotApprovedImage());
+        } else {
+            surNameApprovedImageView.setImage(getApprovedImage());
+        }
+    }
+
+    @FXML
+    private void checkAdress() {
+        if (postAdressTextField.getText().equals("")) {
+            postadressApprovedImageView.setImage(getNotApprovedImage());
+        } else {
+            postadressApprovedImageView.setImage(getApprovedImage());
+        }
+    }
+
+    @FXML
+    private void checkCity() {
+        if (!isAlpha(cityTextField.getText())) {
+            cityTextField.deletePreviousChar();
+        }
+
+        if (cityTextField.getText().equals("")) {
+            cityApprovedImageView.setImage(getNotApprovedImage());
+        } else {
+            cityApprovedImageView.setImage(getApprovedImage());
+        }
+    }
+
+    @FXML
+    private void checkEmail() {
+        if (iMat.emailValidator.isValid(mailTextField.getText())) {
+            mailApprovedImageView.setImage(getApprovedImage());
+        } else {
+            mailApprovedImageView.setImage(getNotApprovedImage());
+        }
+    }
+
+    @FXML
+    private void checkHoldersName() {
+        if (holdersNameTextField.getText().equals("")) {
+            holdersNameApprovedImageView.setImage(getNotApprovedImage());
+        } else if (!holdersNameTextField.getText().contains(" ")) {
+            holdersNameApprovedImageView.setImage(getNotApprovedImage());
+        } else {
+            holdersNameApprovedImageView.setImage(getApprovedImage());
+        }
+    }
+
+    @FXML
     private void checkValidDate() {
         if (validMonthTextField.getLength() > 2) {
             validMonthTextField.deletePreviousChar();
@@ -497,6 +574,10 @@ public class mypageController extends AnchorPane {
             year = Integer.parseInt(validYearTextField.getText());
         }
         return  year >= 21 && year <=31 && validYearTextField.getLength() == 2;
+    }
+
+    public boolean isAlpha(String name) {
+        return name.matches("[a-öA-Ö]+");
     }
 
     Image getApprovedImage() {
