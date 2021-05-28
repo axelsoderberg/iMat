@@ -10,19 +10,22 @@ import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import javax.print.DocFlavor;
 import java.io.IOException;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class oneShoppingList extends AnchorPane {
 
     @FXML private Text nameText;
-    private List<Product> productList;
+    private List<ShoppingItem> productList = new ArrayList<ShoppingItem>();
     private final Model model = Model.getInstance();
     private iMatController controller;
     private shoppinglists parentController;
 
+
+    private Map<Product, shoppingListItem> shoppingListProductMap;
+
     public oneShoppingList(shoppinglists parentController) {
         this.parentController = parentController;
+        productListInit();
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("oneshoppinglist.fxml"));
         fxmlLoader.setRoot(this);
@@ -35,7 +38,6 @@ public class oneShoppingList extends AnchorPane {
         }
     }
 
-
     public void setListName(String listName){
         nameText.setText(listName);
     }
@@ -44,8 +46,12 @@ public class oneShoppingList extends AnchorPane {
         return nameText.getText();
     }
 
-    public List<Product> getProductList() {
+    public List<ShoppingItem> getProductList() {
         return productList;
+    }
+
+    public Map<Product, shoppingListItem> getShoppingListProductMap() {
+        return shoppingListProductMap;
     }
 
     @FXML private void editButton(){
@@ -53,6 +59,21 @@ public class oneShoppingList extends AnchorPane {
     }
 
     @FXML private void addButton(){
+        parentController.listView.toFront();
+    }
 
+    private void productListInit() {
+        shoppingListProductMap = new HashMap<Product, shoppingListItem>();
+        for (ShoppingItem item : getProductList()) {
+            shoppingListItem shoppingListItem = new shoppingListItem(item, this);
+            shoppingListProductMap.put(item.getProduct(), shoppingListItem);
+        }
+
+        for (Product product : model.getProducts()) {
+            if (!shoppingListProductMap.containsKey(product)) {
+                shoppingListItem shoppingListItem = new shoppingListItem(new ShoppingItem(product, 0), this);
+                shoppingListProductMap.put(product, shoppingListItem);
+            }
+        }
     }
 }
