@@ -199,6 +199,10 @@
     -fx-border-width: 2px;
 }
 
+.productcard:hover {
+    -fx-background-color: #EEEEEE;
+}
+
 .textfields {
     -fx-background-radius: 10;
     -fx-background-color: #ECEBEB;
