@@ -8,11 +8,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="170.0" styleClass="productcard" stylesheets="@iMat.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="170.0" styleClass="productcard" stylesheets="@iMat.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fx:id="productCardImageView" fitHeight="87.0" fitWidth="82.0" layoutX="52.0" layoutY="48.0" onMouseClicked="#openDetailView" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="43.0" AnchorPane.rightAnchor="43.0" AnchorPane.topAnchor="48.0">
+      <Rectangle fx:id="shadowBox" fill="#00000033" height="62.0" layoutX="60.0" layoutY="59.0" onMouseClicked="#openDetailView" onMouseExited="#hoverEnd" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="82.0" AnchorPane.leftAnchor="43.0" AnchorPane.topAnchor="48.0" />
+      <ImageView fx:id="productCardImageView" fitHeight="87.0" fitWidth="82.0" layoutX="52.0" layoutY="48.0" onMouseEntered="#hover" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="43.0" AnchorPane.rightAnchor="43.0" AnchorPane.topAnchor="48.0">
          <image>
             <Image url="@../resources/apple.jpg" />
          </image>
@@ -22,7 +24,7 @@
             <Font size="11.0" />
          </font>
       </Label>
-      <Circle fill="#c4c4c4" layoutX="130.0" layoutY="43.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle fx:id="prizeCircle" fill="#c4c4c4" layoutX="130.0" layoutY="43.0" radius="32.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
       <Label fx:id="productCardPrizeLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="99.0" layoutY="13.0" prefHeight="58.0" prefWidth="61.0" styleClass="text-helpbox-normal" text="15 kr/st" textAlignment="CENTER">
          <font>
             <Font size="18.0" />
