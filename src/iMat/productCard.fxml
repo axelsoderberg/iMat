@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="170.0" styleClass="productcard" stylesheets="@iMat.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="170.0" styleClass="productcard" stylesheets="@iMat.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Rectangle fx:id="shadowBox" fill="#00000033" height="62.0" layoutX="60.0" layoutY="59.0" onMouseClicked="#openDetailView" onMouseExited="#hoverEnd" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="82.0" AnchorPane.leftAnchor="43.0" AnchorPane.topAnchor="48.0" />
       <ImageView fx:id="productCardImageView" fitHeight="87.0" fitWidth="82.0" layoutX="52.0" layoutY="48.0" onMouseEntered="#hover" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="43.0" AnchorPane.rightAnchor="43.0" AnchorPane.topAnchor="48.0">
@@ -35,7 +35,7 @@
             <Image url="@../resources/heart.png" />
          </image>
       </ImageView>
-      <Group fx:id="addOrRemoveButton" layoutX="12.0" layoutY="182.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="6.0">
+      <Group fx:id="addOrRemoveButton" layoutX="12.0" layoutY="182.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="5.0">
          <children>
             <ImageView fitHeight="42.0" fitWidth="157.0" layoutX="-6.0" layoutY="9.0" pickOnBounds="true">
                <image>
@@ -65,6 +65,6 @@
             </ImageView>
          </children>
       </Group>
-      <Button fx:id="addButton" layoutX="7.0" layoutY="190.0" maxHeight="40.0" minHeight="40.0" mnemonicParsing="false" onAction="#handleAddAction" prefHeight="40.0" prefWidth="157.0" styleClass="lightgreen-button" text="Lägg till" AnchorPane.bottomAnchor="18.0" AnchorPane.leftAnchor="7.0" />
+      <Button fx:id="addButton" layoutX="7.0" layoutY="190.0" maxHeight="40.0" minHeight="40.0" mnemonicParsing="false" onAction="#handleAddAction" prefHeight="40.0" prefWidth="157.0" styleClass="lightgreen-button" text="Lägg till" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="5.0" />
    </children>
 </fx:root>
