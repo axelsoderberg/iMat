@@ -281,7 +281,6 @@ public class mypageController extends AnchorPane {
                 {
                     // Denna körs när fältet inte längre är fokuserat, så vill ha spara metod här också
                     model.getCreditCard().setHoldersName(holdersNameTextField.getText());
-                    System.out.println(model.getCreditCard().getHoldersName());
                 }
             }
         });
@@ -564,7 +563,6 @@ public class mypageController extends AnchorPane {
             month = Integer.parseInt(validMonthTextField.getText());
         }
 
-        System.out.println(month);
         return  month >= 1 && month <=12 && validMonthTextField.getLength() > 0;
     }
 
