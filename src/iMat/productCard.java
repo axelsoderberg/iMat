@@ -10,6 +10,8 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Circle;
+import javafx.scene.shape.Rectangle;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ShoppingItem;
@@ -26,6 +28,10 @@ public class productCard extends AnchorPane {
     @FXML Button addButton;
     @FXML Group addOrRemoveButton;
     @FXML Label productCardAmountLabel;
+    @FXML
+    Rectangle shadowBox;
+    @FXML
+    Circle prizeCircle;
 
     private final Model model = Model.getInstance();
 
@@ -110,6 +116,16 @@ public class productCard extends AnchorPane {
 
     public ShoppingItem getShoppingItem() {
         return this.shoppingItem;
+    }
+
+    @FXML private void hover(){
+        shadowBox.toFront();
+        prizeCircle.toFront();
+        productCardPrizeLabel.toFront();
+    }
+
+    @FXML private void hoverEnd(){
+        shadowBox.toBack();
     }
 
     @FXML
