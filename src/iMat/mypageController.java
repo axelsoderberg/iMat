@@ -73,7 +73,7 @@ public class mypageController extends AnchorPane {
 
         initComboBoxCardtype();
 
-       // checkApprovals();
+        checkApprovals();
 
     }
 

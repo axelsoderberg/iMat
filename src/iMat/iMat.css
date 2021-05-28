@@ -224,4 +224,9 @@
     -fx-font-size: 26px;
 }
 
+.text-mypage-smaller {
+    -fx-font-family: "Assistant";
+    -fx-font-size: 22px;
+}
+
 
