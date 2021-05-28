@@ -11,9 +11,14 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<fx:root fx:id="headerPane" prefHeight="175.0" prefWidth="1536.0" styleClass="almost-white" stylesheets="@iMat.css" type="AnchorPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root fx:id="headerPane" prefHeight="175.0" prefWidth="1536.0" styleClass="almost-white" stylesheets="@iMat.css" type="AnchorPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label fx:id="iMatTitle" layoutX="21.0" layoutY="-20.0" maxHeight="121.0" minHeight="90.0" onMouseClicked="#openStoreView" prefHeight="121.0" prefWidth="303.0" text="IMAT" textFill="#629543" AnchorPane.leftAnchor="21.0" AnchorPane.topAnchor="-20.0">
+      <ImageView fitHeight="120.0" fitWidth="1536.0" layoutX="673.0" layoutY="-15.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../resources/headerpicture.PNG" />
+         </image>
+      </ImageView>
+      <Label fx:id="iMatTitle" layoutX="21.0" layoutY="-20.0" maxHeight="121.0" minHeight="90.0" onMouseClicked="#openStoreView" prefHeight="121.0" prefWidth="303.0" styleClass="almost-white" text="IMAT" textFill="#629543" AnchorPane.leftAnchor="21.0" AnchorPane.topAnchor="-20.0">
          <font>
             <Font name="Berlin Sans FB Bold" size="100.0" />
          </font>
