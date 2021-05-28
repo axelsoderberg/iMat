@@ -8,9 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
-import se.chalmers.cse.dat216.project.CartEvent;
-import se.chalmers.cse.dat216.project.ProductCategory;
-import se.chalmers.cse.dat216.project.ShoppingCartListener;
+import se.chalmers.cse.dat216.project.*;
 
 
 /**
@@ -125,7 +123,15 @@ public class iMatController implements Initializable, ShoppingCartListener {
         this.checkoutCtrl.updateCheckoutTotal();
         //uppdatera produktkorten
         if(cartEvent.getShoppingItem() != null){
-        this.storeCtrl.updateProductCard(cartEvent.getShoppingItem().getProduct());}
+            this.storeCtrl.updateProductCard(cartEvent.getShoppingItem().getProduct(), false);
+        } else {
+            List<Order> orders = IMatDataHandler.getInstance().getOrders();
+            List<ShoppingItem> items = orders.get(orders.size() - 1).getItems();
+            for (ShoppingItem item : items) {
+                System.out.println(item.getProduct());
+                this.storeCtrl.updateProductCard(item.getProduct(), true);
+            }
+        }
     }
 
     public static headerController getHeader() { return headerCtrl; }

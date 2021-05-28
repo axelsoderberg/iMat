@@ -59,8 +59,8 @@ public class storeController extends AnchorPane {
         this.checkoutCtrl = checkoutCtrl;
     }
 
-    void updateProductCard(Product product) {
-        productCardMap.get(product).update();
+    void updateProductCard(Product product, Boolean clear) {
+        productCardMap.get(product).update(clear);
     }
 
     void updateProductList(List<Product> products) {

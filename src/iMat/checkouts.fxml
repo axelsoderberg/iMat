@@ -60,7 +60,7 @@
                         <Label layoutX="111.0" layoutY="11.0" styleClass="text-page-header" text="Leveransuppgifter" />
                         <Line endX="434.0" layoutX="87.0" layoutY="171.0" startX="-100.0" stroke="#ecebeb" strokeWidth="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="65.0" />
                         <Line endX="434.0" layoutX="104.0" layoutY="516.0" startX="-100.0" stroke="#ecebeb" strokeWidth="5.0" AnchorPane.leftAnchor="1.5" AnchorPane.topAnchor="513.5" />
-                        <Button layoutX="196.0" layoutY="534.0" mnemonicParsing="false" onAction="#openCheckoutThanks" styleClass="white-button" text="Bekräfta" AnchorPane.leftAnchor="196.0" />
+                        <Button layoutX="196.0" layoutY="534.0" mnemonicParsing="false" onAction="#openPaymentDetails" styleClass="white-button" text="Bekräfta" AnchorPane.leftAnchor="196.0" />
                         <ImageView fitHeight="66.0" fitWidth="74.0" layoutX="468.0" layoutY="4.0" onMouseClicked="#openShoppingcart" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../resources/listCloseButton.png" />
@@ -203,82 +203,6 @@
                   </AnchorPane>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="checkoutShoppingcart" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: f7f7f7;">
-               <children>
-                  <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#f7f7f7" height="603.0" stroke="#c9c9c9" strokeType="INSIDE" strokeWidth="5.0" width="1136.0" AnchorPane.bottomAnchor="43.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="43.0" />
-                  <Label layoutX="721.0" layoutY="53.0" styleClass="text-page-header" text="Kassan" />
-                  <Label layoutX="450.0" layoutY="116.0" styleClass="text-helpbox-header" text="Produkt" AnchorPane.leftAnchor="435.0" AnchorPane.topAnchor="116.0" />
-                  <Line endX="1030.0" layoutX="302.5" layoutY="106.0" startX="-100.0" stroke="#c9c9c9" strokeWidth="5.0" AnchorPane.leftAnchor="200.0" />
-                  <Label layoutX="995.0" layoutY="116.0" styleClass="text-helpbox-header" text="Styckpris" AnchorPane.leftAnchor="1150.0" AnchorPane.topAnchor="116.0" />
-                  <Label layoutX="660.0" layoutY="116.0" styleClass="text-helpbox-header" text="Totalpris" AnchorPane.leftAnchor="950.0" AnchorPane.topAnchor="116.0" />
-                  <Label layoutX="743.0" layoutY="116.0" styleClass="text-helpbox-header" text="Antal" AnchorPane.leftAnchor="743.0" AnchorPane.topAnchor="116.0" />
-                  <Line endX="1030.0" layoutX="302.5" layoutY="163.0" startX="-100.0" stroke="#c9c9c9" strokeWidth="5.0" AnchorPane.leftAnchor="200.0" />
-                  <Line endX="1030.0" layoutX="312.5" layoutY="173.0" startX="-100.0" stroke="#c9c9c9" strokeWidth="5.0" AnchorPane.bottomAnchor="115.0" AnchorPane.leftAnchor="200.0" />
-                  <Label fx:id="checkoutTotalLabel" layoutX="907.0" layoutY="590.0" styleClass="text-helpbox-header" text="Summa: 0 kr" />
-                  <Button fx:id="payButton" alignment="CENTER" layoutX="1139.0" layoutY="582.0" maxHeight="70.0" minHeight="50.0" mnemonicParsing="false" onAction="#openDeliveryDetails" prefHeight="50.0" prefWidth="182.0" styleClass="green-button" stylesheets="@iMat.css" text="Betala">
-                     <effect>
-                        <DropShadow height="10.45" offsetY="5.0" radius="3.6125" width="6.0">
-                           <color>
-                              <Color opacity="0.6000000238418579" />
-                           </color>
-                        </DropShadow>
-                     </effect>
-                     <font>
-                        <Font size="36.0" />
-                     </font>
-                  </Button>
-                  <ScrollPane layoutX="206.0" layoutY="166.0" prefHeight="401.0" prefWidth="1125.0">
-                     <content>
-                        <FlowPane fx:id="productsFlowPaneCheckout" prefHeight="401.0" prefWidth="1123.0" />
-                     </content>
-                  </ScrollPane>
-                  <ImageView fitHeight="77.0" fitWidth="116.0" layoutX="1340.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="153.0">
-                     <image>
-                        <Image url="@../resources/bentArrow.png" />
-                     </image>
-                  </ImageView>
-                  <Text layoutX="1349.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-contact" text="Här är din varukorg!" AnchorPane.topAnchor="75.0" />
-                  <Text layoutX="1367.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-normal" text="Se till att kolla så att allt stämmer" textAlignment="CENTER" wrappingWidth="136.9999999999999" AnchorPane.topAnchor="100.0" />
-                  <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#c9c9c9" height="209.0" layoutX="14.0" layoutY="414.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="172.0" AnchorPane.bottomAnchor="43.0" />
-                  <Text layoutX="23.0" layoutY="465.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-contact" text="Handlar du dessa produkter ofta?" textAlignment="CENTER" wrappingWidth="154.0" />
-                  <Text layoutX="42.0" layoutY="514.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-normal" text="Klicka nedan för att spara artiklarna i en inköpslista" textAlignment="CENTER" wrappingWidth="115.99999999999977" />
-                  <Button alignment="CENTER" layoutX="20.0" layoutY="598.0" maxHeight="70.0" minHeight="38.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="161.0" stylesheets="@iMat.css" text="Spara lista">
-                     <effect>
-                        <DropShadow height="10.45" offsetY="5.0" radius="3.6125" width="6.0">
-                           <color>
-                              <Color opacity="0.6000000238418579" />
-                           </color>
-                        </DropShadow>
-                     </effect>
-                     <font>
-                        <Font size="36.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="small-button" />
-                        <String fx:value="green-button" />
-                     </styleClass>
-                  </Button>
-                  <Button fx:id="shopMoreButton" alignment="CENTER" layoutX="4.0" layoutY="43.0" maxHeight="70.0" minHeight="50.0" mnemonicParsing="false" onAction="#backAction" prefHeight="50.0" prefWidth="192.0" styleClass="grey-button" stylesheets="@iMat.css" text="Tillbaka" textAlignment="RIGHT">
-                     <effect>
-                        <DropShadow height="10.45" offsetY="5.0" radius="3.6125" width="6.0">
-                           <color>
-                              <Color opacity="0.6000000238418579" />
-                           </color>
-                        </DropShadow>
-                     </effect>
-                     <font>
-                        <Font size="36.0" />
-                     </font>
-                     <graphic>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../resources/arrow.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-               </children>
-            </AnchorPane>
             <AnchorPane fx:id="checkoutPaymentdetails" layoutX="8.0" layoutY="10.0" onMouseClicked="#openShoppingcart" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
                <children>
                   <AnchorPane maxHeight="-Infinity" onMouseClicked="#mouseTrap" prefHeight="220.0" prefWidth="200.0" styleClass="light-green" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="500.0" AnchorPane.rightAnchor="500.0" AnchorPane.topAnchor="35.0">
@@ -399,6 +323,82 @@
                         <Label layoutX="85.0" layoutY="496.0" styleClass="text-mypage-smaller" text="Leverans sker inom 1-2 arbetsdagar" />
                      </children>
                   </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="checkoutShoppingcart" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: f7f7f7;">
+               <children>
+                  <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#f7f7f7" height="603.0" stroke="#c9c9c9" strokeType="INSIDE" strokeWidth="5.0" width="1136.0" AnchorPane.bottomAnchor="43.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="43.0" />
+                  <Label layoutX="721.0" layoutY="53.0" styleClass="text-page-header" text="Kassan" />
+                  <Label layoutX="450.0" layoutY="116.0" styleClass="text-helpbox-header" text="Produkt" AnchorPane.leftAnchor="435.0" AnchorPane.topAnchor="116.0" />
+                  <Line endX="1030.0" layoutX="302.5" layoutY="106.0" startX="-100.0" stroke="#c9c9c9" strokeWidth="5.0" AnchorPane.leftAnchor="200.0" />
+                  <Label layoutX="995.0" layoutY="116.0" styleClass="text-helpbox-header" text="Styckpris" AnchorPane.leftAnchor="1150.0" AnchorPane.topAnchor="116.0" />
+                  <Label layoutX="660.0" layoutY="116.0" styleClass="text-helpbox-header" text="Totalpris" AnchorPane.leftAnchor="950.0" AnchorPane.topAnchor="116.0" />
+                  <Label layoutX="743.0" layoutY="116.0" styleClass="text-helpbox-header" text="Antal" AnchorPane.leftAnchor="743.0" AnchorPane.topAnchor="116.0" />
+                  <Line endX="1030.0" layoutX="302.5" layoutY="163.0" startX="-100.0" stroke="#c9c9c9" strokeWidth="5.0" AnchorPane.leftAnchor="200.0" />
+                  <Line endX="1030.0" layoutX="312.5" layoutY="173.0" startX="-100.0" stroke="#c9c9c9" strokeWidth="5.0" AnchorPane.bottomAnchor="115.0" AnchorPane.leftAnchor="200.0" />
+                  <Label fx:id="checkoutTotalLabel" layoutX="907.0" layoutY="590.0" styleClass="text-helpbox-header" text="Summa: 0 kr" />
+                  <Button fx:id="payButton" alignment="CENTER" layoutX="1139.0" layoutY="582.0" maxHeight="70.0" minHeight="50.0" mnemonicParsing="false" onAction="#openDeliveryDetails" prefHeight="50.0" prefWidth="182.0" styleClass="green-button" stylesheets="@iMat.css" text="Betala">
+                     <effect>
+                        <DropShadow height="10.45" offsetY="5.0" radius="3.6125" width="6.0">
+                           <color>
+                              <Color opacity="0.6000000238418579" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Button>
+                  <ScrollPane layoutX="206.0" layoutY="166.0" prefHeight="401.0" prefWidth="1125.0">
+                     <content>
+                        <FlowPane fx:id="productsFlowPaneCheckout" prefHeight="401.0" prefWidth="1123.0" />
+                     </content>
+                  </ScrollPane>
+                  <ImageView fitHeight="77.0" fitWidth="116.0" layoutX="1340.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="153.0">
+                     <image>
+                        <Image url="@../resources/bentArrow.png" />
+                     </image>
+                  </ImageView>
+                  <Text layoutX="1349.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-contact" text="Här är din varukorg!" AnchorPane.topAnchor="75.0" />
+                  <Text layoutX="1367.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-normal" text="Se till att kolla så att allt stämmer" textAlignment="CENTER" wrappingWidth="136.9999999999999" AnchorPane.topAnchor="100.0" />
+                  <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#c9c9c9" height="209.0" layoutX="14.0" layoutY="414.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="172.0" AnchorPane.bottomAnchor="43.0" />
+                  <Text layoutX="23.0" layoutY="465.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-contact" text="Handlar du dessa produkter ofta?" textAlignment="CENTER" wrappingWidth="154.0" />
+                  <Text layoutX="42.0" layoutY="514.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-normal" text="Klicka nedan för att spara artiklarna i en inköpslista" textAlignment="CENTER" wrappingWidth="115.99999999999977" />
+                  <Button alignment="CENTER" layoutX="20.0" layoutY="598.0" maxHeight="70.0" minHeight="38.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="161.0" stylesheets="@iMat.css" text="Spara lista">
+                     <effect>
+                        <DropShadow height="10.45" offsetY="5.0" radius="3.6125" width="6.0">
+                           <color>
+                              <Color opacity="0.6000000238418579" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="small-button" />
+                        <String fx:value="green-button" />
+                     </styleClass>
+                  </Button>
+                  <Button fx:id="shopMoreButton" alignment="CENTER" layoutX="4.0" layoutY="43.0" maxHeight="70.0" minHeight="50.0" mnemonicParsing="false" onAction="#backAction" prefHeight="50.0" prefWidth="192.0" styleClass="grey-button" stylesheets="@iMat.css" text="Tillbaka" textAlignment="RIGHT">
+                     <effect>
+                        <DropShadow height="10.45" offsetY="5.0" radius="3.6125" width="6.0">
+                           <color>
+                              <Color opacity="0.6000000238418579" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/arrow.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
                </children>
             </AnchorPane>
          </children>

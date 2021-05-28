@@ -74,11 +74,16 @@ public class productCard extends AnchorPane {
 
     }
 
-    void update() {
-        if (shoppingItem.getAmount() == 0) { //Om man tog bort den sista i kundvagnen
+    void update(boolean clear) {
+        if (clear) {
+            shoppingItem.setAmount(0);
             addButton.toFront();
         } else {
-            productCardAmountLabel.setText((int) shoppingItem.getAmount() + " " + shoppingItem.getProduct().getUnitSuffix());
+            if (shoppingItem.getAmount() == 0) { //Om man tog bort den sista i kundvagnen
+                addButton.toFront();
+            } else {
+                productCardAmountLabel.setText((int) shoppingItem.getAmount() + " " + shoppingItem.getProduct().getUnitSuffix());
+            }
         }
     }
 
