@@ -7,9 +7,9 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<fx:root prefHeight="864.0" prefWidth="1536.0" styleClass="lightbox-background" stylesheets="@iMat.css" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root prefHeight="885.0" prefWidth="1536.0" styleClass="lightbox-background" stylesheets="@iMat.css" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="864.0" opacity="0.6" stroke="BLACK" strokeType="INSIDE" styleClass="lightbox-background" width="1536.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="885.0" opacity="0.6" stroke="BLACK" strokeType="INSIDE" styleClass="lightbox-background" width="1536.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ecebeb" height="400.0" layoutX="419.0" layoutY="274.0" stroke="BLACK" strokeType="INSIDE" styleClass="almost-white" width="606.0" />
       <ImageView fx:id="detailViewImage" fitHeight="209.0" fitWidth="170.0" layoutX="433.0" layoutY="296.0" pickOnBounds="true" preserveRatio="true" />
       <Label fx:id="detailViewProductName" layoutX="631.0" layoutY="284.0" prefHeight="65.0" prefWidth="339.0" styleClass="text-page-header" text="Produktnamn" />

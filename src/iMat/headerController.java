@@ -84,15 +84,15 @@ public class headerController extends AnchorPane {
         List<Product> matches = model.findProducts(searchField.getText());
         searchField.clear();
         storeCtrl.updateProductList(matches);
+        storeCtrl.backArrowClicked();
         storeCtrl.toFront();
-        storeCtrl.clearSubcategories();
-        storeCtrl.placeCategories();
         this.toFront();
 
     }
 
     public void updateCheckoutButton() {
         checkoutButton.setText("Kassan " + String.format("%.2f", model.getShoppingCart().getTotal()) + " kr");
+
     }
 
 }

@@ -36,7 +36,13 @@ public class categories extends AnchorPane {
 
     @FXML
     private void onClick() {
-        parentController.updateSubcategories(c);
-        parentController.updateProductList(Model.getInstance().getList(c));
+        if (c.equals("Favoriter")) {
+            parentController.viewFavorites();
+        } else if (c.equals("Erbjudanden")) {
+            parentController.viewFeatured();
+        } else {
+            parentController.updateSubcategories(c);
+            parentController.updateProductList(Model.getInstance().getList(c));
+        }
     }
 }
