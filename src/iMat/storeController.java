@@ -36,9 +36,9 @@ public class storeController extends AnchorPane {
     private List<ProductCategory> selectedCategories = new ArrayList();
     private final Model model = Model.getInstance();
 
-    headerController headerCtrl;
+    checkoutController checkoutCtrl;
 
-    public storeController(headerController headerCtrl) {
+    public storeController(checkoutController checkoutCtrl) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("store.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
@@ -54,7 +54,7 @@ public class storeController extends AnchorPane {
         updateProductList(model.getProducts());
         updateShoppingcartview(model.getShoppingCart().getItems());
 
-        this.headerCtrl = headerCtrl;
+        this.checkoutCtrl = checkoutCtrl;
     }
 
     void updateProductCard(Product product) {
@@ -218,6 +218,12 @@ public class storeController extends AnchorPane {
         for (Product product : list) {
             productsFlowPaneStore.getChildren().add(productCardMap.get(product));
         }
+    }
+
+    @FXML
+    void openCheckoutView() {
+        checkoutCtrl.toFront();
+        checkoutCtrl.updateShoppingcartList(model.getShoppingCart().getItems());
     }
 
 }

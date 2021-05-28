@@ -48,7 +48,7 @@ public class iMatController implements Initializable, ShoppingCartListener {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         checkoutCtrl = new checkoutController();
-        storeCtrl = new storeController(headerCtrl);
+        storeCtrl = new storeController(checkoutCtrl);
         mypageController mypageCtrl = new mypageController();
         shoppinglistsCtrl = new shoppinglists();
         helpController helpCtrl = new helpController();

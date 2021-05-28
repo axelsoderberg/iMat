@@ -90,7 +90,7 @@
             <Font size="18.0" />
          </font>
       </MenuButton>
-      <Button alignment="CENTER" layoutX="1195.0" layoutY="605.0" maxHeight="50.0" minHeight="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="281.0" styleClass="white-button" stylesheets="@iMat.css" text="Till kassan">
+      <Button alignment="CENTER" layoutX="1195.0" layoutY="605.0" maxHeight="50.0" minHeight="50.0" mnemonicParsing="false" onAction="#openCheckoutView" prefHeight="50.0" prefWidth="281.0" styleClass="white-button" stylesheets="@iMat.css" text="Till kassan">
          <effect>
             <DropShadow height="10.45" offsetY="5.0" radius="3.6125" width="6.0">
                <color>
