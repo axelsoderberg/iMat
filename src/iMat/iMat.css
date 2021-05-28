@@ -207,6 +207,12 @@
     -fx-font-size: 18px;
 }
 
+.textfields:hover {
+    -fx-border-color: #000000;
+    -fx-border-radius: 10px;
+    -fx-border-width: 2px;
+}
+
 .rounded-corners {
     -fx-border-radius: 40;
 }

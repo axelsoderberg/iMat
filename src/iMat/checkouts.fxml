@@ -53,128 +53,6 @@
                   </AnchorPane>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="checkoutPaymentdetails" layoutX="8.0" layoutY="10.0" onMouseClicked="#openShoppingcart" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
-               <children>
-                  <AnchorPane maxHeight="-Infinity" onMouseClicked="#mouseTrap" prefHeight="220.0" prefWidth="200.0" styleClass="light-green" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="500.0" AnchorPane.rightAnchor="500.0" AnchorPane.topAnchor="35.0">
-                     <children>
-                        <HBox layoutX="27.0" layoutY="97.0" spacing="10.0" AnchorPane.topAnchor="110.0">
-                           <children>
-                              <VBox alignment="CENTER_RIGHT" spacing="30.0">
-                                 <children>
-                                    <Label styleClass="text-mypage" text="Korttyp:">
-                                       <font>
-                                          <Font size="36.0" />
-                                       </font>
-                                    </Label>
-                                    <Label styleClass="text-mypage" text="Kortnummer:">
-                                       <font>
-                                          <Font size="36.0" />
-                                       </font>
-                                    </Label>
-                                    <Label styleClass="text-mypage" text="Korthavarens namn:">
-                                       <font>
-                                          <Font size="36.0" />
-                                       </font>
-                                    </Label>
-                                    <Label styleClass="text-mypage" text="Utgångsdatum:">
-                                       <font>
-                                          <Font size="36.0" />
-                                       </font>
-                                    </Label>
-                                    <Label styleClass="text-mypage" text="CVC:">
-                                       <font>
-                                          <Font size="36.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </VBox>
-                              <VBox prefWidth="187.0" spacing="28.0">
-                                 <children>
-                                    <ComboBox fx:id="cardTypeComboBox" prefHeight="39.0" prefWidth="187.0" styleClass="textfields" />
-                                    <TextField fx:id="cardNrTextField" maxHeight="40.0" minHeight="40.0" onKeyTyped="#checkCardNumber" prefHeight="40.0" prefWidth="176.0" styleClass="textfields">
-                                       <font>
-                                          <Font size="18.0" />
-                                       </font>
-                                    </TextField>
-                                    <TextField fx:id="holdersNameTextField" maxHeight="40.0" minHeight="40.0" onKeyTyped="#checkHoldersName" prefHeight="40.0" prefWidth="198.0" styleClass="textfields">
-                                       <font>
-                                          <Font size="18.0" />
-                                       </font>
-                                    </TextField>
-                                    <HBox spacing="10.0">
-                                       <children>
-                                          <TextField fx:id="validMonthTextField" maxHeight="40.0" maxWidth="80.0" minHeight="40.0" onKeyTyped="#checkValidDate" prefHeight="40.0" prefWidth="87.0" promptText="Månad" styleClass="textfields">
-                                             <font>
-                                                <Font size="18.0" />
-                                             </font>
-                                          </TextField>
-                                          <Label prefHeight="40.0" prefWidth="3.0" styleClass="text-shopping-list-title" text="/" />
-                                          <TextField fx:id="validYearTextField" maxHeight="40.0" maxWidth="80.0" minHeight="40.0" onKeyTyped="#checkValidDate" prefHeight="40.0" prefWidth="87.0" promptText="År" styleClass="textfields">
-                                             <font>
-                                                <Font size="18.0" />
-                                             </font>
-                                          </TextField>
-                                       </children>
-                                    </HBox>
-                                    <HBox alignment="CENTER_LEFT" spacing="10.0">
-                                       <children>
-                                          <TextField fx:id="verificationCodeTextField" maxHeight="40.0" maxWidth="80.0" minHeight="40.0" onKeyTyped="#checkVerificationCode" prefHeight="40.0" prefWidth="87.0" styleClass="textfields">
-                                             <font>
-                                                <Font size="18.0" />
-                                             </font>
-                                          </TextField>
-                                          <ImageView fx:id="verificationCodeApprovedImageView" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../resources/notApproved.png" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </HBox>
-                                 </children>
-                              </VBox>
-                              <VBox spacing="38.0">
-                                 <children>
-                                    <ImageView fx:id="cardtypeApprovedImageView" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../resources/notApproved.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fx:id="cardNrApprovedImageView" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../resources/notApproved.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fx:id="holdersNameApprovedImageView" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../resources/notApproved.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fx:id="validDateApprovedImageView" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../resources/notApproved.png" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                                 <padding>
-                                    <Insets top="5.0" />
-                                 </padding>
-                              </VBox>
-                           </children>
-                        </HBox>
-                        <Label layoutX="111.0" layoutY="11.0" styleClass="text-page-header" text="Betaluppgifter" AnchorPane.leftAnchor="147.0" AnchorPane.rightAnchor="147.0" />
-                        <Line endX="434.0" layoutX="102.5" layoutY="73.5" startX="-100.0" stroke="#ecebeb" strokeWidth="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="71.0" />
-                        <Line endX="434.0" layoutX="104.0" layoutY="528.0" startX="-100.0" stroke="#ecebeb" strokeWidth="5.0" AnchorPane.leftAnchor="1.5" AnchorPane.topAnchor="470.0" />
-                        <Button layoutX="170.0" layoutY="543.0" mnemonicParsing="false" onAction="#openCheckoutThanks" onMouseClicked="#openCheckoutThanks" styleClass="white-button" text="Bekräfta köp" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="171.0" />
-                        <ImageView fitHeight="66.0" fitWidth="74.0" layoutX="468.0" layoutY="4.0" onMouseClicked="#openDeliveryDetails" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../resources/listCloseButton.png" />
-                           </image>
-                        </ImageView>
-                        <Label layoutX="85.0" layoutY="496.0" styleClass="text-mypage-smaller" text="Leverans sker inom 1-2 arbetsdagar" />
-                     </children>
-                  </AnchorPane>
-               </children>
-            </AnchorPane>
             <AnchorPane fx:id="checkoutDeliverydetails" onMouseClicked="#openShoppingcart" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
                <children>
                   <AnchorPane maxHeight="-Infinity" onMouseClicked="#mouseTrap" prefHeight="220.0" prefWidth="200.0" styleClass="light-green" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="500.0" AnchorPane.rightAnchor="500.0" AnchorPane.topAnchor="35.0">
@@ -399,6 +277,128 @@
                         </ImageView>
                      </graphic>
                   </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="checkoutPaymentdetails" layoutX="8.0" layoutY="10.0" onMouseClicked="#openShoppingcart" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
+               <children>
+                  <AnchorPane maxHeight="-Infinity" onMouseClicked="#mouseTrap" prefHeight="220.0" prefWidth="200.0" styleClass="light-green" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="500.0" AnchorPane.rightAnchor="500.0" AnchorPane.topAnchor="35.0">
+                     <children>
+                        <HBox layoutX="27.0" layoutY="97.0" spacing="10.0" AnchorPane.topAnchor="110.0">
+                           <children>
+                              <VBox alignment="CENTER_RIGHT" spacing="30.0">
+                                 <children>
+                                    <Label styleClass="text-mypage" text="Korttyp:">
+                                       <font>
+                                          <Font size="36.0" />
+                                       </font>
+                                    </Label>
+                                    <Label styleClass="text-mypage" text="Kortnummer:">
+                                       <font>
+                                          <Font size="36.0" />
+                                       </font>
+                                    </Label>
+                                    <Label styleClass="text-mypage" text="Korthavarens namn:">
+                                       <font>
+                                          <Font size="36.0" />
+                                       </font>
+                                    </Label>
+                                    <Label styleClass="text-mypage" text="Utgångsdatum:">
+                                       <font>
+                                          <Font size="36.0" />
+                                       </font>
+                                    </Label>
+                                    <Label styleClass="text-mypage" text="CVC:">
+                                       <font>
+                                          <Font size="36.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox prefWidth="187.0" spacing="28.0">
+                                 <children>
+                                    <ComboBox fx:id="cardTypeComboBox" prefHeight="39.0" prefWidth="187.0" styleClass="textfields" />
+                                    <TextField fx:id="cardNrTextField" maxHeight="40.0" minHeight="40.0" onKeyTyped="#checkCardNumber" prefHeight="40.0" prefWidth="176.0" styleClass="textfields">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </TextField>
+                                    <TextField fx:id="holdersNameTextField" maxHeight="40.0" minHeight="40.0" onKeyTyped="#checkHoldersName" prefHeight="40.0" prefWidth="198.0" styleClass="textfields">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </TextField>
+                                    <HBox spacing="10.0">
+                                       <children>
+                                          <TextField fx:id="validMonthTextField" maxHeight="40.0" maxWidth="80.0" minHeight="40.0" onKeyTyped="#checkValidDate" prefHeight="40.0" prefWidth="87.0" promptText="Månad" styleClass="textfields">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </TextField>
+                                          <Label prefHeight="40.0" prefWidth="3.0" styleClass="text-shopping-list-title" text="/" />
+                                          <TextField fx:id="validYearTextField" maxHeight="40.0" maxWidth="80.0" minHeight="40.0" onKeyTyped="#checkValidDate" prefHeight="40.0" prefWidth="87.0" promptText="År" styleClass="textfields">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </TextField>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                       <children>
+                                          <TextField fx:id="verificationCodeTextField" maxHeight="40.0" maxWidth="80.0" minHeight="40.0" onKeyTyped="#checkVerificationCode" prefHeight="40.0" prefWidth="87.0" styleClass="textfields">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </TextField>
+                                          <ImageView fx:id="verificationCodeApprovedImageView" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../resources/notApproved.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <VBox spacing="38.0">
+                                 <children>
+                                    <ImageView fx:id="cardtypeApprovedImageView" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/notApproved.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fx:id="cardNrApprovedImageView" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/notApproved.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fx:id="holdersNameApprovedImageView" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/notApproved.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fx:id="validDateApprovedImageView" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../resources/notApproved.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                                 <padding>
+                                    <Insets top="5.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <Label layoutX="111.0" layoutY="11.0" styleClass="text-page-header" text="Betaluppgifter" AnchorPane.leftAnchor="147.0" AnchorPane.rightAnchor="147.0" />
+                        <Line endX="434.0" layoutX="102.5" layoutY="73.5" startX="-100.0" stroke="#ecebeb" strokeWidth="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="71.0" />
+                        <Line endX="434.0" layoutX="104.0" layoutY="528.0" startX="-100.0" stroke="#ecebeb" strokeWidth="5.0" AnchorPane.leftAnchor="1.5" AnchorPane.topAnchor="470.0" />
+                        <Button layoutX="170.0" layoutY="543.0" mnemonicParsing="false" onAction="#openCheckoutThanks" onMouseClicked="#openCheckoutThanks" styleClass="white-button" text="Bekräfta köp" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="171.0" />
+                        <ImageView fitHeight="66.0" fitWidth="74.0" layoutX="468.0" layoutY="4.0" onMouseClicked="#openDeliveryDetails" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/listCloseButton.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="85.0" layoutY="496.0" styleClass="text-mypage-smaller" text="Leverans sker inom 1-2 arbetsdagar" />
+                     </children>
+                  </AnchorPane>
                </children>
             </AnchorPane>
          </children>
