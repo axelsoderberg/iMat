@@ -2,6 +2,7 @@ package iMat;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Group;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -15,13 +16,21 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class shoppinglists extends AnchorPane {
+public class shoppinglists extends AnchorPane{
 
     @FXML private AnchorPane createView;
-    @FXML private AnchorPane listView;
+    @FXML AnchorPane listView;
     @FXML private TextField createShoppingListName;
     @FXML private FlowPane shoppingListListPane;
     @FXML private AnchorPane abortPane;
+    @FXML private FlowPane createListList;
+    @FXML private Button createButton;
+    @FXML private Button addButton;
+    @FXML private AnchorPane searchPane;
+    @FXML private TextField searchField;
+    @FXML private FlowPane searchFlow;
+    @FXML private Group searchBox;
+    @FXML private Button addProductsButton;
     private boolean close = false;
     private boolean save = false;
     private boolean addedProduct = false;
@@ -62,16 +71,23 @@ public class shoppinglists extends AnchorPane {
     }
 
     void editShoppingList(oneShoppingList listItem){
-        List<Product> productList = new ArrayList<>();
         createView.toFront();
+        listNumber = shoppingListList.indexOf(listItem);
+        updateCreateFlow();
         createShoppingListName.setText(listItem.getListName());
     }
 
+    public void updateCreateFlow(){
+        createListList.getChildren().clear();
+        populateCreateFlow();
+        createListList.getChildren().add(addButton);
+    }
+
     @FXML private void createShoppingList(){
+        createButton.setText("Skapa lista");
         oneShoppingList listItem = new oneShoppingList(this);
         shoppingListList.add(listItem);
-        listNumber = shoppingListList.size() - 1;
-        editShoppingList(shoppingListList.get(listNumber));
+        editShoppingList(listItem);
     }
 
     @FXML private void completeCreate(){
@@ -86,26 +102,65 @@ public class shoppinglists extends AnchorPane {
             shoppingListList.add(shoppingListList.get(listNumber));
         }
         closeCreateView();
+        createButton.setText("Klar");
     }
 
     @FXML private void abortCreate(){
         abortPane.toFront();
     }
 
-    private Product getProduct(){
-        return null;
+    @FXML private void addProduct(){
+        searchPane.toFront();
+        searchBox.toFront();
+        addProductsButton.toFront();
+        populateSearchFlow();
     }
 
-    @FXML private void add(){
-        addedProduct = true;
+    @FXML private void doneAdding(){
+        searchPane.toBack();
+        searchBox.toBack();
+        addProductsButton.toBack();
+        searchField.clear();
+        searchFlow.getChildren().clear();
+        updateCreateFlow();
+    }
+
+    private void populateCreateFlow(){
+        for (ShoppingItem shoppingItems : shoppingListList.get(listNumber).getProductList()){
+            createListList.getChildren().add(shoppingListList.get(listNumber).getShoppingListProductMap().get(shoppingItems.getProduct()));
+        }
+
+    }
+
+    private void populateSearchFlow(){
+        for (Product products : model.getProducts()){
+            searchFlow.getChildren().add(shoppingListList.get(listNumber).getShoppingListProductMap().get(products));
+        }
+    }
+
+    @FXML private void handleSearchAction(){
+        List<Product> matches = model.findProducts(searchField.getText());
+        searchFlow.getChildren().clear();
+        for (Product products : matches){
+            searchFlow.getChildren().add(shoppingListList.get(listNumber).getShoppingListProductMap().get(products));
+        }
+    }
+
+    private Product getProduct(){
+        return null;
     }
 
     @FXML private void closeCreateView(){
         createView.toBack();
         abortPane.toBack();
+        searchPane.toBack();
+        searchBox.toBack();
+        addProductsButton.toBack();
     }
 
     public void setListNumber(int setter){
         listNumber = setter;
     }
+
+
 }
