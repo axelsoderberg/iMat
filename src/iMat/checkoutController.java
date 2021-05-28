@@ -129,6 +129,7 @@ public class checkoutController extends AnchorPane {
     }
 
     @FXML private void doneWithOrder() {
+        checkoutThanks.toBack();
         this.toBack();
     }
 
