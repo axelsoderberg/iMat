@@ -66,6 +66,10 @@
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 0, 10, 0, 4);
 }
 
+.lightgreen-button:hover {
+    -fx-background-color: #629543;
+}
+
 .red-button {
     -fx-font-family: "Assistant";
     -fx-font-size: 28px;
