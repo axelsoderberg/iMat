@@ -124,7 +124,8 @@ public class iMatController implements Initializable, ShoppingCartListener {
         this.headerCtrl.updateCheckoutButton();
         this.checkoutCtrl.updateCheckoutTotal();
         //uppdatera produktkorten
-        this.storeCtrl.updateProductCard(cartEvent.getShoppingItem().getProduct());
+        if(cartEvent.getShoppingItem()!= null){
+        this.storeCtrl.updateProductCard(cartEvent.getShoppingItem().getProduct());}
     }
 
     public static headerController getHeader() { return headerCtrl; }
