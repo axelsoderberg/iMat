@@ -44,5 +44,7 @@ public class categories extends AnchorPane {
             parentController.updateSubcategories(c);
             parentController.updateProductList(Model.getInstance().getList(c));
         }
+        parentController.category.setText(c);
+        parentController.categoriesLabel.setText(c);
     }
 }

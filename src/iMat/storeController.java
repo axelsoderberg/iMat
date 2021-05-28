@@ -29,6 +29,8 @@ public class storeController extends AnchorPane {
     @FXML private AnchorPane detailPane;
     @FXML private AnchorPane storePane;
     @FXML private final ToggleGroup categoriesGroup = new ToggleGroup();
+    @FXML public Label category;
+    @FXML public Label categoriesLabel;
     @FXML FlowPane shoppingcartFlowpaneStore;
     @FXML Label storeShoppingcartTotalPrize;
 
@@ -134,6 +136,8 @@ public class storeController extends AnchorPane {
         clearSubcategories();
         placeCategories();
         updateProductList(model.getProducts());
+        category.setText("Produkter");
+        categoriesLabel.setText("Kategorier");
     }
 
     public String subCatConverter(ProductCategory pc) {
