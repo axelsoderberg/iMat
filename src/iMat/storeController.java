@@ -86,7 +86,7 @@ public class storeController extends AnchorPane {
         }
     }
 
-    public void sortAlfabethic() {
+    public void sortAlphabethic() {
 
     }
 
@@ -197,6 +197,27 @@ public class storeController extends AnchorPane {
         detailPane.toBack();
         storePane.toBack();
         iMatController.getHeader().openStoreView();
+    }
+
+    public void viewFavorites() {
+        List<Product> list = model.getProducts();
+        productsFlowPaneStore.getChildren().clear();
+        for (Product product : list) {
+            if (model.isFavorite(product))
+                productsFlowPaneStore.getChildren().add(productCardMap.get(product));
+        }
+    }
+
+    public void viewFeatured() {
+        List<Product> list = new ArrayList();
+        list.add(model.getProduct(1));
+        list.add(model.getProduct(20));
+        list.add(model.getProduct(55));
+        list.add(model.getProduct(65));
+        productsFlowPaneStore.getChildren().clear();
+        for (Product product : list) {
+            productsFlowPaneStore.getChildren().add(productCardMap.get(product));
+        }
     }
 
 }
