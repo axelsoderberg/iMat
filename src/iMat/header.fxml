@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-<fx:root fx:id="headerPane" prefHeight="175.0" prefWidth="1536.0" styleClass="almost-white" stylesheets="@iMat.css" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root fx:id="headerPane" prefHeight="175.0" prefWidth="1536.0" styleClass="almost-white" stylesheets="@iMat.css" type="AnchorPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fitHeight="120.0" fitWidth="1536.0" layoutX="673.0" layoutY="-15.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
@@ -28,7 +32,7 @@
       </Label>
       <HBox layoutX="1034.0" layoutY="20.0" spacing="43.0" AnchorPane.rightAnchor="50.0">
          <children>
-            <Button fx:id="myPageButton" alignment="CENTER" maxHeight="70.0" minHeight="50.0" mnemonicParsing="false" onAction="#openMypageView" onMouseEntered="#hoverOnMyPage" onMouseExited="#exitHoverOnMyPage" prefHeight="50.0" prefWidth="227.0" styleClass="green-button" stylesheets="@iMat.css" text="Mina sidor">
+            <Button fx:id="myPageButton" alignment="CENTER" maxHeight="70.0" minHeight="50.0" mnemonicParsing="false" onAction="#openMypageView" prefHeight="50.0" prefWidth="227.0" styleClass="green-button" stylesheets="@iMat.css" text="Mina sidor">
                <effect>
                   <DropShadow height="10.45" offsetY="5.0" radius="3.6125" width="6.0">
                      <color>
@@ -47,7 +51,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="helpButton" alignment="CENTER" maxHeight="70.0" minHeight="50.0" mnemonicParsing="false" onAction="#openHelpView" onMouseEntered="#hoverOnHelp" onMouseExited="#exitHoverOnHelp" prefHeight="50.0" prefWidth="182.0" styleClass="green-button" stylesheets="@iMat.css" text="Hjälp">
+            <Button fx:id="helpButton" alignment="CENTER" maxHeight="70.0" minHeight="50.0" mnemonicParsing="false" onAction="#openHelpView" prefHeight="50.0" prefWidth="182.0" styleClass="green-button" stylesheets="@iMat.css" text="Hjälp">
                <effect>
                   <DropShadow height="10.45" offsetY="5.0" radius="3.6125" width="6.0">
                      <color>
@@ -70,7 +74,7 @@
       </HBox>
       <HBox layoutX="25.0" layoutY="108.0" spacing="43.0" AnchorPane.rightAnchor="50.0">
          <children>
-            <Button fx:id="storeButton" alignment="CENTER" maxHeight="50.0" minHeight="50.0" mnemonicParsing="false" onAction="#openStoreView" onMouseEntered="#hoverOnHome" onMouseExited="#exitHoverOnHome" prefHeight="50.0" prefWidth="175.0" styleClass="white-button" stylesheets="@iMat.css" text="Hem">
+            <Button fx:id="storeButton" alignment="CENTER" maxHeight="50.0" minHeight="50.0" mnemonicParsing="false" onAction="#openStoreView" prefHeight="50.0" prefWidth="175.0" styleClass="white-button" stylesheets="@iMat.css" text="Hem">
                <effect>
                   <DropShadow height="10.45" offsetY="5.0" radius="3.6125" width="6.0">
                      <color>
@@ -89,7 +93,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="shoppingListButton" alignment="CENTER" maxHeight="50.0" minHeight="50.0" mnemonicParsing="false" onAction="#openShoppingListView" onMouseEntered="#hoverOnShoppingLists" onMouseExited="#exitHoverOnShoppingLists" prefHeight="50.0" prefWidth="286.0" styleClass="white-button" stylesheets="@iMat.css" text="Inköpslistor">
+            <Button fx:id="shoppingListButton" alignment="CENTER" maxHeight="50.0" minHeight="50.0" mnemonicParsing="false" onAction="#openShoppingListView" prefHeight="50.0" prefWidth="286.0" styleClass="white-button" stylesheets="@iMat.css" text="Inköpslistor">
                <effect>
                   <DropShadow height="10.45" offsetY="5.0" radius="3.6125" width="6.0">
                      <color>
@@ -120,7 +124,7 @@
                   </DropShadow>
                </effect>
             </TextField>
-            <Button fx:id="checkoutButton" alignment="CENTER" maxHeight="60.0" minHeight="45.0" mnemonicParsing="false" onAction="#openCheckoutView" onMouseEntered="#hoverOnCheckout" onMouseExited="#exitHoverOnCheckout" prefHeight="50.0" prefWidth="364.0" styleClass="white-button" stylesheets="@iMat.css" text="Kassan  0 kr">
+            <Button fx:id="checkoutButton" alignment="CENTER" maxHeight="60.0" minHeight="45.0" mnemonicParsing="false" onAction="#openCheckoutView" prefHeight="50.0" prefWidth="364.0" styleClass="white-button" stylesheets="@iMat.css" text="Kassan  0 kr">
                <effect>
                   <DropShadow height="14.9" offsetY="5.0" radius="4.725" width="6.0">
                      <color>
