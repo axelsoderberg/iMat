@@ -16,100 +16,105 @@
 
 <fx:root fx:id="helpPane" prefHeight="689.0" prefWidth="1536.0" styleClass="almost-white" stylesheets="@iMat.css" type="AnchorPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fitHeight="628.0" fitWidth="1152.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../resources/guide1.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="628.0" fitWidth="1152.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../resources/guide2.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="628.0" fitWidth="1152.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../resources/guide3.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="628.0" fitWidth="1152.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../resources/guide4.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="628.0" fitWidth="1152.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../resources/guide5.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="628.0" fitWidth="1152.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../resources/guide6.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="628.0" fitWidth="1152.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../resources/guide7.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="628.0" fitWidth="1152.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../resources/guide8.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="628.0" fitWidth="1152.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../resources/guide9.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="628.0" fitWidth="1152.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../resources/guide10.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="628.0" fitWidth="1152.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../resources/guide11.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="628.0" fitWidth="1152.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../resources/guide12.png" />
-         </image>
-      </ImageView>
-      <AnchorPane prefHeight="82.0" prefWidth="1118.0" stylesheets="@iMat.css">
+      <AnchorPane fx:id="guidePane" prefHeight="200.0" prefWidth="1535.0">
+         <children>
+            <Rectangle fx:id="blackBox" arcHeight="5.0" arcWidth="5.0" fill="#000000cb" height="914.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1536.0" />
+            <ImageView fx:id="g1" fitHeight="600.0" fitWidth="950.0" layoutX="290.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/guide1.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="g2" fitHeight="600.0" fitWidth="950.0" layoutX="290.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/guide2.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="g3" fitHeight="600.0" fitWidth="950.0" layoutX="290.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/guide3.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="g4" fitHeight="600.0" fitWidth="950.0" layoutX="290.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/guide4.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="g5" fitHeight="600.0" fitWidth="950.0" layoutX="290.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/guide5.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="g6" fitHeight="600.0" fitWidth="950.0" layoutX="290.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/guide6.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="g7" fitHeight="600.0" fitWidth="950.0" layoutX="290.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/guide7.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="g8" fitHeight="600.0" fitWidth="950.0" layoutX="290.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/guide8.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="g9" fitHeight="600.0" fitWidth="950.0" layoutX="290.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/guide9.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="g10" fitHeight="600.0" fitWidth="950.0" layoutX="290.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/guide10.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="g11" fitHeight="600.0" fitWidth="950.0" layoutX="290.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/guide11.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="g12" fitHeight="600.0" fitWidth="950.0" layoutX="290.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/guide12.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="guideControl" layoutX="200.0" prefHeight="82.0" prefWidth="1118.0" stylesheets="@iMat.css" AnchorPane.bottomAnchor="0.0">
          <styleClass>
             <String fx:value="dark-green" />
             <String fx:value="rounded-corners" />
          </styleClass>
          <children>
-            <Button layoutX="16.0" layoutY="11.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="301.0" styleClass="white-button" text="&lt;-- Föregående sida" />
-            <Button layoutX="801.0" layoutY="10.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="301.0" styleClass="white-button" text="Nästa sida --&gt;" />
-            <Button layoutX="333.0" layoutY="10.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="219.0" styleClass="white-button" text="Starta om" />
-            <Button layoutX="567.0" layoutY="10.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="219.0" styleClass="white-button" text="Avsluta" />
+            <Button fx:id="prevButton" layoutX="16.0" layoutY="11.0" mnemonicParsing="false" onMouseClicked="#prevPage" prefHeight="57.0" prefWidth="301.0" styleClass="white-button" text="&lt;-- Föregående sida" />
+            <Button fx:id="nextButton" layoutX="801.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#nextPage" prefHeight="57.0" prefWidth="301.0" styleClass="white-button" text="Nästa sida --&gt;" />
+            <Button fx:id="resetButton" layoutX="333.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#reset" prefHeight="57.0" prefWidth="219.0" styleClass="white-button" text="Starta om" />
+            <Button fx:id="exitButton" layoutX="567.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#exitGuide" prefHeight="57.0" prefWidth="219.0" styleClass="white-button" text="Avsluta" />
          </children>
       </AnchorPane>
-      <StackPane prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <StackPane fx:id="stackPane" prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <AnchorPane fx:id="QAAnchorpane" onMouseClicked="#closeQA" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
                <children>
-                  <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#ecebeb" height="656.0" layoutX="372.0" layoutY="33.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1207.0" AnchorPane.leftAnchor="165.0" AnchorPane.rightAnchor="164.0" AnchorPane.topAnchor="22.0" />
-                  <ImageView fitHeight="656.0" fitWidth="1207.0" layoutX="251.0" layoutY="22.0" onMouseClicked="#mouseTrap" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="165.0" AnchorPane.topAnchor="22.0">
+                  <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#ecebeb" height="656.0" layoutX="372.0" layoutY="50.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1207.0" y="20.0" AnchorPane.leftAnchor="165.0" AnchorPane.rightAnchor="164.0" AnchorPane.topAnchor="230.0" />
+                  <ImageView fitHeight="656.0" fitWidth="1207.0" layoutX="251.0" layoutY="22.0" onMouseClicked="#mouseTrap" pickOnBounds="true" preserveRatio="true" y="20.0" AnchorPane.leftAnchor="165.0" AnchorPane.topAnchor="230.0">
                      <image>
                         <Image url="@../resources/q&amp;a.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="150.0" fitWidth="70.0" layoutX="1295.0" layoutY="31.0" onMouseClicked="#closeQA" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="31.0">
+                  <ImageView fitHeight="150.0" fitWidth="70.0" layoutX="1295.0" layoutY="31.0" onMouseClicked="#closeQA" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="230.0">
                      <image>
                         <Image url="@../resources/listCloseButton.png" />
                      </image>
                   </ImageView>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="helpAnchorpane" prefHeight="200.0" prefWidth="200.0" styleClass="almost-white">
+            <AnchorPane fx:id="helpAnchorpane" prefHeight="831.0" prefWidth="1536.0" styleClass="almost-white">
                <children>
-                  <Line endX="100.0" startX="-564.0" stroke="#0000004d" strokeWidth="5.0" AnchorPane.leftAnchor="420.0" AnchorPane.topAnchor="100.0" />
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-page-header" text="Hej! Vad behöver du hjälp med?" textAlignment="CENTER" AnchorPane.leftAnchor="497.0" AnchorPane.topAnchor="45.0" />
-                  <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#c3d5bd" height="440.0" layoutX="223.0" layoutY="169.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="light-green" width="310.0">
+                  <Line endX="100.0" layoutX="986.5" layoutY="312.5" startX="-564.0" stroke="#0000004d" strokeWidth="5.0" AnchorPane.leftAnchor="420.0" AnchorPane.topAnchor="310.0" />
+                  <Text layoutX="497.0" layoutY="293.84765625" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-page-header" text="Hej! Vad behöver du hjälp med?" textAlignment="CENTER" AnchorPane.leftAnchor="497.0" AnchorPane.topAnchor="255.0" />
+                  <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#c3d5bd" height="440.0" layoutX="223.0" layoutY="369.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="light-green" width="310.0">
                      <effect>
                         <DropShadow height="6.0" offsetY="2.0" radius="2.5" width="6.0">
                            <color>
@@ -118,7 +123,7 @@
                         </DropShadow>
                      </effect>
                   </Rectangle>
-                  <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#c3d5bd" height="440.0" layoutX="613.0" layoutY="169.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="light-green" width="310.0">
+                  <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#c3d5bd" height="440.0" layoutX="613.0" layoutY="369.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="light-green" width="310.0">
                      <effect>
                         <DropShadow height="6.0" offsetY="2.0" radius="2.5" width="6.0">
                            <color>
@@ -127,7 +132,7 @@
                         </DropShadow>
                      </effect>
                   </Rectangle>
-                  <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#c3d5bd" height="440.0" layoutX="1003.0" layoutY="169.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="light-green" width="310.0">
+                  <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#c3d5bd" height="440.0" layoutX="1003.0" layoutY="369.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="light-green" width="310.0">
                      <effect>
                         <DropShadow height="6.0" offsetY="2.0" radius="2.5" width="6.0">
                            <color>
@@ -136,29 +141,18 @@
                         </DropShadow>
                      </effect>
                   </Rectangle>
-                  <Text layoutX="254.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-header" text="Osäker på hur du använder hemsidan?" textAlignment="CENTER" wrappingWidth="250.0" AnchorPane.leftAnchor="254.0" AnchorPane.topAnchor="200.0" />
-                  <Text layoutX="252.0" layoutY="369.423828125" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-normal" text="Få en genomgång av programmet!" textAlignment="CENTER" wrappingWidth="250.0" AnchorPane.bottomAnchor="301.1171875" AnchorPane.leftAnchor="252.0" AnchorPane.topAnchor="350.0" />
-                  <Text layoutX="643.0" layoutY="360.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-normal" text="Vill du ha hjälp med att ändra uppgifterna i din profil eller vill du veta mer om betalningsätt och leverans?" textAlignment="CENTER" wrappingWidth="250.0" AnchorPane.bottomAnchor="252.658203125" AnchorPane.leftAnchor="643.0" AnchorPane.topAnchor="350.0" />
-                  <Text layoutX="1033.0" layoutY="369.423828125" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-normal" text="Du når oss på telefon mellan 8-17 varje vardag. Skickar du ett mejl svarar vi så fort vi kan!" textAlignment="CENTER" wrappingWidth="250.0" AnchorPane.topAnchor="350.0" />
-                  <Text layoutX="643.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-header" text="Har du frågor angående din profil?" textAlignment="CENTER" wrappingWidth="250.0" AnchorPane.leftAnchor="643.0" AnchorPane.topAnchor="200.0" />
-                  <Text layoutX="1030.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-header" text="Vill du komma i kontakt med kundsupporten?" textAlignment="CENTER" wrappingWidth="250.0" AnchorPane.topAnchor="200.0" />
+                  <Text layoutX="254.0" layoutY="418.056640625" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-header" text="Osäker på hur du använder hemsidan?" textAlignment="CENTER" wrappingWidth="250.0" AnchorPane.leftAnchor="254.0" AnchorPane.topAnchor="390.0" />
+                  <Text layoutX="252.0" layoutY="539.423828125" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-normal" text="Få en genomgång av programmet!" textAlignment="CENTER" wrappingWidth="250.0" AnchorPane.bottomAnchor="346.1171875" AnchorPane.leftAnchor="252.0" AnchorPane.topAnchor="520.0" />
+                  <Text layoutX="643.0" layoutY="539.423828125" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-normal" text="Vill du ha hjälp med att ändra uppgifterna i din profil eller vill du veta mer om betalningsätt och leverans?" textAlignment="CENTER" wrappingWidth="250.0" AnchorPane.bottomAnchor="298.234375" AnchorPane.leftAnchor="643.0" AnchorPane.topAnchor="520.0" />
+                  <Text layoutX="1033.0" layoutY="539.423828125" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-normal" text="Du når oss på telefon mellan 8-17 varje vardag. Skickar du ett mejl svarar vi så fort vi kan!" textAlignment="CENTER" wrappingWidth="250.0" AnchorPane.topAnchor="520.0" />
+                  <Text layoutX="643.0" layoutY="418.056640625" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-header" text="Har du frågor angående din profil?" textAlignment="CENTER" wrappingWidth="250.0" AnchorPane.leftAnchor="643.0" AnchorPane.topAnchor="390.0" />
+                  <Text layoutX="1030.0" layoutY="418.056640625" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-header" text="Vill du komma i kontakt med kundsupporten?" textAlignment="CENTER" wrappingWidth="250.0" AnchorPane.topAnchor="390.0" />
                   <HBox layoutX="1078.0" layoutY="510.0" spacing="10.0">
                      <children>
-                        <VBox alignment="CENTER_RIGHT" spacing="5.0">
-                           <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-contact" text="Tel:" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-contact" text="Mejl:" />
-                           </children>
-                        </VBox>
-                        <VBox spacing="5.0">
-                           <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-normal" text="0700-000000" textAlignment="CENTER" />
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-normal" text="imat@mejl.se" textAlignment="CENTER" />
-                           </children>
-                        </VBox>
+                        <VBox spacing="5.0" />
                      </children>
                   </HBox>
-                  <Button layoutX="304.0" layoutY="514.0" mnemonicParsing="false" prefWidth="150.0" text="Starta guide" AnchorPane.bottomAnchor="141.0">
+                  <Button fx:id="guide" layoutX="293.0" layoutY="725.0" mnemonicParsing="false" onMouseClicked="#startGuide" prefWidth="150.0" text="Starta guide" AnchorPane.bottomAnchor="145.0">
                      <effect>
                         <DropShadow height="6.17" offsetY="2.0" radius="2.585" width="6.17">
                            <color>
@@ -171,7 +165,7 @@
                         <String fx:value="small-button" />
                      </styleClass>
                   </Button>
-                  <Button layoutX="693.0" layoutY="514.0" mnemonicParsing="false" onAction="#openQA" prefWidth="150.0" text="Läs mer" AnchorPane.bottomAnchor="141.0">
+                  <Button layoutX="697.0" layoutY="722.0" mnemonicParsing="false" onAction="#openQA" prefWidth="150.0" text="Läs mer" AnchorPane.bottomAnchor="148.0">
                      <effect>
                         <DropShadow height="6.17" offsetY="2.0" radius="2.585" width="6.17">
                            <color>
@@ -184,6 +178,11 @@
                         <String fx:value="small-button" />
                      </styleClass>
                   </Button>
+                  <VBox alignment="CENTER_RIGHT" layoutX="1069.0" layoutY="640.0" spacing="5.0" />
+                  <Text layoutX="1128.0" layoutY="750.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-normal" text="imat@mejl.se" textAlignment="CENTER" />
+                  <Text layoutX="1131.0" layoutY="714.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-normal" text="0700-000000" textAlignment="CENTER" />
+                  <Text layoutX="1079.0" layoutY="715.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-contact" text="Tel:" />
+                  <Text layoutX="1073.0" layoutY="751.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-contact" text="Mejl:" />
                </children>
             </AnchorPane>
          </children>

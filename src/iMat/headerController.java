@@ -51,7 +51,7 @@ public class headerController extends AnchorPane {
     }
 
     @FXML
-    private void openHelpView() {
+    public void openHelpView() {
         helpCtrl.toFront();
         this.toFront();
     }
@@ -61,6 +61,11 @@ public class headerController extends AnchorPane {
         storeCtrl.updateProductList(model.getProducts());
         storeCtrl.toFront();
         storeCtrl.backArrowClicked();
+        this.toFront();
+    }
+
+    @FXML
+    public void headerToFront() {
         this.toFront();
     }
 

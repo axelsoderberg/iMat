@@ -4,7 +4,10 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
+import javafx.scene.shape.Rectangle;
 
 import java.io.IOException;
 
@@ -12,27 +15,32 @@ public class helpController extends AnchorPane {
 
     @FXML AnchorPane QAAnchorpane;
     @FXML AnchorPane helpAnchorpane;
+    @FXML AnchorPane helpPane;
+    @FXML StackPane stackPane;
+    @FXML AnchorPane guidePane;
+
     @FXML private Button guide;
+    @FXML private Button nextButton;
+    @FXML private Button prevButton;
+    @FXML private Button resetButton;
+    @FXML private Button exitButton;
+    @FXML private ImageView g1;
+    @FXML private ImageView g2;
+    @FXML private ImageView g3;
+    @FXML private ImageView g4;
+    @FXML private ImageView g5;
+    @FXML private ImageView g6;
+    @FXML private ImageView g7;
+    @FXML private ImageView g8;
+    @FXML private ImageView g9;
+    @FXML private ImageView g10;
+    @FXML private ImageView g11;
+    @FXML private ImageView g12;
+    @FXML private AnchorPane guideControl;
+    @FXML private Rectangle blackBox;
 
-    @FXML AnchorPane g1;
-    @FXML AnchorPane g2;
-    @FXML AnchorPane g3;
-    @FXML AnchorPane g4;
-    @FXML AnchorPane g5;
-    @FXML AnchorPane g6;
-    @FXML AnchorPane g7;
-    @FXML AnchorPane g8;
-    @FXML AnchorPane g9;
-    @FXML AnchorPane g10;
-    @FXML AnchorPane g11;
-    @FXML AnchorPane g12;
-    @FXML AnchorPane g13;
-    @FXML AnchorPane g14;
-    @FXML AnchorPane g15;
-    @FXML AnchorPane g16;
 
-
-    private int guideIndex = 0;
+    private int guideIndex = 1;
 
     public helpController() {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("help.fxml"));
@@ -64,12 +72,34 @@ public class helpController extends AnchorPane {
 
     @FXML
     public void startGuide() {
+        helpPane.toFront();
+        guidePane.toFront();
         loadPage(1);
+    }
+
+    @FXML
+    private void nextPage() {
+        if (guideIndex < 12)
+            loadPage(++guideIndex);
+    }
+
+    @FXML
+    private void reset() {
+        loadPage(1);
+    }
+
+    @FXML
+    private void exitGuide() {
+        guidePane.toBack();
+        guideControl.toBack();
+        iMatController.getHeader().openHelpView();
 
     }
 
-    private void nextPage() {
-        loadPage(++guideIndex);
+    @FXML
+    private void prevPage() {
+        if (guideIndex > 1)
+            loadPage(--guideIndex);
     }
 
     private void loadPage(int i) {
@@ -86,11 +116,8 @@ public class helpController extends AnchorPane {
             case 10 -> g10.toFront();
             case 11 -> g11.toFront();
             case 12 -> g12.toFront();
-            case 13 -> g13.toFront();
-            case 14 -> g14.toFront();
-            case 15 -> g15.toFront();
-            case 16 -> g16.toFront();
         }
+        guideControl.toFront();
     }
 
 }
