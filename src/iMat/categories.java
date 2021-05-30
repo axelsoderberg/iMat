@@ -44,6 +44,7 @@ public class categories extends AnchorPane {
         } else {
             parentController.updateSubcategories(c);
             parentController.updateProductList(Model.getInstance().getList(c));
+            parentController.currentCategory = c;
         }
         parentController.category.setText(c);
         parentController.categoriesLabel.setText(c);
@@ -58,6 +59,6 @@ public class categories extends AnchorPane {
     @FXML
     private void exitHover() {
         categoryPane.setStyle("-fx-background-color: #C3D5BD;");
-        label.setStyle("-fx-font-weight: regular;");
+        label.setStyle("-fx-font-weight: normal");
     }
 }

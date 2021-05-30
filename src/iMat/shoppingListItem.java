@@ -51,9 +51,9 @@ public class shoppingListItem extends AnchorPane{
         this.shoppingItem = item;
         shoppingListItemNameText.setText(item.getProduct().getName());
         shoppingListItemPrizePerItemText.setText(String.format("%.2f", item.getProduct().getPrice()) + " " + item.getProduct().getUnit());
-        shoppingListItemTotalItemPrizeText.setText("" + shoppingItem.getTotal() + " kr");
+        shoppingListItemTotalItemPrizeText.setText(String.format("%.2f", shoppingItem.getTotal()) + " kr");
         shoppingListItemProductImage.setImage(model.getImage(item.getProduct()));
-        shoppingListItemAmountLabel.setText((int) item.getAmount() + " st");
+        shoppingListItemAmountLabel.setText((int) item.getAmount() + " " + this.shoppingItem.getProduct().getUnitSuffix());
     }
 
     public shoppingListItem setAddView(){
@@ -88,8 +88,8 @@ public class shoppingListItem extends AnchorPane{
             shoppingItem.setAmount(shoppingItem.getAmount() - 1);
             if(shoppingItem.getAmount() == 0){
                 removeButton.toBack();
-                parentController.getProductList().remove(shoppingItem);
-                parentController.getParentController().updateCreateFlow();
+                    parentController.getProductList().remove(shoppingItem);
+                    parentController.getParentController().updateCreateFlow();
             }
         }
         updateListItem();
@@ -99,7 +99,7 @@ public class shoppingListItem extends AnchorPane{
     private void updateListItem(){
         shoppingListItemAmountLabel.setText("" + shoppingItem.getAmount());
         shoppingListItemPrizePerItemText.setText(String.format("%.2f", shoppingItem.getProduct().getPrice()) + " " + shoppingItem.getProduct().getUnit());
-        shoppingListItemTotalItemPrizeText.setText("" + shoppingItem.getTotal() + " kr");
+        shoppingListItemTotalItemPrizeText.setText(String.format("%.2f", shoppingItem.getTotal()) + " kr");
     }
 
     @FXML private void removeAllProducts(){

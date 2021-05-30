@@ -21,6 +21,49 @@
 
 <fx:root fx:id="shoppingListsPane" prefHeight="689.0" prefWidth="1536.0" styleClass="almost-white" stylesheets="@iMat.css" type="AnchorPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <children>
+      <AnchorPane fx:id="listView" prefHeight="400.0" prefWidth="600.0" stylesheets="@iMat.css" AnchorPane.leftAnchor="150.0">
+         <children>
+            <Rectangle arcHeight="100.0" arcWidth="100.0" fill="#ecebeb" height="600.0" layoutX="7.0" layoutY="10.0" stroke="#c9c9c9" strokeType="INSIDE" strokeWidth="5.0" width="1203.0" />
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="1124.0" layoutY="24.0" onMouseClicked="#closeShoppingList" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/listCloseButton.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="listViewName" layoutX="324.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-page-header" text="text" textAlignment="CENTER" wrappingWidth="587.376953125" />
+            <Line endX="389.0" layoutX="818.0" layoutY="73.0" startX="-809.0" stroke="#c9c9c9" strokeWidth="5.0" styleClass="almost-white" />
+            <Line endX="389.0" layoutX="818.0" layoutY="133.0" startX="-809.0" stroke="#c9c9c9" strokeWidth="5.0" styleClass="almost-white" />
+            <Text layoutX="138.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-header" text="Produkt" textAlignment="CENTER" />
+            <Text layoutX="361.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-header" text="Antal" textAlignment="CENTER" />
+            <Text layoutX="560.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-header" text="Totalpris" textAlignment="CENTER" />
+            <Text layoutX="792.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-header" text="Styckpris" textAlignment="CENTER" />
+            <Text layoutX="1050.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-header" text="Valda" textAlignment="CENTER" />
+            <Line endX="389.0" layoutX="818.0" layoutY="541.0" startX="-809.0" stroke="#c9c9c9" strokeWidth="5.0" styleClass="almost-white" />
+            <ScrollPane layoutX="15.0" layoutY="135.0" prefHeight="404.0" prefWidth="1190.0">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="1190.0">
+                     <children>
+                        <FlowPane fx:id="listViewFlowPane" prefHeight="400.0" prefWidth="1190.0" prefWrapLength="1190.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+            <Line endX="132.0" endY="50.0" layoutX="828.0" layoutY="83.0" startX="132.0" startY="-7.0" stroke="#c9c9c9" strokeWidth="5.0" styleClass="almost-white" AnchorPane.leftAnchor="960.0" />
+            <Label fx:id="listAmountText" layoutX="357.0" layoutY="557.0" styleClass="text-helpbox-header" text="x st" />
+            <Label fx:id="listSumText" layoutX="541.0" layoutY="557.0" styleClass="text-helpbox-header" text="Summa: 0 kr" />
+            <Button alignment="CENTER" layoutX="970.0" layoutY="557.0" maxHeight="70.0" minHeight="50.0" mnemonicParsing="false" onAction="#buyShoppingList" prefHeight="50.0" prefWidth="225.0" styleClass="red-button" stylesheets="@iMat.css" text="Lägg till valda" AnchorPane.bottomAnchor="13.0" AnchorPane.rightAnchor="25.0">
+               <effect>
+                  <DropShadow height="10.45" offsetY="5.0" radius="3.6125" width="6.0">
+                     <color>
+                        <Color opacity="0.6000000238418579" />
+                     </color>
+                  </DropShadow>
+               </effect>
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
       <AnchorPane fx:id="createView" layoutX="170.0" prefHeight="400.0" prefWidth="600.0" stylesheets="@iMat.css">
          <children>
             <Rectangle arcHeight="100.0" arcWidth="100.0" fill="#ecebeb" height="600.0" layoutX="7.0" layoutY="10.0" stroke="#c9c9c9" strokeType="INSIDE" strokeWidth="5.0" width="1203.0" />
@@ -89,49 +132,6 @@
                </font>
             </Button>
             <Button alignment="CENTER" layoutX="14.0" layoutY="141.0" maxHeight="70.0" minHeight="50.0" mnemonicParsing="false" onAction="#completeCreate" prefHeight="50.0" prefWidth="225.0" styleClass="green-button" stylesheets="@iMat.css" text="JA" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="25.0">
-               <effect>
-                  <DropShadow height="10.45" offsetY="5.0" radius="3.6125" width="6.0">
-                     <color>
-                        <Color opacity="0.6000000238418579" />
-                     </color>
-                  </DropShadow>
-               </effect>
-               <font>
-                  <Font size="36.0" />
-               </font>
-            </Button>
-         </children>
-      </AnchorPane>
-      <AnchorPane fx:id="listView" prefHeight="400.0" prefWidth="600.0" stylesheets="@iMat.css" AnchorPane.leftAnchor="150.0">
-         <children>
-            <Rectangle arcHeight="100.0" arcWidth="100.0" fill="#ecebeb" height="600.0" layoutX="7.0" layoutY="10.0" stroke="#c9c9c9" strokeType="INSIDE" strokeWidth="5.0" width="1203.0" />
-            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="1124.0" layoutY="24.0" onMouseClicked="#closeShoppingList" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../resources/listCloseButton.png" />
-               </image>
-            </ImageView>
-            <Text fx:id="listViewName" layoutX="576.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-page-header" text="text" textAlignment="CENTER" />
-            <Line endX="389.0" layoutX="818.0" layoutY="73.0" startX="-809.0" stroke="#c9c9c9" strokeWidth="5.0" styleClass="almost-white" />
-            <Line endX="389.0" layoutX="818.0" layoutY="133.0" startX="-809.0" stroke="#c9c9c9" strokeWidth="5.0" styleClass="almost-white" />
-            <Text layoutX="138.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-header" text="Produkt" textAlignment="CENTER" />
-            <Text layoutX="361.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-header" text="Antal" textAlignment="CENTER" />
-            <Text layoutX="560.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-header" text="Totalpris" textAlignment="CENTER" />
-            <Text layoutX="792.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-header" text="Styckpris" textAlignment="CENTER" />
-            <Text layoutX="1050.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-header" text="Valda" textAlignment="CENTER" />
-            <Line endX="389.0" layoutX="818.0" layoutY="541.0" startX="-809.0" stroke="#c9c9c9" strokeWidth="5.0" styleClass="almost-white" />
-            <ScrollPane layoutX="15.0" layoutY="135.0" prefHeight="404.0" prefWidth="1190.0">
-               <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="1190.0">
-                     <children>
-                        <FlowPane fx:id="listViewFlowPane" prefHeight="400.0" prefWidth="1190.0" prefWrapLength="1190.0" />
-                     </children>
-                  </AnchorPane>
-               </content>
-            </ScrollPane>
-            <Line endX="132.0" endY="50.0" layoutX="828.0" layoutY="83.0" startX="132.0" startY="-7.0" stroke="#c9c9c9" strokeWidth="5.0" styleClass="almost-white" AnchorPane.leftAnchor="960.0" />
-            <Label layoutX="357.0" layoutY="557.0" styleClass="text-helpbox-header" text="x st" />
-            <Label layoutX="541.0" layoutY="557.0" styleClass="text-helpbox-header" text="Summa: 0 kr" />
-            <Button alignment="CENTER" layoutX="970.0" layoutY="557.0" maxHeight="70.0" minHeight="50.0" mnemonicParsing="false" onAction="#buyShoppingList" prefHeight="50.0" prefWidth="225.0" styleClass="red-button" stylesheets="@iMat.css" text="Lägg till valda" AnchorPane.bottomAnchor="13.0" AnchorPane.rightAnchor="25.0">
                <effect>
                   <DropShadow height="10.45" offsetY="5.0" radius="3.6125" width="6.0">
                      <color>

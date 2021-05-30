@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -37,13 +38,17 @@ public class shoppinglists extends AnchorPane{
     @FXML private FlowPane searchFlow;
     @FXML private Group searchBox;
     @FXML private Button addProductsButton;
+    @FXML private Label listAmountText;
+    @FXML private Label listSumText;
     private boolean close = false;
     private boolean save = false;
     private boolean addedProduct = false;
+    int numberOfItems = 0;
+    double totalPrice = 0;
     private List<oneShoppingList> shoppingListList = new ArrayList<>();
     private Model model = Model.getInstance();
     private int listNumber;
-    private List<ShoppingItem> listViewShoppingItems;
+    private oneShoppingList listViewShoppingItems;
 
     @FXML
     ImageView closeButton;
@@ -73,8 +78,10 @@ public class shoppinglists extends AnchorPane{
         listNumber = shoppingListList.indexOf(listItem);
         populateListFlow();
         listView.toFront();
-        listViewShoppingItems = new ArrayList<>();
-        listViewShoppingItems.addAll(listItem.getProductList());
+        listViewShoppingItems = new oneShoppingList(this);
+        for (ShoppingItem shoppingItem : listItem.getProductList()) {
+            listViewShoppingItems.getProductList().add(new ShoppingItem(shoppingItem.getProduct(), shoppingItem.getAmount()));
+        }
     }
 
     @FXML private void closeShoppingList(){
@@ -84,7 +91,7 @@ public class shoppinglists extends AnchorPane{
     }
 
     @FXML private void buyShoppingList(){
-        for (ShoppingItem shoppingItem : listViewShoppingItems) {
+        for (ShoppingItem shoppingItem : listViewShoppingItems.getProductList()) {
             model.getShoppingCart().addItem(shoppingItem);
         }
         closeShoppingList();
@@ -101,6 +108,11 @@ public class shoppinglists extends AnchorPane{
         createListList.getChildren().clear();
         populateCreateFlow();
         createListList.getChildren().add(addButton);
+    }
+
+    void updateListFlow(){
+        listViewFlowPane.getChildren().clear();
+        populateListFlow();
     }
 
     @FXML private void createShoppingList(){
@@ -154,9 +166,15 @@ public class shoppinglists extends AnchorPane{
     }
 
     private void populateListFlow(){
+        numberOfItems = 0;
+        totalPrice = 0;
         for (ShoppingItem shoppingItems : shoppingListList.get(listNumber).getProductList()){
             listViewFlowPane.getChildren().add(shoppingListList.get(listNumber).getShoppingListProductMap().get(shoppingItems.getProduct()).setListView());
+            totalPrice += shoppingItems.getTotal();
+            numberOfItems += shoppingItems.getAmount();
         }
+        listAmountText.setText("" + numberOfItems + " st");
+        listSumText.setText(String.format("%.2f", totalPrice) + " kr");
     }
 
     private void populateSearchFlow(){
@@ -190,11 +208,11 @@ public class shoppinglists extends AnchorPane{
     }
 
     void setShoppingItem(ShoppingItem item){
-        if(listViewShoppingItems.contains(item)) {
-            listViewShoppingItems.remove(item);
+        if(listViewShoppingItems.getProductList().contains(item)) {
+            listViewShoppingItems.getProductList().remove(item);
         }
         else{
-            listViewShoppingItems.add(item);
+            listViewShoppingItems.getProductList().add(item);
         }
     }
 

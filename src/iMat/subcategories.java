@@ -16,7 +16,7 @@ public class subcategories extends AnchorPane {
     @FXML private CheckBox checkbox;
     @FXML private ImageView check;
 
-    private ProductCategory pc;
+    public ProductCategory pc;
     private storeController parentController;
 
     public subcategories(ProductCategory pc, storeController parentController) {

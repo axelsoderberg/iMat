@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxWidth="1130.0" minWidth="1190.0" prefHeight="70.0" prefWidth="1130.0" styleClass="almost-white" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Rectangle fx:id="removeBackground" arcHeight="5.0" arcWidth="5.0" fill="#ececeb" height="78.0" layoutX="850.0" layoutY="2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="262.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Text fx:id="orderListItemName" layoutX="226.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-products" text="Produktnamn" AnchorPane.leftAnchor="226.0" AnchorPane.topAnchor="24.1015625" />
+      <Text fx:id="orderListItemTotalPrice" layoutX="792.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-products" text="xx kr" AnchorPane.leftAnchor="792.0" AnchorPane.topAnchor="24.1015625" />
+      <ImageView fx:id="orderListItemImage" fitHeight="50.0" fitWidth="50.0" layoutX="32.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="12.0">
+         <image>
+            <Image url="@../resources/apple.jpg" />
+         </image>
+      </ImageView>
+      <Line endX="1087.878662109375" layoutX="102.0" layoutY="80.0" startX="-100.0" stroke="#c9c9c9" strokeWidth="3.0" AnchorPane.leftAnchor="0.0" />
+      <Text fx:id="orderListItemPrice" layoutX="958.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-products" text="xx kr/st" AnchorPane.leftAnchor="958.0" AnchorPane.topAnchor="24.1015625" />
+      <Text fx:id="orderListItemAmount" layoutX="482.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-products" text="x st" />
+   </children>
+</AnchorPane>

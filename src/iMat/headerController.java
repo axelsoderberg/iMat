@@ -60,6 +60,7 @@ public class headerController extends AnchorPane {
     public void openStoreView() {
         storeCtrl.updateProductList(model.getProducts());
         storeCtrl.toFront();
+        storeCtrl.backArrowClicked();
         this.toFront();
     }
 
@@ -73,6 +74,7 @@ public class headerController extends AnchorPane {
     @FXML
     private void openMypageView() {
         mypageCtrl.toFront();
+        mypageCtrl.populateOrderFlow();
         this.toFront();
     }
 

@@ -37,6 +37,8 @@ public class Model {
     public List<Product> base = new ArrayList();
     public List<Product> sweets = new ArrayList();
 
+    public String sortBy = "";
+
     /**
      * Constructor that should never be called, use getInstance() instead.
      */
@@ -73,10 +75,18 @@ public class Model {
     }
 
     public List<Product> getProducts() {
-        return iMatDataHandler.getProducts();
+        List<Product> list = iMatDataHandler.getProducts();
+        if (sortBy != "")
+            sort(list, sortBy);
+        return list;
     }
 
-    public List<Product> getProducts(ProductCategory pc) {return iMatDataHandler.getProducts(pc); }
+    public List<Product> getProducts(ProductCategory pc) {
+        List<Product> list = iMatDataHandler.getProducts(pc);
+        if (sortBy != "")
+            sort(list, sortBy);
+        return list;
+    }
 
     public Product getProduct(int idNbr) {
         return iMatDataHandler.getProduct(idNbr);
@@ -174,14 +184,107 @@ public class Model {
     }
 
     public List<Product> getList(String c) {
-        return switch (c) {
-            case "Godis & Läsk" -> sweets;
-            case "Frukt" -> fruits;
-            case "Mejeri" -> dairy;
-            case "Kött & Fisk" -> meat;
-            case "Basvaror" -> base;
-            case "Grönsaker" -> greens;
-            default -> null;
-        };
+        switch (c) {
+            case "Godis & Läsk" -> {
+                sort(sweets, sortBy);
+                return sweets;
+            }
+            case "Frukt" -> {
+                sort(fruits, sortBy);
+                return fruits;
+            }
+            case "Mejeri" -> {
+                sort(dairy, sortBy);
+                return dairy;
+            }
+            case "Kött & Fisk" -> {
+                sort(meat, sortBy);
+                return meat;
+            }
+            case "Basvaror" -> {
+                sort(base, sortBy);
+                return base;
+            }
+            case "Grönsaker" -> {
+                sort(greens, sortBy);
+                return greens;
+            }
+        }
+        return null;
     }
+
+    public void sort(List<Product> list, String sortBy) {
+        switch (sortBy) {
+            case "Pris stigande":
+                quickSort(list, 0, list.size() - 1);
+                break;
+            case "Pris fallande":
+                quickSort(list,0, list.size() - 1);
+                for (int i = 0, j = list.size() - 1; i < j; i++) {
+                    list.add(i, list.remove(j));
+                }
+                break;
+            case "A - Ö":
+                quickSortAlphabetic(list, 0, list.size() - 1);
+                break;
+        }
+    }
+
+    public static void quickSort(List<Product> list, int begin, int end) {
+        if (end <= begin) return;
+        int pivot = partition(list, begin, end);
+        quickSort(list, begin, pivot-1);
+        quickSort(list, pivot+1, end);
+    }
+
+    static int partition(List<Product> list, int begin, int end) {
+
+        int counter = begin;
+        for (int i = begin; i < end; i++) {
+            if (list.get(i).getPrice() < list.get(end).getPrice()) {
+                Product temp = list.get(counter);
+                list.set(counter, list.get(i));
+                list.set(i, temp);
+                counter++;
+            }
+        }
+        Product temp = list.get(end);
+        list.set(end, list.get(counter));
+        list.set(counter, temp);
+
+        return counter;
+    }
+
+    public static void quickSortAlphabetic(List<Product> list, int begin, int end) {
+        if (end <= begin) return;
+        int pivot = partitionAlphabetic(list, begin, end);
+        quickSortAlphabetic(list, begin, pivot-1);
+        quickSortAlphabetic(list, pivot+1, end);
+    }
+
+    static int partitionAlphabetic(List<Product> list, int begin, int end) {
+
+        int counter = begin;
+        for (int i = begin; i < end; i++) {
+            if (isBeforeInAlphabet(list.get(i), list.get(end - 1))) {
+                Product temp = list.get(counter);
+                list.set(counter, list.get(i));
+                list.set(i, temp);
+                counter++;
+            }
+        }
+        Product temp = list.get(end);
+        list.set(end, list.get(counter));
+        list.set(counter, temp);
+
+        return counter;
+    }
+
+    private static boolean isBeforeInAlphabet(Product p1, Product p2) {
+        int i = 0;
+        /*while (p1.getName().charAt(i) == p2.getName().charAt(i))
+            i++;*/
+        return p1.getName().charAt(0) - p2.getName().charAt(0) <= 0;
+    }
+
 }

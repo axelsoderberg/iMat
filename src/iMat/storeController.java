@@ -1,12 +1,13 @@
 package iMat;
 
 import javafx.beans.property.BooleanProperty;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.CheckBox;
+import javafx.scene.control.*;
 import javafx.scene.control.Label;
-import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
@@ -31,6 +32,7 @@ public class storeController extends AnchorPane {
     @FXML private final ToggleGroup categoriesGroup = new ToggleGroup();
     @FXML public Label category;
     @FXML public Label categoriesLabel;
+    @FXML public ComboBox sortCombo;
     @FXML FlowPane shoppingcartFlowpaneStore;
     @FXML Label storeShoppingcartTotalPrize;
 
@@ -38,6 +40,7 @@ public class storeController extends AnchorPane {
     public List<ProductCategory> selectedCategories = new ArrayList();
     public List<subcategories> currentSubCategories = new ArrayList();
     private final Model model = Model.getInstance();
+    public String currentCategory = "";
 
     checkoutController checkoutCtrl;
 
@@ -57,6 +60,29 @@ public class storeController extends AnchorPane {
         updateProductList(model.getProducts());
         updateShoppingcartview(model.getShoppingCart().getItems());
 
+        sortCombo.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                model.sortBy = (String) sortCombo.getValue();
+                if (selectedCategories.isEmpty() && currentCategory.equals(""))
+                    updateProductList(model.getProducts());
+                else if (selectedCategories.isEmpty()) {
+                    updateProductList(model.getList(currentCategory));
+                } else {
+                    List<Product> lp = new ArrayList();
+                    for (ProductCategory productCat : selectedCategories) {
+                        lp.addAll(model.getProducts(productCat));
+                    }
+                    model.sort(lp, model.sortBy);
+                    updateProductList(lp);
+                }
+            }
+        });
+
+        sortCombo.getItems().removeAll(sortCombo.getItems());
+        sortCombo.getItems().addAll("A - Ö", "Pris fallande", "Pris stigande");
+
         this.checkoutCtrl = checkoutCtrl;
     }
 
@@ -73,6 +99,17 @@ public class storeController extends AnchorPane {
         }
 
     }
+
+    /*
+    void updateProductList(List<Product> products) {
+
+        productsFlowPaneStore.getChildren().clear();
+
+        for (Product product : products) {
+            productsFlowPaneStore.getChildren().add(productCardMap.get(product));
+        }
+
+    }*/
 
     private void productListInit() {
         productCardMap = new HashMap<Product, productCard>();
@@ -160,6 +197,7 @@ public class storeController extends AnchorPane {
         updateProductList(model.getProducts());
         category.setText("Produkter");
         categoriesLabel.setText("Kategorier");
+        currentCategory = "";
     }
 
     public String subCatConverter(ProductCategory pc) {
@@ -178,7 +216,7 @@ public class storeController extends AnchorPane {
             case COLD_DRINKS -> "Kall dryck";
             case MELONS -> "Melon";
             case CITRUS_FRUIT -> "Citrus";
-            case DAIRIES -> "Mejeri";
+            case DAIRIES -> "Mejeriprodukter";
             case POTATO_RICE -> "Potatis & Ris";
             case EXOTIC_FRUIT -> "Exotisk";
             case FLOUR_SUGAR_SALT -> "Skafferi";
@@ -205,6 +243,7 @@ public class storeController extends AnchorPane {
         for (ProductCategory productCat : selectedCategories) {
             lp.addAll(model.getProducts(productCat));
         }
+        model.sort(lp, model.sortBy);
         updateProductList(lp);
         setCategoriesLabel();
 
@@ -216,6 +255,7 @@ public class storeController extends AnchorPane {
         for (ProductCategory productCat : selectedCategories) {
             lp.addAll(model.getProducts(productCat));
         }
+        model.sort(lp, model.sortBy);
         updateProductList(lp);
         if (selectedCategories.isEmpty()) {
             addSelectionToAllSubCats();
