@@ -86,6 +86,7 @@ public class helpController extends AnchorPane {
     @FXML
     private void reset() {
         loadPage(1);
+        guideIndex = 1;
     }
 
     @FXML
