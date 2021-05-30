@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-<fx:root prefHeight="885.0" prefWidth="1536.0" styleClass="lightbox-background" stylesheets="@iMat.css" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root prefHeight="885.0" prefWidth="1536.0" styleClass="lightbox-background" stylesheets="@iMat.css" type="AnchorPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="885.0" opacity="0.6" stroke="BLACK" strokeType="INSIDE" styleClass="lightbox-background" width="1536.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ecebeb" height="400.0" layoutX="419.0" layoutY="274.0" stroke="BLACK" strokeType="INSIDE" styleClass="almost-white" width="606.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="885.0" onMouseClicked="#closeDetailView" opacity="0.6" stroke="BLACK" strokeType="INSIDE" styleClass="lightbox-background" width="1536.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ecebeb" height="400.0" layoutX="419.0" layoutY="274.0" onMouseClicked="#mouseStrap" stroke="BLACK" strokeType="INSIDE" styleClass="almost-white" width="606.0" />
       <ImageView fx:id="detailViewImage" fitHeight="209.0" fitWidth="170.0" layoutX="433.0" layoutY="296.0" pickOnBounds="true" preserveRatio="true" />
       <Label fx:id="detailViewProductName" layoutX="631.0" layoutY="284.0" prefHeight="65.0" prefWidth="339.0" styleClass="text-page-header" text="Produktnamn" />
       <Label alignment="TOP_LEFT" layoutX="631.0" layoutY="357.0" prefHeight="157.0" prefWidth="390.0" styleClass="text-detail-view-detail" text="Produktbeskrivning ipsum">
@@ -36,17 +39,18 @@
                   <Image url="@../resources/addRemoveButton.png" />
                </image>
             </ImageView>
-            <Line endX="15.0" layoutX="7.0" layoutY="19.0" onMouseClicked="#handleRemoveAction" strokeWidth="5.0" />
+            <Line endX="15.0" layoutX="7.0" layoutY="19.0" strokeWidth="5.0" />
             <ImageView fitHeight="27.0" fitWidth="27.0" layoutX="117.0" layoutY="7.0" onMouseClicked="#handleAddAction" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../resources/plusSign.png" />
                </image>
             </ImageView>
-            <Label fx:id="imageViewAmountLabel" layoutX="43.0" layoutY="-8.0" prefHeight="35.0" prefWidth="60.0" styleClass="text-font" text="x st">
+            <Label fx:id="detailViewAmountLabel" layoutX="52.0" layoutY="1.0" prefHeight="35.0" prefWidth="60.0" styleClass="text-amount-big" text="x st" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="28.0" layoutX="2.0" layoutY="6.0" onMouseClicked="#handleRemoveAction" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="28.0" />
          </children>
       </Group>
       <Button fx:id="addButton" layoutX="857.0" layoutY="458.0" maxHeight="40.0" minHeight="35.0" mnemonicParsing="false" onAction="#handleAddAction" prefHeight="40.0" prefWidth="157.0" styleClass="lightgreen-button" text="Lägg till" />

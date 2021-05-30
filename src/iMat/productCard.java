@@ -88,7 +88,7 @@ public class productCard extends AnchorPane {
     }
 
     @FXML
-    private void handleAddAction() {
+    void handleAddAction() {
         shoppingItem.setAmount(shoppingItem.getAmount() + 1);
         model.addToShoppingCart(shoppingItem);
         addOrRemoveButton.toFront();
@@ -97,7 +97,7 @@ public class productCard extends AnchorPane {
     }
 
     @FXML
-    private void handleRemoveAction() {
+    void handleRemoveAction() {
         shoppingItem.setAmount(shoppingItem.getAmount() - 1);
         if (shoppingItem.getAmount() == 0) { //Om man tog bort den sista i kundvagnen
             addButton.toFront();
@@ -135,7 +135,7 @@ public class productCard extends AnchorPane {
 
     @FXML
     private void openDetailView() {
-        parentController.openDetailView(product);
+        parentController.openDetailView(shoppingItem);
     }
 }
 
