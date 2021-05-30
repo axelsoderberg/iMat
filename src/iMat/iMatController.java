@@ -39,10 +39,10 @@ public class iMatController implements Initializable, ShoppingCartListener {
     static List<ProductCategory> sweets = Arrays.asList(ProductCategory.HOT_DRINKS, ProductCategory.COLD_DRINKS,
             ProductCategory.SWEET);
 
-    checkoutController checkoutCtrl;
+    static checkoutController checkoutCtrl;
     static headerController headerCtrl;
     storeController storeCtrl;
-    shoppinglists shoppinglistsCtrl;
+    static shoppinglists shoppinglistsCtrl;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -136,5 +136,7 @@ public class iMatController implements Initializable, ShoppingCartListener {
     }
 
     public static headerController getHeader() { return headerCtrl; }
+
+    public static shoppinglists getShoppingListController() { return shoppinglistsCtrl; }
 }
 

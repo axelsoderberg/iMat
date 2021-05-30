@@ -13,6 +13,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
 import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 
@@ -77,6 +78,10 @@ public class checkoutController extends AnchorPane {
     @FXML ImageView thanksClose;
     @FXML ImageView payClose;
     @FXML ImageView deliveryClose;
+
+    @FXML Button saveListButton;
+    @FXML Text text1;
+    @FXML Text text2;
 
     Boolean firstNameOk = false;
     Boolean surNameOk = false;
@@ -819,5 +824,17 @@ public class checkoutController extends AnchorPane {
         deliveryClose.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
                 "resources/lightgreenClose.png")));
     }
+
+    @FXML
+    void saveList() {
+        iMatController.getShoppingListController().createListFromCheckout(model.getShoppingCart().getItems());
+        text1.setText("Snyggt! ✓");
+        text1.setStyle("-fx-font-size: 24px;");
+        text2.setText("Du hittar din lista under ´Inköpslistor´ ");
+        text2.setStyle("-fx-font-size: 20px;");
+        saveListButton.setStyle("-fx-background-color: #878787;");
+    }
+
+
 
 }

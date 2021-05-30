@@ -15,10 +15,7 @@ import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class shoppinglists extends AnchorPane{
 
@@ -40,6 +37,9 @@ public class shoppinglists extends AnchorPane{
     @FXML private Button addProductsButton;
     @FXML private Label listAmountText;
     @FXML private Label listSumText;
+    @FXML private Label createAmountText;
+    @FXML private Label createNumberOfItems;
+
     private boolean close = false;
     private boolean save = false;
     private boolean addedProduct = false;
@@ -138,6 +138,16 @@ public class shoppinglists extends AnchorPane{
         createListList.getChildren().clear();
     }
 
+    @FXML public void createListFromCheckout(List<ShoppingItem> items) {
+        oneShoppingList listItem = new oneShoppingList(this);
+        Date date = new Date();
+        listItem.setListName(date.toString());
+        listItem.addProducts(items);
+
+        shoppingListList.add(listItem);
+        updateShoppingListList();
+    }
+
     @FXML private void abortCreate(){
         abortPane.toFront();
     }
@@ -159,10 +169,15 @@ public class shoppinglists extends AnchorPane{
     }
 
     private void populateCreateFlow(){
+        numberOfItems = 0;
+        totalPrice = 0;
         for (ShoppingItem shoppingItems : shoppingListList.get(listNumber).getProductList()){
             createListList.getChildren().add(shoppingListList.get(listNumber).getShoppingListProductMap().get(shoppingItems.getProduct()).setAddView());
+            totalPrice += shoppingItems.getTotal();
+            numberOfItems += shoppingItems.getAmount();
         }
-
+        createAmountText.setText("Summa: " + String.format("%.2f", totalPrice) + " kr");
+        createNumberOfItems.setText("" + numberOfItems + " st");
     }
 
     private void populateListFlow(){
@@ -233,5 +248,7 @@ public class shoppinglists extends AnchorPane{
         closeButton.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
                 "resources/lightgreenClose.png")));
     }
+
+
 
 }
