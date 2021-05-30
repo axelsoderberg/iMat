@@ -86,10 +86,10 @@ public class detailView extends AnchorPane {
     @FXML
     private void handleFavoriteAction() {
         if (model.isFavorite(shoppingItem.getProduct())) {
-            model.removeFavorite(shoppingItem.getProduct());
+            parentController.productCardMap.get(shoppingItem.getProduct()).handleFavoriteAction();
             detailViewFavoriteImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("resources/heart.png"))));
         } else {
-            model.addFavorite(shoppingItem.getProduct());
+            parentController.productCardMap.get(shoppingItem.getProduct()).handleFavoriteAction();
             detailViewFavoriteImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("resources/heartFilled.png"))));
         }
     }

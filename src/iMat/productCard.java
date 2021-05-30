@@ -109,7 +109,7 @@ public class productCard extends AnchorPane {
     }
 
     @FXML
-    private void handleFavoriteAction() {
+    void handleFavoriteAction() {
         if (model.isFavorite(product)) {
             model.removeFavorite(product);
             productCardFavoriteImageView.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("resources/heart.png"))));
