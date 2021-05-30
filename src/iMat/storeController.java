@@ -190,9 +190,9 @@ public class storeController extends AnchorPane {
 
     public String getParentCategory(ProductCategory pc) {
         return switch (pc) {
-            case POD, HERB, ROOT_VEGETABLE, CABBAGE -> "Grönsaker";
+            case POD, HERB, ROOT_VEGETABLE, CABBAGE, VEGETABLE_FRUIT -> "Grönsaker";
             case FISH, MEAT -> "Kött & Fisk";
-            case BERRY, CITRUS_FRUIT, MELONS, FRUIT, EXOTIC_FRUIT, VEGETABLE_FRUIT -> "Frukt";
+            case BERRY, CITRUS_FRUIT, MELONS, FRUIT, EXOTIC_FRUIT -> "Frukt";
             case BREAD, PASTA, FLOUR_SUGAR_SALT, POTATO_RICE, NUTS_AND_SEEDS -> "Basvaror";
             case SWEET, COLD_DRINKS, HOT_DRINKS -> "Godis & Läsk";
             case DAIRIES -> "Mejeri";
