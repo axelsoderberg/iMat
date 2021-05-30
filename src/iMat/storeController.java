@@ -236,8 +236,6 @@ public class storeController extends AnchorPane {
     public void closeDetailView() {
         detailPane.getChildren().clear();
         detailPane.toBack();
-        storePane.toBack();
-        iMatController.getHeader().openStoreView();
     }
 
     public void viewFavorites() {
