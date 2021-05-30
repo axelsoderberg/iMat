@@ -25,12 +25,13 @@ public class iMatController implements Initializable, ShoppingCartListener {
 
     private static final List<AnchorPane> panes = new ArrayList<>(); // Här har vi alla fxml-sidor
 
-    static List<String> categoriesList = Arrays.asList("Erbjudanden", "Favoriter", "Frukt", "Grönsaker", "Kött & Fisk", "Mejeri", "Basvaror", "Godis & Läsk");
+    static List<String> categoriesList = Arrays.asList("Erbjudanden", "Favoriter", "Frukt", "Grönsaker", "Kött & Fisk",
+            "Mejeri", "Basvaror", "Godis & Läsk");
 
     static List<ProductCategory> fruit = Arrays.asList(ProductCategory.FRUIT, ProductCategory.CITRUS_FRUIT,
-            ProductCategory.EXOTIC_FRUIT, ProductCategory.BERRY, ProductCategory.VEGETABLE_FRUIT, ProductCategory.MELONS);
-    static List<ProductCategory> greens = Arrays.asList(ProductCategory.POD, ProductCategory.CABBAGE, ProductCategory.HERB,
-            ProductCategory.ROOT_VEGETABLE);
+            ProductCategory.EXOTIC_FRUIT, ProductCategory.BERRY, ProductCategory.MELONS);
+    static List<ProductCategory> greens = Arrays.asList(ProductCategory.POD, ProductCategory.CABBAGE,
+            ProductCategory.VEGETABLE_FRUIT, ProductCategory.HERB, ProductCategory.ROOT_VEGETABLE);
     static List<ProductCategory> meat = Arrays.asList(ProductCategory.FISH, ProductCategory.MEAT);
     static List<ProductCategory> dairy = Arrays.asList(ProductCategory.DAIRIES);
     static List<ProductCategory> base = Arrays.asList(ProductCategory.BREAD, ProductCategory.FLOUR_SUGAR_SALT,
