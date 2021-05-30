@@ -22,7 +22,7 @@
             <Image url="@../resources/listCloseButton.png" />
          </image>
       </ImageView>
-      <Text layoutX="576.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-page-header" text="text" textAlignment="CENTER" />
+      <Text layoutX="576.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-page-header" textAlignment="CENTER" />
       <Line endX="389.0" layoutX="818.0" layoutY="73.0" startX="-809.0" stroke="#c9c9c9" strokeWidth="5.0" styleClass="almost-white" />
       <Line endX="389.0" layoutX="818.0" layoutY="133.0" startX="-809.0" stroke="#c9c9c9" strokeWidth="5.0" styleClass="almost-white" />
       <Text layoutX="138.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-header" text="Produkt" textAlignment="CENTER" />

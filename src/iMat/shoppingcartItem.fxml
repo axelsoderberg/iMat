@@ -17,9 +17,9 @@
             <Image url="@../resources/apple.jpg" />
          </image>
       </ImageView>
-      <Text fx:id="shoppingcartItemNameText" layoutX="64.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-detail-view-detail" text="Produktnamn" textAlignment="CENTER" wrappingWidth="115.0" AnchorPane.leftAnchor="55.0" />
-      <Text fx:id="shoppingcartItemPrizeText" layoutX="64.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-detail-view-detail" text="xx kr/st" textAlignment="CENTER" wrappingWidth="115.0" AnchorPane.leftAnchor="55.0" />
-      <Group fx:id="addOrRemoveButton" layoutX="176.0" layoutY="21.0" AnchorPane.rightAnchor="5.0">
+      <Text fx:id="shoppingcartItemNameText" layoutX="54.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-detail-view-detail" text="Ekologisk kyckling hel" textAlignment="CENTER" wrappingWidth="160.0" AnchorPane.leftAnchor="54.0" />
+      <Text fx:id="shoppingcartItemPrizeText" layoutX="55.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-detail-view-detail" text="xx kr/st" textAlignment="CENTER" wrappingWidth="115.0" AnchorPane.leftAnchor="55.0" />
+      <Group fx:id="addOrRemoveButton" layoutX="176.0" layoutY="21.0" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="5.0">
          <children>
             <ImageView fitHeight="25.0" fitWidth="119.0" layoutX="6.0" pickOnBounds="true">
                <image>
