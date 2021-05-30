@@ -147,13 +147,15 @@ public class detailView extends AnchorPane {
     }
 
     @FXML
-    private void hover() {
-        detailViewCloseButton.setStyle("-fx-background-color: #629543;");
+    void hoverCloseDelivery() {
+        detailViewCloseButton.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
+                "resources/lightgreenClose.png")));
     }
 
     @FXML
-    private void exitHover() {
-        detailViewCloseButton.setStyle("-fx-background-color: #C3D5BD;");
+    void hoverDoneCloseDelivery() {
+        detailViewCloseButton.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
+                "resources/whiteCloseButton.png")));
     }
 
 
