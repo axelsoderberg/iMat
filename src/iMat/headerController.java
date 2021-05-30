@@ -82,6 +82,7 @@ public class headerController extends AnchorPane {
     private void openMypageView() {
         mypageCtrl.toFront();
         mypageCtrl.populateOrderFlow();
+        mypageCtrl.openUpdate();
         this.toFront();
     }
 
