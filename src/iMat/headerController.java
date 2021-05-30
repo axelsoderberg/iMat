@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.cse.dat216.project.Product;
 
@@ -22,6 +23,7 @@ public class headerController extends AnchorPane {
     @FXML private Button shoppingListButton;
     @FXML private Button myPageButton;
     @FXML private Button helpButton;
+    @FXML private ImageView searchButton;
     checkoutController checkoutCtrl;
     storeController storeCtrl;
     mypageController mypageCtrl;
@@ -99,6 +101,16 @@ public class headerController extends AnchorPane {
     public void updateCheckoutButton() {
         checkoutButton.setText("Kassan " + String.format("%.2f", model.getShoppingCart().getTotal()) + " kr");
 
+    }
+
+    @FXML
+    private void hover() {
+        searchButton.setStyle("-fx-background-color: #d1e6ca;");
+    }
+
+    @FXML
+    private void exitHover() {
+        searchButton.setStyle("-fx-background-color: #C3D5BD;");
     }
 
 }
