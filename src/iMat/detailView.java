@@ -33,16 +33,15 @@ public class detailView extends AnchorPane {
 
     private final Model model = Model.getInstance();
 
-    private final Product product;
     ShoppingItem shoppingItem;
     storeController parentController;
 
     private final static double kImageWidth = 82;
     private final static double kImageRatio = 0.75;
 
-    public detailView(Product product, storeController parentController) {
-        this.shoppingItem = new ShoppingItem(product, 0);
+    public detailView(ShoppingItem shoppingItem, storeController parentController) {
 
+        this.shoppingItem = shoppingItem;
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("detailView.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
@@ -53,12 +52,15 @@ public class detailView extends AnchorPane {
             throw new RuntimeException(exception);
         }
 
-        this.product = product;
-        detailViewProductName.setText(product.getName());
-        detailViewPriceLabel.setText(String.format("%.2f", product.getPrice()) + " " + product.getUnit());
-        detailViewImage.setImage(model.getImage(product, kImageWidth, kImageWidth*kImageRatio));
+        if (shoppingItem.getAmount() != 0) {
+            addButton.toBack();
+        }
+        detailViewProductName.setText(shoppingItem.getProduct().getName());
+        detailViewPriceLabel.setText(String.format("%.2f", shoppingItem.getProduct().getPrice()) + " " + shoppingItem.getProduct().getUnit());
+        detailViewImage.setImage(model.getImage(shoppingItem.getProduct(), kImageWidth, kImageWidth*kImageRatio));
+        detailViewAmountLabel.setText((int) shoppingItem.getAmount() + " " + shoppingItem.getProduct().getUnitSuffix());
         // if favorite....
-        if (model.isFavorite(product)) {
+        if (model.isFavorite(shoppingItem.getProduct())) {
             detailViewFavoriteImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("resources/heartFilled.png"))));
         } //annars ej ifyllt hjärta
         this.parentController = parentController;
@@ -66,29 +68,28 @@ public class detailView extends AnchorPane {
 
     @FXML
     private void handleAddAction() {
-        shoppingItem.setAmount(shoppingItem.getAmount() + 1);
-        model.addToShoppingCart(shoppingItem);
+        parentController.productCardMap.get(shoppingItem.getProduct()).handleAddAction();
         addOrRemoveButton.toFront();
-        detailViewAmountLabel.setText((int) shoppingItem.getAmount() + " st");
+        detailViewAmountLabel.setText((int) shoppingItem.getAmount() + " " + shoppingItem.getProduct().getUnitSuffix());
     }
 
     @FXML
     private void handleRemoveAction() {
-        shoppingItem.setAmount(shoppingItem.getAmount() - 1);
+        parentController.productCardMap.get(shoppingItem.getProduct()).handleRemoveAction();
         if (shoppingItem.getAmount() == 0) { //Om man tog bort den sista i kundvagnen
             addButton.toFront();
         } else {
-            detailViewAmountLabel.setText((int) shoppingItem.getAmount() + " st");
+            detailViewAmountLabel.setText((int) shoppingItem.getAmount() + " " + shoppingItem.getProduct().getUnitSuffix());
         }
     }
 
     @FXML
     private void handleFavoriteAction() {
-        if (model.isFavorite(product)) {
-            model.removeFavorite(product);
+        if (model.isFavorite(shoppingItem.getProduct())) {
+            parentController.productCardMap.get(shoppingItem.getProduct()).handleFavoriteAction();
             detailViewFavoriteImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("resources/heart.png"))));
         } else {
-            model.addFavorite(product);
+            parentController.productCardMap.get(shoppingItem.getProduct()).handleFavoriteAction();
             detailViewFavoriteImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("resources/heartFilled.png"))));
         }
     }
@@ -134,5 +135,8 @@ public class detailView extends AnchorPane {
         parentController.closeDetailView();
     }
 
+    @FXML private void mouseStrap(){
+
+    }
 }
 

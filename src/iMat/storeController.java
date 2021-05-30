@@ -34,7 +34,7 @@ public class storeController extends AnchorPane {
     @FXML FlowPane shoppingcartFlowpaneStore;
     @FXML Label storeShoppingcartTotalPrize;
 
-    private Map<Product, productCard> productCardMap;
+    Map<Product, productCard> productCardMap;
     public List<ProductCategory> selectedCategories = new ArrayList();
     public List<subcategories> currentSubCategories = new ArrayList();
     private final Model model = Model.getInstance();
@@ -238,9 +238,9 @@ public class storeController extends AnchorPane {
         selectedCategories.clear();
     }
 
-    public void openDetailView(Product product) {
+    public void openDetailView(ShoppingItem shoppingItem) {
         detailPane.getChildren().clear();
-        detailView productDetailCard = new detailView(product, this);
+        detailView productDetailCard = new detailView(shoppingItem, this);
         detailPane.getChildren().add(productDetailCard);
         detailPane.toFront();
         storePane.toFront();
