@@ -59,7 +59,7 @@
             <Image url="@../resources/heart.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="detailViewCloseButton" fitHeight="82.0" fitWidth="40.0" layoutX="967.0" layoutY="287.0" onMouseClicked="#closeDetailView" onMouseEntered="#hover" onMouseExited="#exitHover" pickOnBounds="true" preserveRatio="true" styleClass="white-button" AnchorPane.leftAnchor="967.0" AnchorPane.topAnchor="287.0">
+      <ImageView fx:id="detailViewCloseButton" fitHeight="82.0" fitWidth="40.0" layoutX="967.0" layoutY="287.0" onMouseClicked="#closeDetailView" onMouseEntered="#hoverCloseDelivery" onMouseExited="#hoverDoneCloseDelivery" pickOnBounds="true" preserveRatio="true" styleClass="white-button" AnchorPane.leftAnchor="967.0" AnchorPane.topAnchor="287.0">
          <image>
             <Image url="@../resources/whiteCloseButton.png" />
          </image>
