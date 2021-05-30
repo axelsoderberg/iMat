@@ -54,7 +54,7 @@
          </children>
       </Group>
       <Button fx:id="addButton" layoutX="857.0" layoutY="457.0" maxHeight="40.0" minHeight="35.0" mnemonicParsing="false" onAction="#handleAddAction" prefHeight="40.0" prefWidth="157.0" styleClass="lightgreen-button" text="Lägg till" />
-      <ImageView fx:id="detailViewFavoriteImage" fitHeight="82.0" fitWidth="40.0" layoutX="430.0" layoutY="288.0" onMouseClicked="#handleFavoriteAction" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="430.0" AnchorPane.topAnchor="288.0">
+      <ImageView fx:id="detailViewFavoriteImage" fitHeight="82.0" fitWidth="40.0" layoutX="430.0" layoutY="288.0" onMouseClicked="#handleFavoriteAction" onMouseEntered="#hoverCloseDelivery2" onMouseExited="#hoverDoneCloseDelivery2" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="430.0" AnchorPane.topAnchor="288.0">
          <image>
             <Image url="@../resources/heart.png" />
          </image>
