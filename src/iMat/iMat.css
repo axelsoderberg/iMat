@@ -60,6 +60,16 @@
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 0, 10, 0, 4);
 }
 
+.big-grey-button {
+    -fx-font-family: "Assistant";
+    -fx-font-size: 27px;
+    -fx-text-fill: #000000;
+    -fx-font-weight: bold;
+    -fx-background-color: #C9C9C9;
+    -fx-background-radius: 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 0, 10, 0, 4);
+}
+
 .lightgreen-button {
     -fx-font-family: "Assistant";
     -fx-font-size: 20px;
@@ -221,8 +231,14 @@
     -fx-border-width: 2px;
 }
 
+.textfields:focus {
+    -fx-border-color: #000000;
+    -fx-border-radius: 10px;
+    -fx-border-width: 2px;
+}
+
 .rounded-corners {
-    -fx-border-radius: 40;
+    -fx-border-radius: 40px;
 }
 
 .text-productcard {
@@ -239,6 +255,15 @@
     -fx-font-family: "Assistant";
     -fx-font-size: 22px;
     -fx-font-weight: bold;
+}
+
+.rounded-imageview {
+    -fx-background-radius: 40px;
+    -fx-border-radius: 40px;
+}
+
+.scrollpanes {
+    -fx-scrollbar-color: #629543;
 }
 
 

@@ -205,9 +205,9 @@
       <AnchorPane>
          <children>
             <Rectangle fill="#ececeb" height="689.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1536.0" />
-            <Line endX="242.0" layoutX="762.5" layoutY="95.5" startX="-564.0" stroke="#0000004d" strokeWidth="5.0" AnchorPane.topAnchor="96.5" />
-            <Text layoutX="229.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-page-header" text="Mina inköpslistor" textAlignment="CENTER" AnchorPane.topAnchor="40.15234375" />
-            <Button layoutX="855.0" layoutY="44.0" mnemonicParsing="false" onAction="#createShoppingList" prefWidth="150.0" text="Skapa ny">
+            <Line endX="242.0" layoutX="762.5" layoutY="95.5" startX="-564.0" stroke="#0000004d" strokeWidth="5.0" AnchorPane.leftAnchor="196.0" AnchorPane.rightAnchor="529.0" AnchorPane.topAnchor="96.5" />
+            <Text layoutX="229.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-page-header" text="Mina inköpslistor" textAlignment="CENTER" AnchorPane.leftAnchor="221.0" AnchorPane.topAnchor="40.15234375" />
+            <Button layoutX="832.0" layoutY="42.0" mnemonicParsing="false" onAction="#createShoppingList" prefWidth="150.0" text="Skapa ny" AnchorPane.rightAnchor="554.0">
                <effect>
                   <DropShadow height="6.17" offsetY="2.0" radius="2.585" width="6.17">
                      <color>
@@ -230,7 +230,7 @@
             <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#c3d5bb" height="603.0" layoutX="1147.0" layoutY="35.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="rectangle" width="300.0" AnchorPane.rightAnchor="50.0" />
             <Line endX="390.0" layoutX="1052.0" layoutY="99.0" startX="95.0" stroke="#ebebeb" strokeWidth="5.0" styleClass="almost-white" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="96.5" />
             <Text layoutX="1301.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-page-header" text="Tips" textAlignment="CENTER" AnchorPane.topAnchor="40.15234375" />
-            <VBox layoutX="1234.0" layoutY="140.576171875" spacing="40.0">
+            <VBox layoutX="1234.0" layoutY="140.576171875" spacing="40.0" AnchorPane.rightAnchor="60.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-contact" text="Namnge listor för att enkelt hitta listan du söker" wrappingWidth="250.0" />
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-contact" text="Du kan lägga till enskilda artiklar från olika listor i din varukorg" wrappingWidth="250.0" />
@@ -238,9 +238,9 @@
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-contact" text="Du kan lägga till varor i en inköpslista i efterhand" wrappingWidth="250.0" />
                </children>
             </VBox>
-            <Circle layoutX="1217.0" layoutY="154.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.rightAnchor="310.0" />
-            <Circle layoutX="1217.0" layoutY="241.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.rightAnchor="310.0" />
-            <Circle layoutX="1217.0" layoutY="355.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.rightAnchor="310.0" />
+            <Circle layoutX="1217.0" layoutY="154.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.rightAnchor="320.0" />
+            <Circle layoutX="1217.0" layoutY="241.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.rightAnchor="320.0" />
+            <Circle layoutX="1217.0" layoutY="355.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.rightAnchor="320.0" />
             <ScrollPane layoutX="196.0" layoutY="101.0" prefHeight="537.0" prefWidth="811.0" styleClass="almost-white">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" styleClass="almost-white">
@@ -250,7 +250,7 @@
                   </AnchorPane>
               </content>
             </ScrollPane>
-            <Circle layoutX="1223.0" layoutY="466.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.rightAnchor="310.0" />
+            <Circle layoutX="1223.0" layoutY="466.0" radius="3.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.rightAnchor="320.0" />
          </children>
       </AnchorPane>
    </children>

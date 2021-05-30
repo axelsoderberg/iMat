@@ -12,6 +12,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.shape.Rectangle;
 import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 
@@ -65,6 +66,28 @@ public class checkoutController extends AnchorPane {
     @FXML ImageView verificationCodeApprovedImageView;
     @FXML ImageView cardNrApprovedImageView;
 
+    @FXML Button deliveryOkButton;
+    @FXML Button notDoneDeliveryButton;
+    @FXML Button paymentOkButton;
+    @FXML Button notDonePayButton;
+
+    @FXML Rectangle helpDelivery;
+    @FXML Rectangle helpPayment;
+
+    Boolean firstNameOk = false;
+    Boolean surNameOk = false;
+    Boolean postadressOk = false;
+    Boolean postcodeOk = false;
+    Boolean cityOk = false;
+    Boolean phoneOk = false;
+    Boolean mailOk = false;
+
+    Boolean cardtypeOk = false;
+    Boolean validDateOk = false;
+    Boolean holdersNameOk = false;
+    Boolean verificationCodeOk = false;
+    Boolean cardnrOk = false;
+
     public checkoutController () {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("checkouts.fxml"));
         fxmlLoader.setRoot(this);
@@ -98,6 +121,7 @@ public class checkoutController extends AnchorPane {
 
         checkApprovals();
         cardtypeApprovedImageView.setImage(getApprovedImage());
+        cardtypeOk = true; //always ok...
 
     }
 
@@ -158,6 +182,8 @@ public class checkoutController extends AnchorPane {
         checkCity();
         checkHoldersName();
         checkValidDate();
+
+        //cardtype always valid...
     }
 
     void initComboBoxCardtype() {
@@ -479,8 +505,12 @@ public class checkoutController extends AnchorPane {
 
         if (postCodeTextField.getLength() == 5) {
             postcodeApprovedImageView.setImage(getApprovedImage());
+            postcodeOk = true;
+            chooseDeliveryButton();
         } else {
             postcodeApprovedImageView.setImage(getNotApprovedImage());
+            postcodeOk = false;
+            chooseDeliveryButton();
         }
     }
 
@@ -495,8 +525,12 @@ public class checkoutController extends AnchorPane {
 
         if (phoneTextField.getLength() == 10) {
             phoneApprovedImageView.setImage(getApprovedImage());
+            phoneOk = true;
+            chooseDeliveryButton();
         } else {
             phoneApprovedImageView.setImage(getNotApprovedImage());
+            phoneOk = false;
+            chooseDeliveryButton();
         }
     }
 
@@ -511,8 +545,12 @@ public class checkoutController extends AnchorPane {
 
         if (verificationCodeTextField.getLength() == 3) {
             verificationCodeApprovedImageView.setImage(getApprovedImage());
+            verificationCodeOk = true;
+            choosePaymentButton();
         } else {
             verificationCodeApprovedImageView.setImage(getNotApprovedImage());
+            verificationCodeOk = false;
+            choosePaymentButton();
         }
     }
 
@@ -529,8 +567,12 @@ public class checkoutController extends AnchorPane {
 
         if (cardNrTextField.getLength() == 16) {
             cardNrApprovedImageView.setImage(getApprovedImage());
+            cardnrOk = true;
+            choosePaymentButton();
         } else {
             cardNrApprovedImageView.setImage(getNotApprovedImage());
+            cardnrOk = false;
+            choosePaymentButton();
         }
     }
 
@@ -542,8 +584,12 @@ public class checkoutController extends AnchorPane {
 
         if (firstNameTextField.getText() == "") {
             firstNameApprovedImageView.setImage(getNotApprovedImage());
+            firstNameOk = false;
+            chooseDeliveryButton();
         } else {
             firstNameApprovedImageView.setImage(getApprovedImage());
+            firstNameOk = true;
+            chooseDeliveryButton();
         }
     }
 
@@ -555,8 +601,12 @@ public class checkoutController extends AnchorPane {
 
         if (surNameTextField.getText().equals("")) {
             surNameApprovedImageView.setImage(getNotApprovedImage());
+            surNameOk = false;
+            chooseDeliveryButton();
         } else {
             surNameApprovedImageView.setImage(getApprovedImage());
+            surNameOk = true;
+            chooseDeliveryButton();
         }
     }
 
@@ -564,8 +614,12 @@ public class checkoutController extends AnchorPane {
     private void checkAdress() {
         if (postAdressTextField.getText().equals("")) {
             postadressApprovedImageView.setImage(getNotApprovedImage());
+            postadressOk = false;
+            chooseDeliveryButton();
         } else {
             postadressApprovedImageView.setImage(getApprovedImage());
+            postadressOk = true;
+            chooseDeliveryButton();
         }
     }
 
@@ -577,8 +631,12 @@ public class checkoutController extends AnchorPane {
 
         if (cityTextField.getText().equals("")) {
             cityApprovedImageView.setImage(getNotApprovedImage());
+            cityOk = false;
+            chooseDeliveryButton();
         } else {
             cityApprovedImageView.setImage(getApprovedImage());
+            cityOk = true;
+            chooseDeliveryButton();
         }
     }
 
@@ -586,8 +644,12 @@ public class checkoutController extends AnchorPane {
     private void checkEmail() {
         if (iMat.emailValidator.isValid(mailTextField.getText())) {
             mailApprovedImageView.setImage(getApprovedImage());
+            mailOk = true;
+            chooseDeliveryButton();
         } else {
             mailApprovedImageView.setImage(getNotApprovedImage());
+            mailOk = false;
+            chooseDeliveryButton();
         }
     }
 
@@ -595,10 +657,16 @@ public class checkoutController extends AnchorPane {
     private void checkHoldersName() {
         if (holdersNameTextField.getText().equals("")) {
             holdersNameApprovedImageView.setImage(getNotApprovedImage());
+            holdersNameOk = false;
+            choosePaymentButton();
         } else if (!holdersNameTextField.getText().contains(" ")) {
             holdersNameApprovedImageView.setImage(getNotApprovedImage());
+            holdersNameOk = false;
+            choosePaymentButton();
         } else {
             holdersNameApprovedImageView.setImage(getApprovedImage());
+            holdersNameOk = true;
+            choosePaymentButton();
         }
     }
 
@@ -620,9 +688,24 @@ public class checkoutController extends AnchorPane {
 
         if (checkMonth() && checkYear()) {
             validDateApprovedImageView.setImage(getApprovedImage());
+            validDateOk = true;
+            choosePaymentButton();
         } else {
             validDateApprovedImageView.setImage(getNotApprovedImage());
+            validDateOk = false;
+            choosePaymentButton();
         }
+    }
+
+
+    @FXML
+    private void notDoneDelivery() {
+        helpDelivery.setStrokeWidth(3.0);
+    }
+
+    @FXML
+    private void notDonePay() {
+        helpPayment.setStrokeWidth(3.0);
     }
 
     boolean checkMonth() {
@@ -654,6 +737,29 @@ public class checkoutController extends AnchorPane {
         return new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("resources/notApproved.png")));
     }
 
+    void chooseDeliveryButton() {
+        if (isDeliveryOk()) {
+            deliveryOkButton.toFront();
+        } else {
+            notDoneDeliveryButton.toFront();
+        }
+    }
 
+    void choosePaymentButton() {
+        if (isPaymentOk()) {
+            paymentOkButton.toFront();
+        } else {
+            notDonePayButton.toFront();
+        }
+    }
+
+    Boolean isDeliveryOk() {
+        return firstNameOk && surNameOk && postadressOk && postcodeOk &&
+                cityOk && phoneOk && mailOk;
+    }
+
+    Boolean isPaymentOk() {
+        return cardtypeOk && validDateOk && holdersNameOk && verificationCodeOk && cardnrOk;
+    }
 
 }
