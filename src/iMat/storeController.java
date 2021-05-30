@@ -35,7 +35,8 @@ public class storeController extends AnchorPane {
     @FXML Label storeShoppingcartTotalPrize;
 
     private Map<Product, productCard> productCardMap;
-    private List<ProductCategory> selectedCategories = new ArrayList();
+    public List<ProductCategory> selectedCategories = new ArrayList();
+    public List<subcategories> currentSubCategories = new ArrayList();
     private final Model model = Model.getInstance();
 
     checkoutController checkoutCtrl;
@@ -111,6 +112,7 @@ public class storeController extends AnchorPane {
         for (String C : categoriesList) {
             categoriesFlowPane.getChildren().add(categoryCard(C));
         }
+        cleaCurrentSubCategories();
     }
 
     @FXML
@@ -124,7 +126,27 @@ public class storeController extends AnchorPane {
     }
 
     public subcategories subCategoryCard(ProductCategory pc) {
-        return new subcategories(pc, this);
+        subcategories sub = new subcategories(pc, this);
+        currentSubCategories.add(sub);
+        return sub;
+    }
+
+    public void cleaCurrentSubCategories() {
+        currentSubCategories.clear();
+    }
+
+    @FXML
+    public void removeSelectionFromAllSubCats() {
+        for (subcategories subcat : currentSubCategories) {
+            subcat.checkToBack();
+        }
+    }
+
+    @FXML
+    public void addSelectionToAllSubCats() {
+        for (subcategories subcat : currentSubCategories) {
+            subcat.checkToFront();
+        }
     }
 
     public categories categoryCard(String c) {
@@ -166,6 +188,17 @@ public class storeController extends AnchorPane {
         };
     }
 
+    public String getParentCategory(ProductCategory pc) {
+        return switch (pc) {
+            case POD, HERB, ROOT_VEGETABLE, CABBAGE -> "Grönsaker";
+            case FISH, MEAT -> "Kött & Fisk";
+            case BERRY, CITRUS_FRUIT, MELONS, FRUIT, EXOTIC_FRUIT, VEGETABLE_FRUIT -> "Frukt";
+            case BREAD, PASTA, FLOUR_SUGAR_SALT, POTATO_RICE, NUTS_AND_SEEDS -> "Basvaror";
+            case SWEET, COLD_DRINKS, HOT_DRINKS -> "Godis & Läsk";
+            case DAIRIES -> "Mejeri";
+        };
+    }
+
     public void addSubcategory(ProductCategory pc) {
         selectedCategories.add(pc);
         List<Product> lp = new ArrayList();
@@ -182,6 +215,10 @@ public class storeController extends AnchorPane {
             lp.addAll(model.getProducts(productCat));
         }
         updateProductList(lp);
+        if (selectedCategories.isEmpty()) {
+            addSelectionToAllSubCats();
+            updateProductList(model.getList(getParentCategory(pc)));
+        }
     }
 
     public void clearSubcategories() {
