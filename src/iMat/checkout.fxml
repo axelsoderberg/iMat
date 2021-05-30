@@ -17,9 +17,9 @@
          <children>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <ScrollPane hbarPolicy="NEVER" prefHeight="392.0" prefWidth="1126.0" AnchorPane.bottomAnchor="127.0" AnchorPane.leftAnchor="205.0">
+                  <ScrollPane hbarPolicy="NEVER" prefHeight="392.0" prefWidth="1123.0" AnchorPane.bottomAnchor="127.0" AnchorPane.leftAnchor="205.0">
                      <content>
-                        <FlowPane prefHeight="392.0" prefWidth="1110.0" />
+                        <FlowPane prefHeight="392.0" prefWidth="1123.0" />
                      </content>
                   </ScrollPane>
                   <Rectangle arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="603.0" stroke="#c9c9c9" strokeType="INSIDE" strokeWidth="5.0" styleClass="rectangle" width="1136.0" AnchorPane.bottomAnchor="43.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="43.0" />
@@ -45,7 +45,7 @@
             </AnchorPane>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" />
             <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
-               <children /></AnchorPane>
+            </AnchorPane>
          </children>
       </StackPane>
    </children>

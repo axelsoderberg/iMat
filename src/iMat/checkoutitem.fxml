@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Group?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Line?>
-<?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<fx:root maxWidth="1123.0" minWidth="1123.0" prefHeight="70.0" prefWidth="1123.0" styleClass="almost-white" stylesheets="@iMat.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxWidth="1120.0" minWidth="1120.0" prefHeight="82.0" prefWidth="1120.0" styleClass="almost-white" stylesheets="@iMat.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Group fx:id="warningGroup" layoutX="403.0" layoutY="9.0">
          <children>
@@ -31,7 +28,7 @@
             <Image url="@../resources/apple.jpg" />
          </image>
       </ImageView>
-      <Line endX="1020.0" layoutX="102.0" layoutY="80.0" startX="-100.0" stroke="#c9c9c9" strokeWidth="3.0" AnchorPane.leftAnchor="0.0" />
+      <Line endX="1117.0" layoutY="80.0" stroke="#c9c9c9" strokeWidth="3.0" AnchorPane.leftAnchor="0.0" />
       <Text fx:id="checkoutitemPrizePerItemText" layoutX="1025.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-products" text="xx kr/st" AnchorPane.leftAnchor="950.0" AnchorPane.topAnchor="23.0" />
       <Group fx:id="buttonGroup" layoutX="476.0" layoutY="22.0" AnchorPane.leftAnchor="570.0">
          <children>

@@ -47,7 +47,8 @@ public class Checkoutitem extends AnchorPane {
         checkoutitemNameText.setText(item.getProduct().getName());
         checkoutitemPrizePerItemText.setText(String.format("%.2f", item.getProduct().getPrice()) + " " + item.getProduct().getUnit());
         checkoutitemProductImage.setImage(model.getImage(item.getProduct(), kImageWidth, kImageWidth*kImageRatio));
-        checkoutitemTotalItemPrizeText.setText(item.getTotal() + " kr");
+        checkoutitemTotalItemPrizeText.setText(String.format("%.2f", item.getTotal()) + " kr");
+
         checkoutitemAmountLabel.setText((int) item.getAmount() + " " + item.getProduct().getUnitSuffix());
 
         checkAmount();
