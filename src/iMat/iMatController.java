@@ -26,7 +26,7 @@ public class iMatController implements Initializable, ShoppingCartListener {
     private static final List<AnchorPane> panes = new ArrayList<>(); // Här har vi alla fxml-sidor
 
     static List<String> categoriesList = Arrays.asList("Erbjudanden", "Favoriter", "Frukt", "Grönsaker", "Kött & Fisk",
-            "Mejeri", "Basvaror", "Godis & Läsk");
+            "Mejeri", "Basvaror", "Godis & Dryck");
 
     static List<ProductCategory> fruit = Arrays.asList(ProductCategory.FRUIT, ProductCategory.CITRUS_FRUIT,
             ProductCategory.EXOTIC_FRUIT, ProductCategory.BERRY, ProductCategory.MELONS);
@@ -107,7 +107,7 @@ public class iMatController implements Initializable, ShoppingCartListener {
             case "Kött & Fisk" -> meat;
             case "Mejeri" -> dairy;
             case "Basvaror" -> base;
-            case "Godis & Läsk" -> sweets;
+            case "Godis & Dryck" -> sweets;
             default -> null;
         };
     }
