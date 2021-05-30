@@ -202,13 +202,11 @@ public class storeController extends AnchorPane {
     public void addSubcategory(ProductCategory pc) {
         selectedCategories.add(pc);
         List<Product> lp = new ArrayList();
-        String subCats = null;
         for (ProductCategory productCat : selectedCategories) {
             lp.addAll(model.getProducts(productCat));
-            subCats += productCat.toString() + ", ";
         }
         updateProductList(lp);
-        category.setText(subCats);
+        setCategoriesLabel();
 
     }
 
@@ -217,13 +215,24 @@ public class storeController extends AnchorPane {
         List<Product> lp = new ArrayList();
         for (ProductCategory productCat : selectedCategories) {
             lp.addAll(model.getProducts(productCat));
-            subCats += productCat.toString() + ", ";
         }
         updateProductList(lp);
         if (selectedCategories.isEmpty()) {
             addSelectionToAllSubCats();
             updateProductList(model.getList(getParentCategory(pc)));
+            category.setText(getParentCategory(pc));
+        } else {
+            setCategoriesLabel();
         }
+    }
+
+    public void setCategoriesLabel() {
+        StringBuilder labelText = new StringBuilder();
+        for (ProductCategory productCat : selectedCategories) {
+            labelText.append(subCatConverter(productCat)).append(", ");
+        }
+        labelText.delete(labelText.length() - 2, labelText.length());
+        category.setText(labelText.toString());
     }
 
     public void clearSubcategories() {
