@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.text.Text;
 import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 
@@ -20,6 +21,9 @@ public class shoppinglists extends AnchorPane{
 
     @FXML private AnchorPane createView;
     @FXML AnchorPane listView;
+    @FXML
+    Text listViewName;
+    @FXML FlowPane listViewFlowPane;
     @FXML private TextField createShoppingListName;
     @FXML private FlowPane shoppingListListPane;
     @FXML private AnchorPane abortPane;
@@ -37,6 +41,7 @@ public class shoppinglists extends AnchorPane{
     private List<oneShoppingList> shoppingListList = new ArrayList<>();
     private Model model = Model.getInstance();
     private int listNumber;
+    private List<ShoppingItem> listViewShoppingItems;
 
     public shoppinglists() {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("shoppinglists.fxml"));
@@ -58,15 +63,25 @@ public class shoppinglists extends AnchorPane{
     }
 
 
-    @FXML private void openShoppingList(){
+    void openShoppingList(oneShoppingList listItem){
+        listViewName.setText(listItem.getListName());
+        listNumber = shoppingListList.indexOf(listItem);
+        populateListFlow();
         listView.toFront();
+        listViewShoppingItems = new ArrayList<>();
+        listViewShoppingItems.addAll(listItem.getProductList());
     }
 
     @FXML private void closeShoppingList(){
         listView.toBack();
+        listViewFlowPane.getChildren().clear();
+        listViewShoppingItems = null;
     }
 
     @FXML private void buyShoppingList(){
+        for (ShoppingItem shoppingItem : listViewShoppingItems) {
+            model.getShoppingCart().addItem(shoppingItem);
+        }
         closeShoppingList();
     }
 
@@ -103,6 +118,7 @@ public class shoppinglists extends AnchorPane{
         }
         closeCreateView();
         createButton.setText("Klar");
+        createListList.getChildren().clear();
     }
 
     @FXML private void abortCreate(){
@@ -127,14 +143,20 @@ public class shoppinglists extends AnchorPane{
 
     private void populateCreateFlow(){
         for (ShoppingItem shoppingItems : shoppingListList.get(listNumber).getProductList()){
-            createListList.getChildren().add(shoppingListList.get(listNumber).getShoppingListProductMap().get(shoppingItems.getProduct()));
+            createListList.getChildren().add(shoppingListList.get(listNumber).getShoppingListProductMap().get(shoppingItems.getProduct()).setAddView());
         }
 
     }
 
+    private void populateListFlow(){
+        for (ShoppingItem shoppingItems : shoppingListList.get(listNumber).getProductList()){
+            listViewFlowPane.getChildren().add(shoppingListList.get(listNumber).getShoppingListProductMap().get(shoppingItems.getProduct()).setListView());
+        }
+    }
+
     private void populateSearchFlow(){
         for (Product products : model.getProducts()){
-            searchFlow.getChildren().add(shoppingListList.get(listNumber).getShoppingListProductMap().get(products));
+            searchFlow.getChildren().add(shoppingListList.get(listNumber).getShoppingListProductMap().get(products).setAddView());
         }
     }
 
@@ -162,5 +184,13 @@ public class shoppinglists extends AnchorPane{
         listNumber = setter;
     }
 
+    void setShoppingItem(ShoppingItem item){
+        if(listViewShoppingItems.contains(item)) {
+            listViewShoppingItems.remove(item);
+        }
+        else{
+            listViewShoppingItems.add(item);
+        }
+    }
 
 }

@@ -31,6 +31,7 @@ public class shoppingListItem extends AnchorPane{
     private final Product product;
     ShoppingItem shoppingItem;
     oneShoppingList parentController;
+    private boolean listViewUp = false;
     private Model model = Model.getInstance();
 
     public shoppingListItem(ShoppingItem item, oneShoppingList parentController){
@@ -55,21 +56,28 @@ public class shoppingListItem extends AnchorPane{
         shoppingListItemAmountLabel.setText((int) item.getAmount() + " st");
     }
 
-    public void setAddView(){
+    public shoppingListItem setAddView(){
         removeBackground.toFront();
-        if(shoppingItem.getAmount() == 0) {
+        if(shoppingItem.getAmount() > 0) {
             removeButton.toFront();
         }
+        listViewUp = false;
+        return this;
     }
 
-    public void setListView(){
+    public shoppingListItem setListView(){
         removeBackground.toBack();
         removeButton.toBack();
+        listViewUp = true;
+        return this;
     }
 
     @FXML private void addProduct(){
-        if(shoppingItem.getAmount() == 0){
+        if(shoppingItem.getAmount() == 0) {
             parentController.getProductList().add(shoppingItem);
+        }
+        if (!listViewUp){
+            removeButton.toFront();
         }
         shoppingItem.setAmount(shoppingItem.getAmount() + 1);
         updateListItem();
@@ -81,10 +89,12 @@ public class shoppingListItem extends AnchorPane{
             if(shoppingItem.getAmount() == 0){
                 removeButton.toBack();
                 parentController.getProductList().remove(shoppingItem);
+                parentController.getParentController().updateCreateFlow();
             }
         }
         updateListItem();
     }
+
 
     private void updateListItem(){
         shoppingListItemAmountLabel.setText("" + shoppingItem.getAmount());
@@ -95,6 +105,12 @@ public class shoppingListItem extends AnchorPane{
     @FXML private void removeAllProducts(){
         shoppingItem.setAmount(0);
         parentController.getProductList().remove(shoppingItem);
+        shoppingListItemAmountLabel.setText("" + shoppingItem.getAmount());
+        parentController.getParentController().updateCreateFlow();
         removeButton.toBack();
+    }
+
+    @FXML void setShopItem(){
+        parentController.getParentController().setShoppingItem(shoppingItem);
     }
 }

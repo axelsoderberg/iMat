@@ -14,7 +14,7 @@
 
 <fx:root maxWidth="1130.0" minWidth="1190.0" prefHeight="70.0" prefWidth="1130.0" styleClass="almost-white" stylesheets="@iMat.css" type="AnchorPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button fx:id="removeButton" layoutX="1053.0" layoutY="14.0" mnemonicParsing="false" onAction="#removeAllProducts" prefHeight="48.0">
+      <Button fx:id="removeButton" layoutX="1011.0" layoutY="13.0" mnemonicParsing="false" onAction="#removeAllProducts" prefHeight="48.0">
          <graphic>
             <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -23,7 +23,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Rectangle fx:id="removeBackground" arcHeight="5.0" arcWidth="5.0" fill="#ececeb" height="78.0" layoutX="850.0" layoutY="2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="239.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Rectangle fx:id="removeBackground" arcHeight="5.0" arcWidth="5.0" fill="#ececeb" height="78.0" layoutX="850.0" layoutY="2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="262.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <Text fx:id="shoppingListItemNameText" layoutX="169.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-products" text="Produktnamn" AnchorPane.leftAnchor="138.0" AnchorPane.topAnchor="23.0" />
       <Text fx:id="shoppingListItemTotalItemPrizeText" layoutX="844.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-products" text="xx kr" AnchorPane.leftAnchor="560.0" AnchorPane.topAnchor="23.0" />
       <ImageView fx:id="shoppingListItemProductImage" fitHeight="50.0" fitWidth="50.0" layoutX="32.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="12.0">
@@ -46,7 +46,7 @@
                   <Image url="@../resources/plusSign.png" />
                </image>
             </ImageView>
-            <Label fx:id="shoppingListItemAmountLabel" layoutX="52.0" styleClass="text-font" text="x st">
+            <Label fx:id="shoppingListItemAmountLabel" layoutX="52.0" styleClass="text-amount-big" text="x st">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
@@ -54,8 +54,8 @@
             <ImageView fitHeight="29.0" fitWidth="31.0" layoutX="4.0" layoutY="5.0" onMouseClicked="#removeOneProduct" pickOnBounds="true" preserveRatio="true" />
          </children>
       </Group>
-      <Line endX="132.0" endY="69.0" layoutX="830.0" layoutY="33.0" startX="132.0" startY="-7.0" stroke="#c9c9c9" strokeWidth="5.0" styleClass="almost-white" AnchorPane.leftAnchor="960.0" AnchorPane.topAnchor="0.0" />
-      <CheckBox layoutX="1059.0" layoutY="19.0" mnemonicParsing="false">
+      <Line endX="132.0" endY="69.0" layoutX="814.5" layoutY="9.5" startX="132.0" startY="-7.0" stroke="#c9c9c9" strokeWidth="5.0" styleClass="almost-white" AnchorPane.leftAnchor="944.0" AnchorPane.topAnchor="0.0" />
+      <CheckBox layoutX="1049.0" layoutY="19.0" mnemonicParsing="false" onAction="#setShopItem" selected="true">
          <font>
             <Font size="29.0" />
          </font>

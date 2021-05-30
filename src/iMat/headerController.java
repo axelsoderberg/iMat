@@ -17,7 +17,11 @@ public class headerController extends AnchorPane {
 
     private static final Model model = Model.getInstance();
     @FXML private TextField searchField;
-    @FXML Button checkoutButton;
+    @FXML private Button checkoutButton;
+    @FXML private Button storeButton;
+    @FXML private Button shoppingListButton;
+    @FXML private Button myPageButton;
+    @FXML private Button helpButton;
     checkoutController checkoutCtrl;
     storeController storeCtrl;
     mypageController mypageCtrl;

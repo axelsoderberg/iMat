@@ -12,6 +12,7 @@ import java.io.IOException;
 public class categories extends AnchorPane {
 
     @FXML private Label label;
+    @FXML private AnchorPane categoryPane;
 
     private final String c;
     storeController parentController;
@@ -46,5 +47,17 @@ public class categories extends AnchorPane {
         }
         parentController.category.setText(c);
         parentController.categoriesLabel.setText(c);
+    }
+
+    @FXML
+    private void hover() {
+        categoryPane.setStyle("-fx-background-color: #629543;");
+        label.setStyle("-fx-font-weight: bold;");
+    }
+
+    @FXML
+    private void exitHover() {
+        categoryPane.setStyle("-fx-background-color: #C3D5BD;");
+        label.setStyle("-fx-font-weight: regular;");
     }
 }

@@ -190,9 +190,9 @@ public class storeController extends AnchorPane {
 
     public String getParentCategory(ProductCategory pc) {
         return switch (pc) {
-            case POD, HERB, ROOT_VEGETABLE, CABBAGE -> "Grönsaker";
+            case POD, HERB, ROOT_VEGETABLE, CABBAGE, VEGETABLE_FRUIT -> "Grönsaker";
             case FISH, MEAT -> "Kött & Fisk";
-            case BERRY, CITRUS_FRUIT, MELONS, FRUIT, EXOTIC_FRUIT, VEGETABLE_FRUIT -> "Frukt";
+            case BERRY, CITRUS_FRUIT, MELONS, FRUIT, EXOTIC_FRUIT -> "Frukt";
             case BREAD, PASTA, FLOUR_SUGAR_SALT, POTATO_RICE, NUTS_AND_SEEDS -> "Basvaror";
             case SWEET, COLD_DRINKS, HOT_DRINKS -> "Godis & Läsk";
             case DAIRIES -> "Mejeri";
@@ -206,6 +206,8 @@ public class storeController extends AnchorPane {
             lp.addAll(model.getProducts(productCat));
         }
         updateProductList(lp);
+        setCategoriesLabel();
+
     }
 
     public void removeSubcategory(ProductCategory pc) {
@@ -218,7 +220,18 @@ public class storeController extends AnchorPane {
         if (selectedCategories.isEmpty()) {
             addSelectionToAllSubCats();
             updateProductList(model.getList(getParentCategory(pc)));
+            category.setText(getParentCategory(pc));
+        } else
+            setCategoriesLabel();
+    }
+
+    public void setCategoriesLabel() {
+        StringBuilder labelText = new StringBuilder();
+        for (ProductCategory productCat : selectedCategories) {
+            labelText.append(subCatConverter(productCat)).append(", ");
         }
+        labelText.delete(labelText.length() - 2, labelText.length());
+        category.setText(labelText.toString());
     }
 
     public void clearSubcategories() {
@@ -236,8 +249,6 @@ public class storeController extends AnchorPane {
     public void closeDetailView() {
         detailPane.getChildren().clear();
         detailPane.toBack();
-        storePane.toBack();
-        iMatController.getHeader().openStoreView();
     }
 
     public void viewFavorites() {
