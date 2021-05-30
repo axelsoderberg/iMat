@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.cse.dat216.project.Product;
@@ -110,13 +111,15 @@ public class headerController extends AnchorPane {
     }
 
     @FXML
-    private void hover() {
-        searchButton.setStyle("-fx-background-color: #d1e6ca;");
+    void hoverCloseDelivery() {
+        searchButton.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
+                "resources/Group 113.png")));
     }
 
     @FXML
-    private void exitHover() {
-        searchButton.setStyle("-fx-background-color: #C3D5BD;");
+    void hoverDoneCloseDelivery() {
+        searchButton.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
+                "resources/search_icon.png")));
     }
 
 }

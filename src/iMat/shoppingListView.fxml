@@ -1,20 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.FlowPane?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.shape.Line?>
-<?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.ShoppingListView">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.ShoppingListView">
    <children>
       <Rectangle arcHeight="100.0" arcWidth="100.0" fill="#ecebeb" height="600.0" layoutX="7.0" layoutY="10.0" stroke="#c9c9c9" strokeType="INSIDE" strokeWidth="5.0" width="1203.0" />
       <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="1124.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
@@ -33,13 +27,8 @@
       <Line endX="389.0" layoutX="818.0" layoutY="541.0" startX="-809.0" stroke="#c9c9c9" strokeWidth="5.0" styleClass="almost-white" />
       <ScrollPane layoutX="15.0" layoutY="135.0" prefHeight="404.0" prefWidth="1190.0">
          <content>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="1190.0">
-               <children>
-                  <FlowPane prefHeight="400.0" prefWidth="1190.0" prefWrapLength="1190.0" />
-               </children>
-            </AnchorPane>
-         </content>
-      </ScrollPane>
+            <FlowPane prefWidth="1190.0" prefWrapLength="1190.0" />
+         </content></ScrollPane>
       <Line endX="132.0" endY="50.0" layoutX="828.0" layoutY="83.0" startX="132.0" startY="-7.0" stroke="#c9c9c9" strokeWidth="5.0" styleClass="almost-white" AnchorPane.leftAnchor="960.0" />
       <Label layoutX="357.0" layoutY="557.0" styleClass="text-helpbox-header" text="x st" />
       <Label layoutX="541.0" layoutY="557.0" styleClass="text-helpbox-header" text="Summa: 0 kr" />
