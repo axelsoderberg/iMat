@@ -15,10 +15,7 @@ import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class shoppinglists extends AnchorPane{
 
@@ -138,6 +135,16 @@ public class shoppinglists extends AnchorPane{
         createListList.getChildren().clear();
     }
 
+    @FXML public void createListFromCheckout(List<ShoppingItem> items) {
+        oneShoppingList listItem = new oneShoppingList(this);
+        Date date = new Date();
+        listItem.setListName(date.toString());
+        listItem.addProducts(items);
+
+        shoppingListList.add(listItem);
+        updateShoppingListList();
+    }
+
     @FXML private void abortCreate(){
         abortPane.toFront();
     }
@@ -233,5 +240,7 @@ public class shoppinglists extends AnchorPane{
         closeButton.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
                 "resources/lightgreenClose.png")));
     }
+
+
 
 }

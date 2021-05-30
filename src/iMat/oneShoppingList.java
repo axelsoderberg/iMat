@@ -2,6 +2,7 @@ package iMat;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
@@ -14,7 +15,7 @@ import java.util.*;
 
 public class oneShoppingList extends AnchorPane {
 
-    @FXML private Text nameText;
+    @FXML private Label nameText;
     private List<ShoppingItem> productList = new ArrayList<ShoppingItem>();
     private final Model model = Model.getInstance();
     private iMatController controller;
@@ -74,6 +75,14 @@ public class oneShoppingList extends AnchorPane {
                 shoppingListItem shoppingListItem = new shoppingListItem(new ShoppingItem(product, 0), this);
                 shoppingListProductMap.put(product, shoppingListItem);
             }
+        }
+    }
+
+    public void addProducts(List<ShoppingItem> items) {
+        shoppingListProductMap = new HashMap<Product, shoppingListItem>();
+        for (ShoppingItem item : items) {
+            shoppingListItem shoppingListItem = new shoppingListItem(item, this);
+            shoppingListProductMap.put(item.getProduct(), shoppingListItem);
         }
     }
 
