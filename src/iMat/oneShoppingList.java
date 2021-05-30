@@ -59,7 +59,7 @@ public class oneShoppingList extends AnchorPane {
     }
 
     @FXML private void addButton(){
-        parentController.listView.toFront();
+        parentController.openShoppingList(this);
     }
 
     private void productListInit() {
@@ -75,5 +75,9 @@ public class oneShoppingList extends AnchorPane {
                 shoppingListProductMap.put(product, shoppingListItem);
             }
         }
+    }
+
+    shoppinglists getParentController(){
+        return parentController;
     }
 }
