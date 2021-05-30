@@ -69,6 +69,24 @@ public class mypageController extends AnchorPane {
             throw new RuntimeException(exception);
         }
 
+        initFields();
+        addListeners();
+
+        initComboBoxCardtype();
+
+        checkApprovals();
+        cardtypeApprovedImageView.setImage(getApprovedImage());
+
+        populateOrderFlow();
+    }
+
+    void openUpdate() {
+        initFields();
+        cardTypeComboBox.getSelectionModel().select(model.getCreditCard().getCardType());
+        checkApprovals();
+    }
+
+    void initFields() {
         firstNameTextField.setText(model.getCustomer().getFirstName());
         surNameTextField.setText(model.getCustomer().getLastName());
         postAdressTextField.setText(model.getCustomer().getPostAddress());
@@ -81,15 +99,6 @@ public class mypageController extends AnchorPane {
         cardNrTextField.setText(model.getCreditCard().getCardNumber());
         validMonthTextField.setText(Integer.toString(model.getCreditCard().getValidMonth()));
         validYearTextField.setText(Integer.toString(model.getCreditCard().getValidYear()));
-
-        addListeners();
-
-        initComboBoxCardtype();
-
-        checkApprovals();
-        cardtypeApprovedImageView.setImage(getApprovedImage());
-
-        populateOrderFlow();
     }
 
     void checkApprovals() {
@@ -171,7 +180,7 @@ public class mypageController extends AnchorPane {
         postAdressTextField.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.ENTER) {
                 // Spara metoden här
-                model.getCustomer().setAddress(postAdressTextField.getText());
+                model.getCustomer().setPostAddress(postAdressTextField.getText());
             }
         });
 
@@ -183,7 +192,7 @@ public class mypageController extends AnchorPane {
                 if (!newPropertyValue)
                 {
                     // Denna körs när fältet inte längre är fokuserat, så vill ha spara metod här också
-                    model.getCustomer().setAddress(postAdressTextField.getText());
+                    model.getCustomer().setPostAddress(postAdressTextField.getText());
                 }
             }
         });
@@ -214,7 +223,7 @@ public class mypageController extends AnchorPane {
         cityTextField.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.ENTER) {
                 // Spara metoden här
-                model.getCustomer().setPostAddress(cityTextField.getText());
+                model.getCustomer().setAddress(cityTextField.getText());
 
             }
         });
@@ -227,7 +236,7 @@ public class mypageController extends AnchorPane {
                 if (!newPropertyValue)
                 {
                     // Denna körs när fältet inte längre är fokuserat, så vill ha spara metod här också
-                    model.getCustomer().setPostAddress(cityTextField.getText());
+                    model.getCustomer().setAddress(cityTextField.getText());
                 }
             }
         });
