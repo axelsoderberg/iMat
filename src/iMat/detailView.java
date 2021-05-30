@@ -30,6 +30,7 @@ public class detailView extends AnchorPane {
     @FXML private Button productInformationButton;
     @FXML private Button moreInformationButton;
     @FXML private Label detailViewAmountLabel;
+    @FXML private ImageView detailViewCloseButton;
 
     private final Model model = Model.getInstance();
 
@@ -138,5 +139,19 @@ public class detailView extends AnchorPane {
     @FXML private void mouseStrap(){
 
     }
+
+    @FXML
+    private void hover() {
+        detailViewCloseButton.setStyle("-fx-background-color: #629543;");
+
+    }
+
+    @FXML
+    private void exitHover() {
+        detailViewCloseButton.setStyle("-fx-background-color: #C3D5BD;");
+
+    }
+
+
 }
 
