@@ -221,9 +221,8 @@ public class storeController extends AnchorPane {
             addSelectionToAllSubCats();
             updateProductList(model.getList(getParentCategory(pc)));
             category.setText(getParentCategory(pc));
-        } else {
+        } else
             setCategoriesLabel();
-        }
     }
 
     public void setCategoriesLabel() {
