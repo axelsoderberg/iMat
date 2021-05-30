@@ -54,6 +54,10 @@
     -fx-background-color: #71ad4c;
 }
 
+.green-button: pressed {
+       -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 0, 13, 0, 7);
+}
+
 .white-button {
     -fx-font-family: "Assistant";
     -fx-font-size: 27px;
@@ -75,7 +79,11 @@
 }
 
 .white-button:hover {
- -fx-background-color: #d1e6ca;
+    -fx-background-color: #d1e6ca;
+}
+
+.white-button: pressed {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 0, 13, 0, 7);
 }
 
 .lightgreen-button {
@@ -90,6 +98,10 @@
 
 .lightgreen-button:hover {
     -fx-background-color: #629543;
+}
+
+.lightgreen-button: pressed {
+       -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 0, 13, 0, 7);
 }
 
 .red-button {
@@ -110,6 +122,14 @@
     -fx-background-color: #C9C9C9;
     -fx-background-radius: 20px;
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 0, 10, 0, 4);
+}
+
+.grey-button:hover {
+    -fx-background-color: #629543;
+}
+
+.lightgreen-button: pressed {
+       -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 0, 13, 0, 7);
 }
 
 .small-button{
@@ -173,6 +193,13 @@
     -fx-font-weight: bold;
     -fx-background-color: #C3D5BD;
     -fx-background-radius: 14px 14px 0px 0px;
+}
+.detail-view-button:hover {
+    -fx-background-color: #629543;
+}
+
+.detail-view-button: pressed {
+       -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 0, 13, 0, 7);
 }
 
 .text-detail-view-detail{

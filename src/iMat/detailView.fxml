@@ -10,9 +10,9 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<fx:root prefHeight="885.0" prefWidth="1536.0" styleClass="lightbox-background" stylesheets="@iMat.css" type="AnchorPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root prefHeight="885.0" prefWidth="1536.0" styleClass="lightbox-background" stylesheets="@iMat.css" type="AnchorPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="885.0" onMouseClicked="#closeDetailView" opacity="0.6" stroke="BLACK" strokeType="INSIDE" styleClass="lightbox-background" width="1536.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="885.0" onMouseClicked="#closeDetailView" opacity="0.6" stroke="BLACK" strokeType="INSIDE" styleClass="green-button" width="1536.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ecebeb" height="400.0" layoutX="419.0" layoutY="274.0" onMouseClicked="#mouseStrap" stroke="BLACK" strokeType="INSIDE" styleClass="almost-white" width="606.0" />
       <ImageView fx:id="detailViewImage" fitHeight="209.0" fitWidth="170.0" layoutX="433.0" layoutY="296.0" pickOnBounds="true" preserveRatio="true" />
       <Label fx:id="detailViewProductName" layoutX="631.0" layoutY="284.0" prefHeight="65.0" prefWidth="339.0" styleClass="text-page-header" text="Produktnamn" />
@@ -53,13 +53,13 @@
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="28.0" layoutX="2.0" layoutY="6.0" onMouseClicked="#handleRemoveAction" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="28.0" />
          </children>
       </Group>
-      <Button fx:id="addButton" layoutX="857.0" layoutY="458.0" maxHeight="40.0" minHeight="35.0" mnemonicParsing="false" onAction="#handleAddAction" prefHeight="40.0" prefWidth="157.0" styleClass="lightgreen-button" text="Lägg till" />
+      <Button fx:id="addButton" layoutX="857.0" layoutY="457.0" maxHeight="40.0" minHeight="35.0" mnemonicParsing="false" onAction="#handleAddAction" prefHeight="40.0" prefWidth="157.0" styleClass="lightgreen-button" text="Lägg till" />
       <ImageView fx:id="detailViewFavoriteImage" fitHeight="82.0" fitWidth="40.0" layoutX="430.0" layoutY="288.0" onMouseClicked="#handleFavoriteAction" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="430.0" AnchorPane.topAnchor="288.0">
          <image>
             <Image url="@../resources/heart.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="detailViewCloseButton" fitHeight="82.0" fitWidth="40.0" layoutX="967.0" layoutY="287.0" onMouseClicked="#closeDetailView" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="967.0" AnchorPane.topAnchor="287.0">
+      <ImageView fx:id="detailViewCloseButton" fitHeight="82.0" fitWidth="40.0" layoutX="967.0" layoutY="287.0" onMouseClicked="#closeDetailView" pickOnBounds="true" preserveRatio="true" styleClass="white-button" AnchorPane.leftAnchor="967.0" AnchorPane.topAnchor="287.0">
          <image>
             <Image url="@../resources/whiteCloseButton.png" />
          </image>

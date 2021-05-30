@@ -12,7 +12,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<fx:root fx:id="headerPane" prefHeight="175.0" prefWidth="1536.0" styleClass="almost-white" stylesheets="@iMat.css" type="AnchorPane" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root fx:id="headerPane" prefHeight="175.0" prefWidth="1536.0" styleClass="almost-white" stylesheets="@iMat.css" type="AnchorPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fitHeight="120.0" fitWidth="1536.0" layoutX="673.0" layoutY="-15.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
@@ -145,7 +145,7 @@
             </Button>
          </children>
       </HBox>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="1016.0" layoutY="112.0" onMouseClicked="#handleSearchAction" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="112.0">
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="1016.0" layoutY="112.0" onMouseClicked="#handleSearchAction" pickOnBounds="true" preserveRatio="true" styleClass="green-button" AnchorPane.topAnchor="112.0">
          <image>
             <Image url="@../resources/search_icon.png" />
          </image>
