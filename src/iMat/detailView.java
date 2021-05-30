@@ -32,6 +32,7 @@ public class detailView extends AnchorPane {
     @FXML private Label detailViewAmountLabel;
     @FXML private ImageView detailViewCloseButton;
 
+    private Button lastPressed = productInformationButton;
     private final Model model = Model.getInstance();
 
     ShoppingItem shoppingItem;
@@ -65,6 +66,7 @@ public class detailView extends AnchorPane {
             detailViewFavoriteImage.setImage(new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("resources/heartFilled.png"))));
         } //annars ej ifyllt hjärta
         this.parentController = parentController;
+        productInformationSelected();
     }
 
     @FXML
@@ -105,6 +107,7 @@ public class detailView extends AnchorPane {
         nutritionButton.setStyle("-fx-background-color: #ECEBEB;");
         productInformationButton.setStyle("set-fx-background-color: #C3D5BD;");
         moreInformationButton.setStyle("-fx-background-color: #C3D5BD;");
+        lastPressed = nutritionButton;
     }
 
     @FXML
@@ -113,6 +116,7 @@ public class detailView extends AnchorPane {
         nutritionButton.setStyle("-fx-background-color: #C3D5BD;");
         productInformationButton.setStyle("-fx-background-color: #C3D5BD;");
         moreInformationButton.setStyle("-fx-background-color: #C3D5BD;");
+        lastPressed = contentsButton;
     }
 
     @FXML
@@ -121,6 +125,7 @@ public class detailView extends AnchorPane {
         nutritionButton.setStyle("-fx-background-color: #C3D5BD;");
         productInformationButton.setStyle("-fx-background-color: #ECEBEB;");
         moreInformationButton.setStyle("-fx-background-color: #C3D5BD;");
+        lastPressed = productInformationButton;
     }
 
     @FXML
@@ -129,6 +134,7 @@ public class detailView extends AnchorPane {
         nutritionButton.setStyle("-fx-background-color: #C3D5BD;");
         productInformationButton.setStyle("-fx-background-color: #C3D5BD;");
         moreInformationButton.setStyle("-fx-background-color: #ECEBEB;");
+        lastPressed = moreInformationButton;
     }
 
     @FXML
@@ -143,15 +149,63 @@ public class detailView extends AnchorPane {
     @FXML
     private void hover() {
         detailViewCloseButton.setStyle("-fx-background-color: #629543;");
-
     }
 
     @FXML
     private void exitHover() {
         detailViewCloseButton.setStyle("-fx-background-color: #C3D5BD;");
-
     }
 
+
+
+
+    @FXML
+    private void moduleTabHover1() {
+        if (lastPressed != contentsButton)
+            contentsButton.setStyle("-fx-background-color: #d8edd1;");
+    }
+
+    @FXML
+    private void moduleTabExitHover1() {
+        if (lastPressed != contentsButton)
+            contentsButton.setStyle("-fx-background-color: #C3D5BD;");
+    }
+
+    @FXML
+    private void moduleTabHover2() {
+        if (lastPressed != nutritionButton)
+            nutritionButton.setStyle("-fx-background-color: #d8edd1;");
+    }
+
+    @FXML
+    private void moduleTabExitHover2() {
+        if (lastPressed != nutritionButton)
+            nutritionButton.setStyle("-fx-background-color: #C3D5BD;");
+    }
+
+    @FXML
+    private void moduleTabHover3() {
+        if (lastPressed != productInformationButton)
+            productInformationButton.setStyle("-fx-background-color: #d8edd1;");
+    }
+
+    @FXML
+    private void moduleTabExitHover3() {
+        if (lastPressed != productInformationButton)
+            productInformationButton.setStyle("-fx-background-color: #C3D5BD;");
+    }
+
+    @FXML
+    private void moduleTabHover4() {
+        if (lastPressed != moreInformationButton)
+            moreInformationButton.setStyle("-fx-background-color: #d8edd1;");
+    }
+
+    @FXML
+    private void moduleTabExitHover4() {
+        if (lastPressed != moreInformationButton)
+            moreInformationButton.setStyle("-fx-background-color: #C3D5BD;");
+    }
 
 }
 
