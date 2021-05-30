@@ -111,18 +111,8 @@ public class checkoutController extends AnchorPane {
         updateShoppingcartList(model.getShoppingCart().getItems());
         updateCheckoutTotal();
 
-        firstNameTextField.setText(model.getCustomer().getFirstName());
-        surNameTextField.setText(model.getCustomer().getLastName());
-        postAdressTextField.setText(model.getCustomer().getPostAddress());
-        postCodeTextField.setText(model.getCustomer().getPostCode());
-        cityTextField.setText(model.getCustomer().getAddress());
-        phoneTextField.setText(model.getCustomer().getPhoneNumber());
-        mailTextField.setText(model.getCustomer().getEmail());
-        holdersNameTextField.setText(model.getCreditCard().getHoldersName());
-        verificationCodeTextField.setText(Integer.toString(model.getCreditCard().getVerificationCode()));
-        cardNrTextField.setText(model.getCreditCard().getCardNumber());
-        validMonthTextField.setText(Integer.toString(model.getCreditCard().getValidMonth()));
-        validYearTextField.setText(Integer.toString(model.getCreditCard().getValidYear()));
+        setPaymentInfo();
+        setDeliveryInfo();
 
         addListeners();
 
@@ -132,6 +122,27 @@ public class checkoutController extends AnchorPane {
         cardtypeApprovedImageView.setImage(getApprovedImage());
         cardtypeOk = true; //always ok...
 
+        chooseDeliveryButton();
+        choosePaymentButton();
+
+    }
+
+    void setPaymentInfo() {
+        holdersNameTextField.setText(model.getCreditCard().getHoldersName());
+        verificationCodeTextField.setText(Integer.toString(model.getCreditCard().getVerificationCode()));
+        cardNrTextField.setText(model.getCreditCard().getCardNumber());
+        validMonthTextField.setText(Integer.toString(model.getCreditCard().getValidMonth()));
+        validYearTextField.setText(Integer.toString(model.getCreditCard().getValidYear()));
+    }
+
+    void setDeliveryInfo() {
+        firstNameTextField.setText(model.getCustomer().getFirstName());
+        surNameTextField.setText(model.getCustomer().getLastName());
+        postAdressTextField.setText(model.getCustomer().getPostAddress());
+        postCodeTextField.setText(model.getCustomer().getPostCode());
+        cityTextField.setText(model.getCustomer().getAddress());
+        phoneTextField.setText(model.getCustomer().getPhoneNumber());
+        mailTextField.setText(model.getCustomer().getEmail());
     }
 
     public void updateShoppingcartList(List<ShoppingItem> items) {
@@ -145,10 +156,16 @@ public class checkoutController extends AnchorPane {
     }
 
     @FXML private void openPaymentDetails() {
+        setPaymentInfo();
+        checkApprovals();
+        choosePaymentButton();
         checkoutPaymentdetails.toFront();
     }
 
     @FXML private void openDeliveryDetails() {
+        setDeliveryInfo();
+        chooseDeliveryButton();
+        checkApprovals();
         checkoutDeliverydetails.toFront();
     }
 
@@ -260,7 +277,7 @@ public class checkoutController extends AnchorPane {
         postAdressTextField.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.ENTER) {
                 // Spara metoden här
-                model.getCustomer().setAddress(postAdressTextField.getText());
+                model.getCustomer().setPostAddress(postAdressTextField.getText());
 
             }
         });
@@ -273,7 +290,7 @@ public class checkoutController extends AnchorPane {
                 if (!newPropertyValue)
                 {
                     // Denna körs när fältet inte längre är fokuserat, så vill ha spara metod här också
-                    model.getCustomer().setAddress(postAdressTextField.getText());
+                    model.getCustomer().setPostAddress(postAdressTextField.getText());
                 }
             }
         });
@@ -304,7 +321,7 @@ public class checkoutController extends AnchorPane {
         cityTextField.setOnKeyPressed(e -> {
             if (e.getCode() == KeyCode.ENTER) {
                 // Spara metoden här
-                model.getCustomer().setPostAddress(cityTextField.getText());
+                model.getCustomer().setAddress(cityTextField.getText());
 
             }
         });
@@ -317,7 +334,7 @@ public class checkoutController extends AnchorPane {
                 if (!newPropertyValue)
                 {
                     // Denna körs när fältet inte längre är fokuserat, så vill ha spara metod här också
-                    model.getCustomer().setPostAddress(cityTextField.getText());
+                    model.getCustomer().setAddress(cityTextField.getText());
                 }
             }
         });
