@@ -609,9 +609,11 @@ public class mypageController extends AnchorPane {
 
     void openOrderView(OldOrder order){
         orderView.toFront();
+        orderListFlowPane.getChildren().clear();
         currentOrder = order;
         double totalPrice = 0;
         for (ShoppingItem shoppingItem : order.order){
+            orderListFlowPane.getChildren().add(new OrderListItem(shoppingItem));
             totalPrice += shoppingItem.getTotal();
         }
         orderSumText.setText("Summa: " + String.format("%.2f", totalPrice) + " kr");
@@ -621,6 +623,7 @@ public class mypageController extends AnchorPane {
     @FXML void buyOrder(){
         for (ShoppingItem shoppingItem : currentOrder.order) {
             model.getShoppingCart().addItem(shoppingItem);
+            model.getShoppingCart().fireShoppingCartChanged(shoppingItem, true);
         }
         orderView.toBack();
     }
