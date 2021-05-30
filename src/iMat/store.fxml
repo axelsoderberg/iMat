@@ -62,7 +62,7 @@
             <Font name="Berlin Sans FB Bold" size="36.0" />
          </font>
       </Label>
-      <Label fx:id="category" layoutX="403.0" layoutY="34.0" prefHeight="53.0" prefWidth="622.0" styleClass="text-page-header" text="Produkter" AnchorPane.topAnchor="34.0" />
+      <Label fx:id="category" layoutX="403.0" layoutY="34.0" prefHeight="53.0" prefWidth="586.0" styleClass="text-page-header" text="Produkter" AnchorPane.topAnchor="34.0" />
       <Line endX="770.0" endY="90.0" layoutX="433.0" layoutY="-3.0" startY="90.0" strokeWidth="2.0" AnchorPane.leftAnchor="380.0" />
       <Label fx:id="storeShoppingcartTotalPrize" alignment="CENTER" layoutX="1216.0" layoutY="569.0" prefHeight="35.0" prefWidth="241.0" styleClass="text-semi" text="Summa: 35 kr" />
       <Line endX="387.0" endY="90.0" layoutX="1105.0" layoutY="9.0" startX="45.0" startY="90.0" stroke="#ececeb" strokeWidth="8.0" AnchorPane.bottomAnchor="120.0" AnchorPane.rightAnchor="50.0" />
@@ -103,6 +103,6 @@
             <Image url="@../resources/arrow.png" />
          </image>
       </ImageView>
-      <ComboBox fx:id="sortCombo" layoutX="1031.0" layoutY="41.0" prefHeight="39.0" prefWidth="121.0" promptText="Sortera" styleClass="text-font" visibleRowCount="3" />
+      <ComboBox fx:id="sortCombo" layoutX="1001.0" layoutY="41.0" prefHeight="39.0" prefWidth="151.0" promptText="Sortera" styleClass="sort-button" visibleRowCount="3" />
    </children>
 </fx:root>
