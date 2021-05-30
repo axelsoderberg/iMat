@@ -172,7 +172,6 @@ public class mypageController extends AnchorPane {
             if (e.getCode() == KeyCode.ENTER) {
                 // Spara metoden här
                 model.getCustomer().setAddress(postAdressTextField.getText());
-
             }
         });
 

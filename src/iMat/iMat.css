@@ -266,7 +266,7 @@
     -fx-border-width: 2px;
 }
 
-.textfields:focus {
+.textfields:focused {
     -fx-border-color: #000000;
     -fx-border-radius: 10px;
     -fx-border-width: 2px;
