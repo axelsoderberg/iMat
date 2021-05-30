@@ -53,6 +53,7 @@ public class shoppinglists extends AnchorPane{
     @FXML
     ImageView closeButton;
     @FXML ImageView closeShoppinglist;
+    @FXML ImageView closeDoneList;
 
     public shoppinglists() {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("shoppinglists.fxml"));
@@ -265,6 +266,24 @@ public class shoppinglists extends AnchorPane{
     @FXML
     void pressedClose() {
         closeShoppinglist.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
+                "resources/lightgreenClose.png")));
+    }
+
+    @FXML
+    void hoverCloseDone() {
+        closeDoneList.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
+                "resources/midgreenClose.png")));
+    }
+
+    @FXML
+    void hoverDoneCloseDone() {
+        closeDoneList.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
+                "resources/greenclose.png")));
+    }
+
+    @FXML
+    void pressedCloseDone() {
+        closeDoneList.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
                 "resources/lightgreenClose.png")));
     }
 
