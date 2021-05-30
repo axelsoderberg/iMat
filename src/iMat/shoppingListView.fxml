@@ -17,7 +17,7 @@
 <AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@iMat.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="iMat.ShoppingListView">
    <children>
       <Rectangle arcHeight="100.0" arcWidth="100.0" fill="#ecebeb" height="600.0" layoutX="7.0" layoutY="10.0" stroke="#c9c9c9" strokeType="INSIDE" strokeWidth="5.0" width="1203.0" />
-      <ImageView fx:id="closeShoppinglist" fitHeight="50.0" fitWidth="50.0" layoutX="1124.0" layoutY="24.0" onMouseEntered="#hoverClose" onMouseExited="#hoverDoneClose" onMousePressed="#pressedClose" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="closeDoneList" fitHeight="50.0" fitWidth="50.0" layoutX="1124.0" layoutY="24.0" onMouseEntered="#hoverCloseDone" onMouseExited="#hoverDoneCloseDone" onMousePressed="#pressedCloseDone" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../resources/listCloseButton.png" />
          </image>

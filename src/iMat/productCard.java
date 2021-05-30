@@ -139,17 +139,5 @@ public class productCard extends AnchorPane {
     }
 
 
-    @FXML
-    void hoverCloseDelivery() {
-        productCardFavoriteImageView.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
-                "resources/Group 114.png")));
-    }
-
-    @FXML
-    void hoverDoneCloseDelivery() {
-        productCardFavoriteImageView.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
-                "resources/heart.png")));
-    }
-
 }
 

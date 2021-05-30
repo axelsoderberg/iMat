@@ -158,18 +158,6 @@ public class detailView extends AnchorPane {
                 "resources/whiteCloseButton.png")));
     }
 
-    @FXML
-    void hoverCloseDelivery2() {
-        detailViewFavoriteImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
-                "resources/Group 114.png")));
-    }
-
-    @FXML
-    void hoverDoneCloseDelivery2() {
-        detailViewFavoriteImage.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
-                "resources/heart.png")));
-    }
-
 
 
     @FXML
