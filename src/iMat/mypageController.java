@@ -5,13 +5,19 @@ import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.FlowPane;
+import javafx.scene.text.Text;
+import se.chalmers.cse.dat216.project.Order;
+import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Objects;
 
 public class mypageController extends AnchorPane {
@@ -43,7 +49,14 @@ public class mypageController extends AnchorPane {
     @FXML ImageView verificationCodeApprovedImageView;
     @FXML ImageView cardNrApprovedImageView;
 
+    @FXML AnchorPane orderView;
+    @FXML FlowPane orderFlowPane;
+    @FXML Text orderViewName;
+    @FXML Label orderSumText;
+    @FXML FlowPane orderListFlowPane;
+
     private final Model model = Model.getInstance();
+    OldOrder currentOrder;
 
     public mypageController() {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("mypage.fxml"));
@@ -76,6 +89,7 @@ public class mypageController extends AnchorPane {
         checkApprovals();
         cardtypeApprovedImageView.setImage(getApprovedImage());
 
+        populateOrderFlow();
     }
 
     void checkApprovals() {
@@ -584,6 +598,35 @@ public class mypageController extends AnchorPane {
 
     Image getNotApprovedImage() {
         return new Image(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("resources/notApproved.png")));
+    }
+
+    void populateOrderFlow(){
+        orderFlowPane.getChildren().clear();
+        for(Order order : model.getImatDataHandler().getOrders()) {
+            orderFlowPane.getChildren().add(new OldOrder(order, this));
+        }
+    }
+
+    void openOrderView(OldOrder order){
+        orderView.toFront();
+        currentOrder = order;
+        double totalPrice = 0;
+        for (ShoppingItem shoppingItem : order.order){
+            totalPrice += shoppingItem.getTotal();
+        }
+        orderSumText.setText("Summa: " + String.format("%.2f", totalPrice) + " kr");
+        orderViewName.setText(order.date);
+    }
+
+    @FXML void buyOrder(){
+        for (ShoppingItem shoppingItem : currentOrder.order) {
+            model.getShoppingCart().addItem(shoppingItem);
+        }
+        orderView.toBack();
+    }
+
+    @FXML void closeOrderView(){
+        orderView.toBack();
     }
 
 }

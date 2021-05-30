@@ -73,6 +73,7 @@ public class headerController extends AnchorPane {
     @FXML
     private void openMypageView() {
         mypageCtrl.toFront();
+        mypageCtrl.populateOrderFlow();
         this.toFront();
     }
 
