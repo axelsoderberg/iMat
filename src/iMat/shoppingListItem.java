@@ -27,6 +27,7 @@ public class shoppingListItem extends AnchorPane{
     Button removeButton;
     @FXML
     Rectangle removeBackground;
+    @FXML Rectangle removeBackground1;
 
     private final Product product;
     ShoppingItem shoppingItem;
@@ -58,6 +59,7 @@ public class shoppingListItem extends AnchorPane{
 
     public shoppingListItem setAddView(){
         removeBackground.toFront();
+        removeBackground1.toBack();
         if(shoppingItem.getAmount() > 0) {
             removeButton.toFront();
         }
@@ -67,6 +69,8 @@ public class shoppingListItem extends AnchorPane{
 
     public shoppingListItem setListView(){
         removeBackground.toBack();
+        removeBackground1.toFront();
+        shoppingListItemAmountLabel.toFront();
         removeButton.toBack();
         listViewUp = true;
         return this;
