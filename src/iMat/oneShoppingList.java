@@ -79,10 +79,9 @@ public class oneShoppingList extends AnchorPane {
     }
 
     public void addProducts(List<ShoppingItem> items) {
-        shoppingListProductMap = new HashMap<Product, shoppingListItem>();
         for (ShoppingItem item : items) {
             shoppingListItem shoppingListItem = new shoppingListItem(item, this);
-            shoppingListProductMap.put(item.getProduct(), shoppingListItem);
+            productList.add(shoppingListItem.shoppingItem);
         }
     }
 

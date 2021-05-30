@@ -37,6 +37,9 @@ public class shoppinglists extends AnchorPane{
     @FXML private Button addProductsButton;
     @FXML private Label listAmountText;
     @FXML private Label listSumText;
+    @FXML private Label createAmountText;
+    @FXML private Label createNumberOfItems;
+
     private boolean close = false;
     private boolean save = false;
     private boolean addedProduct = false;
@@ -166,10 +169,15 @@ public class shoppinglists extends AnchorPane{
     }
 
     private void populateCreateFlow(){
+        numberOfItems = 0;
+        totalPrice = 0;
         for (ShoppingItem shoppingItems : shoppingListList.get(listNumber).getProductList()){
             createListList.getChildren().add(shoppingListList.get(listNumber).getShoppingListProductMap().get(shoppingItems.getProduct()).setAddView());
+            totalPrice += shoppingItems.getTotal();
+            numberOfItems += shoppingItems.getAmount();
         }
-
+        createAmountText.setText("Summa: " + String.format("%.2f", totalPrice) + " kr");
+        createNumberOfItems.setText("" + numberOfItems + " st");
     }
 
     private void populateListFlow(){
