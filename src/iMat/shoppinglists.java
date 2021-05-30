@@ -5,6 +5,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.text.Text;
@@ -42,6 +44,9 @@ public class shoppinglists extends AnchorPane{
     private Model model = Model.getInstance();
     private int listNumber;
     private List<ShoppingItem> listViewShoppingItems;
+
+    @FXML
+    ImageView closeButton;
 
     public shoppinglists() {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("shoppinglists.fxml"));
@@ -191,6 +196,24 @@ public class shoppinglists extends AnchorPane{
         else{
             listViewShoppingItems.add(item);
         }
+    }
+
+    @FXML
+    void hoverCloseShoppinglist() {
+        closeButton.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
+                "resources/midgreenClose.png")));
+    }
+
+    @FXML
+    void hoverDoneCloseShoppinglist() {
+        closeButton.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
+                "resources/greenclose.png")));
+    }
+
+    @FXML
+    void pressedCloseShoppinglist() {
+        closeButton.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
+                "resources/lightgreenClose.png")));
     }
 
 }
