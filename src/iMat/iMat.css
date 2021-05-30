@@ -274,4 +274,8 @@
     -fx-scrollbar-color: #629543;
 }
 
+.dark-close {
+    -fx-fill: #629543;
+}
+
 

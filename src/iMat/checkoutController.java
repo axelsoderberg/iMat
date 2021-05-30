@@ -74,6 +74,10 @@ public class checkoutController extends AnchorPane {
     @FXML Rectangle helpDelivery;
     @FXML Rectangle helpPayment;
 
+    @FXML ImageView thanksClose;
+    @FXML ImageView payClose;
+    @FXML ImageView deliveryClose;
+
     Boolean firstNameOk = false;
     Boolean surNameOk = false;
     Boolean postadressOk = false;
@@ -760,6 +764,60 @@ public class checkoutController extends AnchorPane {
 
     Boolean isPaymentOk() {
         return cardtypeOk && validDateOk && holdersNameOk && verificationCodeOk && cardnrOk;
+    }
+
+    @FXML
+    void hoverCloseThanks() {
+        thanksClose.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
+                "resources/midgreenClose.png")));
+    }
+
+    @FXML
+    void hoverDoneCloseThanks() {
+        thanksClose.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
+                "resources/greenclose.png")));
+    }
+
+    @FXML
+    void pressedCloseThanks() {
+        thanksClose.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
+                "resources/lightgreenClose.png")));
+    }
+
+    @FXML
+    void hoverClosePay() {
+        payClose.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
+                "resources/midgreenClose.png")));
+    }
+
+    @FXML
+    void hoverDoneClosePay() {
+        payClose.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
+                "resources/greenclose.png")));
+    }
+
+    @FXML
+    void pressedClosePay() {
+        payClose.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
+                "resources/lightgreenClose.png")));
+    }
+
+    @FXML
+    void hoverCloseDelivery() {
+        deliveryClose.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
+                "resources/midgreenClose.png")));
+    }
+
+    @FXML
+    void hoverDoneCloseDelivery() {
+        deliveryClose.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
+                "resources/greenclose.png")));
+    }
+
+    @FXML
+    void pressedCloseDelivery() {
+        deliveryClose.setImage(new Image(getClass().getClassLoader().getResourceAsStream(
+                "resources/lightgreenClose.png")));
     }
 
 }
