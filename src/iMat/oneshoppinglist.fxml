@@ -21,7 +21,7 @@
             </DropShadow>
          </effect>
       </Rectangle>
-      <Text fx:id="nameText" layoutX="35.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-header" text="Text" AnchorPane.leftAnchor="35.0" />
+      <Text fx:id="nameText" layoutX="35.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-helpbox-header" AnchorPane.leftAnchor="35.0" />
       <Button layoutX="324.0" layoutY="23.0" mnemonicParsing="false" onAction="#addButton" text="Anpassa och lägg till">
          <styleClass>
             <String fx:value="white-button" />

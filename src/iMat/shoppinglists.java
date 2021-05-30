@@ -111,11 +111,11 @@ public class shoppinglists extends AnchorPane{
     }
 
     @FXML private void completeCreate(){
-        if(createShoppingListName.getText() != null) {
+        if(!createShoppingListName.getText().equals("")) {
             shoppingListList.get(listNumber).setListName(createShoppingListName.getText());
         }
         else {
-            shoppingListList.get(listNumber).setListName("Inköpslista");
+            shoppingListList.get(listNumber).setListName("Inköpslista " + (listNumber + 1));
         }
         updateShoppingListList();
         if(!shoppingListList.contains(shoppingListList.get(listNumber))) {
