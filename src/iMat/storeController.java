@@ -217,7 +217,7 @@ public class storeController extends AnchorPane {
         List<Product> lp = new ArrayList();
         for (ProductCategory productCat : selectedCategories) {
             lp.addAll(model.getProducts(productCat));
-            subCats += productCat.toString() + ", ";
+            //subCats += productCat.toString() + ", ";
         }
         updateProductList(lp);
         if (selectedCategories.isEmpty()) {
