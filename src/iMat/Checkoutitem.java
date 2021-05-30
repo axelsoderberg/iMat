@@ -22,6 +22,8 @@ public class Checkoutitem extends AnchorPane {
     @FXML Text checkoutitemPrizePerItemText;
     @FXML Text checkoutitemTotalItemPrizeText;
     @FXML ImageView checkoutitemProductImage;
+    @FXML Group buttonGroup;
+    @FXML Group warningGroup;
 
     private Model model = Model.getInstance();
 
@@ -47,6 +49,19 @@ public class Checkoutitem extends AnchorPane {
         checkoutitemProductImage.setImage(model.getImage(item.getProduct(), kImageWidth, kImageWidth*kImageRatio));
         checkoutitemTotalItemPrizeText.setText(item.getTotal() + " kr");
         checkoutitemAmountLabel.setText((int) item.getAmount() + " " + item.getProduct().getUnitSuffix());
+
+        checkAmount();
+    }
+
+    void checkAmount() {
+        //hantera orimliga mängder
+        if (this.item.getAmount() > 15) {
+            AnchorPane.setLeftAnchor(buttonGroup, 570.0);
+            warningGroup.setVisible(true);
+        } else {
+            AnchorPane.setLeftAnchor(buttonGroup, 500.0);
+            warningGroup.setVisible(false);
+        }
     }
 
     @FXML
@@ -56,6 +71,7 @@ public class Checkoutitem extends AnchorPane {
         checkoutitemAmountLabel.setText((int) item.getAmount() + " " + item.getProduct().getUnitSuffix());
         checkoutitemTotalItemPrizeText.setText(String.format("%.2f",item.getTotal()) + " kr");
         model.getShoppingCart().fireShoppingCartChanged(item, true);
+        checkAmount();
     }
 
     @FXML
@@ -70,5 +86,6 @@ public class Checkoutitem extends AnchorPane {
             checkoutitemTotalItemPrizeText.setText(String.format("%.2f",item.getTotal()) + " kr");
             model.getShoppingCart().fireShoppingCartChanged(item, false);
         }
+        checkAmount();
     }
 }

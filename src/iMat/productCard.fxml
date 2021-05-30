@@ -48,7 +48,7 @@
                   <Image url="@../resources/plusSign.png" />
                </image>
             </ImageView>
-            <Label fx:id="productCardAmountLabel" alignment="CENTER" layoutX="39.0" layoutY="12.0" prefHeight="35.0" prefWidth="67.0" styleClass="text-amount-big" text="x st" textAlignment="CENTER">
+            <Label fx:id="productCardAmountLabel" alignment="CENTER" layoutX="36.0" layoutY="12.0" prefHeight="35.0" prefWidth="75.0" styleClass="text-amount-big" text="xx förp" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>

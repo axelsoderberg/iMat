@@ -87,9 +87,9 @@ public class headerController extends AnchorPane {
 
         List<Product> matches = model.findProducts(searchField.getText());
         searchField.clear();
-        storeCtrl.updateProductList(matches);
-        storeCtrl.backArrowClicked();
         storeCtrl.toFront();
+        storeCtrl.backArrowClicked();
+        storeCtrl.updateProductList(matches);
         this.toFront();
 
     }

@@ -19,13 +19,13 @@
             <Image url="@../resources/headerpicture.PNG" />
          </image>
       </ImageView>
-      <Label fx:id="iMatTitle" layoutX="21.0" layoutY="-20.0" maxHeight="121.0" minHeight="90.0" onMouseClicked="#openStoreView" prefHeight="121.0" prefWidth="303.0" text="IMAT" textFill="#629543" AnchorPane.leftAnchor="21.0" AnchorPane.topAnchor="-20.0">
+      <Label fx:id="iMatTitle" layoutX="21.0" layoutY="-20.0" maxHeight="121.0" minHeight="90.0" onMouseClicked="#openStoreView" prefHeight="121.0" prefWidth="303.0" text="IMAT" textFill="#629543" AnchorPane.leftAnchor="50.0" AnchorPane.topAnchor="-20.0">
          <font>
             <Font name="Berlin Sans FB Bold" size="100.0" />
          </font>
       </Label>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#629543" height="84.0" layoutY="91.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1536.0" />
-      <Label layoutX="277.0" layoutY="24.0" prefHeight="17.0" prefWidth="496.0" text="En Mataffär Online" textFill="#629543">
+      <Label layoutX="304.0" layoutY="24.0" prefHeight="17.0" prefWidth="496.0" text="En Mataffär Online" textFill="#629543">
          <font>
             <Font size="54.0" />
          </font>
