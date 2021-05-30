@@ -202,10 +202,14 @@ public class storeController extends AnchorPane {
     public void addSubcategory(ProductCategory pc) {
         selectedCategories.add(pc);
         List<Product> lp = new ArrayList();
+        String subCats = null;
         for (ProductCategory productCat : selectedCategories) {
             lp.addAll(model.getProducts(productCat));
+            subCats += productCat.toString() + ", ";
         }
         updateProductList(lp);
+        category.setText(subCats);
+
     }
 
     public void removeSubcategory(ProductCategory pc) {
@@ -213,6 +217,7 @@ public class storeController extends AnchorPane {
         List<Product> lp = new ArrayList();
         for (ProductCategory productCat : selectedCategories) {
             lp.addAll(model.getProducts(productCat));
+            subCats += productCat.toString() + ", ";
         }
         updateProductList(lp);
         if (selectedCategories.isEmpty()) {

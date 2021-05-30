@@ -17,7 +17,11 @@ public class headerController extends AnchorPane {
 
     private static final Model model = Model.getInstance();
     @FXML private TextField searchField;
-    @FXML Button checkoutButton;
+    @FXML private Button checkoutButton;
+    @FXML private Button storeButton;
+    @FXML private Button shoppingListButton;
+    @FXML private Button myPageButton;
+    @FXML private Button helpButton;
     checkoutController checkoutCtrl;
     storeController storeCtrl;
     mypageController mypageCtrl;
@@ -95,4 +99,54 @@ public class headerController extends AnchorPane {
 
     }
 
+    @FXML
+    private void hoverOnHome() {
+        storeButton.setStyle("-fx-background-color: #d1e6ca;");
+    }
+
+    @FXML
+    private void exitHoverOnHome() {
+        storeButton.setStyle("-fx-background-color: #ECEBEB;");
+    }
+
+    @FXML
+    private void hoverOnShoppingLists() {
+        shoppingListButton.setStyle("-fx-background-color: #d1e6ca;");
+    }
+
+    @FXML
+    private void exitHoverOnShoppingLists() {
+        shoppingListButton.setStyle("-fx-background-color: #ECEBEB;");
+    }
+
+    @FXML
+    private void hoverOnCheckout() {
+        checkoutButton.setStyle("-fx-background-color: #d1e6ca;");
+    }
+
+    @FXML
+    private void exitHoverOnCheckout() {
+        checkoutButton.setStyle("-fx-background-color: #ECEBEB;");
+    }
+
+
+    @FXML
+    private void hoverOnMyPage() {
+        myPageButton.setStyle("-fx-background-color: #71ad4c;");
+    }
+
+    @FXML
+    private void exitHoverOnMyPage() {
+        myPageButton.setStyle("-fx-background-color: #629543;");
+    }
+
+    @FXML
+    private void hoverOnHelp() {
+        helpButton.setStyle("-fx-background-color: #71ad4c;");
+    }
+
+    @FXML
+    private void exitHoverOnHelp() {
+        helpButton.setStyle("-fx-background-color: #629543;");
+    }
 }
